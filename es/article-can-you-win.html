@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>¿Se puede ganar en un casino online? Lo que dice la matemática — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de…" name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.chart-wrap{position:relative;}
+.chart-tooltip{
+  position:absolute;pointer-events:none;opacity:0;transition:opacity .15s ease;
+  background:rgba(13,8,27,0.95);border:1px solid var(--gold-dim);border-radius:8px;
+  padding:8px 12px;font-size:12px;color:var(--text-primary);line-height:1.5;
+  white-space:nowrap;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
+.chart-tooltip strong{color:var(--gold);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;display:block;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/es/article-can-you-win.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/article-can-you-win.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/article-can-you-win.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/article-can-you-win.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/article-can-you-win.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/article-can-you-win.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/article-can-you-win.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/article-can-you-win.html" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="¿Se puede ganar en un casino online? Lo que dice la matemática — Gamer Logic Hub" property="og:title"/>
+<meta content="Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de…" property="og:description"/>
+<meta content="https://gamer-logic-hub.com/es/article-can-you-win.html" property="og:url"/>
+<meta content="es_AR" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="uz_UZ" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="¿Se puede ganar en un casino online? Lo que dice la matemática — Gamer Logic Hub" name="twitter:title"/>
+<meta content="Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de…" name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "¿Se puede ganar en un casino online? Lo que dice la matemática", "description": "Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de…", "inLanguage": "es-AR", "url": "https://gamer-logic-hub.com/es/article-can-you-win.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gamer-logic-hub.com/es/article-can-you-win.html"}, "dateModified": "2026-08-06", "author": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com"}, "publisher": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com", "logo": {"@type": "ImageObject", "url": "https://gamer-logic-hub.com/apple-touch-icon.png"}}, "isAccessibleForFree": true}</script>
+<meta content="https://gamer-logic-hub.com/es/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>Gamer Logic Hub<small id="i18nLogoSub">Artículo</small></div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Inicio</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Artículos</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../article-can-you-win.html">RU</a><a data-lang="en" href="../en/article-can-you-win.html">EN</a><a data-lang="uz" href="../uz/article-can-you-win.html">UZ</a><a data-lang="tg" href="../tg/article-can-you-win.html">TJ</a><span class="active" data-lang="es">AR</span><a data-lang="id" href="../id/article-can-you-win.html">ID</a></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap-narrow">
+<span class="eyebrow" id="i18nEyebrow">Matemática del juego · Análisis a fondo</span>
+<h1 id="i18nHeroTitle">¿Se puede <span class="accent">ganar</span> en un casino online? Lo que dice la matemática</h1>
+<p class="meta" id="i18nMeta">~7 min de lectura</p>
+</section>
+<div class="wrap-narrow article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+<article class="block wrap-narrow" id="articleBody">
+<p>Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de ella. La respuesta larga importa más: por qué ocurre esto, por qué no vuelve al juego "vencible" en el largo plazo, y cómo distinguir un hecho del otro.</p>
+<h3><span class="h3-icon">🏦</span>Qué es el house edge y por qué lo decide todo</h3>
+<p>El <strong>house edge</strong> (ventaja de la casa) es la ventaja matemática incorporada de la plataforma, el inverso del RTP. Si el RTP de un juego es del 96%, el house edge es del 4%: en promedio, por cada unidad apostada, la plataforma retiene 4 centavos y devuelve 96 como premios. No es "codicia" del operador, sino una propiedad fundamental del modelo matemático: sin esa ventaja incorporada, la plataforma no podría existir como negocio.</p>
+<p>El house edge se aplica por igual a cada apuesta individual, sin importar el historial de rondas anteriores. Es un promedio sobre un número enorme de repeticiones, no una garantía para un solo intento.</p>
+<h3><span class="h3-icon">📈</span>¿Puede ganar un jugador en particular? Sí, y así es por qué</h3>
+<p>El house edge describe el valor esperado, no el resultado de cada sesión. En el corto plazo, el resultado está gobernado principalmente por la <strong>varianza (volatilidad)</strong>, no por el promedio. Por eso mismo un saldo puede dispararse en un momento dado: es una desviación estadísticamente normal, no una falla de la matemática.</p>
+<p style="font-size:13px;">Abajo hay una visualización condicional: tres trayectorias aleatorias de saldo en la misma distancia de apuestas con el mismo house edge. Cada una tiene subidas locales, pero a medida que continúa la distancia, todas tienden estadísticamente a bajar.</p>
+<div class="chart-wrap" id="bankrollChart"></div>
+<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Cuanto más larga sea la distancia, más se acerca el resultado agregado al house edge teórico; eso es consecuencia de la ley de los grandes números, no "mala suerte".</p>
+<h3><span class="h3-icon">🎯</span>Por qué los "sistemas" de apuestas no cambian la matemática</h3>
+<p>Estrategias como duplicar la apuesta después de una pérdida (Martingala) no eliminan el house edge: solo redistribuyen el riesgo, haciendo que las ganancias sean más frecuentes y pequeñas, y que la pérdida ocasional sea catastróficamente grande. El valor esperado sigue siendo el mismo (o empeora, porque los límites de mesa y el bankroll limitado del jugador cortan la secuencia antes de que la teoría tenga oportunidad de "funcionar").</p>
+<p>La creencia en estos sistemas suele apoyarse en la <strong>falacia del jugador (gambler's fallacy)</strong>: la idea de que después de una racha de pérdidas, una victoria está "por llegar". En juegos con rondas independientes y un generador de números aleatorios (RNG), la máquina no tiene memoria de resultados pasados: la probabilidad de cada nueva ronda no depende del historial.</p>
+<h3><span class="h3-icon">⏳</span>Qué significa realmente "el largo plazo" en la práctica</h3>
+<p>La ley de los grandes números no funciona en una noche. La convergencia real hacia el RTP teórico suele requerir miles o decenas de miles de rondas: una distancia que ninguna persona recorre en una sola sesión, pero que una plataforma recorre colectivamente cada día gracias a una enorme cantidad de jugadores. Por eso un casino es predeciblemente rentable como negocio, mientras que el resultado de una noche de un jugador es una variable aleatoria.</p>
+<h3><span class="h3-icon">🧭</span>Cómo tomar una decisión informada</h3>
+<ul>
+<li>Consultá el RTP y la volatilidad de un juego específico antes de jugar: son parámetros oficiales y verificables</li>
+<li>Tratá la apuesta como el costo de un entretenimiento por un monto predeterminado, no como una fuente de ingresos</li>
+<li>Fijá de antemano un límite de dinero y tiempo, y no lo revises en medio de la sesión</li>
+<li>Recordá: un RNG no tiene memoria; "recuperar" lo perdido tras una racha de pérdidas no es un patrón matemático, sino una trampa cognitiva</li>
+<li>Si jugar deja de ser entretenimiento y se convierte en una forma de "recuperar" lo perdido, es señal de hacer una pausa</li>
+</ul>
+<div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y explica principios matemáticos generales de los juegos con resultado aleatorio. No es una recomendación para jugar con dinero real y no garantiza ningún resultado. Si la sensación de control sobre el juego se está perdiendo, vale la pena contactar a un especialista o a una línea de ayuda para el juego problemático en tu país.</div>
+<div class="sources"><h3>Fuentes y lectura adicional</h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" rel="noopener" target="_blank">Wikipedia — Gambling mathematics</a> — teoría matemática general de los juegos de azar</li>
+<li><a href="https://en.wikipedia.org/wiki/House_advantage" rel="noopener" target="_blank">Wikipedia — House advantage (house edge)</a> — definición y cálculo de la ventaja de la plataforma</li>
+<li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" rel="noopener" target="_blank">Wikipedia — Gambler's fallacy</a> — el sesgo cognitivo detrás de la creencia en los "sistemas"</li>
+<li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" rel="noopener" target="_blank">Wikipedia — Law of large numbers</a> — por qué el resultado converge al promedio teórico solo en el largo plazo</li>
+</ul></div></article>
+<div class="article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>></a>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo"><div class="logo-mark"><span>Σ</span></div><div>Gamer Math Portal</div></div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego.</p>
+</div>
+</footer>
+<script>
+function renderBankrollChart(chartLabels, tooltipRound, tooltipBalance){
+  const container = document.getElementById('bankrollChart');
+  if(!container) return;
+  container.innerHTML = '';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 640, H = 240;
+  const baseline = 120, scale = 0.9;
+
+  const series = [
+    { color:'#4cc98e', colorLight:'#8fe6bb', values:[100,104,96,108,92,101,88,95,80,88,74] },
+    { color:'#a855f7', colorLight:'#d3aaff', values:[100,92,110,88,124,138,116,132,100,80,90] },
+    { color:'#ef6a6a', colorLight:'#f5a3a3', values:[100,96,88,90,74,78,62,68,54,46,40] }
+  ];
+  const n = series[0].values.length;
+  const xs = series[0].values.map((_,i)=> 30 + i * ((W-50)/(n-1)) );
+  const valToY = v => baseline - (v-100)*scale;
+
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('xmlns', NS);
+  svg.style.width = '100%';
+  svg.style.height = 'auto';
+  svg.style.background = 'var(--bg-panel)';
+  svg.style.border = '1px solid var(--line)';
+  svg.style.borderRadius = '14px';
+  svg.style.padding = '10px';
+  svg.style.overflow = 'visible';
+
+  const defs = document.createElementNS(NS, 'defs');
+  series.forEach((s, si)=>{
+    const grad = document.createElementNS(NS, 'linearGradient');
+    grad.setAttribute('id', 'lineGrad'+si);
+    grad.setAttribute('x1','0'); grad.setAttribute('y1','0');
+    grad.setAttribute('x2','1'); grad.setAttribute('y2','0');
+    const s1 = document.createElementNS(NS,'stop'); s1.setAttribute('offset','0%'); s1.setAttribute('stop-color', s.colorLight);
+    const s2 = document.createElementNS(NS,'stop'); s2.setAttribute('offset','100%'); s2.setAttribute('stop-color', s.color);
+    grad.appendChild(s1); grad.appendChild(s2);
+    defs.appendChild(grad);
+  });
+  svg.appendChild(defs);
+
+  // baseline (starting balance) dashed guide
+  const base = document.createElementNS(NS,'line');
+  base.setAttribute('x1','30'); base.setAttribute('x2', W-20);
+  base.setAttribute('y1', baseline); base.setAttribute('y2', baseline);
+  base.setAttribute('stroke','#c9a227'); base.setAttribute('stroke-width','1');
+  base.setAttribute('stroke-dasharray','4 4'); base.setAttribute('opacity','0.5');
+  svg.appendChild(base);
+
+  const vAxis = document.createElementNS(NS,'line');
+  vAxis.setAttribute('x1','30'); vAxis.setAttribute('x2','30');
+  vAxis.setAttribute('y1','16'); vAxis.setAttribute('y2', H-24);
+  vAxis.setAttribute('stroke','#c9a227'); vAxis.setAttribute('stroke-width','1.5'); vAxis.setAttribute('opacity','0.5');
+  svg.appendChild(vAxis);
+
+  series.forEach((s, si)=>{
+    const points = s.values.map((v,i)=> `${xs[i]},${valToY(v)}`).join(' ');
+    const poly = document.createElementNS(NS,'polyline');
+    poly.setAttribute('points', points);
+    poly.setAttribute('fill','none');
+    poly.setAttribute('stroke', `url(#lineGrad${si})`);
+    poly.setAttribute('stroke-width','2.5');
+    poly.setAttribute('stroke-linecap','round');
+    poly.setAttribute('stroke-linejoin','round');
+    poly.style.transition = 'filter .2s ease';
+    poly.style.filter = 'none';
+    svg.appendChild(poly);
+
+    s.values.forEach((v,i)=>{
+      const cx = xs[i], cy = valToY(v);
+
+      const hit = document.createElementNS(NS,'circle');
+      hit.setAttribute('cx', cx); hit.setAttribute('cy', cy); hit.setAttribute('r', 12);
+      hit.setAttribute('fill', 'transparent');
+      hit.style.cursor = 'pointer';
+
+      const dot = document.createElementNS(NS,'circle');
+      dot.setAttribute('cx', cx); dot.setAttribute('cy', cy); dot.setAttribute('r', 3.5);
+      dot.setAttribute('fill', s.color);
+      dot.style.transition = 'r .18s cubic-bezier(.34,1.56,.64,1), filter .18s ease';
+      dot.style.pointerEvents = 'none';
+
+      hit.addEventListener('mouseenter', (e)=>{
+        dot.setAttribute('r', 7);
+        dot.style.filter = `drop-shadow(0 0 6px ${s.color})`;
+        poly.style.filter = `drop-shadow(0 0 4px ${s.color})`;
+        const sign = v >= 100 ? '+' : '';
+        showChartTooltip(container, e, `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${s.color};margin-right:6px;"></span>${tooltipRound} ${i+1}<br><strong>${tooltipBalance}: ${v}</strong> <span style="color:var(--text-muted);">(${sign}${v-100})</span>`);
+      });
+      hit.addEventListener('mousemove', (e)=> moveChartTooltip(container, e));
+      hit.addEventListener('mouseleave', ()=>{
+        dot.setAttribute('r', 3.5);
+        dot.style.filter = 'none';
+        poly.style.filter = 'none';
+        hideChartTooltip(container);
+      });
+
+      svg.appendChild(hit);
+      svg.appendChild(dot);
+    });
+  });
+
+  const capA = document.createElementNS(NS,'text');
+  capA.setAttribute('x','30'); capA.setAttribute('y','14');
+  capA.setAttribute('fill','#a89cc8'); capA.setAttribute('font-size','11'); capA.setAttribute('font-family','sans-serif');
+  capA.textContent = chartLabels[0];
+  svg.appendChild(capA);
+
+  const capB = document.createElementNS(NS,'text');
+  capB.setAttribute('x', W-140); capB.setAttribute('y','40');
+  capB.setAttribute('fill','#a89cc8'); capB.setAttribute('font-size','11'); capB.setAttribute('font-family','sans-serif');
+  capB.textContent = chartLabels[1];
+  svg.appendChild(capB);
+
+  const capC = document.createElementNS(NS,'text');
+  capC.setAttribute('x','30'); capC.setAttribute('y', H-8);
+  capC.setAttribute('fill','#a89cc8'); capC.setAttribute('font-size','11'); capC.setAttribute('font-family','sans-serif');
+  capC.textContent = chartLabels[2];
+  svg.appendChild(capC);
+
+  container.appendChild(svg);
+}
+
+function ensureChartTooltip(container){
+  let tip = container.querySelector('.chart-tooltip');
+  if(!tip){
+    tip = document.createElement('div');
+    tip.className = 'chart-tooltip';
+    container.appendChild(tip);
+  }
+  return tip;
+}
+function showChartTooltip(container, evt, html){
+  const tip = ensureChartTooltip(container);
+  tip.innerHTML = html;
+  tip.style.opacity = '1';
+  moveChartTooltip(container, evt);
+}
+function moveChartTooltip(container, evt){
+  const tip = container.querySelector('.chart-tooltip');
+  if(!tip) return;
+  const rect = container.getBoundingClientRect();
+  let x = evt.clientX - rect.left + 14;
+  let y = evt.clientY - rect.top - 10;
+  const maxX = rect.width - 160;
+  if(x > maxX) x = maxX;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+}
+function hideChartTooltip(container){
+  const tip = container.querySelector('.chart-tooltip');
+  if(tip) tip.style.opacity = '0';
+}
+
+const translations = {
+  ru:{
+    logoSub:"Статья", navHome:"Главная", navArticles:"Статьи",
+    eyebrow:"Математика игр · Разбор темы",
+    heroTitle:'Можно ли <span class="accent">выиграть</span> в онлайн-казино: что говорит математика',
+    meta:"~7 минут чтения",
+    chartLabels:["Стартовый баланс","Отдельные удачные всплески","Общий тренд на дистанции"],
+    tooltipRound:"Раунд", tooltipBalance:"Баланс",
+    body:`
+    <p>Короткий ответ: да, отдельный игрок может выиграть в конкретной сессии — и это не противоречит математике, а прямо из неё следует. Длинный ответ куда важнее: почему именно это происходит, почему это не делает игру «обыгрываемой» на дистанции, и как отличить один факт от другого.</p>
+
+    <h3><span class="h3-icon">🏦</span>Что такое хаус-эдж и почему он решает всё</h3>
+    <p><strong>Хаус-эдж (house edge)</strong> — это встроенное математическое преимущество площадки, обратная величина от RTP. Если RTP игры составляет 96%, хаус-эдж — 4%: в среднем с каждой условной единицы ставок площадка удерживает 4 цента, а 96 возвращает в виде выигрышей. Это не «жадность» оператора, а фундаментальное свойство математической модели: без такого встроенного преимущества площадка не могла бы существовать как бизнес.</p>
+    <p>Хаус-эдж действует на каждую отдельную ставку одинаково, независимо от истории предыдущих раундов. Это среднее значение по огромному числу повторений, а не гарантия для одной попытки.</p>
+
+    <h3><span class="h3-icon">📈</span>Может ли конкретный игрок выиграть — да, и вот почему</h3>
+    <p>Хаус-эдж описывает математическое ожидание, а не результат каждой сессии. На коротких дистанциях результат определяется в первую очередь <strong>дисперсией (волатильностью)</strong>, а не средним значением. Именно поэтому в моменте баланс может вырасти в разы — это статистически нормальное отклонение, а не нарушение математики.</p>
+    <p style="font-size:13px;">Ниже — условная визуализация: три случайные траектории баланса на одной и той же дистанции ставок с одинаковым хаус-эджем. У каждой бывают локальные подъёмы, но при продолжении дистанции все они статистически тяготеют к снижению.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Чем длиннее дистанция, тем сильнее совокупный результат приближается к теоретическому хаус-эджу — это следствие закона больших чисел, а не «невезения».</p>
+
+    <h3><span class="h3-icon">🎯</span>Почему «системы» ставок не меняют математику</h3>
+    <p>Стратегии вроде удвоения ставки после проигрыша (мартингейл) не устраняют хаус-эдж — они лишь перераспределяют риск: делают выигрыши более частыми и мелкими, а редкий проигрыш — катастрофически крупным. Математическое ожидание при этом остаётся тем же (или хуже — из-за лимитов стола и ограниченного банкролла игрока, которые обрывают серию до того, как теория успевает «сработать»).</p>
+    <p>В основе веры в системы часто лежит <strong>ошибка игрока (gambler's fallacy)</strong> — убеждение, что после серии проигрышей выигрыш «должен» случиться скорее. В играх с независимыми раундами и генератором случайных чисел (RNG) у машины нет памяти о предыдущих исходах: вероятность каждого нового раунда не зависит от истории.</p>
+
+    <h3><span class="h3-icon">⏳</span>Что означает «долгосрочная перспектива» на практике</h3>
+    <p>Закон больших чисел работает не за один вечер. Реальное схождение результата к теоретическому RTP обычно требует тысяч и десятков тысяч раундов — это дистанция, которую отдельный человек проходит не за одну сессию, а совокупно площадка проходит ежедневно за счёт огромного числа игроков. Именно поэтому казино как бизнес предсказуемо прибыльно, а результат одного вечера одного игрока — величина случайная.</p>
+
+    <h3><span class="h3-icon">🧭</span>Как принимать взвешенное решение</h3>
+    <ul>
+      <li>Смотрите на RTP и волатильность конкретной игры до начала — это официальные, проверяемые параметры</li>
+      <li>Относитесь к ставке как к плате за развлечение на заранее определённую сумму, а не как к источнику дохода</li>
+      <li>Заранее устанавливайте лимит по деньгам и времени — и не пересматривайте его в процессе игры</li>
+      <li>Помните: генератор случайных чисел не имеет памяти, «отыгрыш» после проигрышей — не математическая закономерность, а когнитивная ловушка</li>
+      <li>Если игра перестаёт быть развлечением и превращается в способ «отыграться» — это сигнал сделать паузу</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно образовательный характер и объясняет общие математические принципы игр со случайным исходом. Он не является рекомендацией к игре на реальные деньги и не гарантирует никакого результата. Если ощущение контроля над игрой теряется, стоит обратиться за поддержкой к специалисту или на горячую линию помощи людям с игровой зависимостью в своей стране.</div>
+
+    <div class="sources"><h3>Источники и дополнительное чтение</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — общая математическая теория игр со случайным исходом</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — определение и расчёт преимущества площадки</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — когнитивное искажение, лежащее в основе веры в «системы»</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — почему результат сходится к теоретическому среднему только на длинной дистанции</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+  },
+  en:{
+    logoSub:"Article", navHome:"Home", navArticles:"Articles",
+    eyebrow:"Game Math · Deep Dive",
+    heroTitle:'Can You <span class="accent">Win</span> at an Online Casino? What the Math Says',
+    meta:"~7 min read",
+    chartLabels:["Starting balance","Occasional lucky spikes","Overall trend over the long run"],
+    tooltipRound:"Round", tooltipBalance:"Balance",
+    body:`
+    <p>The short answer: yes, an individual player can win in a given session — and that doesn't contradict the math, it follows directly from it. The longer answer matters more: why this happens, why it doesn't make the game "beatable" over the long run, and how to tell these two facts apart.</p>
+
+    <h3><span class="h3-icon">🏦</span>What house edge is, and why it decides everything</h3>
+    <p>The <strong>house edge</strong> is the platform's built-in mathematical advantage — the inverse of RTP. If a game's RTP is 96%, the house edge is 4%: on average, for every unit wagered, the platform keeps 4 cents and returns 96 as winnings. This isn't operator "greed" — it's a fundamental property of the math model; without this built-in edge, the platform couldn't exist as a business.</p>
+    <p>The house edge applies equally to every single bet, regardless of the history of previous rounds. It's an average over a huge number of repetitions, not a guarantee for any one attempt.</p>
+
+    <h3><span class="h3-icon">📈</span>Can a specific player win — yes, and here's why</h3>
+    <p>House edge describes expected value, not the outcome of any one session. Over short runs, the result is driven mainly by <strong>variance (volatility)</strong>, not by the average. That's exactly why a balance can spike upward in the moment — that's a statistically normal deviation, not a breakdown of the math.</p>
+    <p style="font-size:13px;">Below is a conditional visualization: three random balance trajectories over the same betting distance with the same house edge. Each has local upswings, but as the distance continues, all of them statistically trend downward.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">The longer the run, the more the aggregate result converges toward the theoretical house edge — that's a consequence of the law of large numbers, not "bad luck."</p>
+
+    <h3><span class="h3-icon">🎯</span>Why betting "systems" don't change the math</h3>
+    <p>Strategies like doubling your bet after a loss (Martingale) don't eliminate the house edge — they just redistribute risk: wins become more frequent and smaller, while the rare loss becomes catastrophically large. The expected value stays the same (or gets worse, because table limits and a player's finite bankroll cut the sequence short before the theory has a chance to "work out").</p>
+    <p>Belief in these systems often rests on the <strong>gambler's fallacy</strong> — the idea that after a losing streak, a win is "due" sooner. In games with independent rounds and a random number generator (RNG), the machine has no memory of past outcomes: the probability of each new round doesn't depend on history.</p>
+
+    <h3><span class="h3-icon">⏳</span>What "the long run" actually means in practice</h3>
+    <p>The law of large numbers doesn't work in one evening. Real convergence toward the theoretical RTP usually requires thousands or tens of thousands of rounds — a distance no single person covers in one session, but that a platform covers collectively every day through a huge number of players. That's exactly why a casino is predictably profitable as a business, while one evening's result for one player is a random variable.</p>
+
+    <h3><span class="h3-icon">🧭</span>How to make an informed decision</h3>
+    <ul>
+      <li>Check a specific game's RTP and volatility before playing — these are official, verifiable parameters</li>
+      <li>Treat a stake as the cost of entertainment for a predetermined amount, not as a source of income</li>
+      <li>Set a money and time limit in advance — and don't revise it mid-session</li>
+      <li>Remember: an RNG has no memory; "chasing" a win after losses is a cognitive trap, not a mathematical pattern</li>
+      <li>If play stops being entertainment and turns into a way to "win back" losses, that's a signal to pause</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Important.</strong> This material is purely educational and explains general mathematical principles of games with random outcomes. It is not a recommendation to play with real money and guarantees no result. If a sense of control over play is slipping, it's worth reaching out to a specialist or a problem-gambling helpline in your country.</div>
+
+    <div class="sources"><h3>Sources & further reading</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — general mathematical theory of games of chance</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — definition and calculation of the platform's edge</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — the cognitive bias underlying belief in "systems"</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — why the result converges to the theoretical average only over a long run</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+  },
+  uz:{
+    logoSub:"Maqola", navHome:"Bosh sahifa", navArticles:"Maqolalar",
+    eyebrow:"O'yin matematikasi · Mavzu tahlili",
+    heroTitle:'Onlayn-kazinoda <span class="accent">yutish</span> mumkinmi: matematika nima deydi',
+    meta:"~7 daqiqalik o'qish",
+    chartLabels:["Boshlang'ich balans","Vaqti-vaqti bilan omadli sakrashlar","Uzoq masofadagi umumiy tendensiya"],
+    tooltipRound:"Raund", tooltipBalance:"Balans",
+    body:`
+    <p>Qisqa javob: ha, alohida o'yinchi ma'lum bir sessiyada yutishi mumkin — va bu matematikaga zid emas, balki undan bevosita kelib chiqadi. Uzunroq javob ancha muhimroq: bu nega sodir bo'ladi, bu nega o'yinni uzoq masofada «yengib bo'ladigan» qilmaydi va bu ikki faktni qanday ajratish kerak.</p>
+
+    <h3><span class="h3-icon">🏦</span>Xaus-edj nima va nega u hamma narsani hal qiladi</h3>
+    <p><strong>Xaus-edj (house edge)</strong> — platformaning o'rnatilgan matematik ustunligi, RTP-ning teskari qiymati. Agar o'yinning RTP-si 96% bo'lsa, xaus-edj 4% bo'ladi: o'rtacha har bir shartli birlik stavkadan platforma 4 tiyinni ushlab qoladi, 96 tasini esa yutuq sifatida qaytaradi. Bu operatorning «ochko'zligi» emas, balki matematik modelning asosiy xususiyati: bunday o'rnatilgan ustunliksiz platforma biznes sifatida mavjud bo'la olmas edi.</p>
+    <p>Xaus-edj oldingi raundlar tarixidan qat'i nazar, har bir alohida stavkaga bir xil ta'sir qiladi. Bu takrorlanishlarning ulkan sonidagi o'rtacha qiymat, bitta urinish uchun kafolat emas.</p>
+
+    <h3><span class="h3-icon">📈</span>Aniq bir o'yinchi yutishi mumkinmi — ha, va mana nega</h3>
+    <p>Xaus-edj matematik kutilma qiymatni tavsiflaydi, har bir sessiya natijasini emas. Qisqa masofalarda natija birinchi navbatda o'rtacha qiymat bilan emas, balki <strong>dispersiya (volatillik)</strong> bilan belgilanadi. Aynan shuning uchun ham balans bir lahzada bir necha barobar o'sishi mumkin — bu statistik jihatdan normal og'ish, matematikaning buzilishi emas.</p>
+    <p style="font-size:13px;">Quyida shartli vizualizatsiya: bir xil xaus-edjga ega bir xil stavka masofasida uchta tasodifiy balans traektoriyasi. Har birida lokal ko'tarilishlar bo'ladi, lekin masofa davom etganda barchasi statistik jihatdan pasayishga moyil bo'ladi.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Masofa qanchalik uzun bo'lsa, umumiy natija nazariy xaus-edjga shunchalik yaqinlashadi — bu «omadsizlik» emas, katta sonlar qonunining natijasidir.</p>
+
+    <h3><span class="h3-icon">🎯</span>Nega stavka «tizimlari» matematikani o'zgartirmaydi</h3>
+    <p>Yutqazgandan keyin stavkani ikki baravar oshirish (martingal) kabi strategiyalar xaus-edjni bartaraf etmaydi — ular faqat xavfni qayta taqsimlaydi: yutuqlarni tez-tez va kichikroq, kamdan-kam yutqazishni esa halokatli darajada katta qiladi. Matematik kutilma qiymat bir xil qoladi (yoki yomonlashadi — chunki stol limitlari va o'yinchining cheklangan bankroli nazariya «ishlashga» ulgurmasdan seriyani to'xtatadi).</p>
+    <p>Bunday tizimlarga ishonch ko'pincha <strong>o'yinchi xatosi (gambler's fallacy)</strong> asosida yotadi — yutqazishlar seriyasidan keyin yutuq tezroq «bo'lishi kerak» degan ishonch. Mustaqil raundlar va tasodifiy sonlar generatori (RNG) bo'lgan o'yinlarda mashinada oldingi natijalar haqida xotira yo'q: har bir yangi raund ehtimoli tarixga bog'liq emas.</p>
+
+    <h3><span class="h3-icon">⏳</span>«Uzoq muddatli istiqbol» amalda nimani anglatadi</h3>
+    <p>Katta sonlar qonuni bir kechada ishlamaydi. Natijaning nazariy RTP-ga haqiqiy yaqinlashishi odatda minglab va o'n minglab raundlarni talab qiladi — bu masofani bitta odam bitta sessiyada emas, balki platforma har kuni ulkan sonli o'yinchilar hisobiga jamlab bosib o'tadi. Aynan shuning uchun kazino biznes sifatida bashorat qilinadigan darajada foydali, bitta o'yinchining bir kechadagi natijasi esa tasodifiy miqdordir.</p>
+
+    <h3><span class="h3-icon">🧭</span>Qanday qilib asosli qaror qabul qilish mumkin</h3>
+    <ul>
+      <li>O'ynashdan oldin muayyan o'yinning RTP va volatilligiga qarang — bu rasmiy, tekshirilishi mumkin bo'lgan parametrlar</li>
+      <li>Stavkaga daromad manbai sifatida emas, balki oldindan belgilangan miqdordagi ko'ngilochar xarajat sifatida qarang</li>
+      <li>Pul va vaqt bo'yicha oldindan chegara belgilang — va o'yin jarayonida uni qayta ko'rib chiqmang</li>
+      <li>Esda tuting: RNG-da xotira yo'q, yutqazishdan keyin «qaytarib olish» matematik qonuniyat emas, balki kognitiv tuzoq</li>
+      <li>Agar o'yin ko'ngilochar bo'lishdan to'xtab, yo'qotilganni «qaytarib olish» usuliga aylansa — bu pauza qilish signalidir</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Muhim.</strong> Material faqat ta'lim maqsadida bo'lib, tasodifiy natijali o'yinlarning umumiy matematik tamoyillarini tushuntiradi. U real pulga o'ynash bo'yicha tavsiya emas va hech qanday natijani kafolatlamaydi. Agar o'yin ustidan nazorat hissi yo'qolayotgan bo'lsa, mutaxassisga yoki o'z mamlakatingizdagi o'yin qaramligiga yordam ko'rsatuvchi ishonch telefoniga murojaat qilishga arziydi.</div>
+
+    <div class="sources"><h3>Manbalar va qo'shimcha o'qish</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — tasodifiy natijali o'yinlarning umumiy matematik nazariyasi</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — platforma ustunligining ta'rifi va hisobi</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — «tizimlar»ga ishonchning asosida yotgan kognitiv xato</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — nega natija faqat uzoq masofada nazariy o'rtachaga yaqinlashadi</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+  },
+  tg:{
+    logoSub:"Мақола", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
+    eyebrow:"Математикаи бозӣ · Таҳлили мавзӯъ",
+    heroTitle:'Оё дар казинои онлайн <span class="accent">бурдан</span> мумкин аст: математика чӣ мегӯяд',
+    meta:"~7 дақиқа хондан",
+    chartLabels:["Балансии ибтидоӣ","Ҷаҳишҳои гоҳ-гоҳи бахтёр","Тамоюли умумӣ дар масофаи дароз"],
+    tooltipRound:"Раунд", tooltipBalance:"Баланс",
+    body:`
+    <p>Ҷавоби кӯтоҳ: бале, бозингари алоҳида метавонад дар як сессияи мушаххас бурд ба даст орад — ва ин ба математика зид нест, балки бевосита аз он бармеояд. Ҷавоби дарозтар муҳимтар аст: чаро ин рӯй медиҳад, чаро ин бозиро дар масофаи дароз «мағлубшаванда» намекунад ва чӣ гуна ин ду далелро аз ҳам фарқ кардан лозим аст.</p>
+
+    <h3><span class="h3-icon">🏦</span>Хаус-эҷ чист ва чаро он ҳама чизро ҳал мекунад</h3>
+    <p><strong>Хаус-эҷ (house edge)</strong> — бартарии математикии дарунсохти платформа, миқдори баръакси RTP аст. Агар RTP-и бозӣ 96% бошад, хаус-эҷ 4% аст: ба ҳисоби миёна аз ҳар воҳиди шартии гарав платформа 4 тин нигоҳ медорад, 96-тояшро бошад ҳамчун бурд бармегардонад. Ин «тамаъкорӣ»-и оператор нест, балки хусусияти бунёдии модели математикист: бе чунин бартарии дарунсохт платформа ҳамчун бизнес вуҷуд дошта наметавонист.</p>
+    <p>Хаус-эҷ новобаста аз таърихи раундҳои пешина ба ҳар як гарави алоҳида якхела амал мекунад. Ин арзиши миёна дар шумораи бузурги такрор аст, на кафолат барои як кӯшиш.</p>
+
+    <h3><span class="h3-icon">📈</span>Оё бозингари мушаххас метавонад бурд кунад — бале, ва инак чаро</h3>
+    <p>Хаус-эҷ интизории математикиро тавсиф мекунад, на натиҷаи ҳар як сессияро. Дар масофаҳои кӯтоҳ натиҷа пеш аз ҳама на бо арзиши миёна, балки бо <strong>дисперсия (волатилнокӣ)</strong> муайян мешавад. Маҳз барои ҳамин баланс дар лаҳза якбора чандин баробар афзоиш ёфта метавонад — ин каҷшавии оморан муқаррарӣ аст, на вайроншавии математика.</p>
+    <p style="font-size:13px;">Дар поён тасвири шартӣ: се траекторияи тасодуфии баланс дар як масофаи гарав бо як хаус-эҷи якхела. Ҳар кадоми онҳо баландшавиҳои маҳаллӣ доранд, аммо ҳангоми давоми масофа ҳамаашон оморан ба пастшавӣ моил мешаванд.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Ҳар қадар масофа дарозтар бошад, ҳамон қадар натиҷаи умумӣ ба хаус-эҷи назариявӣ наздиктар мешавад — ин натиҷаи қонуни рақамҳои калон аст, на «бадшансӣ».</p>
+
+    <h3><span class="h3-icon">🎯</span>Чаро «системаҳо»-и гарав математикаро тағйир намедиҳанд</h3>
+    <p>Стратегияҳо чун ду баробар кардани гарав пас аз бохт (мартингейл) хаус-эҷро бартараф намекунанд — онҳо танҳо хавфро аз нав тақсим мекунанд: бурдҳоро зуд-зуд ва хурдтар, бохти каму беш рухдодагиро бошад бузурги фалокатбор мекунанд. Интизории математикӣ дар айни замон ҳамон боқӣ мемонад (ё бадтар мешавад — зеро маҳдудиятҳои миз ва банкроли маҳдуди бозингар силсиларо пеш аз он ки назария «кор кунад» қатъ мекунанд).</p>
+    <p>Дар асоси эътиқод ба чунин системаҳо аксар вақт <strong>хатои бозингар (gambler's fallacy)</strong> қарор дорад — эътиқод, ки пас аз силсилаи бохтҳо бурд «бояд» зудтар рух диҳад. Дар бозиҳои бо раундҳои мустақил ва генератори рақамҳои тасодуфӣ (RNG) мошин дар бораи натиҷаҳои пешина хотира надорад: эҳтимолияти ҳар раунди нав аз таърих вобаста нест.</p>
+
+    <h3><span class="h3-icon">⏳</span>«Дурнамои дарозмуддат» дар амал чиро ифода мекунад</h3>
+    <p>Қонуни рақамҳои калон дар як шаб кор намекунад. Наздикшавии воқеии натиҷа ба RTP-и назариявӣ одатан ҳазорон ва даҳҳо ҳазор раундро талаб мекунад — ин масофаест, ки як инсон дар як сессия тай намекунад, балки платформа онро ҳар рӯз ба ҳисоби шумораи бузурги бозингарон дар маҷмӯъ тай мекунад. Маҳз барои ҳамин казино ҳамчун бизнес пешгӯишаванда даромаднок аст, натиҷаи як шаби як бозингар бошад миқдори тасодуфист.</p>
+
+    <h3><span class="h3-icon">🧭</span>Чӣ гуна қарори баробарсанҷидашуда қабул кардан лозим аст</h3>
+    <ul>
+      <li>Пеш аз бозӣ ба RTP ва волатилнокии бозии мушаххас нигаред — ин параметрҳои расмӣ ва санҷидашавандаанд</li>
+      <li>Ба гарав на ҳамчун манбаи даромад, балки ҳамчун пардохт барои фароғат бо маблағи пешакӣ муайяншуда муносибат кунед</li>
+      <li>Пешакӣ ҳадди пул ва вақтро муайян кунед — ва онро дар давоми бозӣ бознабинед</li>
+      <li>Дар хотир доред: RNG хотира надорад, «баргардонидан»-и бохт пас аз бохтҳо қонунияти математикӣ нест, балки доми маърифатист</li>
+      <li>Агар бозӣ фароғат буданро бас карда, ба усули «баргардонидани» гумшуда табдил ёбад — ин сигнали таваққуф аст</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Муҳим.</strong> Мавод хусусияти танҳо таълимӣ дорад ва принсипҳои умумии математикии бозиҳои бо натиҷаи тасодуфиро шарҳ медиҳад. Он тавсия ба бозӣ бо пули воқеӣ нест ва ҳеҷ натиҷаро кафолат намедиҳад. Агар ҳисси назорат бар бозӣ гум шавад, ба мутахассис ё ба хатти кӯмаки вобастагии қиморбозӣ дар кишвари худ муроҷиат кардан арзанда аст.</div>
+
+    <div class="sources"><h3>Манбаъҳо ва хондани иловагӣ</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — назарияи умумии математикии бозиҳои бо натиҷаи тасодуфӣ</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — таъриф ва ҳисоби бартарии платформа</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — хатои маърифатие, ки дар асоси эътиқод ба «системаҳо» қарор дорад</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — чаро натиҷа танҳо дар масофаи дароз ба миёнаи назариявӣ наздик мешавад</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+  },
+  es:{
+    logoSub:"Artículo", navHome:"Inicio", navArticles:"Artículos",
+    eyebrow:"Matemática del juego · Análisis a fondo",
+    heroTitle:'¿Se puede <span class="accent">ganar</span> en un casino online? Lo que dice la matemática',
+    meta:"~7 min de lectura",
+    chartLabels:["Saldo inicial","Picos de suerte ocasionales","Tendencia general en el largo plazo"],
+    tooltipRound:"Ronda", tooltipBalance:"Saldo",
+    body:`
+    <p>Respuesta corta: sí, un jugador individual puede ganar en una sesión determinada, y eso no contradice la matemática, sino que se desprende directamente de ella. La respuesta larga importa más: por qué ocurre esto, por qué no vuelve al juego "vencible" en el largo plazo, y cómo distinguir un hecho del otro.</p>
+
+    <h3><span class="h3-icon">🏦</span>Qué es el house edge y por qué lo decide todo</h3>
+    <p>El <strong>house edge</strong> (ventaja de la casa) es la ventaja matemática incorporada de la plataforma, el inverso del RTP. Si el RTP de un juego es del 96%, el house edge es del 4%: en promedio, por cada unidad apostada, la plataforma retiene 4 centavos y devuelve 96 como premios. No es "codicia" del operador, sino una propiedad fundamental del modelo matemático: sin esa ventaja incorporada, la plataforma no podría existir como negocio.</p>
+    <p>El house edge se aplica por igual a cada apuesta individual, sin importar el historial de rondas anteriores. Es un promedio sobre un número enorme de repeticiones, no una garantía para un solo intento.</p>
+
+    <h3><span class="h3-icon">📈</span>¿Puede ganar un jugador en particular? Sí, y así es por qué</h3>
+    <p>El house edge describe el valor esperado, no el resultado de cada sesión. En el corto plazo, el resultado está gobernado principalmente por la <strong>varianza (volatilidad)</strong>, no por el promedio. Por eso mismo un saldo puede dispararse en un momento dado: es una desviación estadísticamente normal, no una falla de la matemática.</p>
+    <p style="font-size:13px;">Abajo hay una visualización condicional: tres trayectorias aleatorias de saldo en la misma distancia de apuestas con el mismo house edge. Cada una tiene subidas locales, pero a medida que continúa la distancia, todas tienden estadísticamente a bajar.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Cuanto más larga sea la distancia, más se acerca el resultado agregado al house edge teórico; eso es consecuencia de la ley de los grandes números, no "mala suerte".</p>
+
+    <h3><span class="h3-icon">🎯</span>Por qué los "sistemas" de apuestas no cambian la matemática</h3>
+    <p>Estrategias como duplicar la apuesta después de una pérdida (Martingala) no eliminan el house edge: solo redistribuyen el riesgo, haciendo que las ganancias sean más frecuentes y pequeñas, y que la pérdida ocasional sea catastróficamente grande. El valor esperado sigue siendo el mismo (o empeora, porque los límites de mesa y el bankroll limitado del jugador cortan la secuencia antes de que la teoría tenga oportunidad de "funcionar").</p>
+    <p>La creencia en estos sistemas suele apoyarse en la <strong>falacia del jugador (gambler's fallacy)</strong>: la idea de que después de una racha de pérdidas, una victoria está "por llegar". En juegos con rondas independientes y un generador de números aleatorios (RNG), la máquina no tiene memoria de resultados pasados: la probabilidad de cada nueva ronda no depende del historial.</p>
+
+    <h3><span class="h3-icon">⏳</span>Qué significa realmente "el largo plazo" en la práctica</h3>
+    <p>La ley de los grandes números no funciona en una noche. La convergencia real hacia el RTP teórico suele requerir miles o decenas de miles de rondas: una distancia que ninguna persona recorre en una sola sesión, pero que una plataforma recorre colectivamente cada día gracias a una enorme cantidad de jugadores. Por eso un casino es predeciblemente rentable como negocio, mientras que el resultado de una noche de un jugador es una variable aleatoria.</p>
+
+    <h3><span class="h3-icon">🧭</span>Cómo tomar una decisión informada</h3>
+    <ul>
+      <li>Consultá el RTP y la volatilidad de un juego específico antes de jugar: son parámetros oficiales y verificables</li>
+      <li>Tratá la apuesta como el costo de un entretenimiento por un monto predeterminado, no como una fuente de ingresos</li>
+      <li>Fijá de antemano un límite de dinero y tiempo, y no lo revises en medio de la sesión</li>
+      <li>Recordá: un RNG no tiene memoria; "recuperar" lo perdido tras una racha de pérdidas no es un patrón matemático, sino una trampa cognitiva</li>
+      <li>Si jugar deja de ser entretenimiento y se convierte en una forma de "recuperar" lo perdido, es señal de hacer una pausa</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y explica principios matemáticos generales de los juegos con resultado aleatorio. No es una recomendación para jugar con dinero real y no garantiza ningún resultado. Si la sensación de control sobre el juego se está perdiendo, vale la pena contactar a un especialista o a una línea de ayuda para el juego problemático en tu país.</div>
+
+    <div class="sources"><h3>Fuentes y lectura adicional</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teoría matemática general de los juegos de azar</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — definición y cálculo de la ventaja de la plataforma</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — el sesgo cognitivo detrás de la creencia en los "sistemas"</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — por qué el resultado converge al promedio teórico solo en el largo plazo</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+  },
+  id:{
+    logoSub:"Artikel", navHome:"Beranda", navArticles:"Artikel",
+    eyebrow:"Matematika Game · Pembahasan Mendalam",
+    heroTitle:'Bisakah <span class="accent">Menang</span> di Kasino Online? Ini Kata Matematika',
+    meta:"~7 menit membaca",
+    chartLabels:["Saldo awal","Lonjakan keberuntungan sesekali","Tren keseluruhan dalam jangka panjang"],
+    tooltipRound:"Ronde", tooltipBalance:"Saldo",
+    body:`
+    <p>Jawaban singkat: ya, seorang pemain individu bisa menang dalam satu sesi tertentu — dan ini tidak bertentangan dengan matematika, justru mengikuti langsung darinya. Jawaban yang lebih panjang jauh lebih penting: mengapa ini terjadi, mengapa ini tidak membuat game jadi "bisa dikalahkan" dalam jangka panjang, dan bagaimana membedakan kedua fakta ini.</p>
+
+    <h3><span class="h3-icon">🏦</span>Apa itu house edge dan mengapa ini menentukan segalanya</h3>
+    <p><strong>House edge</strong> adalah keunggulan matematis bawaan platform, kebalikan dari RTP. Jika RTP sebuah game adalah 96%, house edge-nya adalah 4%: rata-rata, dari setiap unit taruhan, platform menahan 4 sen dan mengembalikan 96 sebagai kemenangan. Ini bukan "keserakahan" operator, melainkan sifat mendasar dari model matematis — tanpa keunggulan bawaan ini, platform tidak bisa eksis sebagai bisnis.</p>
+    <p>House edge berlaku sama untuk setiap taruhan individual, terlepas dari riwayat ronde sebelumnya. Ini adalah rata-rata dari jumlah pengulangan yang sangat besar, bukan jaminan untuk satu percobaan.</p>
+
+    <h3><span class="h3-icon">📈</span>Bisakah pemain tertentu menang — ya, dan inilah alasannya</h3>
+    <p>House edge menggambarkan nilai ekspektasi, bukan hasil dari tiap sesi. Dalam jangka pendek, hasil terutama ditentukan oleh <strong>varians (volatilitas)</strong>, bukan oleh rata-rata. Itulah sebabnya saldo bisa melonjak drastis pada suatu momen — itu adalah penyimpangan yang secara statistik normal, bukan kegagalan matematika.</p>
+    <p style="font-size:13px;">Di bawah ini adalah visualisasi kondisional: tiga lintasan saldo acak pada rentang taruhan yang sama dengan house edge yang sama. Masing-masing memiliki kenaikan lokal, namun seiring berlanjutnya rentang, semuanya secara statistik cenderung menurun.</p>
+    <div class="chart-wrap" id="bankrollChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Semakin panjang rentangnya, semakin hasil agregat mendekati house edge teoretis — ini adalah konsekuensi dari hukum bilangan besar, bukan "nasib buruk".</p>
+
+    <h3><span class="h3-icon">🎯</span>Mengapa "sistem" taruhan tidak mengubah matematika</h3>
+    <p>Strategi seperti menggandakan taruhan setelah kalah (Martingale) tidak menghilangkan house edge — strategi ini hanya mendistribusikan ulang risiko: membuat kemenangan lebih sering dan lebih kecil, sementara kekalahan yang jarang terjadi menjadi sangat besar. Nilai ekspektasi tetap sama (atau menjadi lebih buruk, karena batas meja dan bankroll pemain yang terbatas memotong rangkaian sebelum teori sempat "berhasil").</p>
+    <p>Kepercayaan pada sistem semacam ini sering didasarkan pada <strong>gambler's fallacy</strong> — anggapan bahwa setelah rentetan kekalahan, kemenangan "sudah waktunya" datang. Dalam game dengan ronde independen dan generator angka acak (RNG), mesin tidak memiliki memori atas hasil sebelumnya: peluang setiap ronde baru tidak bergantung pada riwayat.</p>
+
+    <h3><span class="h3-icon">⏳</span>Apa arti sebenarnya "jangka panjang" dalam praktiknya</h3>
+    <p>Hukum bilangan besar tidak bekerja dalam semalam. Konvergensi nyata menuju RTP teoretis biasanya membutuhkan ribuan hingga puluhan ribu ronde — rentang yang tidak ditempuh satu orang dalam satu sesi, tetapi ditempuh platform secara kolektif setiap hari lewat jumlah pemain yang sangat besar. Itulah sebabnya kasino dapat diprediksi menguntungkan sebagai bisnis, sementara hasil satu malam bagi satu pemain adalah variabel acak.</p>
+
+    <h3><span class="h3-icon">🧭</span>Cara membuat keputusan yang bijak</h3>
+    <ul>
+      <li>Periksa RTP dan volatilitas game tertentu sebelum bermain — ini adalah parameter resmi yang dapat diverifikasi</li>
+      <li>Perlakukan taruhan sebagai biaya hiburan dengan jumlah yang telah ditentukan sebelumnya, bukan sebagai sumber penghasilan</li>
+      <li>Tetapkan batas uang dan waktu sejak awal — dan jangan mengubahnya di tengah sesi</li>
+      <li>Ingat: RNG tidak memiliki memori; "mengejar" kemenangan setelah kekalahan bukan pola matematis, melainkan jebakan kognitif</li>
+      <li>Jika bermain berhenti menjadi hiburan dan berubah menjadi cara untuk "mengembalikan" kerugian, itu adalah sinyal untuk berhenti sejenak</li>
+    </ul>
+
+    <div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat murni edukasi dan menjelaskan prinsip matematis umum dari game dengan hasil acak. Ini bukan rekomendasi untuk bermain dengan uang sungguhan dan tidak menjamin hasil apa pun. Jika rasa kendali atas permainan mulai hilang, ada baiknya menghubungi spesialis atau hotline bantuan masalah judi di negara Anda.</div>
+
+    <div class="sources"><h3>Sumber & bacaan lanjutan</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teori matematis umum permainan berbasis peluang</li>
+      <li><a href="https://en.wikipedia.org/wiki/House_advantage" target="_blank" rel="noopener">Wikipedia — House advantage (house edge)</a> — definisi dan perhitungan keunggulan platform</li>
+      <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — bias kognitif di balik kepercayaan pada "sistem"</li>
+      <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — mengapa hasil hanya konvergen ke rata-rata teoretis dalam jangka panjang</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+  }
+};
+
+function applyLanguage(lang){
+  const t = translations[lang];
+  if(!t) return;
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('i18nLogoSub').textContent = t.logoSub;
+  document.getElementById('i18nNavHome').textContent = t.navHome;
+  document.getElementById('i18nNavArticles').textContent = t.navArticles;
+  document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+  document.getElementById('i18nHeroTitle').innerHTML = t.heroTitle;
+  document.getElementById('i18nMeta').textContent = t.meta;
+  document.getElementById('i18nFooterText').textContent = t.footerText;
+  document.getElementById('articleBody').innerHTML = t.body;
+  renderBankrollChart(t.chartLabels, t.tooltipRound, t.tooltipBalance);
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLanguage(btn.dataset.lang);
+  });
+});
+
+applyLanguage('es');
+</script>
+</body>
+</html>

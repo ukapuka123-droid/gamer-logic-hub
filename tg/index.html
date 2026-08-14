@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html id="htmlRoot" lang="tg">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title id="pageTitle">Gamer Logic Hub — Математикаи механизмҳои бозӣ</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ." name="description"/>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg-deep:#0d081b;
+    --bg-panel:#161029;
+    --bg-panel-2:#1c1436;
+    --gold:#ffd700;
+    --gold-dim:#c9a227;
+    --purple-neon:#a855f7;
+    --purple-glow:#7c3aed;
+    --text-primary:#f5f0ff;
+    --text-muted:#a89cc8;
+    --line:rgba(255,215,0,0.18);
+    --radius:14px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+      var(--bg-deep);
+    color:var(--text-primary);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    width:100%;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    letter-spacing:0.02em;
+  }
+
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  .meander{
+    height:14px;width:100%;
+    background-image:
+      linear-gradient(var(--gold-dim) 2px, transparent 2px),
+      linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+    background-size:14px 14px;
+    opacity:0.55;
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,8,27,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;gap:12px;flex-wrap:wrap;
+  }
+
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+
+  .logo-mark{
+    width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+    background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 16px rgba(255,215,0,0.35);
+  }
+  .logo-mark span{
+    width:24px;height:24px;border-radius:50%;background:var(--bg-deep);
+    display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);
+  }
+
+  .logo small{
+    display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;
+    color:var(--text-muted);text-transform:uppercase;
+  }
+
+  .header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+
+  .lang-switch{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .lang-switch::-webkit-scrollbar{display:none;}
+
+  .lang-switch button{
+    border:none;background:transparent;color:var(--text-muted);font-size:11px;
+    font-weight:700;letter-spacing:0.04em;padding:6px 10px;border-radius:999px;
+    cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;
+    font-family:inherit;
+  }
+
+  .lang-switch button.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+  .menu-btn{
+    width:38px;height:38px;border-radius:10px;border:1px solid var(--line);
+    background:var(--bg-panel);display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:4px;cursor:pointer;
+  }
+  .menu-btn span{width:16px;height:2px;background:var(--gold);border-radius:2px;}
+
+  .hero{padding:52px 0 20px;text-align:center;}
+
+  .eyebrow{
+    display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--gold-dim);border:1px solid var(--line);padding:6px 14px;
+    border-radius:999px;margin-bottom:18px;
+  }
+
+  .hero h1{font-size:clamp(26px,7vw,46px);line-height:1.18;font-weight:700;margin-bottom:16px;}
+
+  .hero h1 .accent{
+    background:linear-gradient(135deg, var(--gold), #fff2a8);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  .hero p.sub{color:var(--text-muted);font-size:15px;max-width:560px;margin:0 auto;}
+
+  .simulator{
+    margin:44px 0 10px;padding:28px 18px 32px;
+    background:linear-gradient(180deg, var(--bg-panel), var(--bg-panel-2));
+    border:1px solid var(--line);border-radius:20px;position:relative;overflow:hidden;
+  }
+
+  .simulator::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(168,85,247,0.18), transparent 60%);
+    pointer-events:none;
+  }
+
+  .simulator h2{font-size:20px;text-align:center;margin-bottom:6px;}
+
+  .simulator .sim-desc{
+    text-align:center;color:var(--text-muted);font-size:13px;max-width:460px;margin:0 auto 22px;
+  }
+
+  .sim-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+
+  .sim-tabs button{
+    border:1px solid var(--line);background:var(--bg-deep);color:var(--text-muted);
+    font-family:inherit;font-weight:600;font-size:13px;padding:9px 16px;
+    border-radius:10px;cursor:pointer;transition:all .25s ease;
+  }
+
+  .sim-tabs button.active{
+    color:var(--bg-deep);background:var(--gold);border-color:var(--gold);
+    box-shadow:0 0 18px rgba(255,215,0,0.4);
+  }
+
+  .columns-stage{
+    display:flex;align-items:flex-end;justify-content:center;
+    gap:clamp(8px,3vw,20px);height:190px;padding:0 6px 14px;
+    border-bottom:2px solid var(--gold-dim);position:relative;
+  }
+
+  .col-item{width:clamp(20px,8vw,34px);display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;position:relative;}
+  .col-cap{width:100%;height:6px;background:var(--gold-dim);border-radius:2px;transition:background .2s ease;}
+
+  .col-shaft{
+    width:66%;background:linear-gradient(180deg, var(--purple-neon), var(--purple-glow));
+    border-radius:4px 4px 0 0;box-shadow:0 0 12px rgba(168,85,247,0.45);
+    transition:height 0.8s cubic-bezier(.34,1.56,.64,1), box-shadow .2s ease, filter .2s ease, transform .2s ease;
+    height:6px;transform-origin:bottom center;
+  }
+
+  .col-item:hover .col-shaft{
+    filter:brightness(1.35);
+    box-shadow:0 0 20px rgba(168,85,247,0.85), 0 0 6px rgba(255,215,0,0.4);
+    transform:scaleX(1.18);
+  }
+  .col-item:hover .col-cap,
+  .col-item:hover .col-base{background:var(--gold);}
+
+  .col-base{width:100%;height:6px;background:var(--gold-dim);border-radius:2px;transition:background .2s ease;}
+
+  .chart-tooltip{
+    position:absolute;bottom:100%;left:50%;transform:translateX(-50%) translateY(-8px) scale(0.9);
+    background:var(--bg-deep);border:1px solid var(--gold);border-radius:8px;
+    padding:6px 10px;font-size:11.5px;font-weight:700;color:var(--gold);
+    white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s ease, transform .15s ease;
+    box-shadow:0 4px 16px rgba(0,0,0,0.5);z-index:5;
+  }
+  .chart-tooltip::after{
+    content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:var(--gold);
+  }
+  .chart-tooltip .tt-sub{display:block;color:var(--text-muted);font-weight:500;font-size:10.5px;margin-top:2px;}
+  .col-item:hover .chart-tooltip{opacity:1;transform:translateX(-50%) translateY(-14px) scale(1);}
+
+  .sim-legend{
+    display:flex;justify-content:center;gap:22px;margin-top:16px;
+    flex-wrap:wrap;font-size:12px;color:var(--text-muted);
+  }
+  .sim-legend b{color:var(--gold);}
+
+  .sim-note{
+    text-align:center;font-size:12px;color:var(--text-muted);margin-top:16px;
+    max-width:520px;margin-left:auto;margin-right:auto;
+  }
+
+  section.block{padding:52px 0;}
+  .section-head{text-align:center;margin-bottom:34px;}
+  .section-head h2{font-size:clamp(22px,5vw,32px);margin-bottom:10px;}
+  .section-head p{color:var(--text-muted);font-size:14px;max-width:520px;margin:0 auto;}
+
+  .card-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:720px){.card-grid{grid-template-columns:1fr 1fr;}}
+
+  .card{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+
+  .card .icon{
+    width:40px;height:40px;border-radius:10px;
+    background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;font-size:18px;
+  }
+
+  .card h3{font-size:16px;margin-bottom:8px;color:var(--gold);}
+  .card p, .card li{font-size:13.5px;color:var(--text-muted);}
+  .card ul{padding-left:18px;margin-top:8px;}
+  .card li{margin-bottom:6px;}
+  .card strong{color:var(--text-primary);}
+
+  .lede{
+    background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:28px;
+  }
+  .lede strong{color:var(--text-primary);}
+
+  .table-scroll{
+    width:100%;overflow-x:auto;border-radius:var(--radius);
+    border:1px solid var(--line);-webkit-overflow-scrolling:touch;
+  }
+
+  table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+
+  thead th{
+    background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:14px 16px;
+    font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);
+  }
+
+  tbody td{padding:14px 16px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:rgba(255,215,0,0.04);}
+  tbody td strong{color:var(--text-primary);}
+
+  .badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+  .badge.low{background:rgba(76,201,142,0.15);color:#4cc98e;}
+  .badge.mid{background:rgba(255,215,0,0.15);color:var(--gold);}
+  .badge.high{background:rgba(168,85,247,0.2);color:var(--purple-neon);}
+
+  .table-foot-note{font-size:12px;color:var(--text-muted);margin-top:12px;}
+
+  .disclaimer{
+    background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+    padding:20px;font-size:13px;color:var(--text-muted);margin-top:36px;
+  }
+  .disclaimer strong{color:var(--gold);}
+
+  footer{
+    padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;
+    border-top:1px solid var(--line);margin-top:20px;
+  }
+  footer .logo{justify-content:center;margin-bottom:14px;}
+
+  @media (prefers-reduced-motion: reduce){.col-shaft{transition:none;}}
+
+  @media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/tg/index.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/index.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/index.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/index.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/index.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/index.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/index.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/index.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="Gamer Logic Hub — Математикаи механизмҳои бозӣ" property="og:title"/>
+<meta content="Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ." property="og:description"/>
+<meta content="https://gamer-logic-hub.com/tg/index.html" property="og:url"/>
+<meta content="tg_TJ" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="uz_UZ" property="og:locale:alternate"/>
+<meta content="es_AR" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gamer Logic Hub — Математикаи механизмҳои бозӣ" name="twitter:title"/>
+<meta content="Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ." name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://gamer-logic-hub.com/#organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com", "logo": {"@type": "ImageObject", "url": "https://gamer-logic-hub.com/apple-touch-icon.png"}}, {"@type": "WebSite", "@id": "https://gamer-logic-hub.com/#website", "url": "https://gamer-logic-hub.com", "name": "Gamer Logic Hub", "description": "Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ.", "inLanguage": "tg", "publisher": {"@id": "https://gamer-logic-hub.com/#organization"}}]}</script>
+<meta content="https://gamer-logic-hub.com/tg/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>
+        Gamer Logic Hub
+        <small id="i18nLogoSub">Забони тоҷикӣ</small>
+</div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a class="active" href="index.html" id="i18nNavHome">Сафҳаи асосӣ</a>
+<a href="articles.html" id="i18nNavArticles">Мақолаҳо</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../index.html">RU</a><a data-lang="en" href="../en/index.html">EN</a><a data-lang="uz" href="../uz/index.html">UZ</a><span class="active" data-lang="tg">TJ</span><a data-lang="es" href="../es/index.html">AR</a><a data-lang="id" href="../id/index.html">ID</a></div>
+<button aria-label="Меню" class="menu-btn"><span></span><span></span><span></span></button>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="hero wrap">
+<span class="eyebrow" id="i18nEyebrow">Бахши таълимӣ · Математикаи бозӣ</span>
+<h1><span id="i18nHeroPre">Механизмҳои бозӣ дар паси худ кадом </span><span class="accent" id="i18nHeroAccent">математика</span><span id="i18nHeroPost"> доранд</span></h1>
+<p class="sub" id="i18nHeroSub">Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ.</p>
+<div class="btn-row">
+<a class="btn-gold" href="articles.html" id="i18nHeroCta">Хондани мақолаҳои портал →</a>
+<a class="btn-ghost" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+</section>
+<div class="wrap">
+<div class="simulator">
+<h2 id="i18nSimTitle">Симулятори тақсимоти натиҷаҳо</h2>
+<p class="sim-desc" id="i18nSimDesc">Сатҳи волатилнокиро интихоб кунед — сутунҳо тақсимоти шартии натиҷаҳоро нишон медиҳанд: басомад ва вазни нисбии онҳо. Қиймaтҳо бо пул алоқаманд нестанд ва танҳо барои мақсадҳои таълимӣ оварда шудаанд.</p>
+<div class="sim-tabs">
+<button class="active" data-level="low" id="i18nTabLow">Волатилнокии паст</button>
+<button data-level="mid" id="i18nTabMid">Волатилнокии миёна</button>
+<button data-level="high" id="i18nTabHigh">Волатилнокии баланд</button>
+</div>
+<div class="columns-stage" id="columnsStage"></div>
+<div class="sim-legend">
+<span id="i18nLegend1"><b>Меҳвари X</b> — натиҷаҳои шартии раунд</span>
+<span id="i18nLegend2"><b>Баландии сутун</b> — андозаи нисбии натиҷа</span>
+</div>
+<p class="sim-note" id="simNote"></p>
+</div>
+</div>
+<section class="block wrap" id="article">
+<div class="section-head">
+<h2 id="i18nArticleTitle">Таҳлили RTP, волатилнокӣ ва раундҳои бонусӣ</h2>
+<p id="i18nArticleDesc">Мафҳумҳои асосӣ, ки модели математикии қариб ҳар як механизми бозиро бо унсури тасодуф муайян мекунанд.</p>
+</div>
+<div class="lede" id="i18nLede"><strong>Мухтасар:</strong> RTP ва волатилнокӣ на "ҳилаҳои" бозӣ, балки параметрҳои расмии математикӣ мебошанд, ки таҳиягар вазифадор аст онҳоро сабт ва ошкор кунад. Фаҳмидани ин истилоҳҳо ба хондани ҳуҷҷатҳои техникии ҳар як бозӣ бо шуур кӯмак мекунад.</div>
+<div class="card-grid">
+<div class="card">
+<div class="icon">◎</div>
+<h3 id="i18nCard1Title">RTP чист</h3>
+<p id="i18nCard1Text"><strong>RTP (Return to Player)</strong> — фоизи маблағи умумии гаравҳо, ки назариявӣ дар масофаи хеле дароз (миллионҳо раунд) ҳамчун бурд бармегардад. Ин як нишондиҳандаи оморист, на кафолати натиҷаи як сессия.</p>
+</div>
+<div class="card">
+<div class="icon">⟁</div>
+<h3 id="i18nCard2Title">Волатилнокӣ (дисперсия)</h3>
+<p id="i18nCard2Intro">Хусусияти тақсимоти бурдҳоро нишон медиҳад:</p>
+<ul id="i18nCard2List"><li><strong>Паст</strong> — бурдҳои зуд-зуд, вале хурд</li><li><strong>Миёна</strong> — тақсимоти мутавозин</li><li><strong>Баланд</strong> — бурдҳои кам, вале эҳтимолан калон</li></ul>
+</div>
+<div class="card">
+<div class="icon">✺</div>
+<h3 id="i18nCard3Title">Механизми раундҳои бонусӣ</h3>
+<p id="i18nCard3Text">Раундҳои бонусӣ (аз ҷумла ба истилоҳ <strong>фриспинҳо</strong>) — ҳолатҳои алоҳидаи бозӣ бо қоидаҳои тағйирёфта мебошанд: мултипликаторҳои иловагӣ, аломатҳои махсус ё дигар тағйирдиҳандаҳо нисбат ба раунди асосӣ.</p>
+</div>
+<div class="card">
+<div class="icon">⌘</div>
+<h3 id="i18nCard4Title">Чӣ гуна ҳуҷҷатҳои техникиро хондан лозим аст</h3>
+<p id="i18nCard4Intro">Дар тавсифи расмии бозӣ (paytable) одатан инҳо нишон дода мешаванд:</p>
+<ul id="i18nCard4List"><li>Қиммати дақиқи RTP барои версияи бозӣ</li><li>Сатҳи волатилнокӣ (бо калима ё бо балл)</li><li>Шартҳои фаъолсозии ҳолатҳои бонусӣ</li><li>Мавҷудияти сертификати лабораторияи мустақил</li></ul>
+</div>
+</div>
+</section>
+<section class="block wrap" id="tableSection">
+<div class="section-head">
+<h2 id="i18nTableTitle">Муқоисаи сатҳҳои волатилнокӣ</h2>
+<p id="i18nTableDesc">Ҷадвали маълумотии хусусиятҳои умумии жанр — самтҳои умумӣ, ки ба провайдер ё маҳсулоти мушаххас алоқаманд нестанд.</p>
+</div>
+<div class="table-scroll">
+<table>
+<thead>
+<tr id="i18nTheadRow"><th>Сатҳи волатилнокӣ</th><th>Басомади натиҷаҳои бурднок</th><th>Андозаи нисбии натиҷа</th><th>Рафтори маъмулии баланс</th></tr>
+</thead>
+<tbody id="i18nTbody"><tr><td><span class="badge low">Паст</span></td><td>Баланд — натиҷаҳо зуд-зуд мебароянд</td><td>Нисбат ба гарав хурд</td><td><strong>Ҳамвор</strong> тағйирот бе фарорасии якбора</td></tr><tr><td><span class="badge mid">Миёна</span></td><td>Мӯътадил</td><td>Миёна, диапазони васеъ</td><td>Иваз шудани фазаҳои <strong>мутавозин</strong></td></tr><tr><td><span class="badge high">Баланд</span></td><td>Паст — натиҷаҳо кам мебароянд</td><td>Метавонад назаррас бошад</td><td>Тағйироти <strong>якбора</strong>, танаффусҳои дароз байни натиҷаҳои калон</td></tr></tbody>
+</table>
+</div>
+<p class="table-foot-note" id="i18nTableFoot">Ҷадвал хусусияти умумии таълимӣ дорад ва пешниҳод, реклама ё тавсифи техникии ягон маҳсулот ё провайдери мушаххас намебошад.</p>
+<div class="disclaimer" id="i18nDisclaimer"><strong>Муҳим.</strong> Маводи ин бахш танҳо бо мақсади таълимӣ таҳия шудааст ва принсипҳои умумии математикии механизмҳои бозӣ бо унсури тасодуфро тавсиф мекунад. Портал майдончаи бозӣ бо пули воқеӣ намебошад, гаравҳоро қабул намекунад ва провайдери мушаххасро реклама намекунад. Дастрасӣ ва қонунияти бозиҳои шартӣ вобаста ба кишвар хеле фарқ мекунад — пеш аз истифодаи ягон платформа мутмаин шавед, ки он тибқи қонунгузории минтақаи шумо иҷозат дода шудааст.</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo">
+<div class="logo-mark"><span>Σ</span></div>
+<div>Gamer Math Portal</div>
+</div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ.</p>
+</div>
+</footer>
+<script>
+  const translations = {
+    ru:{
+      logoSub:"Русский язык",
+      navHome:"Главная", navArticles:"Статьи", heroCta:"Читать статьи портала →",
+      eyebrow:"Образовательный раздел · Игровая математика",
+      heroPre:"Как устроена ", heroAccent:"математика", heroPost:" внутри игровых механик",
+      heroSub:"Разбираем волатильность, RTP и структуру бонусных раундов простым языком — без привязки к конкретным операторам и без реальных денежных ставок.",
+      simTitle:"Симулятор распределения исходов",
+      simDesc:"Выберите уровень волатильности — колонны покажут условное распределение исходов: их частоту и относительный «вес». Значения не привязаны к деньгам и приведены исключительно в учебных целях.",
+      tabLow:"Низкая волатильность", tabMid:"Средняя волатильность", tabHigh:"Высокая волатильность",
+      legend1:"<b>Ось X</b> — условные исходы раунда", legend2:"<b>Высота колонны</b> — относительная величина исхода",
+      noteLow:"Низкая волатильность: большинство колонн примерно одной высоты — исходы распределены равномерно и часто.",
+      noteMid:"Средняя волатильность: заметен разброс высот — чередуются небольшие и более значимые исходы.",
+      noteHigh:"Высокая волатильность: большинство колонн низкие, но изредка встречается один резко выделяющийся исход.",
+      articleTitle:"Разбор RTP, волатильности и бонусных раундов",
+      articleDesc:"Ключевые понятия, которые определяют математическую модель практически любой игровой механики с элементом случайности.",
+      lede:"<strong>Коротко:</strong> RTP и волатильность — это не игровые «фишки», а официальные математические параметры, которые разработчик обязан фиксировать и раскрывать. Понимание этих терминов помогает читать техническую документацию любой игры осознанно.",
+      card1Title:"Что такое RTP",
+      card1Text:"<strong>RTP (Return to Player)</strong> — процент от общего объёма ставок, который теоретически возвращается в виде выигрышей на очень длинной дистанции (миллионы раундов). Это статистическая величина, а не гарантия результата отдельной сессии.",
+      card2Title:"Волатильность (дисперсия)", card2Intro:"Показывает характер распределения выигрышей:",
+      card2List:"<li><strong>Низкая</strong> — частые, но небольшие выигрыши</li><li><strong>Средняя</strong> — сбалансированное распределение</li><li><strong>Высокая</strong> — редкие, но потенциально крупные выигрыши</li>",
+      card3Title:"Механика бонусных раундов",
+      card3Text:"Бонусные раунды (в том числе так называемые <strong>фриспины</strong>) — это отдельные игровые состояния с изменёнными правилами: дополнительными множителями, специальными символами или иными модификаторами относительно базового раунда.",
+      card4Title:"Как читать техническую документацию", card4Intro:"В официальном описании игры (paytable) обычно указаны:",
+      card4List:"<li>Точное значение RTP для версии игры</li><li>Уровень волатильности (словесно или в баллах)</li><li>Условия активации бонусных состояний</li><li>Наличие сертификации независимой лабораторией</li>",
+      tableTitle:"Сравнение уровней волатильности",
+      tableDesc:"Справочная таблица общих характеристик жанра — обобщённые ориентиры, не относящиеся к конкретному оператору или продукту.",
+      theadRow:"<th>Уровень волатильности</th><th>Частота выигрышных исходов</th><th>Относительный размер исхода</th><th>Типичное поведение баланса</th>",
+      tbody:'<tr><td><span class="badge low">Низкая</span></td><td>Высокая — исходы выпадают часто</td><td>Небольшой относительно ставки</td><td><strong>Плавные</strong> колебания без резких провалов</td></tr><tr><td><span class="badge mid">Средняя</span></td><td>Умеренная</td><td>Средний, широкий диапазон значений</td><td><strong>Сбалансированное</strong> чередование фаз</td></tr><tr><td><span class="badge high">Высокая</span></td><td>Низкая — исходы выпадают редко</td><td>Потенциально значительный</td><td><strong>Резкие</strong> перепады, длительные паузы между крупными исходами</td></tr>',
+      tableFoot:"Таблица носит обобщающий образовательный характер и не является офертой, рекламой или технической спецификацией какого-либо конкретного продукта или провайдера.",
+      disclaimer:"<strong>Важно.</strong> Материалы раздела созданы исключительно в просветительских целях и описывают общие математические принципы игровых механик с элементом случайности. Портал не является площадкой для игры на реальные деньги, не принимает ставки и не рекламирует конкретных операторов. Доступность и легальность азартных развлечений существенно различаются в зависимости от страны — перед использованием любых платформ убедитесь, что это разрешено законодательством вашей юрисдикции.",
+      footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик.",
+      pageTitle:"Gamer Math Portal — Математика игровых механик"
+    },
+    en:{
+      logoSub:"English",
+      navHome:"Home", navArticles:"Articles", heroCta:"Read the portal articles →",
+      eyebrow:"Educational Section · Game Math",
+      heroPre:"How the ", heroAccent:"math", heroPost:" behind game mechanics works",
+      heroSub:"We break down volatility, RTP and bonus round structure in plain language — with no ties to specific operators and no real-money wagering.",
+      simTitle:"Outcome Distribution Simulator",
+      simDesc:"Choose a volatility level — the columns will show a conditional distribution of outcomes: their frequency and relative \u201cweight.\u201d Values are not tied to money and are provided for educational purposes only.",
+      tabLow:"Low volatility", tabMid:"Medium volatility", tabHigh:"High volatility",
+      legend1:"<b>X-axis</b> — conditional round outcomes", legend2:"<b>Column height</b> — relative outcome size",
+      noteLow:"Low volatility: most columns are roughly the same height — outcomes are distributed evenly and occur often.",
+      noteMid:"Medium volatility: heights vary noticeably — smaller and larger outcomes alternate.",
+      noteHigh:"High volatility: most columns are low, but occasionally one sharply taller outcome appears.",
+      articleTitle:"Breaking Down RTP, Volatility and Bonus Rounds",
+      articleDesc:"Key concepts that define the mathematical model behind virtually any game mechanic with an element of chance.",
+      lede:"<strong>In short:</strong> RTP and volatility aren't gaming \u201cgimmicks\u201d — they're official mathematical parameters that developers are required to record and disclose. Understanding these terms helps you read any game's technical documentation with confidence.",
+      card1Title:"What is RTP",
+      card1Text:"<strong>RTP (Return to Player)</strong> is the percentage of total wagers theoretically returned as winnings over a very long run (millions of rounds). It's a statistical figure, not a guarantee for any single session.",
+      card2Title:"Volatility (variance)", card2Intro:"Describes the character of the winnings distribution:",
+      card2List:"<li><strong>Low</strong> — frequent but small wins</li><li><strong>Medium</strong> — a balanced distribution</li><li><strong>High</strong> — rare but potentially large wins</li>",
+      card3Title:"Bonus round mechanics",
+      card3Text:"Bonus rounds (including so-called <strong>free spins</strong>) are separate game states with modified rules: extra multipliers, special symbols, or other modifiers relative to the base round.",
+      card4Title:"How to read technical documentation", card4Intro:"A game's official description (paytable) usually specifies:",
+      card4List:"<li>The exact RTP value for that game version</li><li>The volatility level (as text or a numeric scale)</li><li>Conditions for triggering bonus states</li><li>Whether it's certified by an independent lab</li>",
+      tableTitle:"Comparing Volatility Levels",
+      tableDesc:"A reference table of general genre characteristics — broad guidelines, not tied to any specific operator or product.",
+      theadRow:"<th>Volatility level</th><th>Frequency of winning outcomes</th><th>Relative outcome size</th><th>Typical balance behavior</th>",
+      tbody:'<tr><td><span class="badge low">Low</span></td><td>High — outcomes appear often</td><td>Small relative to the stake</td><td><strong>Smooth</strong> changes with no sharp drops</td></tr><tr><td><span class="badge mid">Medium</span></td><td>Moderate</td><td>Medium, wide range</td><td><strong>Balanced</strong> alternation of phases</td></tr><tr><td><span class="badge high">High</span></td><td>Low — outcomes appear rarely</td><td>Can be significant</td><td><strong>Sharp</strong> swings, long pauses between big outcomes</td></tr>',
+      tableFoot:"This table is for general educational purposes and is not an offer, advertisement, or technical specification of any specific product or provider.",
+      disclaimer:"<strong>Important.</strong> This section's materials are created solely for educational purposes and describe general mathematical principles behind game mechanics involving chance. This portal is not a real-money gambling platform, does not accept wagers, and does not advertise any specific operator. The availability and legality of gambling entertainment varies significantly by country — before using any platform, make sure it's permitted under the laws of your jurisdiction.",
+      footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics.",
+      pageTitle:"Gamer Math Portal — The Mathematics of Game Mechanics"
+    },
+    uz:{
+      logoSub:"O'zbek tili",
+      navHome:"Bosh sahifa", navArticles:"Maqolalar", heroCta:"Portal maqolalarini o'qish →",
+      eyebrow:"Ta'lim bo'limi · O'yin matematikasi",
+      heroPre:"O'yin mexanikalari ortidagi ", heroAccent:"matematika", heroPost:" qanday ishlaydi",
+      heroSub:"Volatillik, RTP va bonus raundlari tuzilishini sodda tilda tushuntiramiz — aniq provayderlarga bog'lanmagan holda va real pul stavkalarisiz.",
+      simTitle:"Natijalar taqsimoti simulyatori",
+      simDesc:"Volatillik darajasini tanlang — ustunlar shartli natijalar taqsimotini ko'rsatadi: ularning chastotasi va nisbiy \"og'irligi\". Qiymatlar pulga bog'liq emas va faqat ta'lim maqsadida keltirilgan.",
+      tabLow:"Past volatillik", tabMid:"O'rta volatillik", tabHigh:"Yuqori volatillik",
+      legend1:"<b>X o'qi</b> — raundning shartli natijalari", legend2:"<b>Ustun balandligi</b> — natijaning nisbiy qiymati",
+      noteLow:"Past volatillik: ustunlarning aksariyati taxminan bir xil balandlikda — natijalar tez-tez va bir tekis taqsimlangan.",
+      noteMid:"O'rta volatillik: balandliklar sezilarli darajada farq qiladi — kichik va yirikroq natijalar almashinib turadi.",
+      noteHigh:"Yuqori volatillik: ustunlarning aksariyati past, lekin vaqti-vaqti bilan bitta keskin baland natija paydo bo'ladi.",
+      articleTitle:"RTP, volatillik va bonus raundlari tahlili",
+      articleDesc:"Tasodifiylik elementiga ega deyarli har qanday o'yin mexanikasining matematik modelini belgilovchi asosiy tushunchalar.",
+      lede:"<strong>Qisqacha:</strong> RTP va volatillik — bu o'yin \"hiylalari\" emas, balki dasturchi qayd etishi va oshkor qilishi shart bo'lgan rasmiy matematik parametrlardir. Bu atamalarni tushunish har qanday o'yinning texnik hujjatlarini ongli ravishda o'qishga yordam beradi.",
+      card1Title:"RTP nima",
+      card1Text:"<strong>RTP (Return to Player)</strong> — juda uzoq muddatda (millionlab raundlarda) nazariy jihatdan yutuq sifatida qaytariladigan umumiy stavkalar foizi. Bu statistik ko'rsatkich bo'lib, alohida sessiya natijasining kafolati emas.",
+      card2Title:"Volatillik (dispersiya)", card2Intro:"Yutuqlar taqsimotining xarakterini ko'rsatadi:",
+      card2List:"<li><strong>Past</strong> — tez-tez, lekin kichik yutuqlar</li><li><strong>O'rta</strong> — muvozanatlashgan taqsimot</li><li><strong>Yuqori</strong> — kam uchraydigan, lekin potensial yirik yutuqlar</li>",
+      card3Title:"Bonus raundlari mexanikasi",
+      card3Text:"Bonus raundlari (shu jumladan <strong>freespinlar</strong> deb ataladigan) — bu asosiy raundga nisbatan o'zgartirilgan qoidalarga ega alohida o'yin holatlari: qo'shimcha multiplikatorlar, maxsus belgilar yoki boshqa modifikatorlar.",
+      card4Title:"Texnik hujjatlarni qanday o'qish kerak", card4Intro:"O'yinning rasmiy tavsifida (paytable) odatda quyidagilar ko'rsatiladi:",
+      card4List:"<li>O'yin versiyasi uchun aniq RTP qiymati</li><li>Volatillik darajasi (so'z bilan yoki ballarda)</li><li>Bonus holatlarini faollashtirish shartlari</li><li>Mustaqil laboratoriya tomonidan sertifikatlashtirilgani</li>",
+      tableTitle:"Volatillik darajalarini taqqoslash",
+      tableDesc:"Janrning umumiy xususiyatlari bo'yicha ma'lumot jadvali — aniq provayder yoki mahsulotga tegishli bo'lmagan umumlashtirilgan mo'ljallar.",
+      theadRow:"<th>Volatillik darajasi</th><th>Yutuq natijalari chastotasi</th><th>Natijaning nisbiy hajmi</th><th>Balansning odatiy xatti-harakati</th>",
+      tbody:'<tr><td><span class="badge low">Past</span></td><td>Yuqori — natijalar tez-tez chiqadi</td><td>Stavkaga nisbatan kichik</td><td><strong>Tekis</strong> o\'zgarishlar, keskin pasayishlarsiz</td></tr><tr><td><span class="badge mid">O\'rta</span></td><td>Mo\'tadil</td><td>O\'rtacha, keng diapazon</td><td><strong>Muvozanatli</strong> fazalar almashinuvi</td></tr><tr><td><span class="badge high">Yuqori</span></td><td>Past — natijalar kamdan-kam chiqadi</td><td>Salmoqli bo\'lishi mumkin</td><td><strong>Keskin</strong> o\'zgarishlar, yirik natijalar orasida uzoq tanaffuslar</td></tr>',
+      tableFoot:"Jadval umumlashtiruvchi ta'lim xarakteriga ega bo'lib, biror-bir aniq mahsulot yoki provayderning taklifi, reklamasi yoki texnik spetsifikatsiyasi hisoblanmaydi.",
+      disclaimer:"<strong>Muhim.</strong> Ushbu bo'lim materiallari faqat ta'lim maqsadida yaratilgan bo'lib, tasodifiylik elementiga ega o'yin mexanikalarining umumiy matematik tamoyillarini tavsiflaydi. Portal real pulga o'ynash maydonchasi emas, stavkalarni qabul qilmaydi va aniq operatorlarni reklama qilmaydi. Qimor o'yinlarining mavjudligi va qonuniyligi mamlakatga qarab sezilarli darajada farq qiladi — istalgan platformadan foydalanishdan oldin bu sizning yurisdiksiyangiz qonunchiligiga muvofiqligiga ishonch hosil qiling.",
+      footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti.",
+      pageTitle:"Gamer Math Portal — O'yin mexanikalari matematikasi"
+    },
+    tg:{
+      logoSub:"Забони тоҷикӣ",
+      navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо", heroCta:"Хондани мақолаҳои портал →",
+      eyebrow:"Бахши таълимӣ · Математикаи бозӣ",
+      heroPre:"Механизмҳои бозӣ дар паси худ кадом ", heroAccent:"математика", heroPost:" доранд",
+      heroSub:"Волатилнокӣ, RTP ва сохтори раундҳои бонусиро бо забони содда шарҳ медиҳем — бе алоқа ба провайдери мушаххас ва бе гарав бо пули воқеӣ.",
+      simTitle:"Симулятори тақсимоти натиҷаҳо",
+      simDesc:"Сатҳи волатилнокиро интихоб кунед — сутунҳо тақсимоти шартии натиҷаҳоро нишон медиҳанд: басомад ва вазни нисбии онҳо. Қиймaтҳо бо пул алоқаманд нестанд ва танҳо барои мақсадҳои таълимӣ оварда шудаанд.",
+      tabLow:"Волатилнокии паст", tabMid:"Волатилнокии миёна", tabHigh:"Волатилнокии баланд",
+      legend1:"<b>Меҳвари X</b> — натиҷаҳои шартии раунд", legend2:"<b>Баландии сутун</b> — андозаи нисбии натиҷа",
+      noteLow:"Волатилнокии паст: аксари сутунҳо тахминан баландии якхела доранд — натиҷаҳо баробар ва зуд-зуд тақсим мешаванд.",
+      noteMid:"Волатилнокии миёна: фарқияти баландиҳо намоён аст — натиҷаҳои хурду калон иваз мешаванд.",
+      noteHigh:"Волатилнокии баланд: аксари сутунҳо паст мебошанд, аммо гоҳ-гоҳ як натиҷаи якбора баланд пайдо мешавад.",
+      articleTitle:"Таҳлили RTP, волатилнокӣ ва раундҳои бонусӣ",
+      articleDesc:"Мафҳумҳои асосӣ, ки модели математикии қариб ҳар як механизми бозиро бо унсури тасодуф муайян мекунанд.",
+      lede:"<strong>Мухтасар:</strong> RTP ва волатилнокӣ на \"ҳилаҳои\" бозӣ, балки параметрҳои расмии математикӣ мебошанд, ки таҳиягар вазифадор аст онҳоро сабт ва ошкор кунад. Фаҳмидани ин истилоҳҳо ба хондани ҳуҷҷатҳои техникии ҳар як бозӣ бо шуур кӯмак мекунад.",
+      card1Title:"RTP чист",
+      card1Text:"<strong>RTP (Return to Player)</strong> — фоизи маблағи умумии гаравҳо, ки назариявӣ дар масофаи хеле дароз (миллионҳо раунд) ҳамчун бурд бармегардад. Ин як нишондиҳандаи оморист, на кафолати натиҷаи як сессия.",
+      card2Title:"Волатилнокӣ (дисперсия)", card2Intro:"Хусусияти тақсимоти бурдҳоро нишон медиҳад:",
+      card2List:"<li><strong>Паст</strong> — бурдҳои зуд-зуд, вале хурд</li><li><strong>Миёна</strong> — тақсимоти мутавозин</li><li><strong>Баланд</strong> — бурдҳои кам, вале эҳтимолан калон</li>",
+      card3Title:"Механизми раундҳои бонусӣ",
+      card3Text:"Раундҳои бонусӣ (аз ҷумла ба истилоҳ <strong>фриспинҳо</strong>) — ҳолатҳои алоҳидаи бозӣ бо қоидаҳои тағйирёфта мебошанд: мултипликаторҳои иловагӣ, аломатҳои махсус ё дигар тағйирдиҳандаҳо нисбат ба раунди асосӣ.",
+      card4Title:"Чӣ гуна ҳуҷҷатҳои техникиро хондан лозим аст", card4Intro:"Дар тавсифи расмии бозӣ (paytable) одатан инҳо нишон дода мешаванд:",
+      card4List:"<li>Қиммати дақиқи RTP барои версияи бозӣ</li><li>Сатҳи волатилнокӣ (бо калима ё бо балл)</li><li>Шартҳои фаъолсозии ҳолатҳои бонусӣ</li><li>Мавҷудияти сертификати лабораторияи мустақил</li>",
+      tableTitle:"Муқоисаи сатҳҳои волатилнокӣ",
+      tableDesc:"Ҷадвали маълумотии хусусиятҳои умумии жанр — самтҳои умумӣ, ки ба провайдер ё маҳсулоти мушаххас алоқаманд нестанд.",
+      theadRow:"<th>Сатҳи волатилнокӣ</th><th>Басомади натиҷаҳои бурднок</th><th>Андозаи нисбии натиҷа</th><th>Рафтори маъмулии баланс</th>",
+      tbody:'<tr><td><span class="badge low">Паст</span></td><td>Баланд — натиҷаҳо зуд-зуд мебароянд</td><td>Нисбат ба гарав хурд</td><td><strong>Ҳамвор</strong> тағйирот бе фарорасии якбора</td></tr><tr><td><span class="badge mid">Миёна</span></td><td>Мӯътадил</td><td>Миёна, диапазони васеъ</td><td>Иваз шудани фазаҳои <strong>мутавозин</strong></td></tr><tr><td><span class="badge high">Баланд</span></td><td>Паст — натиҷаҳо кам мебароянд</td><td>Метавонад назаррас бошад</td><td>Тағйироти <strong>якбора</strong>, танаффусҳои дароз байни натиҷаҳои калон</td></tr>',
+      tableFoot:"Ҷадвал хусусияти умумии таълимӣ дорад ва пешниҳод, реклама ё тавсифи техникии ягон маҳсулот ё провайдери мушаххас намебошад.",
+      disclaimer:"<strong>Муҳим.</strong> Маводи ин бахш танҳо бо мақсади таълимӣ таҳия шудааст ва принсипҳои умумии математикии механизмҳои бозӣ бо унсури тасодуфро тавсиф мекунад. Портал майдончаи бозӣ бо пули воқеӣ намебошад, гаравҳоро қабул намекунад ва провайдери мушаххасро реклама намекунад. Дастрасӣ ва қонунияти бозиҳои шартӣ вобаста ба кишвар хеле фарқ мекунад — пеш аз истифодаи ягон платформа мутмаин шавед, ки он тибқи қонунгузории минтақаи шумо иҷозат дода шудааст.",
+      footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ.",
+      pageTitle:"Gamer Math Portal — Математикаи механизмҳои бозӣ"
+    },
+    es:{
+      logoSub:"Español (AR)",
+      navHome:"Inicio", navArticles:"Artículos", heroCta:"Leer los artículos del portal →",
+      eyebrow:"Sección educativa · Matemática del juego",
+      heroPre:"Cómo funciona la ", heroAccent:"matemática", heroPost:" detrás de las mecánicas de juego",
+      heroSub:"Explicamos la volatilidad, el RTP y la estructura de las rondas bonus en lenguaje simple, sin vincularnos a operadores específicos y sin apuestas de dinero real.",
+      simTitle:"Simulador de distribución de resultados",
+      simDesc:"Elegí un nivel de volatilidad: las columnas mostrarán una distribución condicional de resultados, su frecuencia y su \"peso\" relativo. Los valores no están vinculados al dinero y se presentan solo con fines educativos.",
+      tabLow:"Volatilidad baja", tabMid:"Volatilidad media", tabHigh:"Volatilidad alta",
+      legend1:"<b>Eje X</b> — resultados condicionales de la ronda", legend2:"<b>Altura de la columna</b> — magnitud relativa del resultado",
+      noteLow:"Volatilidad baja: la mayoría de las columnas tiene una altura similar; los resultados se distribuyen de forma pareja y frecuente.",
+      noteMid:"Volatilidad media: se nota una variación en las alturas; se alternan resultados pequeños y más grandes.",
+      noteHigh:"Volatilidad alta: la mayoría de las columnas son bajas, pero ocasionalmente aparece un resultado notablemente más alto.",
+      articleTitle:"Análisis del RTP, la volatilidad y las rondas bonus",
+      articleDesc:"Conceptos clave que definen el modelo matemático de prácticamente cualquier mecánica de juego con un elemento de azar.",
+      lede:"<strong>En resumen:</strong> el RTP y la volatilidad no son \"trucos\" del juego, sino parámetros matemáticos oficiales que el desarrollador debe registrar y divulgar. Entender estos términos ayuda a leer la documentación técnica de cualquier juego con criterio.",
+      card1Title:"Qué es el RTP",
+      card1Text:"El <strong>RTP (Return to Player)</strong> es el porcentaje del total apostado que, en teoría, se devuelve como premios en un plazo muy largo (millones de rondas). Es un valor estadístico, no una garantía para una sesión en particular.",
+      card2Title:"Volatilidad (varianza)", card2Intro:"Indica el carácter de la distribución de los premios:",
+      card2List:"<li><strong>Baja</strong>: premios frecuentes pero pequeños</li><li><strong>Media</strong>: distribución equilibrada</li><li><strong>Alta</strong>: premios poco frecuentes pero potencialmente grandes</li>",
+      card3Title:"Mecánica de las rondas bonus",
+      card3Text:"Las rondas bonus (incluidos los llamados <strong>giros gratis</strong>) son estados de juego independientes con reglas modificadas: multiplicadores adicionales, símbolos especiales u otros modificadores respecto de la ronda base.",
+      card4Title:"Cómo leer la documentación técnica", card4Intro:"En la descripción oficial del juego (paytable) suele indicarse:",
+      card4List:"<li>El valor exacto de RTP para esa versión del juego</li><li>El nivel de volatilidad (en palabras o en una escala numérica)</li><li>Las condiciones para activar los estados bonus</li><li>Si cuenta con certificación de un laboratorio independiente</li>",
+      tableTitle:"Comparación de niveles de volatilidad",
+      tableDesc:"Tabla de referencia con características generales del género: pautas amplias, no vinculadas a un operador o producto específico.",
+      theadRow:"<th>Nivel de volatilidad</th><th>Frecuencia de resultados ganadores</th><th>Tamaño relativo del resultado</th><th>Comportamiento típico del saldo</th>",
+      tbody:'<tr><td><span class="badge low">Baja</span></td><td>Alta: los resultados aparecen con frecuencia</td><td>Pequeño en relación con la apuesta</td><td>Variaciones <strong>suaves</strong>, sin caídas bruscas</td></tr><tr><td><span class="badge mid">Media</span></td><td>Moderada</td><td>Medio, rango amplio</td><td>Alternancia <strong>equilibrada</strong> de fases</td></tr><tr><td><span class="badge high">Alta</span></td><td>Baja: los resultados aparecen con poca frecuencia</td><td>Puede ser considerable</td><td>Cambios <strong>bruscos</strong>, pausas largas entre resultados grandes</td></tr>',
+      tableFoot:"La tabla tiene carácter educativo general y no constituye una oferta, publicidad ni especificación técnica de ningún producto o proveedor en particular.",
+      disclaimer:"<strong>Importante.</strong> Los materiales de esta sección se crearon únicamente con fines educativos y describen los principios matemáticos generales de las mecánicas de juego con un elemento de azar. El portal no es una plataforma de juego con dinero real, no acepta apuestas ni publicita operadores específicos. La disponibilidad y legalidad del entretenimiento de azar varía considerablemente según el país; antes de usar cualquier plataforma, asegurate de que esté permitida por la legislación de tu jurisdicción.",
+      footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego.",
+      pageTitle:"Gamer Math Portal — La matemática de las mecánicas de juego"
+    },
+    id:{
+      logoSub:"Bahasa Indonesia",
+      navHome:"Beranda", navArticles:"Artikel", heroCta:"Baca artikel portal →",
+      eyebrow:"Bagian Edukasi · Matematika Game",
+      heroPre:"Bagaimana ", heroAccent:"matematika", heroPost:" di balik mekanisme game bekerja",
+      heroSub:"Kami menjelaskan volatilitas, RTP, dan struktur ronde bonus dengan bahasa sederhana — tanpa terkait operator tertentu dan tanpa taruhan uang sungguhan.",
+      simTitle:"Simulator Distribusi Hasil",
+      simDesc:"Pilih tingkat volatilitas — kolom akan menunjukkan distribusi hasil bersyarat: frekuensi dan \"bobot\" relatifnya. Nilai tidak terkait dengan uang dan disajikan semata-mata untuk tujuan edukasi.",
+      tabLow:"Volatilitas rendah", tabMid:"Volatilitas sedang", tabHigh:"Volatilitas tinggi",
+      legend1:"<b>Sumbu X</b> — hasil ronde bersyarat", legend2:"<b>Tinggi kolom</b> — besaran relatif hasil",
+      noteLow:"Volatilitas rendah: sebagian besar kolom memiliki tinggi yang hampir sama — hasil terdistribusi merata dan sering muncul.",
+      noteMid:"Volatilitas sedang: terlihat variasi tinggi kolom — hasil kecil dan lebih besar saling bergantian.",
+      noteHigh:"Volatilitas tinggi: sebagian besar kolom rendah, namun sesekali muncul satu hasil yang jauh lebih tinggi.",
+      articleTitle:"Mengupas RTP, Volatilitas, dan Ronde Bonus",
+      articleDesc:"Konsep utama yang menentukan model matematis dari hampir semua mekanisme game dengan unsur keberuntungan.",
+      lede:"<strong>Singkatnya:</strong> RTP dan volatilitas bukan \"trik\" dalam game, melainkan parameter matematis resmi yang wajib dicatat dan diungkapkan oleh pengembang. Memahami istilah ini membantu membaca dokumentasi teknis game mana pun secara sadar.",
+      card1Title:"Apa itu RTP",
+      card1Text:"<strong>RTP (Return to Player)</strong> adalah persentase dari total taruhan yang secara teoretis dikembalikan sebagai kemenangan dalam jangka sangat panjang (jutaan ronde). Ini adalah angka statistik, bukan jaminan hasil untuk satu sesi tertentu.",
+      card2Title:"Volatilitas (varians)", card2Intro:"Menunjukkan karakter distribusi kemenangan:",
+      card2List:"<li><strong>Rendah</strong> — kemenangan sering namun kecil</li><li><strong>Sedang</strong> — distribusi yang seimbang</li><li><strong>Tinggi</strong> — kemenangan jarang namun berpotensi besar</li>",
+      card3Title:"Mekanisme ronde bonus",
+      card3Text:"Ronde bonus (termasuk yang disebut <strong>putaran gratis</strong>) adalah kondisi permainan terpisah dengan aturan yang dimodifikasi: pengganda tambahan, simbol khusus, atau pengubah lain dibandingkan ronde dasar.",
+      card4Title:"Cara membaca dokumentasi teknis", card4Intro:"Dalam deskripsi resmi game (paytable) biasanya tercantum:",
+      card4List:"<li>Nilai RTP pasti untuk versi game tersebut</li><li>Tingkat volatilitas (dalam kata atau skala angka)</li><li>Syarat pengaktifan kondisi bonus</li><li>Ada tidaknya sertifikasi dari laboratorium independen</li>",
+      tableTitle:"Perbandingan Tingkat Volatilitas",
+      tableDesc:"Tabel referensi karakteristik umum genre — panduan umum yang tidak terkait dengan operator atau produk tertentu.",
+      theadRow:"<th>Tingkat volatilitas</th><th>Frekuensi hasil menang</th><th>Besaran relatif hasil</th><th>Perilaku saldo yang umum</th>",
+      tbody:'<tr><td><span class="badge low">Rendah</span></td><td>Tinggi — hasil sering muncul</td><td>Kecil dibandingkan taruhan</td><td>Perubahan <strong>halus</strong> tanpa penurunan tajam</td></tr><tr><td><span class="badge mid">Sedang</span></td><td>Moderat</td><td>Sedang, rentang luas</td><td>Pergantian fase yang <strong>seimbang</strong></td></tr><tr><td><span class="badge high">Tinggi</span></td><td>Rendah — hasil jarang muncul</td><td>Bisa signifikan</td><td>Perubahan <strong>tajam</strong>, jeda panjang antar hasil besar</td></tr>',
+      tableFoot:"Tabel ini bersifat edukasi umum dan bukan merupakan penawaran, iklan, atau spesifikasi teknis dari produk atau penyedia tertentu.",
+      disclaimer:"<strong>Penting.</strong> Materi di bagian ini dibuat semata-mata untuk tujuan edukasi dan menjelaskan prinsip matematis umum dari mekanisme game dengan unsur keberuntungan. Portal ini bukan platform judi uang sungguhan, tidak menerima taruhan, dan tidak mengiklankan operator tertentu. Ketersediaan dan legalitas hiburan berjudi sangat bervariasi tergantung negara — sebelum menggunakan platform apa pun, pastikan hal itu diizinkan oleh hukum di yurisdiksi Anda.",
+      footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game.",
+      pageTitle:"Gamer Math Portal — Matematika Mekanisme Game"
+    }
+  };
+
+  const htmlTargets = ["legend1","legend2","lede","card1Text","card2List","card3Text","card4List","tbody","disclaimer"];
+
+  function applyLanguage(lang){
+    const t = translations[lang];
+    if(!t) return;
+    document.getElementById('htmlRoot').setAttribute('lang', lang === 'tg' ? 'tg' : lang);
+    document.getElementById('pageTitle').textContent = t.pageTitle;
+    document.getElementById('i18nLogoSub').textContent = t.logoSub;
+    document.getElementById('i18nNavHome').textContent = t.navHome;
+    document.getElementById('i18nNavArticles').textContent = t.navArticles;
+    document.getElementById('i18nHeroCta').textContent = t.heroCta;
+    document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+    document.getElementById('i18nHeroPre').textContent = t.heroPre;
+    document.getElementById('i18nHeroAccent').textContent = t.heroAccent;
+    document.getElementById('i18nHeroPost').textContent = t.heroPost;
+    document.getElementById('i18nHeroSub').textContent = t.heroSub;
+    document.getElementById('i18nSimTitle').textContent = t.simTitle;
+    document.getElementById('i18nSimDesc').textContent = t.simDesc;
+    document.getElementById('i18nTabLow').textContent = t.tabLow;
+    document.getElementById('i18nTabMid').textContent = t.tabMid;
+    document.getElementById('i18nTabHigh').textContent = t.tabHigh;
+    document.getElementById('i18nLegend1').innerHTML = t.legend1;
+    document.getElementById('i18nLegend2').innerHTML = t.legend2;
+    document.getElementById('i18nArticleTitle').textContent = t.articleTitle;
+    document.getElementById('i18nArticleDesc').textContent = t.articleDesc;
+    document.getElementById('i18nLede').innerHTML = t.lede;
+    document.getElementById('i18nCard1Title').textContent = t.card1Title;
+    document.getElementById('i18nCard1Text').innerHTML = t.card1Text;
+    document.getElementById('i18nCard2Title').textContent = t.card2Title;
+    document.getElementById('i18nCard2Intro').textContent = t.card2Intro;
+    document.getElementById('i18nCard2List').innerHTML = t.card2List;
+    document.getElementById('i18nCard3Title').textContent = t.card3Title;
+    document.getElementById('i18nCard3Text').innerHTML = t.card3Text;
+    document.getElementById('i18nCard4Title').textContent = t.card4Title;
+    document.getElementById('i18nCard4Intro').textContent = t.card4Intro;
+    document.getElementById('i18nCard4List').innerHTML = t.card4List;
+    document.getElementById('i18nTableTitle').textContent = t.tableTitle;
+    document.getElementById('i18nTableDesc').textContent = t.tableDesc;
+    document.getElementById('i18nTheadRow').innerHTML = t.theadRow;
+    document.getElementById('i18nTbody').innerHTML = t.tbody;
+    document.getElementById('i18nTableFoot').textContent = t.tableFoot;
+    document.getElementById('i18nDisclaimer').innerHTML = t.disclaimer;
+    document.getElementById('i18nFooterText').textContent = t.footerText;
+
+    const activeLevel = document.querySelector('.sim-tabs button.active').dataset.level;
+    renderColumns(activeLevel, lang);
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      applyLanguage(btn.dataset.lang);
+    });
+  });
+
+  const scenarioHeights = {
+    low:[62,70,58,66,74,60,68,64,72,58],
+    mid:[30,55,40,80,35,60,90,45,50,38],
+    high:[8,12,6,15,10,95,9,7,55,11]
+  };
+  const scenarioNoteKey = {low:'noteLow', mid:'noteMid', high:'noteHigh'};
+  const roundLabel = {
+    ru:'Раунд', en:'Round', uz:'Raund', tg:'Раунд', es:'Ronda', id:'Ronde'
+  };
+  const valueLabel = {
+    ru:'значение', en:'value', uz:'qiymat', tg:'қиммат', es:'valor', id:'nilai'
+  };
+
+  const stage = document.getElementById('columnsStage');
+  const note = document.getElementById('simNote');
+
+  function currentLang(){
+    return document.querySelector('.lang-switch .active').dataset.lang;
+  }
+
+  function renderColumns(level, lang){
+    lang = lang || currentLang();
+    const heights = scenarioHeights[level];
+    stage.innerHTML = '';
+    heights.forEach((h, i)=>{
+      const item = document.createElement('div');
+      item.className = 'col-item';
+      item.innerHTML = `<div class="chart-tooltip">${roundLabel[lang]} ${i+1}<span class="tt-sub">${valueLabel[lang]}: ${h}</span></div><div class="col-cap"></div><div class="col-shaft" style="height:0px" data-h="${h}"></div><div class="col-base"></div>`;
+      stage.appendChild(item);
+    });
+    note.textContent = translations[lang][scenarioNoteKey[level]];
+
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('.col-shaft').forEach(el=>{
+        const h = el.getAttribute('data-h');
+        el.style.height = (h*1.5) + 'px';
+      });
+    });
+  }
+
+  document.querySelectorAll('.sim-tabs button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.sim-tabs button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderColumns(btn.dataset.level);
+    });
+  });
+
+  renderColumns('low', 'tg');
+</script>
+</body>
+</html>

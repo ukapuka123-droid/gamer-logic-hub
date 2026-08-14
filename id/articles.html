@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>Artikel tentang matematika mekanisme game — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang." name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--line);color:var(--text-primary);font-weight:600;font-size:13px;
+  padding:9px 17px;border-radius:10px;
+}
+
+/* article hero */
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:8px;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.table-scroll{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);-webkit-overflow-scrolling:touch;margin:18px 0;}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+thead th{background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:12px 14px;font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,215,0,0.04);}
+tbody td strong{color:var(--text-primary);}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+.badge.low, .badge.legal{background:rgba(76,201,142,0.15);color:var(--green);}
+.badge.mid, .badge.mixed{background:rgba(255,215,0,0.15);color:var(--gold);}
+.badge.high, .badge.banned{background:rgba(239,106,106,0.18);color:var(--red);}
+
+/* infographic bars */
+.status-chart{margin:22px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.status-row:last-child{margin-bottom:0;}
+.status-label{width:110px;flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--text-primary);}
+.status-track{flex:1;height:14px;background:var(--bg-deep);border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.status-fill{height:100%;border-radius:8px;}
+.status-fill.legal{background:linear-gradient(90deg,var(--green),#3aa876);width:85%;}
+.status-fill.mixed{background:linear-gradient(90deg,var(--gold-dim),var(--gold));width:55%;}
+.status-fill.banned{background:linear-gradient(90deg,#c94a4a,var(--red));width:15%;}
+.status-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--text-muted);}
+.status-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.legal{background:var(--green);}
+.dot.mixed{background:var(--gold);}
+.dot.banned{background:var(--red);}
+
+/* icon diagrams */
+.icon-flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:24px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;}
+.icon-step{display:flex;flex-direction:column;align-items:center;gap:8px;width:110px;text-align:center;}
+.icon-step .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.icon-step span{font-size:11.5px;color:var(--text-muted);}
+.icon-arrow{color:var(--gold-dim);font-size:18px;}
+
+/* sources */
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+/* article cards / hub */
+.card-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:720px){.card-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.card-grid.three{grid-template-columns:1fr 1fr 1fr;}}
+.card{
+  display:block;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:border-color .2s ease, transform .2s ease, background .2s ease;
+  cursor:pointer;
+}
+.card:hover{border-color:rgba(255,215,0,0.45);transform:translateY(-2px);background:var(--bg-panel-2);}
+.card:active{transform:translateY(0);}
+.card .icon{
+  width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;
+}
+.card h3{font-size:16px;margin-bottom:8px;color:var(--gold);margin-top:0;}
+.card p{font-size:13.5px;color:var(--text-muted);margin-bottom:12px;}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:0.03em;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--text-muted);}
+.card .read-more{display:inline-block;font-size:13px;font-weight:700;color:var(--gold);transition:transform .2s ease;}
+.card:hover .read-more{transform:translateX(3px);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/id/articles.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/articles.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/articles.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/articles.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/articles.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/articles.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/articles.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/articles.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="Artikel tentang matematika mekanisme game — Gamer Logic Hub" property="og:title"/>
+<meta content="Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang." property="og:description"/>
+<meta content="https://gamer-logic-hub.com/id/articles.html" property="og:url"/>
+<meta content="id_ID" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="uz_UZ" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="es_AR" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Artikel tentang matematika mekanisme game — Gamer Logic Hub" name="twitter:title"/>
+<meta content="Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang." name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Artikel tentang matematika mekanisme game — Gamer Logic Hub", "description": "Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang.", "url": "https://gamer-logic-hub.com/id/articles.html", "inLanguage": "id", "isPartOf": {"@type": "WebSite", "@id": "https://gamer-logic-hub.com/#website"}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "url": "https://gamer-logic-hub.com/id/article-volatility.html", "name": "Mengapa Volatilitas Tinggi Tidak Menjamin Kemenangan"}, {"@type": "ListItem", "position": 2, "url": "https://gamer-logic-hub.com/id/article-certification.html", "name": "Sertifikasi Game oleh Laboratorium Independen"}, {"@type": "ListItem", "position": 3, "url": "https://gamer-logic-hub.com/id/article-legality.html", "name": "Legalitas Judi Online: Asia Tengah, Argentina, Indonesia"}, {"@type": "ListItem", "position": 4, "url": "https://gamer-logic-hub.com/id/article-can-you-win.html", "name": "Bisakah Menang di Kasino Online? Ini Kata Matematika"}]}}</script>
+<meta content="https://gamer-logic-hub.com/id/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>
+        Gamer Logic Hub
+        <small id="i18nLogoSub">Artikel &amp; Ulasan</small>
+</div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Beranda</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Artikel</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../articles.html">RU</a><a data-lang="en" href="../en/articles.html">EN</a><a data-lang="uz" href="../uz/articles.html">UZ</a><a data-lang="tg" href="../tg/articles.html">TJ</a><a data-lang="es" href="../es/articles.html">AR</a><span class="active" data-lang="id">ID</span></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap">
+<span class="eyebrow" id="i18nEyebrow">Perpustakaan Konten</span>
+<h1><span id="i18nHeroPre">Artikel tentang </span><span class="accent" id="i18nHeroAccent">matematika</span><span id="i18nHeroPost"> mekanisme game</span></h1>
+<p class="meta" id="i18nHeroSub" style="max-width:560px;margin:0 auto;">Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang.</p>
+</section>
+<section class="block wrap">
+<div class="card-grid">
+<a class="card" href="article-volatility.html">
+<div class="icon">⟁</div>
+<div class="tags">
+<span class="tag" id="i18nCard1Tag1">Matematika Game</span>
+<span class="tag" id="i18nCard1Tag2">Sedang</span>
+</div>
+<h3 id="i18nCard1Title">Mengapa Volatilitas Tinggi Tidak Menjamin Kemenangan</h3>
+<p id="i18nCard1Desc">Kami menjelaskan perbedaan volatilitas dengan peluang menang, dan mengapa sebaran hasil yang luas bukan berarti peluang yang lebih tinggi.</p>
+<span class="read-more" id="i18nCard1Link">Baca artikel →</span></a>
+<a class="card" href="article-certification.html">
+<div class="icon">⌘</div>
+<div class="tags">
+<span class="tag" id="i18nCard2Tag1">Tinjauan Teknis</span>
+<span class="tag" id="i18nCard2Tag2">Sedang</span>
+</div>
+<h3 id="i18nCard2Title">Sertifikasi Game oleh Laboratorium Independen</h3>
+<p id="i18nCard2Desc">Apa yang diperiksa laboratorium seperti GLI, eCOGRA, dan iTech Labs, mengapa audit RNG penting, dan cara membedakan model matematis yang terverifikasi dari klaim tanpa bukti.</p>
+<span class="read-more" id="i18nCard2Link">Baca artikel →</span></a>
+<a class="card" href="article-legality.html">
+<div class="icon">⚖</div>
+<div class="tags">
+<span class="tag" id="i18nCard3Tag1">Regulasi</span>
+<span class="tag" id="i18nCard3Tag2">Spesifik</span>
+</div>
+<h3 id="i18nCard3Title">Legalitas Judi Online: Asia Tengah, Argentina, Indonesia</h3>
+<p id="i18nCard3Desc">Tinjauan terkini regulasi per negara: apa yang legal, apa yang dilarang, siapa yang mengatur industri ini, dan sanksi apa yang berlaku.</p>
+<span class="read-more" id="i18nCard3Link">Baca artikel →</span></a>
+<a class="card" href="article-can-you-win.html">
+<div class="icon">🎲</div>
+<div class="tags">
+<span class="tag" id="i18nCard4Tag1">Matematika Game</span>
+<span class="tag" id="i18nCard4Tag2">Frekuensi Tinggi</span>
+</div>
+<h3 id="i18nCard4Title">Bisakah Menang di Kasino Online? Ini Kata Matematika</h3>
+<p id="i18nCard4Desc">Ulasan jujur: house edge, mengapa platform selalu unggul dalam jangka panjang, apakah “sistem” taruhan benar-benar berfungsi, dan cara mengambil keputusan yang bijak.</p>
+<span class="read-more" id="i18nCard4Link">Baca artikel →</span></a>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo">
+<div class="logo-mark"><span>Σ</span></div>
+<div>Gamer Math Portal</div>
+</div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game.</p>
+</div>
+</footer>
+<script>
+  const translations = {
+    ru:{ logoSub:"Статьи и разборы", navHome:"Главная", navArticles:"Статьи",
+      eyebrow:"Библиотека материалов", heroPre:"Статьи о ", heroAccent:"математике", heroPost:" игровых механик",
+      heroSub:"Раздел регулярно пополняется. Все материалы — образовательные, без привязки к конкретным операторам, без рекламных ссылок и денежных призов.",
+      card1Tag1:"Математика игр", card1Tag2:"СЧ",
+      card1Title:"Почему высокая волатильность не гарантирует выигрыш",
+      card1Desc:"Разбираем, чем волатильность отличается от вероятности выигрыша, и почему высокий разброс результатов — не то же самое, что высокие шансы.",
+      card1Link:"Читать статью →",
+      card2Tag1:"Техническая проверка", card2Tag2:"СЧ",
+      card2Title:"Сертификация игр независимыми лабораториями",
+      card2Desc:"Что проверяют лаборатории вроде GLI, eCOGRA и iTech Labs, зачем нужен аудит RNG и как отличить проверенную математическую модель от голословных заявлений.",
+      card2Link:"Читать статью →",
+      card3Tag1:"Регулирование", card3Tag2:"УНЧ",
+      card3Title:"Легальность онлайн-гэмблинга: Центральная Азия, Аргентина, Индонезия",
+      card3Desc:"Актуальный обзор законодательства по странам: что легально, что запрещено, кто регулирует отрасль и какая ответственность предусмотрена.",
+      card3Link:"Читать статью →",
+      card4Tag1:"Математика игр", card4Tag2:"ВЧ",
+      card4Title:"Можно ли выиграть в онлайн-казино: что говорит математика",
+      card4Desc:"Честный разбор: хаус-эдж, почему площадка в плюсе на дистанции, работают ли «системы» ставок и как принимать взвешенные решения.",
+      card4Link:"Читать статью →",
+      footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+    },
+    en:{ logoSub:"Articles & Insights", navHome:"Home", navArticles:"Articles",
+      eyebrow:"Content Library", heroPre:"Articles on the ", heroAccent:"mathematics", heroPost:" of game mechanics",
+      heroSub:"This section is updated regularly. All materials are educational, not tied to any specific operator, with no promotional links or cash prizes.",
+      card1Tag1:"Game Math", card1Tag2:"Medium",
+      card1Title:"Why High Volatility Doesn't Guarantee a Win",
+      card1Desc:"We break down how volatility differs from win probability, and why a wide spread of outcomes isn't the same as high odds.",
+      card1Link:"Read the article →",
+      card2Tag1:"Technical Review", card2Tag2:"Medium",
+      card2Title:"Independent Lab Certification of Games",
+      card2Desc:"What labs like GLI, eCOGRA and iTech Labs actually check, why RNG audits matter, and how to tell a verified math model from unverified claims.",
+      card2Link:"Read the article →",
+      card3Tag1:"Regulation", card3Tag2:"Long-tail",
+      card3Title:"Online Gambling Legality: Central Asia, Argentina, Indonesia",
+      card3Desc:"An up-to-date overview of legislation by country: what's legal, what's banned, who regulates the industry, and what penalties apply.",
+      card3Link:"Read the article →",
+      card4Tag1:"Game Math", card4Tag2:"High-volume",
+      card4Title:"Can You Win at an Online Casino? What the Math Says",
+      card4Desc:"An honest breakdown: house edge, why the platform stays ahead over time, whether betting “systems” actually work, and how to decide wisely.",
+      card4Link:"Read the article →",
+      footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+    },
+    uz:{ logoSub:"Maqolalar va tahlillar", navHome:"Bosh sahifa", navArticles:"Maqolalar",
+      eyebrow:"Materiallar kutubxonasi", heroPre:"O'yin mexanikalari ", heroAccent:"matematikasi", heroPost:" haqida maqolalar",
+      heroSub:"Bo'lim muntazam yangilanib boriladi. Barcha materiallar ta'lim xarakteriga ega, aniq operatorlarga bog'lanmagan, reklama havolalari va pul mukofotlarisiz.",
+      card1Tag1:"O'yin matematikasi", card1Tag2:"O'rta",
+      card1Title:"Nega yuqori volatillik yutuqni kafolatlamaydi",
+      card1Desc:"Volatillik yutuq ehtimolidan nimasi bilan farq qilishini va natijalarning katta tarqalishi yuqori imkoniyat bilan bir xil emasligini tushuntiramiz.",
+      card1Link:"Maqolani o'qish →",
+      card2Tag1:"Texnik tekshiruv", card2Tag2:"O'rta",
+      card2Title:"O'yinlarni mustaqil laboratoriyalar tomonidan sertifikatlashtirish",
+      card2Desc:"GLI, eCOGRA va iTech Labs kabi laboratoriyalar nimani tekshiradi, RNG auditi nima uchun kerak va tekshirilgan matematik modelni asossiz da'volardan qanday ajratish mumkin.",
+      card2Link:"Maqolani o'qish →",
+      card3Tag1:"Tartibga solish", card3Tag2:"Tor yo'naltirilgan",
+      card3Title:"Onlayn-gemblingning qonuniyligi: Markaziy Osiyo, Argentina, Indoneziya",
+      card3Desc:"Mamlakatlar bo'yicha qonunchilikning dolzarb sharhi: nima qonuniy, nima taqiqlangan, sohani kim tartibga soladi va qanday javobgarlik nazarda tutilgan.",
+      card3Link:"Maqolani o'qish →",
+      card4Tag1:"O'yin matematikasi", card4Tag2:"Yuqori chastota",
+      card4Title:"Onlayn-kazinoda yutish mumkinmi: matematika nima deydi",
+      card4Desc:"Halol tahlil: xaus-edj, nega platforma masofada foydada qoladi, stavka “tizimlari” ishlaydimi va qanday asosli qaror qabul qilish mumkin.",
+      card4Link:"Maqolani o'qish →",
+      footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+    },
+    tg:{ logoSub:"Мақолаҳо ва таҳлилҳо", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
+      eyebrow:"Китобхонаи маводҳо", heroPre:"Мақолаҳо дар бораи ", heroAccent:"математикаи", heroPost:" механизмҳои бозӣ",
+      heroSub:"Бахш мунтазам пур карда мешавад. Ҳамаи маводҳо хусусияти таълимӣ доранд, бо провайдери мушаххас алоқаманд нестанд ва бе истинодҳои рекламавӣ ва ҷоизаҳои пулӣ мебошанд.",
+      card1Tag1:"Математикаи бозӣ", card1Tag2:"Миёна",
+      card1Title:"Чаро волатилнокии баланд бурдро кафолат намедиҳад",
+      card1Desc:"Таҳлил мекунем, ки волатилнокӣ аз эҳтимолияти бурд чӣ фарқ дорад ва чаро паҳншавии калони натиҷаҳо бо эҳтимолияти баланд якхела нест.",
+      card1Link:"Мақоларо хондан →",
+      card2Tag1:"Санҷиши техникӣ", card2Tag2:"Миёна",
+      card2Title:"Сертификатсияи бозиҳо аз ҷониби лабораторияҳои мустақил",
+      card2Desc:"Лабораторияҳое чун GLI, eCOGRA ва iTech Labs чиро месанҷанд, аудити RNG барои чӣ лозим аст ва чӣ гуна модели математикии санҷидашударо аз даъвоҳои беасос фарқ кардан мумкин.",
+      card2Link:"Мақоларо хондан →",
+      card3Tag1:"Танзимкунӣ", card3Tag2:"Тангмаъно",
+      card3Title:"Қонунияти гэмблинги онлайн: Осиёи Марказӣ, Аргентина, Индонезия",
+      card3Desc:"Шарҳи рӯзонаи қонунгузорӣ аз рӯи кишварҳо: чӣ қонунӣ аст, чӣ манъ аст, кӣ соҳаро танзим мекунад ва кадом масъулият пешбинӣ шудааст.",
+      card3Link:"Мақоларо хондан →",
+      card4Tag1:"Математикаи бозӣ", card4Tag2:"Баландбасомад",
+      card4Title:"Оё дар казинои онлайн бурдан мумкин аст: математика чӣ мегӯяд",
+      card4Desc:"Таҳлили ростқавлона: хаус-эҷ, чаро платформа дар масофа фоидаовар мемонад, оё «системаҳо»-и гарав кор мекунанд ва чӣ гуна қарори баробарсанҷидашуда қабул кардан лозим аст.",
+      card4Link:"Мақоларо хондан →",
+      footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+    },
+    es:{ logoSub:"Artículos y análisis", navHome:"Inicio", navArticles:"Artículos",
+      eyebrow:"Biblioteca de contenidos", heroPre:"Artículos sobre la ", heroAccent:"matemática", heroPost:" de las mecánicas de juego",
+      heroSub:"La sección se actualiza periódicamente. Todo el contenido es educativo, no está vinculado a operadores específicos y no incluye enlaces promocionales ni premios en dinero.",
+      card1Tag1:"Matemática del juego", card1Tag2:"Media",
+      card1Title:"Por qué la alta volatilidad no garantiza una victoria",
+      card1Desc:"Explicamos en qué se diferencia la volatilidad de la probabilidad de ganar, y por qué una mayor dispersión de resultados no es lo mismo que más chances.",
+      card1Link:"Leer el artículo →",
+      card2Tag1:"Revisión técnica", card2Tag2:"Media",
+      card2Title:"Certificación de juegos por laboratorios independientes",
+      card2Desc:"Qué verifican laboratorios como GLI, eCOGRA e iTech Labs, para qué sirve la auditoría del RNG y cómo distinguir un modelo matemático verificado de afirmaciones sin respaldo.",
+      card2Link:"Leer el artículo →",
+      card3Tag1:"Regulación", card3Tag2:"Long-tail",
+      card3Title:"Legalidad del juego online: Asia Central, Argentina, Indonesia",
+      card3Desc:"Un panorama actualizado de la legislación por país: qué es legal, qué está prohibido, quién regula la actividad y qué sanciones se aplican.",
+      card3Link:"Leer el artículo →",
+      card4Tag1:"Matemática del juego", card4Tag2:"Alta frecuencia",
+      card4Title:"¿Se puede ganar en un casino online? Lo que dice la matemática",
+      card4Desc:"Un análisis honesto: house edge, por qué la plataforma siempre queda en ventaja a la larga, si los “sistemas” de apuestas funcionan y cómo decidir con criterio.",
+      card4Link:"Leer el artículo →",
+      footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+    },
+    id:{ logoSub:"Artikel & Ulasan", navHome:"Beranda", navArticles:"Artikel",
+      eyebrow:"Perpustakaan Konten", heroPre:"Artikel tentang ", heroAccent:"matematika", heroPost:" mekanisme game",
+      heroSub:"Bagian ini diperbarui secara berkala. Semua materi bersifat edukasi, tidak terkait operator tertentu, dan tanpa tautan promosi atau hadiah uang.",
+      card1Tag1:"Matematika Game", card1Tag2:"Sedang",
+      card1Title:"Mengapa Volatilitas Tinggi Tidak Menjamin Kemenangan",
+      card1Desc:"Kami menjelaskan perbedaan volatilitas dengan peluang menang, dan mengapa sebaran hasil yang luas bukan berarti peluang yang lebih tinggi.",
+      card1Link:"Baca artikel →",
+      card2Tag1:"Tinjauan Teknis", card2Tag2:"Sedang",
+      card2Title:"Sertifikasi Game oleh Laboratorium Independen",
+      card2Desc:"Apa yang diperiksa laboratorium seperti GLI, eCOGRA, dan iTech Labs, mengapa audit RNG penting, dan cara membedakan model matematis yang terverifikasi dari klaim tanpa bukti.",
+      card2Link:"Baca artikel →",
+      card3Tag1:"Regulasi", card3Tag2:"Spesifik",
+      card3Title:"Legalitas Judi Online: Asia Tengah, Argentina, Indonesia",
+      card3Desc:"Tinjauan terkini regulasi per negara: apa yang legal, apa yang dilarang, siapa yang mengatur industri ini, dan sanksi apa yang berlaku.",
+      card3Link:"Baca artikel →",
+      card4Tag1:"Matematika Game", card4Tag2:"Frekuensi Tinggi",
+      card4Title:"Bisakah Menang di Kasino Online? Ini Kata Matematika",
+      card4Desc:"Ulasan jujur: house edge, mengapa platform selalu unggul dalam jangka panjang, apakah “sistem” taruhan benar-benar berfungsi, dan cara mengambil keputusan yang bijak.",
+      card4Link:"Baca artikel →",
+      footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+    }
+  };
+
+  function applyLanguage(lang){
+    const t = translations[lang];
+    if(!t) return;
+    document.documentElement.setAttribute('lang', lang);
+    document.getElementById('i18nLogoSub').textContent = t.logoSub;
+    document.getElementById('i18nNavHome').textContent = t.navHome;
+    document.getElementById('i18nNavArticles').textContent = t.navArticles;
+    document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+    document.getElementById('i18nHeroPre').textContent = t.heroPre;
+    document.getElementById('i18nHeroAccent').textContent = t.heroAccent;
+    document.getElementById('i18nHeroPost').textContent = t.heroPost;
+    document.getElementById('i18nHeroSub').textContent = t.heroSub;
+    document.getElementById('i18nCard1Tag1').textContent = t.card1Tag1;
+    document.getElementById('i18nCard1Tag2').textContent = t.card1Tag2;
+    document.getElementById('i18nCard1Title').textContent = t.card1Title;
+    document.getElementById('i18nCard1Desc').textContent = t.card1Desc;
+    document.getElementById('i18nCard1Link').textContent = t.card1Link;
+    document.getElementById('i18nCard2Tag1').textContent = t.card2Tag1;
+    document.getElementById('i18nCard2Tag2').textContent = t.card2Tag2;
+    document.getElementById('i18nCard2Title').textContent = t.card2Title;
+    document.getElementById('i18nCard2Desc').textContent = t.card2Desc;
+    document.getElementById('i18nCard2Link').textContent = t.card2Link;
+    document.getElementById('i18nCard3Tag1').textContent = t.card3Tag1;
+    document.getElementById('i18nCard3Tag2').textContent = t.card3Tag2;
+    document.getElementById('i18nCard3Title').textContent = t.card3Title;
+    document.getElementById('i18nCard3Desc').textContent = t.card3Desc;
+    document.getElementById('i18nCard3Link').textContent = t.card3Link;
+    document.getElementById('i18nCard4Tag1').textContent = t.card4Tag1;
+    document.getElementById('i18nCard4Tag2').textContent = t.card4Tag2;
+    document.getElementById('i18nCard4Title').textContent = t.card4Title;
+    document.getElementById('i18nCard4Desc').textContent = t.card4Desc;
+    document.getElementById('i18nCard4Link').textContent = t.card4Link;
+    document.getElementById('i18nFooterText').textContent = t.footerText;
+  }
+
+  document.querySelectorAll('.lang-switch button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      applyLanguage(btn.dataset.lang);
+    });
+  });
+</script>
+</body>
+</html>

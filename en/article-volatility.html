@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>Why High Volatility Doesn't Guarantee a Win — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="A common myth among gamers: the higher a game's volatility, the more &quot;worth it&quot; it is, because prizes are bigger. In reality, high volatility isn't about…" name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--line);color:var(--text-primary);font-weight:600;font-size:13px;
+  padding:9px 17px;border-radius:10px;
+}
+
+/* article hero */
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:8px;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.chart-wrap{position:relative;}
+.chart-tooltip{
+  position:absolute;pointer-events:none;opacity:0;transition:opacity .15s ease;
+  background:rgba(13,8,27,0.95);border:1px solid var(--gold-dim);border-radius:8px;
+  padding:8px 12px;font-size:12px;color:var(--text-primary);line-height:1.5;
+  white-space:nowrap;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
+.chart-tooltip strong{color:var(--gold);}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.table-scroll{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);-webkit-overflow-scrolling:touch;margin:18px 0;}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+thead th{background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:12px 14px;font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,215,0,0.04);}
+tbody td strong{color:var(--text-primary);}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+.badge.low, .badge.legal{background:rgba(76,201,142,0.15);color:var(--green);}
+.badge.mid, .badge.mixed{background:rgba(255,215,0,0.15);color:var(--gold);}
+.badge.high, .badge.banned{background:rgba(239,106,106,0.18);color:var(--red);}
+
+/* infographic bars */
+.status-chart{margin:22px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.status-row:last-child{margin-bottom:0;}
+.status-label{width:110px;flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--text-primary);}
+.status-track{flex:1;height:14px;background:var(--bg-deep);border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.status-fill{height:100%;border-radius:8px;}
+.status-fill.legal{background:linear-gradient(90deg,var(--green),#3aa876);width:85%;}
+.status-fill.mixed{background:linear-gradient(90deg,var(--gold-dim),var(--gold));width:55%;}
+.status-fill.banned{background:linear-gradient(90deg,#c94a4a,var(--red));width:15%;}
+.status-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--text-muted);}
+.status-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.legal{background:var(--green);}
+.dot.mixed{background:var(--gold);}
+.dot.banned{background:var(--red);}
+
+/* icon diagrams */
+.icon-flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:24px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;}
+.icon-step{display:flex;flex-direction:column;align-items:center;gap:8px;width:110px;text-align:center;}
+.icon-step .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.icon-step span{font-size:11.5px;color:var(--text-muted);}
+.icon-arrow{color:var(--gold-dim);font-size:18px;}
+
+/* sources */
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+/* article cards / hub */
+.card-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:720px){.card-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.card-grid.three{grid-template-columns:1fr 1fr 1fr;}}
+.card{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+.card .icon{
+  width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;
+}
+.card h3{font-size:16px;margin-bottom:8px;color:var(--gold);margin-top:0;}
+.card p{font-size:13.5px;color:var(--text-muted);margin-bottom:12px;}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:0.03em;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--text-muted);}
+.card a.read-more{font-size:13px;font-weight:700;color:var(--gold);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/en/article-volatility.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/article-volatility.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/article-volatility.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/article-volatility.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/article-volatility.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/article-volatility.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/article-volatility.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/article-volatility.html" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="Why High Volatility Doesn't Guarantee a Win — Gamer Logic Hub" property="og:title"/>
+<meta about…"="" are="" because="" bigger.="" content="A common myth among gamers: the higher a game's volatility, the more " high="" in="" is,="" isn't="" it="" it"="" prizes="" property="og:description" reality,="" volatility="" worth=""/>
+<meta content="https://gamer-logic-hub.com/en/article-volatility.html" property="og:url"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="uz_UZ" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="es_AR" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Why High Volatility Doesn't Guarantee a Win — Gamer Logic Hub" name="twitter:title"/>
+<meta about…"="" are="" because="" bigger.="" content="A common myth among gamers: the higher a game's volatility, the more " high="" in="" is,="" isn't="" it="" it"="" name="twitter:description" prizes="" reality,="" volatility="" worth=""/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why High Volatility Doesn't Guarantee a Win", "description": "A common myth among gamers: the higher a game's volatility, the more \"worth it\" it is, because prizes are bigger. In reality, high volatility isn't about…", "inLanguage": "en", "url": "https://gamer-logic-hub.com/en/article-volatility.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gamer-logic-hub.com/en/article-volatility.html"}, "dateModified": "2026-08-06", "author": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com"}, "publisher": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com", "logo": {"@type": "ImageObject", "url": "https://gamer-logic-hub.com/apple-touch-icon.png"}}, "isAccessibleForFree": true}</script>
+<meta content="https://gamer-logic-hub.com/en/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>Gamer Logic Hub<small id="i18nLogoSub">Article</small></div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Home</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Articles</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../article-volatility.html">RU</a><span class="active" data-lang="en">EN</span><a data-lang="uz" href="../uz/article-volatility.html">UZ</a><a data-lang="tg" href="../tg/article-volatility.html">TJ</a><a data-lang="es" href="../es/article-volatility.html">AR</a><a data-lang="id" href="../id/article-volatility.html">ID</a></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap-narrow">
+<span class="eyebrow" id="i18nEyebrow">Game Math · Basics</span>
+<h1 id="i18nHeroTitle">Why High <span class="accent">Volatility</span> Doesn't Guarantee a Win</h1>
+<p class="meta" id="i18nMeta">~5 min read</p>
+</section>
+<div class="wrap-narrow article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+<article class="block wrap-narrow" id="articleBody">
+<p>A common myth among gamers: the higher a game's <strong>volatility</strong>, the more "worth it" it is, because prizes are bigger. In reality, high volatility isn't about better odds — it's about a different shape of the outcome distribution. Here's why these are fundamentally different things.</p>
+<h3><span class="h3-icon">⟁</span>Volatility and probability aren't the same thing</h3>
+<p><strong>Volatility (variance)</strong> describes how outcomes are distributed by frequency and size — not how likely a win is in principle. Overall win probability is primarily determined by <strong>RTP (Return to Player)</strong> — the theoretical percentage of stakes returned over the long run. Volatility and RTP are two separate, independent parameters.</p>
+<h2 style="font-size:20px;margin:26px 0 6px;">Visualized: outcome distribution by volatility level</h2>
+<p style="font-size:13px;">A conditional chart — bar height reflects the relative size of a single outcome across 10 rounds.</p>
+<div class="chart-wrap" id="volatilityChart"></div>
+<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">With high volatility, most outcomes are small, but one stands out sharply — the total over the run isn't necessarily higher than with low volatility.</p>
+<h3><span class="h3-icon">📊</span>What "high volatility" actually means</h3>
+<p>With high volatility, winning outcomes appear less often, but the potential size of individual outcomes is larger. This means:</p>
+<ul><li>Longer stretches with no visible change in balance</li><li>Sharper swings when an outcome does occur</li><li>A wider spread of possible results over a short run</li></ul>
+<p>In other words, high volatility increases the <strong>range</strong> of possible outcomes, not the probability of hitting a winning one.</p>
+<h3><span class="h3-icon">🎲</span>Why it's not a "guarantee" of anything</h3>
+<p>The key mistake in interpreting volatility is confusing a statistical property with a forecast. RTP and volatility are calculated from millions of simulations and describe a game's behavior <strong>over the long run</strong>, not the outcome of one session. Over a short run, the result is governed by randomness within a fixed algorithm (RNG — random number generator), and no volatility level changes that fundamental property.</p>
+<h3><span class="h3-icon">💡</span>How to avoid the typical misconception</h3>
+<ul><li>A game's statistics only "even out" over a very large number of rounds</li><li>High volatility = a wider spread of results, not higher win probability</li><li>Official RTP and volatility figures are stated in the technical documentation (paytable) and don't change based on a player's "luck"</li></ul>
+<div class="disclaimer"><strong>Important.</strong> This material is purely educational and describes general mathematical principles of game mechanics with a random outcome. It is not a recommendation to play with real money.</div>
+<div class="sources"><h3>Sources &amp; further reading</h3><ul>
+<li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" rel="noopener" target="_blank">Wikipedia — Gambling mathematics</a> — general mathematical theory of games of chance</li>
+<li><a href="https://en.wikipedia.org/wiki/Variance" rel="noopener" target="_blank">Wikipedia — Variance</a> — the statistical definition underlying the concept of volatility</li>
+<li><a href="https://en.wikipedia.org/wiki/Random_number_generation" rel="noopener" target="_blank">Wikipedia — Random number generation</a> — how random number generators (RNG) work</li>
+</ul></div></article>
+<div class="article-btn-slot">
+<a class="btn-gold" href="#" <a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>></a>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo"><div class="logo-mark"><span>Σ</span></div><div>Gamer Math Portal</div></div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics.</p>
+</div>
+</footer>
+<script>
+function renderVolatilityChart(groupLabels, tooltipOutcome, tooltipUnit){
+  const container = document.getElementById('volatilityChart');
+  if(!container) return;
+  container.innerHTML = '';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 640, H = 260;
+  const baseline = 200, maxBarH = 160, scale = maxBarH / 100;
+
+  const groups = [
+    { label: groupLabels[0], color: '#4cc98e', colorLight: '#8fe6bb', values: [62,70,58,66,74] },
+    { label: groupLabels[1], color: '#ffd700', colorLight: '#fff2a8', values: [30,55,40,80,35] },
+    { label: groupLabels[2], color: '#a855f7', colorLight: '#d3aaff', values: [6,10,95,8,5] }
+  ];
+
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('xmlns', NS);
+  svg.style.width = '100%';
+  svg.style.height = 'auto';
+  svg.style.background = 'var(--bg-panel)';
+  svg.style.border = '1px solid var(--line)';
+  svg.style.borderRadius = '14px';
+  svg.style.padding = '10px';
+  svg.style.overflow = 'visible';
+
+  const defs = document.createElementNS(NS, 'defs');
+  groups.forEach((g, gi) => {
+    const grad = document.createElementNS(NS, 'linearGradient');
+    grad.setAttribute('id', 'barGrad'+gi);
+    grad.setAttribute('x1','0'); grad.setAttribute('y1','0');
+    grad.setAttribute('x2','0'); grad.setAttribute('y2','1');
+    const s1 = document.createElementNS(NS,'stop'); s1.setAttribute('offset','0%'); s1.setAttribute('stop-color', g.colorLight);
+    const s2 = document.createElementNS(NS,'stop'); s2.setAttribute('offset','100%'); s2.setAttribute('stop-color', g.color);
+    grad.appendChild(s1); grad.appendChild(s2);
+    defs.appendChild(grad);
+  });
+  svg.appendChild(defs);
+
+  // grid lines
+  [25,50,75,100].forEach(v=>{
+    const y = baseline - v*scale;
+    const line = document.createElementNS(NS,'line');
+    line.setAttribute('x1','30'); line.setAttribute('x2', W-20);
+    line.setAttribute('y1', y); line.setAttribute('y2', y);
+    line.setAttribute('stroke', '#c9a227'); line.setAttribute('stroke-width','1');
+    line.setAttribute('stroke-dasharray','3 5'); line.setAttribute('opacity','0.25');
+    svg.appendChild(line);
+    const t = document.createElementNS(NS,'text');
+    t.setAttribute('x','8'); t.setAttribute('y', y+3);
+    t.setAttribute('fill','#a89cc8'); t.setAttribute('font-size','9'); t.setAttribute('font-family','sans-serif');
+    t.textContent = v;
+    svg.appendChild(t);
+  });
+
+  const baseLine = document.createElementNS(NS,'line');
+  baseLine.setAttribute('x1','30'); baseLine.setAttribute('x2', W-20);
+  baseLine.setAttribute('y1', baseline); baseLine.setAttribute('y2', baseline);
+  baseLine.setAttribute('stroke', '#c9a227'); baseLine.setAttribute('stroke-width','1.5'); baseLine.setAttribute('opacity','0.6');
+  svg.appendChild(baseLine);
+
+  const groupWidth = 170, barWidth = 18, barGap = 6;
+  groups.forEach((g, gi) => {
+    const groupX = 60 + gi * (groupWidth + 20);
+    g.values.forEach((val, vi) => {
+      const barH = val * scale;
+      const x = groupX + vi * (barWidth + barGap);
+      const y = baseline - barH;
+
+      const rect = document.createElementNS(NS,'rect');
+      rect.setAttribute('x', x);
+      rect.setAttribute('y', y);
+      rect.setAttribute('width', barWidth);
+      rect.setAttribute('height', barH);
+      rect.setAttribute('rx', 3);
+      rect.setAttribute('fill', `url(#barGrad${gi})`);
+      rect.style.transformBox = 'fill-box';
+      rect.style.transformOrigin = 'center bottom';
+      rect.style.transition = 'transform .18s cubic-bezier(.34,1.56,.64,1), filter .18s ease';
+      rect.style.cursor = 'pointer';
+      rect.dataset.value = val;
+      rect.dataset.group = g.label;
+      rect.dataset.color = g.color;
+
+      rect.addEventListener('mouseenter', (e)=>{
+        rect.style.transform = 'scale(1.08)';
+        rect.style.filter = `drop-shadow(0 0 8px ${g.color}) brightness(1.15)`;
+        showChartTooltip(container, e, `${g.label} · ${tooltipOutcome} ${vi+1}<br><strong>${val} ${tooltipUnit}</strong>`);
+      });
+      rect.addEventListener('mousemove', (e)=> moveChartTooltip(container, e));
+      rect.addEventListener('mouseleave', ()=>{
+        rect.style.transform = 'scale(1)';
+        rect.style.filter = 'none';
+        hideChartTooltip(container);
+      });
+
+      svg.appendChild(rect);
+    });
+
+    const label = document.createElementNS(NS,'text');
+    label.setAttribute('x', groupX + (barWidth+barGap)*2 - barGap/2);
+    label.setAttribute('y', baseline + 20);
+    label.setAttribute('fill', '#a89cc8');
+    label.setAttribute('font-size', '12');
+    label.setAttribute('font-family', 'sans-serif');
+    label.setAttribute('text-anchor', 'middle');
+    label.textContent = g.label;
+    svg.appendChild(label);
+  });
+
+  container.appendChild(svg);
+}
+
+function ensureChartTooltip(container){
+  let tip = container.querySelector('.chart-tooltip');
+  if(!tip){
+    tip = document.createElement('div');
+    tip.className = 'chart-tooltip';
+    container.appendChild(tip);
+  }
+  return tip;
+}
+function showChartTooltip(container, evt, html){
+  const tip = ensureChartTooltip(container);
+  tip.innerHTML = html;
+  tip.style.opacity = '1';
+  moveChartTooltip(container, evt);
+}
+function moveChartTooltip(container, evt){
+  const tip = container.querySelector('.chart-tooltip');
+  if(!tip) return;
+  const rect = container.getBoundingClientRect();
+  let x = evt.clientX - rect.left + 14;
+  let y = evt.clientY - rect.top - 10;
+  const maxX = rect.width - 150;
+  if(x > maxX) x = maxX;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+}
+function hideChartTooltip(container){
+  const tip = container.querySelector('.chart-tooltip');
+  if(tip) tip.style.opacity = '0';
+}
+
+const translations = {
+  ru:{
+    logoSub:"Статья", navHome:"Главная", navArticles:"Статьи",
+    eyebrow:"Математика игр · Основы",
+    heroTitle:'Почему высокая <span class="accent">волатильность</span> не гарантирует выигрыш',
+    meta:"~5 минут чтения",
+    chartLabels:["Низкая","Средняя","Высокая"],
+    tooltipOutcome:"Исход", tooltipUnit:"усл. ед.",
+    body:`
+    <p>Среди геймеров бытует миф: чем выше <strong>волатильность</strong> игры, тем «выгоднее» в неё играть, потому что призы крупнее. На деле высокая волатильность — это не про больше шансов на выигрыш, а про другой характер распределения результатов. Разберём, почему это принципиально разные вещи.</p>
+    <h3><span class="h3-icon">⟁</span>Волатильность и вероятность — не одно и то же</h3>
+    <p><strong>Волатильность (дисперсия)</strong> описывает, как распределены исходы по частоте и размеру, а не то, насколько вероятен выигрыш в принципе. Общая вероятность выигрыша в первую очередь определяется параметром <strong>RTP (Return to Player)</strong> — теоретическим процентом возврата ставок на длинной дистанции. Волатильность и RTP — два разных, независимых друг от друга параметра.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">Наглядно: распределение исходов по уровню волатильности</h2>
+    <p style="font-size:13px;">Условный график — высота столбца отражает относительный размер отдельного исхода на дистанции из 10 раундов.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">При высокой волатильности большинство исходов малы, но один резко выделяется — итоговая сумма за дистанцию при этом не обязательно выше, чем при низкой волатильности.</p>
+    <h3><span class="h3-icon">📊</span>Что на самом деле означает «высокая волатильность»</h3>
+    <p>При высокой волатильности выигрышные исходы выпадают реже, но потенциальный размер отдельных исходов выше. Это означает:</p>
+    <ul><li>Более длинные периоды без заметных изменений баланса</li><li>Более резкие колебания, когда исход всё же случается</li><li>Больший разброс возможных результатов на короткой дистанции</li></ul>
+    <p>Иными словами, высокая волатильность увеличивает <strong>размах</strong> возможных результатов, а не саму вероятность попадания в выигрышный исход.</p>
+    <h3><span class="h3-icon">🎲</span>Почему это не «гарантия» ничего</h3>
+    <p>Ключевая ошибка в интерпретации волатильности — путать статистическую характеристику с прогнозом. RTP и волатильность рассчитываются на основе миллионов симуляций и описывают поведение игры <strong>в долгосрочной перспективе</strong>, а не исход конкретной сессии. На короткой дистанции результат определяется случайностью в рамках заданного алгоритма (RNG — генератора случайных чисел), и никакой уровень волатильности не может изменить это фундаментальное свойство.</p>
+    <h3><span class="h3-icon">💡</span>Как избежать типичного заблуждения</h3>
+    <ul><li>Статистика игры «выравнивается» только на очень большом числе раундов</li><li>Высокая волатильность = больший разброс результатов, а не более высокая вероятность выигрыша</li><li>Официальные параметры RTP и волатильности указываются в технической документации (paytable) и не меняются в зависимости от «везения» игрока</li></ul>
+    <div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно образовательный характер и описывает общие математические принципы игровых механик со случайным исходом. Материал не является рекомендацией к игре на реальные деньги.</div>
+    <div class="sources"><h3>Источники и дополнительное чтение</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — общая математическая теория игр со случайным исходом</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — статистическое определение дисперсии, лежащее в основе понятия волатильности</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — принципы работы генераторов случайных чисел (RNG)</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+  },
+  en:{
+    logoSub:"Article", navHome:"Home", navArticles:"Articles",
+    eyebrow:"Game Math · Basics",
+    heroTitle:'Why High <span class="accent">Volatility</span> Doesn&#39;t Guarantee a Win',
+    meta:"~5 min read",
+    chartLabels:["Low","Medium","High"],
+    tooltipOutcome:"Outcome", tooltipUnit:"units",
+    body:`
+    <p>A common myth among gamers: the higher a game's <strong>volatility</strong>, the more "worth it" it is, because prizes are bigger. In reality, high volatility isn't about better odds — it's about a different shape of the outcome distribution. Here's why these are fundamentally different things.</p>
+    <h3><span class="h3-icon">⟁</span>Volatility and probability aren't the same thing</h3>
+    <p><strong>Volatility (variance)</strong> describes how outcomes are distributed by frequency and size — not how likely a win is in principle. Overall win probability is primarily determined by <strong>RTP (Return to Player)</strong> — the theoretical percentage of stakes returned over the long run. Volatility and RTP are two separate, independent parameters.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">Visualized: outcome distribution by volatility level</h2>
+    <p style="font-size:13px;">A conditional chart — bar height reflects the relative size of a single outcome across 10 rounds.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">With high volatility, most outcomes are small, but one stands out sharply — the total over the run isn't necessarily higher than with low volatility.</p>
+    <h3><span class="h3-icon">📊</span>What "high volatility" actually means</h3>
+    <p>With high volatility, winning outcomes appear less often, but the potential size of individual outcomes is larger. This means:</p>
+    <ul><li>Longer stretches with no visible change in balance</li><li>Sharper swings when an outcome does occur</li><li>A wider spread of possible results over a short run</li></ul>
+    <p>In other words, high volatility increases the <strong>range</strong> of possible outcomes, not the probability of hitting a winning one.</p>
+    <h3><span class="h3-icon">🎲</span>Why it's not a "guarantee" of anything</h3>
+    <p>The key mistake in interpreting volatility is confusing a statistical property with a forecast. RTP and volatility are calculated from millions of simulations and describe a game's behavior <strong>over the long run</strong>, not the outcome of one session. Over a short run, the result is governed by randomness within a fixed algorithm (RNG — random number generator), and no volatility level changes that fundamental property.</p>
+    <h3><span class="h3-icon">💡</span>How to avoid the typical misconception</h3>
+    <ul><li>A game's statistics only "even out" over a very large number of rounds</li><li>High volatility = a wider spread of results, not higher win probability</li><li>Official RTP and volatility figures are stated in the technical documentation (paytable) and don't change based on a player's "luck"</li></ul>
+    <div class="disclaimer"><strong>Important.</strong> This material is purely educational and describes general mathematical principles of game mechanics with a random outcome. It is not a recommendation to play with real money.</div>
+    <div class="sources"><h3>Sources & further reading</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — general mathematical theory of games of chance</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — the statistical definition underlying the concept of volatility</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — how random number generators (RNG) work</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+  },
+  uz:{
+    logoSub:"Maqola", navHome:"Bosh sahifa", navArticles:"Maqolalar",
+    eyebrow:"O'yin matematikasi · Asoslar",
+    heroTitle:'Nega yuqori <span class="accent">volatillik</span> yutuqni kafolatlamaydi',
+    meta:"~5 daqiqalik o'qish",
+    chartLabels:["Past","O'rta","Yuqori"],
+    tooltipOutcome:"Natija", tooltipUnit:"shart. birlik",
+    body:`
+    <p>Geymerlar orasida mif bor: o'yinning <strong>volatilligi</strong> qancha yuqori bo'lsa, unda o'ynash shuncha "foydali", chunki mukofotlar kattaroq. Aslida yuqori volatillik yutuq imkoniyati ko'proq degani emas — bu natijalar taqsimotining boshqacha xarakteri haqida. Nega bular tubdan farqli tushunchalar ekanini tushunib olamiz.</p>
+    <h3><span class="h3-icon">⟁</span>Volatillik va ehtimollik — bir xil narsa emas</h3>
+    <p><strong>Volatillik (dispersiya)</strong> natijalarning chastota va hajm bo'yicha qanday taqsimlanganini tavsiflaydi, umuman yutuq qanchalik ehtimolligini emas. Umumiy yutuq ehtimoli birinchi navbatda <strong>RTP (Return to Player)</strong> — uzoq muddatda stavkalarning nazariy qaytish foizi bilan belgilanadi. Volatillik va RTP — bir-biriga bog'liq bo'lmagan ikkita alohida parametr.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">Vizual: volatillik darajasi bo'yicha natijalar taqsimoti</h2>
+    <p style="font-size:13px;">Shartli grafik — ustun balandligi 10 ta raund davomidagi alohida natijaning nisbiy hajmini aks ettiradi.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Yuqori volatillikda natijalarning aksariyati kichik, lekin bittasi keskin ajralib turadi — davr yakunidagi umumiy summa past volatillikka nisbatan yuqori bo'lishi shart emas.</p>
+    <h3><span class="h3-icon">📊</span>"Yuqori volatillik" aslida nimani anglatadi</h3>
+    <p>Yuqori volatillikda yutuqli natijalar kamroq chiqadi, lekin alohida natijaning potensial hajmi kattaroq. Bu quyidagilarni anglatadi:</p>
+    <ul><li>Balansda sezilarli o'zgarishlar bo'lmagan uzunroq davrlar</li><li>Natija sodir bo'lganda keskinroq tebranishlar</li><li>Qisqa muddatda mumkin bo'lgan natijalarning kattaroq tarqalishi</li></ul>
+    <p>Boshqacha aytganda, yuqori volatillik mumkin bo'lgan natijalar <strong>doirasini</strong> kengaytiradi, yutuqli natijaga tushish ehtimolini emas.</p>
+    <h3><span class="h3-icon">🎲</span>Nega bu hech narsaning "kafolati" emas</h3>
+    <p>Volatillikni talqin qilishdagi asosiy xato — statistik xususiyatni bashorat bilan aralashtirib yuborish. RTP va volatillik millionlab simulyatsiyalar asosida hisoblanadi va o'yinning <strong>uzoq muddatli</strong> xatti-harakatini tavsiflaydi, aniq bir sessiya natijasini emas. Qisqa masofada natija berilgan algoritm (RNG — tasodifiy sonlar generatori) doirasidagi tasodifiylik bilan belgilanadi, va hech qanday volatillik darajasi bu asosiy xususiyatni o'zgartira olmaydi.</p>
+    <h3><span class="h3-icon">💡</span>Odatiy noto'g'ri tushunchadan qanday qochish mumkin</h3>
+    <ul><li>O'yin statistikasi faqat juda katta miqdordagi raundlarda "tekislanadi"</li><li>Yuqori volatillik = natijalarning kattaroq tarqalishi, yuqori yutuq ehtimoli emas</li><li>Rasmiy RTP va volatillik ko'rsatkichlari texnik hujjatlarda (paytable) ko'rsatiladi va o'yinchining "omadi"ga qarab o'zgarmaydi</li></ul>
+    <div class="disclaimer"><strong>Muhim.</strong> Ushbu material faqat ta'lim maqsadida bo'lib, tasodifiy natijaga ega o'yin mexanikalarining umumiy matematik tamoyillarini tavsiflaydi. Material real pulga o'ynash bo'yicha tavsiya emas.</div>
+    <div class="sources"><h3>Manbalar va qo'shimcha o'qish</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — tasodifiy natijali o'yinlarning umumiy matematik nazariyasi</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — volatillik tushunchasi asosidagi statistik ta'rif</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — tasodifiy sonlar generatorlari (RNG) qanday ishlaydi</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+  },
+  tg:{
+    logoSub:"Мақола", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
+    eyebrow:"Математикаи бозӣ · Асосҳо",
+    heroTitle:'Чаро волатилнокии баланд <span class="accent">бурдро</span> кафолат намедиҳад',
+    meta:"~5 дақиқа хондан",
+    chartLabels:["Паст","Миёна","Баланд"],
+    tooltipOutcome:"Натиҷа", tooltipUnit:"воҳиди шартӣ",
+    body:`
+    <p>Дар байни геймерҳо афсонае паҳн шудааст: ҳар қадар <strong>волатилнокии</strong> бозӣ баландтар бошад, бозӣ кардан ҳамон қадар «муфидтар» аст, зеро ҷоизаҳо калонтаранд. Дар асл волатилнокии баланд на дар бораи имконияти бештари бурд, балки дар бораи хусусияти дигари тақсимоти натиҷаҳост. Биёед фаҳмем, ки чаро инҳо аслан чизҳои гуногунанд.</p>
+    <h3><span class="h3-icon">⟁</span>Волатилнокӣ ва эҳтимолият — на як чиз</h3>
+    <p><strong>Волатилнокӣ (дисперсия)</strong> тавсиф мекунад, ки натиҷаҳо аз рӯи басомад ва андоза чӣ гуна тақсим шудаанд, на он ки бурд умуман то чӣ андоза эҳтимол дорад. Эҳтимолияти умумии бурд пеш аз ҳама бо параметри <strong>RTP (Return to Player)</strong> — фоизи назариявии баргардонидани гаравҳо дар масофаи дароз муайян мешавад. Волатилнокӣ ва RTP — ду параметри алоҳида ва ба ҳам вобаста набуда мебошанд.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">Тасвирӣ: тақсимоти натиҷаҳо аз рӯи сатҳи волатилнокӣ</h2>
+    <p style="font-size:13px;">Графики шартӣ — баландии сутун андозаи нисбии як натиҷаро дар масофаи 10 раунд нишон медиҳад.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Дар волатилнокии баланд аксари натиҷаҳо хурданд, аммо яктоаш якбора фарқ мекунад — маблағи умумии дар давоми масофа ҳатман аз волатилнокии паст баландтар нест.</p>
+    <h3><span class="h3-icon">📊</span>«Волатилнокии баланд» дар асл чиро ифода мекунад</h3>
+    <p>Дар волатилнокии баланд натиҷаҳои бурднок камтар мебароянд, аммо андозаи потенсиалии натиҷаҳои алоҳида калонтар аст. Ин маънои инҳоро дорад:</p>
+    <ul><li>Давраҳои дарозтар бе тағйироти назарраси баланс</li><li>Тағйироти кескинтар, вақте ки натиҷа рух медиҳад</li><li>Паҳншавии калонтари натиҷаҳои имконпазир дар масофаи кӯтоҳ</li></ul>
+    <p>Ба таъбири дигар, волатилнокии баланд <strong>доираи</strong> натиҷаҳои имконпазирро васеъ мекунад, на худи эҳтимолияти афтодан ба натиҷаи бурднокро.</p>
+    <h3><span class="h3-icon">🎲</span>Чаро ин «кафолати» ҳеҷ чиз нест</h3>
+    <p>Хатои асосӣ дар тафсири волатилнокӣ — омехта кардани хусусияти оморӣ бо пешгӯӣ мебошад. RTP ва волатилнокӣ дар асоси миллионҳо симулятсия ҳисоб карда мешаванд ва рафтори бозиро <strong>дар дарозмуддат</strong> тавсиф мекунанд, на натиҷаи як сессияи мушаххасро. Дар масофаи кӯтоҳ натиҷа бо тасодуф дар доираи алгоритми муайяншуда (RNG — генератори рақамҳои тасодуфӣ) муайян мешавад, ва ҳеҷ сатҳи волатилнокӣ ин хусусияти бунёдиро тағйир дода наметавонад.</p>
+    <h3><span class="h3-icon">💡</span>Чӣ гуна аз хатои маъмулӣ канорагирӣ кардан мумкин</h3>
+    <ul><li>Омори бозӣ танҳо дар шумораи хеле калони раундҳо «баробар» мешавад</li><li>Волатилнокии баланд = паҳншавии калонтари натиҷаҳо, на эҳтимолияти баландтари бурд</li><li>Нишондиҳандаҳои расмии RTP ва волатилнокӣ дар ҳуҷҷатҳои техникӣ (paytable) нишон дода мешаванд ва вобаста ба «бахти» бозингар тағйир намеёбанд</li></ul>
+    <div class="disclaimer"><strong>Муҳим.</strong> Ин мавод танҳо бо мақсади таълимӣ таҳия шудааст ва принсипҳои умумии математикии механизмҳои бозӣ бо натиҷаи тасодуфиро тавсиф мекунад. Мавод тавсия ба бозӣ бо пули воқеӣ нест.</div>
+    <div class="sources"><h3>Манбаъҳо ва хондани иловагӣ</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — назарияи умумии математикии бозиҳои бо натиҷаи тасодуфӣ</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — таърифи оморие, ки дар асоси мафҳуми волатилнокӣ қарор дорад</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — принсипҳои кори генераторҳои рақамҳои тасодуфӣ (RNG)</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+  },
+  es:{
+    logoSub:"Artículo", navHome:"Inicio", navArticles:"Artículos",
+    eyebrow:"Matemática del juego · Fundamentos",
+    heroTitle:'Por qué la alta <span class="accent">volatilidad</span> no garantiza una victoria',
+    meta:"~5 min de lectura",
+    chartLabels:["Baja","Media","Alta"],
+    tooltipOutcome:"Resultado", tooltipUnit:"u. cond.",
+    body:`
+    <p>Entre los jugadores circula un mito: cuanto más alta es la <strong>volatilidad</strong> de un juego, más "conviene" jugarlo, porque los premios son mayores. En realidad, la alta volatilidad no implica más chances de ganar, sino un carácter distinto en la distribución de resultados. Veamos por qué son cosas fundamentalmente diferentes.</p>
+    <h3><span class="h3-icon">⟁</span>Volatilidad y probabilidad no son lo mismo</h3>
+    <p>La <strong>volatilidad (varianza)</strong> describe cómo se distribuyen los resultados por frecuencia y tamaño, no cuán probable es ganar en principio. La probabilidad general de ganar está determinada, ante todo, por el <strong>RTP (Return to Player)</strong>: el porcentaje teórico de devolución de las apuestas en el largo plazo. Volatilidad y RTP son dos parámetros distintos e independientes entre sí.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">En un gráfico: distribución de resultados según el nivel de volatilidad</h2>
+    <p style="font-size:13px;">Gráfico condicional: la altura de la barra refleja el tamaño relativo de cada resultado a lo largo de 10 rondas.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Con alta volatilidad, la mayoría de los resultados son pequeños, pero uno se destaca notablemente; el total acumulado no es necesariamente mayor que con baja volatilidad.</p>
+    <h3><span class="h3-icon">📊</span>Qué significa realmente "alta volatilidad"</h3>
+    <p>Con alta volatilidad, los resultados ganadores aparecen con menos frecuencia, pero el tamaño potencial de cada uno es mayor. Esto implica:</p>
+    <ul><li>Períodos más largos sin cambios visibles en el saldo</li><li>Variaciones más bruscas cuando el resultado ocurre</li><li>Una dispersión mayor de resultados posibles en el corto plazo</li></ul>
+    <p>En otras palabras, la alta volatilidad aumenta el <strong>rango</strong> de resultados posibles, no la probabilidad de obtener un resultado ganador.</p>
+    <h3><span class="h3-icon">🎲</span>Por qué esto no es una "garantía" de nada</h3>
+    <p>El error clave al interpretar la volatilidad es confundir una propiedad estadística con un pronóstico. El RTP y la volatilidad se calculan a partir de millones de simulaciones y describen el comportamiento del juego <strong>en el largo plazo</strong>, no el resultado de una sesión puntual. En el corto plazo, el resultado está gobernado por el azar dentro de un algoritmo fijo (RNG, generador de números aleatorios), y ningún nivel de volatilidad cambia esa propiedad fundamental.</p>
+    <h3><span class="h3-icon">💡</span>Cómo evitar el error típico</h3>
+    <ul><li>Las estadísticas de un juego solo "se equilibran" a lo largo de un número muy grande de rondas</li><li>Alta volatilidad = mayor dispersión de resultados, no mayor probabilidad de ganar</li><li>Los valores oficiales de RTP y volatilidad se indican en la documentación técnica (paytable) y no cambian según la "suerte" del jugador</li></ul>
+    <div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y describe principios matemáticos generales de las mecánicas de juego con resultado aleatorio. No constituye una recomendación para jugar con dinero real.</div>
+    <div class="sources"><h3>Fuentes y lectura adicional</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teoría matemática general de los juegos de azar</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — la definición estadística detrás del concepto de volatilidad</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — cómo funcionan los generadores de números aleatorios (RNG)</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+  },
+  id:{
+    logoSub:"Artikel", navHome:"Beranda", navArticles:"Artikel",
+    eyebrow:"Matematika Game · Dasar",
+    heroTitle:'Mengapa <span class="accent">Volatilitas</span> Tinggi Tidak Menjamin Kemenangan',
+    meta:"~5 menit membaca",
+    chartLabels:["Rendah","Sedang","Tinggi"],
+    tooltipOutcome:"Hasil", tooltipUnit:"unit",
+    body:`
+    <p>Ada mitos di kalangan gamer: semakin tinggi <strong>volatilitas</strong> sebuah game, semakin "menguntungkan" untuk dimainkan karena hadiahnya lebih besar. Padahal, volatilitas tinggi bukan berarti peluang menang lebih besar — melainkan karakter distribusi hasil yang berbeda. Mari kita bahas mengapa keduanya pada dasarnya berbeda.</p>
+    <h3><span class="h3-icon">⟁</span>Volatilitas dan peluang bukan hal yang sama</h3>
+    <p><strong>Volatilitas (varians)</strong> menggambarkan bagaimana hasil terdistribusi berdasarkan frekuensi dan besarannya, bukan seberapa besar peluang menang secara umum. Peluang menang secara keseluruhan pertama-tama ditentukan oleh <strong>RTP (Return to Player)</strong> — persentase teoretis pengembalian taruhan dalam jangka panjang. Volatilitas dan RTP adalah dua parameter terpisah yang tidak saling bergantung.</p>
+    <h2 style="font-size:20px;margin:26px 0 6px;">Visualisasi: distribusi hasil berdasarkan tingkat volatilitas</h2>
+    <p style="font-size:13px;">Grafik bersyarat — tinggi batang mencerminkan besaran relatif satu hasil dalam rentang 10 ronde.</p>
+    <div class="chart-wrap" id="volatilityChart"></div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Pada volatilitas tinggi, sebagian besar hasil kecil, namun satu hasil menonjol tajam — total keseluruhan tidak selalu lebih tinggi dibanding volatilitas rendah.</p>
+    <h3><span class="h3-icon">📊</span>Apa arti sebenarnya dari "volatilitas tinggi"</h3>
+    <p>Pada volatilitas tinggi, hasil menang muncul lebih jarang, tetapi besaran potensial tiap hasil lebih besar. Ini berarti:</p>
+    <ul><li>Periode lebih panjang tanpa perubahan saldo yang terlihat</li><li>Perubahan lebih tajam ketika hasil benar-benar muncul</li><li>Sebaran hasil yang mungkin lebih luas dalam jangka pendek</li></ul>
+    <p>Dengan kata lain, volatilitas tinggi memperbesar <strong>rentang</strong> hasil yang mungkin terjadi, bukan peluang mendapatkan hasil menang itu sendiri.</p>
+    <h3><span class="h3-icon">🎲</span>Mengapa ini bukan "jaminan" apa pun</h3>
+    <p>Kesalahan utama dalam menafsirkan volatilitas adalah mencampuradukkan sifat statistik dengan prediksi. RTP dan volatilitas dihitung dari jutaan simulasi dan menggambarkan perilaku game <strong>dalam jangka panjang</strong>, bukan hasil satu sesi tertentu. Dalam jangka pendek, hasil ditentukan oleh keacakan dalam algoritma tetap (RNG — generator angka acak), dan tidak ada tingkat volatilitas yang mengubah sifat mendasar ini.</p>
+    <h3><span class="h3-icon">💡</span>Cara menghindari kesalahpahaman umum</h3>
+    <ul><li>Statistik game hanya "merata" pada jumlah ronde yang sangat besar</li><li>Volatilitas tinggi = sebaran hasil yang lebih luas, bukan peluang menang yang lebih tinggi</li><li>Angka RTP dan volatilitas resmi tercantum dalam dokumentasi teknis (paytable) dan tidak berubah berdasarkan "keberuntungan" pemain</li></ul>
+    <div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat murni edukasi dan menjelaskan prinsip matematis umum dari mekanisme game dengan hasil acak. Materi ini bukan rekomendasi untuk bermain dengan uang sungguhan.</div>
+    <div class="sources"><h3>Sumber & bacaan lanjutan</h3><ul>
+      <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teori matematis umum permainan berbasis peluang</li>
+      <li><a href="https://en.wikipedia.org/wiki/Variance" target="_blank" rel="noopener">Wikipedia — Variance</a> — definisi statistik yang mendasari konsep volatilitas</li>
+      <li><a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank" rel="noopener">Wikipedia — Random number generation</a> — cara kerja generator angka acak (RNG)</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+  }
+};
+
+function applyLanguage(lang){
+  const t = translations[lang];
+  if(!t) return;
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('i18nLogoSub').textContent = t.logoSub;
+  document.getElementById('i18nNavHome').textContent = t.navHome;
+  document.getElementById('i18nNavArticles').textContent = t.navArticles;
+  document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+  document.getElementById('i18nHeroTitle').innerHTML = t.heroTitle;
+  document.getElementById('i18nMeta').textContent = t.meta;
+  document.getElementById('i18nFooterText').textContent = t.footerText;
+  document.getElementById('articleBody').innerHTML = t.body;
+  renderVolatilityChart(t.chartLabels, t.tooltipOutcome, t.tooltipUnit);
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLanguage(btn.dataset.lang);
+  });
+});
+
+applyLanguage('en');
+</script>
+</body>
+</html>

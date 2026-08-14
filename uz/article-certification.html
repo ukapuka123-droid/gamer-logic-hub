@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni…" name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--line);color:var(--text-primary);font-weight:600;font-size:13px;
+  padding:9px 17px;border-radius:10px;
+}
+
+/* article hero */
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:8px;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.table-scroll{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);-webkit-overflow-scrolling:touch;margin:18px 0;}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+thead th{background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:12px 14px;font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,215,0,0.04);}
+tbody td strong{color:var(--text-primary);}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+.badge.low, .badge.legal{background:rgba(76,201,142,0.15);color:var(--green);}
+.badge.mid, .badge.mixed{background:rgba(255,215,0,0.15);color:var(--gold);}
+.badge.high, .badge.banned{background:rgba(239,106,106,0.18);color:var(--red);}
+
+/* infographic bars */
+.status-chart{margin:22px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.status-row:last-child{margin-bottom:0;}
+.status-label{width:110px;flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--text-primary);}
+.status-track{flex:1;height:14px;background:var(--bg-deep);border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.status-fill{height:100%;border-radius:8px;}
+.status-fill.legal{background:linear-gradient(90deg,var(--green),#3aa876);width:85%;}
+.status-fill.mixed{background:linear-gradient(90deg,var(--gold-dim),var(--gold));width:55%;}
+.status-fill.banned{background:linear-gradient(90deg,#c94a4a,var(--red));width:15%;}
+.status-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--text-muted);}
+.status-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.legal{background:var(--green);}
+.dot.mixed{background:var(--gold);}
+.dot.banned{background:var(--red);}
+
+/* icon diagrams */
+.icon-flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:24px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;}
+.icon-step{display:flex;flex-direction:column;align-items:center;gap:8px;width:110px;text-align:center;}
+.icon-step .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.icon-step span{font-size:11.5px;color:var(--text-muted);}
+.icon-arrow{color:var(--gold-dim);font-size:18px;}
+
+/* sources */
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+/* article cards / hub */
+.card-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:720px){.card-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.card-grid.three{grid-template-columns:1fr 1fr 1fr;}}
+.card{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+.card .icon{
+  width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;
+}
+.card h3{font-size:16px;margin-bottom:8px;color:var(--gold);margin-top:0;}
+.card p{font-size:13.5px;color:var(--text-muted);margin-bottom:12px;}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:0.03em;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--text-muted);}
+.card a.read-more{font-size:13px;font-weight:700;color:var(--gold);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/uz/article-certification.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/article-certification.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/article-certification.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/article-certification.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/article-certification.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/article-certification.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/article-certification.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/article-certification.html" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak — Gamer Logic Hub" property="og:title"/>
+<meta content="Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni…" property="og:description"/>
+<meta content="https://gamer-logic-hub.com/uz/article-certification.html" property="og:url"/>
+<meta content="uz_UZ" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="es_AR" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak — Gamer Logic Hub" name="twitter:title"/>
+<meta content="Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni…" name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak", "description": "Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni…", "inLanguage": "uz", "url": "https://gamer-logic-hub.com/uz/article-certification.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gamer-logic-hub.com/uz/article-certification.html"}, "dateModified": "2026-08-06", "author": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com"}, "publisher": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com", "logo": {"@type": "ImageObject", "url": "https://gamer-logic-hub.com/apple-touch-icon.png"}}, "isAccessibleForFree": true}</script>
+<meta content="https://gamer-logic-hub.com/uz/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>Gamer Logic Hub<small id="i18nLogoSub">Maqola</small></div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Bosh sahifa</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Maqolalar</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../article-certification.html">RU</a><a data-lang="en" href="../en/article-certification.html">EN</a><span class="active" data-lang="uz">UZ</span><a data-lang="tg" href="../tg/article-certification.html">TJ</a><a data-lang="es" href="../es/article-certification.html">AR</a><a data-lang="id" href="../id/article-certification.html">ID</a></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap-narrow">
+<span class="eyebrow" id="i18nEyebrow">Texnik tekshiruv · Soha standartlari</span>
+<h1 id="i18nHeroTitle">O'yinlarni mustaqil laboratoriyalar <span class="accent">sertifikatlashtirishi</span>: nega bu kerak</h1>
+<p class="meta" id="i18nMeta">~5 daqiqalik o'qish</p>
+</section>
+<div class="wrap-narrow article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+<article class="block wrap-narrow" id="articleBody">
+<p>Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni <strong>mustaqil sertifikatlashtirish</strong> beradi — bu jarayonda uchinchi tomon laboratoriyasi tasodifiy sonlar generatorini va o'yinning bayon qilingan parametrlarini haqiqatga muvofiqligini sinaydi.</p>
+<h2 style="font-size:20px;margin:26px 0 14px;">Sertifikatlashtirish jarayoni qanday ishlaydi</h2>
+<div class="icon-flow">
+<div class="icon-step"><div class="circ">①</div><span>Ishlab chiquvchi o'yin algoritmi va RNGni yaratadi</span></div>
+<div class="icon-arrow">→</div>
+<div class="icon-step"><div class="circ">②</div><span>Laboratoriya millionlab simulyatsiyalarni ishga tushiradi</span></div>
+<div class="icon-arrow">→</div>
+<div class="icon-step"><div class="circ">③</div><span>Haqiqiy RTP bayon qilinganiga solishtiriladi</span></div>
+<div class="icon-arrow">→</div>
+<div class="icon-step"><div class="circ">④</div><span>Sertifikat beriladi va hisobot e'lon qilinadi</span></div>
+</div>
+<h3><span class="h3-icon">🔬</span>Test laboratoriyalari nimani tekshiradi</h3>
+<p>Mustaqil laboratoriyalar (masalan, <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) o'yin mexanikalarining texnik auditini bir necha yo'nalishda o'tkazadi:</p>
+<ul>
+<li><strong>RNG (Random Number Generator)</strong> — tasodifiy sonlar generatori statistik tasodifiylik va bashorat qilinadigan naqshlar yo'qligiga tekshiriladi</li>
+<li>Bayon qilingan <strong>RTPning</strong> o'yinning haqiqiy matematik algoritmiga muvofiqligi</li>
+<li>Bayon qilingan koeffitsientlar va yutuqlar jadvaliga (paytable) muvofiq <strong>to'lovlarning to'g'riligi</strong></li>
+<li>Turli yuklama sharoitlarida o'yin dvijokining <strong>barqarorligi</strong></li>
+</ul>
+<h3><span class="h3-icon">✺</span>Nega bu chiroyli interfeysdan ham muhimroq</h3>
+<p>O'yinning tashqi ko'rinishi va animatsiyalari uning matematik halolligi bilan hech qanday bog'liq emas. Bayon qilingan parametrlar — RTP, volatillik, bonus natijalarining ehtimoli — o'yinning haqiqiy xatti-harakatiga mos kelishini tasdiqlashning yagona yo'li mustaqil texnik audit hisoblanadi. Sertifikatlashtirishsiz tavsifdagi har qanday raqamlar ishlab chiquvchining so'zlari bo'lib qoladi, ularni tashqaridan tekshirib bo'lmaydi.</p>
+<h3><span class="h3-icon">🔎</span>Sertifikatlashtirish haqida ma'lumotni qayerdan izlash kerak</h3>
+<ul>
+<li>Ishlab chiquvchi saytidagi «O'yin haqida» bo'limida yoki texnik tavsifda (paytable)</li>
+<li>Test laboratoriyasining o'z saytida — u yerda sertifikatning dolzarbligini tekshirish mumkin</li>
+<li>Agar platforma bunday ma'lumotlarni umuman e'lon qilsa, uning litsenziyalash bo'limida</li>
+</ul>
+<h3><span class="h3-icon">⚠</span>Sertifikatlashtirishning yo'qligi — xavotirli signal</h3>
+<p>Agar o'yin hech qayerda mustaqil texnik auditni tilga olmasa, bayon qilingan RTP va volatillik ko'rsatkichlarini uchinchi tomon manbalari orqali tekshirib bo'lmasa — bu bayon qilingan raqamlarga shubha bilan qarash uchun sabab. Mustaqil laboratoriyaning dolzarb sertifikati mavjudligi — o'yinning matematik modeli bayon qilinganiga mos kelishining ozgina obyektiv ko'rsatkichlaridan biridir.</p>
+<div class="disclaimer"><strong>Muhim.</strong> Ushbu material faqat ta'lim maqsadida bo'lib, o'yin mexanikalarini texnik audit qilishning umumiy tamoyillarini tushuntiradi. Material aniq operatorlar yoki platformalarni tavsiya qilish emas.</div>
+<div class="sources"><h3>Manbalar va qo'shimcha o'qish</h3><ul>
+<li><a href="https://www.gaminglabs.com/" rel="noopener" target="_blank">Gaming Laboratories International (GLI)</a> — sohaning eng yirik test laboratoriyalaridan birining rasmiy sayti</li>
+<li><a href="https://ecogra.org/" rel="noopener" target="_blank">eCOGRA</a> — o'yinlar halolligini test qilish va sertifikatlashtirish bo'yicha mustaqil tashkilot</li>
+<li><a href="https://www.itechlabs.com/" rel="noopener" target="_blank">iTech Labs</a> — RNG va o'yin tizimlarini sertifikatlashtirish laboratoriyasi</li>
+</ul></div></article>
+<div class="article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>></a>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo"><div class="logo-mark"><span>Σ</span></div><div>Gamer Math Portal</div></div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti.</p>
+</div>
+</footer>
+<script>
+const translations = {
+  ru:{
+    logoSub:"Статья", navHome:"Главная", navArticles:"Статьи",
+    eyebrow:"Техническая проверка · Стандарты индустрии",
+    heroTitle:'Сертификация игр <span class="accent">независимыми лабораториями</span>: зачем она нужна',
+    meta:"~5 минут чтения",
+    body:`
+    <p>Один из главных вопросов, который стоит задавать перед оценкой любой игры со случайным исходом: «Кто проверял математику этой игры?» Ответ на него даёт <strong>независимая сертификация</strong> — процесс, в котором сторонняя лаборатория тестирует генератор случайных чисел и заявленные параметры игры на соответствие реальности.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">Как устроен процесс сертификации</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>Разработчик создаёт игровой алгоритм и RNG</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>Лаборатория запускает миллионы симуляций</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>Сверка реального RTP с заявленным</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Выдача сертификата и публикация отчёта</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>Что проверяют тестовые лаборатории</h3>
+    <p>Независимые лаборатории (например, <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) проводят технический аудит игровых механик по нескольким направлениям:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong> — генератор случайных чисел проверяется на статистическую случайность и отсутствие предсказуемых паттернов</li>
+      <li><strong>Соответствие заявленного RTP</strong> реальному математическому алгоритму игры</li>
+      <li><strong>Корректность выплат</strong> согласно заявленным коэффициентам и таблице выигрышей (paytable)</li>
+      <li><strong>Стабильность работы</strong> игрового движка при разных условиях нагрузки</li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Почему это важнее, чем красивый интерфейс</h3>
+    <p>Внешний вид и анимации игры никак не связаны с её математической честностью. Единственный способ подтвердить, что заявленные параметры — RTP, волатильность, вероятности бонусных исходов — соответствуют реальному поведению игры, это независимый технический аудит. Без сертификации любые цифры в описании остаются словами разработчика, которые невозможно проверить со стороны.</p>
+    <h3><span class="h3-icon">🔎</span>Где искать информацию о сертификации</h3>
+    <ul>
+      <li>В разделе «О игре» или в техническом описании (paytable) на сайте разработчика</li>
+      <li>На сайте самой тестовой лаборатории — там можно проверить актуальность сертификата</li>
+      <li>В разделе лицензирования площадки, если она в принципе публикует такие данные</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>Отсутствие сертификации — тревожный сигнал</h3>
+    <p>Если игра нигде не упоминает независимый технический аудит, а заявленные параметры RTP и волатильности невозможно проверить сторонними источниками — это повод отнестись к заявленным цифрам скептически. Наличие актуального сертификата независимой лаборатории — один из немногих объективных индикаторов, что математическая модель игры соответствует заявленной.</p>
+    <div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно образовательный характер и объясняет общие принципы технического аудита игровых механик. Материал не является рекомендацией конкретных операторов или площадок.</div>
+    <div class="sources"><h3>Источники и дополнительное чтение</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — официальный сайт одной из крупнейших тестовых лабораторий индустрии</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — независимая организация по тестированию и сертификации честности игр</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — лаборатория сертификации RNG и игровых систем</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+  },
+  en:{
+    logoSub:"Article", navHome:"Home", navArticles:"Articles",
+    eyebrow:"Technical Review · Industry Standards",
+    heroTitle:'Independent Lab <span class="accent">Certification</span> of Games: Why It Matters',
+    meta:"~5 min read",
+    body:`
+    <p>One of the key questions to ask before judging any game of chance: "Who verified this game's math?" The answer lies in <strong>independent certification</strong> — a process where a third-party lab tests the random number generator and the game's stated parameters against reality.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">How the certification process works</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>Developer builds the game algorithm and RNG</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>Lab runs millions of simulations</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>Actual RTP is checked against the stated value</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Certificate issued, report published</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>What test labs actually check</h3>
+    <p>Independent labs (such as <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) run technical audits of game mechanics across several areas:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong> — tested for statistical randomness and the absence of predictable patterns</li>
+      <li><strong>Compliance of the stated RTP</strong> with the game's actual mathematical algorithm</li>
+      <li><strong>Payout accuracy</strong> according to the declared coefficients and paytable</li>
+      <li><strong>Engine stability</strong> under various load conditions</li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Why this matters more than a nice interface</h3>
+    <p>Visual design and animations have nothing to do with a game's mathematical honesty. The only way to confirm that stated parameters — RTP, volatility, bonus-outcome probabilities — match the game's real behavior is an independent technical audit. Without certification, any numbers in the description remain the developer's word, unverifiable from the outside.</p>
+    <h3><span class="h3-icon">🔎</span>Where to find certification information</h3>
+    <ul>
+      <li>In the "About the game" section or the technical description (paytable) on the developer's site</li>
+      <li>On the test lab's own website — where you can verify a certificate is current</li>
+      <li>In a platform's licensing section, if it publishes such data at all</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>No certification is a red flag</h3>
+    <p>If a game nowhere mentions an independent technical audit, and its stated RTP and volatility can't be verified by third-party sources, that's reason enough to be skeptical of the numbers. A current certificate from an independent lab is one of the few objective indicators that a game's math model matches what's advertised.</p>
+    <div class="disclaimer"><strong>Important.</strong> This material is purely educational and explains general principles of technical auditing for game mechanics. It is not a recommendation of any specific operator or platform.</div>
+    <div class="sources"><h3>Sources & further reading</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — official site of one of the industry's largest testing labs</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — an independent organization for testing and certifying game fairness</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — RNG and gaming system certification lab</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+  },
+  uz:{
+    logoSub:"Maqola", navHome:"Bosh sahifa", navArticles:"Maqolalar",
+    eyebrow:"Texnik tekshiruv · Soha standartlari",
+    heroTitle:'O&#39;yinlarni mustaqil laboratoriyalar <span class="accent">sertifikatlashtirishi</span>: nega bu kerak',
+    meta:"~5 daqiqalik o'qish",
+    body:`
+    <p>Tasodifiy natijali istalgan o'yinni baholashdan oldin berish kerak bo'lgan asosiy savollardan biri: «Bu o'yin matematikasini kim tekshirgan?» Bunga javobni <strong>mustaqil sertifikatlashtirish</strong> beradi — bu jarayonda uchinchi tomon laboratoriyasi tasodifiy sonlar generatorini va o'yinning bayon qilingan parametrlarini haqiqatga muvofiqligini sinaydi.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">Sertifikatlashtirish jarayoni qanday ishlaydi</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>Ishlab chiquvchi o'yin algoritmi va RNGni yaratadi</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>Laboratoriya millionlab simulyatsiyalarni ishga tushiradi</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>Haqiqiy RTP bayon qilinganiga solishtiriladi</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Sertifikat beriladi va hisobot e'lon qilinadi</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>Test laboratoriyalari nimani tekshiradi</h3>
+    <p>Mustaqil laboratoriyalar (masalan, <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) o'yin mexanikalarining texnik auditini bir necha yo'nalishda o'tkazadi:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong> — tasodifiy sonlar generatori statistik tasodifiylik va bashorat qilinadigan naqshlar yo'qligiga tekshiriladi</li>
+      <li>Bayon qilingan <strong>RTPning</strong> o'yinning haqiqiy matematik algoritmiga muvofiqligi</li>
+      <li>Bayon qilingan koeffitsientlar va yutuqlar jadvaliga (paytable) muvofiq <strong>to'lovlarning to'g'riligi</strong></li>
+      <li>Turli yuklama sharoitlarida o'yin dvijokining <strong>barqarorligi</strong></li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Nega bu chiroyli interfeysdan ham muhimroq</h3>
+    <p>O'yinning tashqi ko'rinishi va animatsiyalari uning matematik halolligi bilan hech qanday bog'liq emas. Bayon qilingan parametrlar — RTP, volatillik, bonus natijalarining ehtimoli — o'yinning haqiqiy xatti-harakatiga mos kelishini tasdiqlashning yagona yo'li mustaqil texnik audit hisoblanadi. Sertifikatlashtirishsiz tavsifdagi har qanday raqamlar ishlab chiquvchining so'zlari bo'lib qoladi, ularni tashqaridan tekshirib bo'lmaydi.</p>
+    <h3><span class="h3-icon">🔎</span>Sertifikatlashtirish haqida ma'lumotni qayerdan izlash kerak</h3>
+    <ul>
+      <li>Ishlab chiquvchi saytidagi «O'yin haqida» bo'limida yoki texnik tavsifda (paytable)</li>
+      <li>Test laboratoriyasining o'z saytida — u yerda sertifikatning dolzarbligini tekshirish mumkin</li>
+      <li>Agar platforma bunday ma'lumotlarni umuman e'lon qilsa, uning litsenziyalash bo'limida</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>Sertifikatlashtirishning yo'qligi — xavotirli signal</h3>
+    <p>Agar o'yin hech qayerda mustaqil texnik auditni tilga olmasa, bayon qilingan RTP va volatillik ko'rsatkichlarini uchinchi tomon manbalari orqali tekshirib bo'lmasa — bu bayon qilingan raqamlarga shubha bilan qarash uchun sabab. Mustaqil laboratoriyaning dolzarb sertifikati mavjudligi — o'yinning matematik modeli bayon qilinganiga mos kelishining ozgina obyektiv ko'rsatkichlaridan biridir.</p>
+    <div class="disclaimer"><strong>Muhim.</strong> Ushbu material faqat ta'lim maqsadida bo'lib, o'yin mexanikalarini texnik audit qilishning umumiy tamoyillarini tushuntiradi. Material aniq operatorlar yoki platformalarni tavsiya qilish emas.</div>
+    <div class="sources"><h3>Manbalar va qo'shimcha o'qish</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — sohaning eng yirik test laboratoriyalaridan birining rasmiy sayti</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — o'yinlar halolligini test qilish va sertifikatlashtirish bo'yicha mustaqil tashkilot</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — RNG va o'yin tizimlarini sertifikatlashtirish laboratoriyasi</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+  },
+  tg:{
+    logoSub:"Мақола", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
+    eyebrow:"Санҷиши техникӣ · Стандартҳои соҳа",
+    heroTitle:'<span class="accent">Сертификатсияи</span> бозиҳо аз ҷониби лабораторияҳои мустақил: чаро он лозим аст',
+    meta:"~5 дақиқа хондан",
+    body:`
+    <p>Яке аз саволҳои асосие, ки пеш аз баҳодиҳии ҳар як бозии натиҷаи тасодуфидошта бояд дод: «Математикаи ин бозиро кӣ санҷидааст?» Ҷавоби онро <strong>сертификатсияи мустақил</strong> медиҳад — раванде, ки дар он лабораторияи берунӣ генератори рақамҳои тасодуфӣ ва параметрҳои эълоншудаи бозиро ба воқеият мувофиқат месанҷад.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">Раванди сертификатсия чӣ гуна кор мекунад</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>Таҳиягар алгоритми бозӣ ва RNG-ро месозад</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>Лаборатория миллионҳо симулятсияро оғоз мекунад</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>RTP-и воқеӣ бо эълоншуда муқоиса карда мешавад</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Сертификат дода мешавад ва ҳисобот нашр мешавад</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>Лабораторияҳои санҷишӣ чиро месанҷанд</h3>
+    <p>Лабораторияҳои мустақил (масалан, <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) аудити техникии механизмҳои бозиро аз рӯи якчанд самт мегузаронанд:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong> — генератори рақамҳои тасодуфӣ аз рӯи тасодуфияти оморӣ ва набудани намунаҳои пешгӯишаванда санҷида мешавад</li>
+      <li>Мувофиқати <strong>RTP-и эълоншуда</strong> ба алгоритми воқеии математикии бозӣ</li>
+      <li><strong>Дурустии пардохтҳо</strong> мувофиқи коэффитсиентҳои эълоншуда ва ҷадвали бурдҳо (paytable)</li>
+      <li><strong>Устувории кори</strong> движоки бозӣ дар шароитҳои гуногуни бор</li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Чаро ин аз интерфейси зебо муҳимтар аст</h3>
+    <p>Намуди зоҳирӣ ва анимацияи бозӣ бо ростқавлии математикии он ҳеҷ алоқа надорад. Ягона роҳи тасдиқ кардани он, ки параметрҳои эълоншуда — RTP, волатилнокӣ, эҳтимолияти натиҷаҳои бонусӣ — ба рафтори воқеии бозӣ мувофиқанд, аудити мустақили техникист. Бе сертификатсия ҳама рақамҳо дар тавсиф суханони таҳиягар боқӣ мемонанд, ки аз берун санҷида шуда наметавонанд.</p>
+    <h3><span class="h3-icon">🔎</span>Дар куҷо маълумот дар бораи сертификатсия ҷустуҷӯ кардан лозим аст</h3>
+    <ul>
+      <li>Дар қисми «Дар бораи бозӣ» ё дар тавсифи техникӣ (paytable) дар сайти таҳиягар</li>
+      <li>Дар сайти худи лабораторияи санҷишӣ — дар он ҷо метавон дурустии сертификатро санҷид</li>
+      <li>Дар қисми литсензиякунонии платформа, агар он чунин маълумотро умуман нашр кунад</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>Набудани сертификатсия — сигнали ташвишовар</h3>
+    <p>Агар бозӣ дар ҳеҷ куҷо аудити мустақили техникиро зикр накунад ва параметрҳои эълоншудаи RTP ва волатилнокиро аз манбаъҳои беруна санҷидан ғайриимкон бошад — ин сабаб аст, ки ба рақамҳои эълоншуда бо шубҳа муносибат кард. Мавҷудияти сертификати дурусти лабораторияи мустақил яке аз ками нишондиҳандаҳои объективист, ки модели математикии бозӣ ба эълоншуда мувофиқат мекунад.</p>
+    <div class="disclaimer"><strong>Муҳим.</strong> Ин мавод танҳо бо мақсади таълимӣ таҳия шудааст ва принсипҳои умумии аудити техникии механизмҳои бозиро шарҳ медиҳад. Мавод тавсияи операторҳо ё платформаҳои мушаххас нест.</div>
+    <div class="sources"><h3>Манбаъҳо ва хондани иловагӣ</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — сайти расмии яке аз калонтарин лабораторияҳои санҷишии соҳа</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — созмони мустақил оид ба санҷиш ва сертификатсияи ростқавлии бозиҳо</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — лабораторияи сертификатсияи RNG ва системаҳои бозӣ</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+  },
+  es:{
+    logoSub:"Artículo", navHome:"Inicio", navArticles:"Artículos",
+    eyebrow:"Revisión técnica · Estándares de la industria",
+    heroTitle:'<span class="accent">Certificación</span> de juegos por laboratorios independientes: por qué importa',
+    meta:"~5 min de lectura",
+    body:`
+    <p>Una de las preguntas clave antes de evaluar cualquier juego de azar: "¿Quién verificó la matemática de este juego?" La respuesta la da la <strong>certificación independiente</strong>: un proceso en el que un laboratorio externo prueba el generador de números aleatorios y los parámetros declarados del juego frente a la realidad.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">Cómo funciona el proceso de certificación</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>El desarrollador crea el algoritmo del juego y el RNG</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>El laboratorio ejecuta millones de simulaciones</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>Se compara el RTP real con el declarado</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Se emite el certificado y se publica el informe</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>Qué verifican los laboratorios de prueba</h3>
+    <p>Los laboratorios independientes (como <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) realizan auditorías técnicas de las mecánicas de juego en varios frentes:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong>: se verifica la aleatoriedad estadística y la ausencia de patrones predecibles</li>
+      <li>Que el <strong>RTP declarado</strong> coincida con el algoritmo matemático real del juego</li>
+      <li><strong>Exactitud de los pagos</strong> según los coeficientes declarados y la tabla de premios (paytable)</li>
+      <li><strong>Estabilidad</strong> del motor del juego bajo distintas condiciones de carga</li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Por qué esto importa más que una interfaz bonita</h3>
+    <p>El aspecto visual y las animaciones no tienen nada que ver con la honestidad matemática de un juego. La única forma de confirmar que los parámetros declarados —RTP, volatilidad, probabilidades de rondas bonus— coinciden con el comportamiento real del juego es una auditoría técnica independiente. Sin certificación, cualquier cifra en la descripción sigue siendo palabra del desarrollador, imposible de verificar desde afuera.</p>
+    <h3><span class="h3-icon">🔎</span>Dónde buscar información sobre certificación</h3>
+    <ul>
+      <li>En la sección "Sobre el juego" o en la descripción técnica (paytable) del sitio del desarrollador</li>
+      <li>En el sitio del propio laboratorio de pruebas, donde se puede verificar si el certificado está vigente</li>
+      <li>En la sección de licencias de la plataforma, si es que publica ese tipo de datos</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>La falta de certificación es una señal de alerta</h3>
+    <p>Si un juego no menciona en ningún lado una auditoría técnica independiente, y el RTP y la volatilidad declarados no pueden verificarse con fuentes externas, eso ya es motivo suficiente para desconfiar de esas cifras. Contar con un certificado vigente de un laboratorio independiente es uno de los pocos indicadores objetivos de que el modelo matemático del juego coincide con lo anunciado.</p>
+    <div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y explica principios generales de auditoría técnica de mecánicas de juego. No constituye una recomendación de ningún operador o plataforma en particular.</div>
+    <div class="sources"><h3>Fuentes y lectura adicional</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — sitio oficial de uno de los mayores laboratorios de pruebas de la industria</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — organización independiente de testeo y certificación de la equidad de los juegos</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — laboratorio de certificación de RNG y sistemas de juego</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+  },
+  id:{
+    logoSub:"Artikel", navHome:"Beranda", navArticles:"Artikel",
+    eyebrow:"Tinjauan Teknis · Standar Industri",
+    heroTitle:'<span class="accent">Sertifikasi</span> Game oleh Laboratorium Independen: Mengapa Ini Penting',
+    meta:"~5 menit membaca",
+    body:`
+    <p>Salah satu pertanyaan utama sebelum menilai game dengan hasil acak apa pun: "Siapa yang memverifikasi matematika game ini?" Jawabannya ada pada <strong>sertifikasi independen</strong> — proses di mana laboratorium pihak ketiga menguji generator angka acak dan parameter yang diklaim game terhadap kenyataan.</p>
+    <h2 style="font-size:20px;margin:26px 0 14px;">Bagaimana proses sertifikasi bekerja</h2>
+    <div class="icon-flow">
+      <div class="icon-step"><div class="circ">①</div><span>Pengembang membuat algoritma game dan RNG</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">②</div><span>Laboratorium menjalankan jutaan simulasi</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">③</div><span>RTP aktual dicocokkan dengan nilai yang diklaim</span></div>
+      <div class="icon-arrow">→</div>
+      <div class="icon-step"><div class="circ">④</div><span>Sertifikat diterbitkan, laporan dipublikasikan</span></div>
+    </div>
+    <h3><span class="h3-icon">🔬</span>Apa yang diperiksa laboratorium penguji</h3>
+    <p>Laboratorium independen (seperti <strong>GLI (Gaming Laboratories International)</strong>, <strong>eCOGRA</strong>, <strong>iTech Labs</strong>) melakukan audit teknis mekanisme game di beberapa area:</p>
+    <ul>
+      <li><strong>RNG (Random Number Generator)</strong> — diuji keacakan statistiknya dan tidak adanya pola yang dapat diprediksi</li>
+      <li>Kesesuaian <strong>RTP yang diklaim</strong> dengan algoritma matematis game yang sebenarnya</li>
+      <li><strong>Akurasi pembayaran</strong> sesuai koefisien yang dinyatakan dan tabel kemenangan (paytable)</li>
+      <li><strong>Stabilitas</strong> mesin game dalam berbagai kondisi beban</li>
+    </ul>
+    <h3><span class="h3-icon">✺</span>Mengapa ini lebih penting daripada tampilan yang bagus</h3>
+    <p>Tampilan visual dan animasi game tidak ada hubungannya dengan kejujuran matematisnya. Satu-satunya cara memastikan parameter yang diklaim — RTP, volatilitas, peluang hasil bonus — sesuai dengan perilaku nyata game adalah audit teknis independen. Tanpa sertifikasi, angka apa pun dalam deskripsi tetap hanya klaim pengembang yang tidak dapat diverifikasi dari luar.</p>
+    <h3><span class="h3-icon">🔎</span>Di mana mencari informasi sertifikasi</h3>
+    <ul>
+      <li>Di bagian "Tentang game" atau deskripsi teknis (paytable) di situs pengembang</li>
+      <li>Di situs laboratorium penguji itu sendiri — di sana bisa diperiksa apakah sertifikat masih berlaku</li>
+      <li>Di bagian lisensi platform, jika platform tersebut mempublikasikan data semacam itu</li>
+    </ul>
+    <h3><span class="h3-icon">⚠</span>Tidak adanya sertifikasi adalah sinyal peringatan</h3>
+    <p>Jika sebuah game tidak pernah menyebutkan audit teknis independen, dan RTP serta volatilitas yang diklaim tidak dapat diverifikasi oleh sumber pihak ketiga, itu sudah cukup menjadi alasan untuk meragukan angka tersebut. Sertifikat yang masih berlaku dari laboratorium independen adalah salah satu dari sedikit indikator objektif bahwa model matematis game sesuai dengan yang diiklankan.</p>
+    <div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat murni edukasi dan menjelaskan prinsip umum audit teknis mekanisme game. Materi ini bukan rekomendasi operator atau platform tertentu.</div>
+    <div class="sources"><h3>Sumber & bacaan lanjutan</h3><ul>
+      <li><a href="https://www.gaminglabs.com/" target="_blank" rel="noopener">Gaming Laboratories International (GLI)</a> — situs resmi salah satu laboratorium penguji terbesar di industri</li>
+      <li><a href="https://ecogra.org/" target="_blank" rel="noopener">eCOGRA</a> — organisasi independen untuk pengujian dan sertifikasi keadilan game</li>
+      <li><a href="https://www.itechlabs.com/" target="_blank" rel="noopener">iTech Labs</a> — laboratorium sertifikasi RNG dan sistem game</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+  }
+};
+
+function applyLanguage(lang){
+  const t = translations[lang];
+  if(!t) return;
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('i18nLogoSub').textContent = t.logoSub;
+  document.getElementById('i18nNavHome').textContent = t.navHome;
+  document.getElementById('i18nNavArticles').textContent = t.navArticles;
+  document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+  document.getElementById('i18nHeroTitle').innerHTML = t.heroTitle;
+  document.getElementById('i18nMeta').textContent = t.meta;
+  document.getElementById('i18nFooterText').textContent = t.footerText;
+  document.getElementById('articleBody').innerHTML = t.body;
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLanguage(btn.dataset.lang);
+  });
+});
+
+applyLanguage('uz');
+</script>
+</body>
+</html>

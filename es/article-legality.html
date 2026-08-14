@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>Legalidad del juego online: Asia Central, Argentina, Indonesia — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por…" name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--line);color:var(--text-primary);font-weight:600;font-size:13px;
+  padding:9px 17px;border-radius:10px;
+}
+
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:8px;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.chart-wrap{position:relative;}
+.chart-tooltip{
+  position:absolute;pointer-events:none;opacity:0;transition:opacity .15s ease;
+  background:rgba(13,8,27,0.95);border:1px solid var(--gold-dim);border-radius:8px;
+  padding:8px 12px;font-size:12px;color:var(--text-primary);line-height:1.5;
+  white-space:nowrap;z-index:10;box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
+.chart-tooltip strong{color:var(--gold);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.table-scroll{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);-webkit-overflow-scrolling:touch;margin:18px 0;}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+thead th{background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:12px 14px;font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,215,0,0.04);}
+tbody td strong{color:var(--text-primary);}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+.badge.low, .badge.legal{background:rgba(76,201,142,0.15);color:var(--green);}
+.badge.mid, .badge.mixed{background:rgba(255,215,0,0.15);color:var(--gold);}
+.badge.high, .badge.banned{background:rgba(239,106,106,0.18);color:var(--red);}
+
+.status-chart{margin:22px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:relative;}
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;cursor:pointer;}
+.status-row:last-child{margin-bottom:0;}
+.status-label{width:110px;flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--text-primary);transition:color .2s ease;}
+.status-row:hover .status-label{color:var(--gold);}
+.status-track{flex:1;height:14px;background:var(--bg-deep);border-radius:8px;overflow:hidden;border:1px solid var(--line);transition:border-color .2s ease;}
+.status-row:hover .status-track{border-color:rgba(255,215,0,0.4);}
+.status-fill{height:100%;border-radius:8px;transition:width 1.1s cubic-bezier(.22,1,.36,1), filter .2s ease, box-shadow .2s ease;}
+.status-fill.legal{background:linear-gradient(90deg,var(--green),#3aa876);}
+.status-fill.mixed{background:linear-gradient(90deg,var(--gold-dim),var(--gold));}
+.status-fill.banned{background:linear-gradient(90deg,#c94a4a,var(--red));}
+.status-row:hover .status-fill{filter:brightness(1.25);}
+.status-row:hover .status-fill.legal{box-shadow:0 0 14px rgba(76,201,142,0.7);}
+.status-row:hover .status-fill.mixed{box-shadow:0 0 14px rgba(255,215,0,0.6);}
+.status-row:hover .status-fill.banned{box-shadow:0 0 14px rgba(239,106,106,0.7);}
+.status-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--text-muted);}
+.status-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.legal{background:var(--green);}
+.dot.mixed{background:var(--gold);}
+.dot.banned{background:var(--red);}
+
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+</style>
+<link href="https://gamer-logic-hub.com/es/article-legality.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/article-legality.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/article-legality.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/article-legality.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/article-legality.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/article-legality.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/article-legality.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/article-legality.html" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="Legalidad del juego online: Asia Central, Argentina, Indonesia — Gamer Logic Hub" property="og:title"/>
+<meta content="El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por…" property="og:description"/>
+<meta content="https://gamer-logic-hub.com/es/article-legality.html" property="og:url"/>
+<meta content="es_AR" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="uz_UZ" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Legalidad del juego online: Asia Central, Argentina, Indonesia — Gamer Logic Hub" name="twitter:title"/>
+<meta content="El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por…" name="twitter:description"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Legalidad del juego online: Asia Central, Argentina, Indonesia", "description": "El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por…", "inLanguage": "es-AR", "url": "https://gamer-logic-hub.com/es/article-legality.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gamer-logic-hub.com/es/article-legality.html"}, "dateModified": "2026-08-06", "author": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com"}, "publisher": {"@type": "Organization", "name": "Gamer Logic Hub", "url": "https://gamer-logic-hub.com", "logo": {"@type": "ImageObject", "url": "https://gamer-logic-hub.com/apple-touch-icon.png"}}, "isAccessibleForFree": true}</script>
+<meta content="https://gamer-logic-hub.com/es/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>Gamer Logic Hub<small id="i18nLogoSub">Artículo</small></div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Inicio</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Artículos</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Выбор языка" class="lang-switch" role="group"><a data-lang="ru" href="../article-legality.html">RU</a><a data-lang="en" href="../en/article-legality.html">EN</a><a data-lang="uz" href="../uz/article-legality.html">UZ</a><a data-lang="tg" href="../tg/article-legality.html">TJ</a><span class="active" data-lang="es">AR</span><a data-lang="id" href="../id/article-legality.html">ID</a></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap-narrow">
+<span class="eyebrow" id="i18nEyebrow">Regulación · Panorama legislativo</span>
+<h1 id="i18nHeroTitle"><span class="accent">Legalidad</span> del juego online: Asia Central, Argentina, Indonesia</h1>
+<p class="meta" id="i18nMeta">Actualizado en 2026 · ~9 min de lectura</p>
+</section>
+<div class="wrap-narrow article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+<article class="block wrap-narrow" id="articleBody">
+<p>El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por organizarlo o promoverlo. Repasamos el panorama actual en siete países: cinco estados de Asia Central, además de Argentina e Indonesia, donde la regulación está estructurada de manera fundamentalmente distinta.</p>
+<div class="callout"><strong>Aclaración importante.</strong> La legislación en esta materia cambia rápido. Este material refleja el panorama al momento de su publicación y no reemplaza la verificación de normas vigentes ni la consulta con un abogado de la jurisdicción específica.</div>
+<h2 style="font-size:22px;margin:30px 0 6px;">Infografía comparativa por región</h2>
+<p style="font-size:13.5px;">Una escala condicional de "rigor" regulatorio, desde la prohibición total hasta un mercado legal y licenciado.</p>
+<div class="status-chart">
+<div class="status-row"><div class="status-label">Uzbekistán</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Tayikistán</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Kazajistán</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Kirguistán</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Turkmenistán</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Argentina</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+<div class="status-row"><div class="status-label">Indonesia</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+<div class="status-legend"><span><i class="dot legal"></i> Legal y con licencia</span><span><i class="dot mixed"></i> Parcial / fragmentado / en curso</span><span><i class="dot banned"></i> Prohibido por ley</span></div>
+</div>
+<h3><span class="h3-icon">🏛</span>Uzbekistán: legalizado desde 2025, pero aún sin licencias emitidas</h3>
+<p>Hasta 2024, el juego estaba prohibido en el país. En abril de 2024 se firmó un decreto que <strong>legaliza la actividad de juego y las apuestas deportivas</strong>, y desde el 1 de enero de 2025 la industria salió oficialmente de la "zona gris". El regulador es la <strong>Agencia Nacional de Proyectos Prospectivos (NAPP)</strong>, responsable de otorgar licencias y supervisar el juego responsable.</p>
+<p>Un matiz importante: que la industria esté legalizada no significa que cada operador individual lo sea. Solo pueden operar en el país empresas con licencia de la NAPP; la actividad sin licencia, incluida la de operadores extranjeros, se castiga con multas y bloqueos. La publicidad de juegos de azar está estrictamente regulada por una ley específica.</p>
+<h3><span class="h3-icon">⚖</span>Tayikistán: casinos terrestres prohibidos, sin regulación específica online</h3>
+<p>La actividad de casinos y salas de juego fue cerrada por decreto presidencial ya en el año 2000, principalmente por incumplimientos de la ley tributaria. Organizar un negocio de juego ilegal cae bajo el Código Penal del país, con responsabilidad severa. Actualmente la legislación no contiene una regulación específica del juego online como segmento propio.</p>
+<h3><span class="h3-icon">⚖</span>Kazajistán: casinos terrestres con licencia, casinos por internet directamente prohibidos</h3>
+<p>La industria se regula por la Ley sobre el Negocio de Juegos de Azar desde 2007. Los casinos terrestres y las salas de máquinas tragamonedas están permitidos solo con licencia y en zonas de juego especialmente designadas. Al mismo tiempo, <strong>operar un casino electrónico (por internet) está directamente prohibido en todo el territorio del país</strong>, sin importar si el operador tiene una licencia extranjera. Se permiten por separado sitios de apuestas deportivas con licencia bajo el dominio .KZ, registrados ante las autoridades fiscales — algo distinto de un casino online.</p>
+<h3><span class="h3-icon">🛂</span>Kirguistán: legalizado en 2022, con restricción por nacionalidad</h3>
+<p>Tras una prohibición de una década, el negocio del juego se legalizó en 2022. Los casinos solo pueden operar en zonas especialmente designadas y atender exclusivamente a ciudadanos extranjeros; la nacionalidad del visitante se verifica mediante un sistema estatal de identificación digital. El segmento online todavía se está formando como un conjunto de reglas separado.</p>
+<h3><span class="h3-icon">🔒</span>Turkmenistán: un régimen regulatorio cerrado</h3>
+<p>Hay muy poca información pública y verificable sobre la regulación del juego online; el país es conocido por tener uno de los regímenes regulatorios más cerrados de la región en general. La falta de datos abiertos es en sí misma una señal de que cualquier actividad en esta jurisdicción requiere una revisión legal individual.</p>
+<h3><span class="h3-icon">🗺</span>Argentina: no una sola ley, sino 24 mercados distintos</h3>
+<p>Argentina funciona de manera fundamentalmente distinta: no existe una ley nacional única sobre el juego online, la regulación está delegada a las 23 provincias y a la Ciudad Autónoma de Buenos Aires. El principio base es que <strong>el juego está prohibido salvo autorización expresa</strong> de la autoridad provincial correspondiente. Al 2026, 23 de las 24 jurisdicciones del país regulan el juego online de alguna forma; la excepción es Santiago del Estero, donde las apuestas online están expresamente prohibidas.</p>
+<p>Las licencias se otorgan por plazos distintos: por ejemplo, 5 años en la Ciudad de Buenos Aires y hasta 15 años en Córdoba y en la Provincia de Buenos Aires. Solo se considera legal a un operador con licencia de una provincia específica; como regla general, el dominio de la plataforma debe corresponder a la jurisdicción nacional — un sitio extranjero ".com" sin licencia local no se considera legal. Desde 2025 también se discute un proyecto de ley federal para restringir la publicidad del juego online a nivel nacional.</p>
+<h3><span class="h3-icon">🚫</span>Indonesia: el régimen más estricto de la región — prohibición total sin excepciones</h3>
+<p>Indonesia, el país de mayoría musulmana más poblado del mundo, prohíbe <strong>todas las formas de juego</strong>, terrestre y online, tanto para ciudadanos como para extranjeros, sin excepción alguna. La base legal es el Código Penal (artículos 303 y 303-bis) y la Ley N.º 7 de 1974 sobre control de juegos de azar. Desde 2024 rige una ley actualizada sobre información electrónica (Ley ITE) que penaliza específicamente la distribución y promoción del juego online en el entorno digital, incluyendo publicidad disfrazada de "consejos de salud" o "contenido de estilo de vida" en redes sociales.</p>
+<p>Desde enero de 2026 la legislación cerró la última zona gris: antes la responsabilidad solo aplicaba al juego "en un lugar público"; ahora jugar en privado en casa por celular se equipara al juego público y se castiga igual, con hasta 10 años de prisión y multas de hasta 10.000 millones de rupias para los organizadores. Los reguladores indonesios también atacan agresivamente la infraestructura financiera: desde 2024 se han congelado más de 33.000 cuentas bancarias vinculadas al juego online, y en 2026 el servicio cripto de mercados de predicción Polymarket fue bloqueado bajo la misma lógica de "juego disfrazado".</p>
+<h2 style="font-size:22px;margin:30px 0 14px;">Tabla resumen por país</h2>
+<div class="table-scroll"><table><thead><tr><th>País</th><th>Estatus</th><th>Regulador / base legal</th></tr></thead><tbody>
+<tr><td><strong>Uzbekistán</strong></td><td><span class="badge mixed">Legalizado, sin licencias emitidas aún</span></td><td>NAPP (desde 2025)</td></tr>
+<tr><td><strong>Tayikistán</strong></td><td><span class="badge banned">Prohibido</span></td><td>Código Penal (desde 2000)</td></tr>
+<tr><td><strong>Kazajistán</strong></td><td><span class="badge mixed">Terrestre con licencia, casinos online prohibidos</span></td><td>Ley sobre el Negocio de Juego (2007)</td></tr>
+<tr><td><strong>Kirguistán</strong></td><td><span class="badge mixed">Legalizado para extranjeros, online en desarrollo</span></td><td>Ley sobre la Actividad de Juego (2022)</td></tr>
+<tr><td><strong>Turkmenistán</strong></td><td><span class="badge banned">Datos insuficientes</span></td><td>Régimen regulatorio cerrado</td></tr>
+<tr><td><strong>Argentina</strong></td><td><span class="badge legal">Legal en 23 de 24 jurisdicciones</span></td><td>Reguladores provinciales</td></tr>
+<tr><td><strong>Indonesia</strong></td><td><span class="badge banned">Prohibición total sin excepciones</span></td><td>Código Penal, ley de 1974, Ley ITE (2024–2026)</td></tr>
+</tbody></table></div>
+<h3><span class="h3-icon">❗</span>Por qué conviene verificar el estatus vigente por cuenta propia</h3>
+<ul>
+<li>La legislación cambia rápido: lo que estaba prohibido hace un año puede estar legalizado ahora, y viceversa</li>
+<li>Que una industria esté legalizada en un país no vuelve automáticamente legal a un operador específico: lo que importa es la licencia local</li>
+<li>La responsabilidad puede recaer tanto en los organizadores como, en algunas jurisdicciones, en ciertas categorías de usuarios</li>
+</ul>
+<div class="disclaimer"><strong>Importante.</strong> Este material tiene fines exclusivamente informativos y se basa en fuentes públicamente disponibles al momento de su redacción. No constituye asesoramiento legal ni refleja automáticamente los últimos cambios legislativos. Antes de tomar cualquier decisión, se recomienda consultar la normativa oficial y a abogados especializados en la jurisdicción correspondiente.</div>
+<div class="sources"><h3>Fuentes</h3><ul>
+<li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" rel="noopener" target="_blank">Podrobno.uz</a> — sobre las reformas que legalizan las apuestas deportivas y los casinos online en Uzbekistán</li>
+<li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" rel="noopener" target="_blank">VitVet.com</a> — análisis legal sobre la regulación de la publicidad de juegos de azar en Uzbekistán</li>
+<li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" rel="noopener" target="_blank">Tribuna.com</a> — reseña de la historia de la prohibición de casinos en Tayikistán</li>
+<li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" rel="noopener" target="_blank">Asociación de Contribuyentes de Kazajistán</a> — estatus legal de los casinos electrónicos en Kazajistán</li>
+<li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" rel="noopener" target="_blank">SBC Eurasia</a> — cómo funciona la legalización del negocio de juego en Kirguistán</li>
+<li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" rel="noopener" target="_blank">ICLG Gambling Laws and Regulations — Argentina</a> — panorama legal oficial de la regulación provincial</li>
+<li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" rel="noopener" target="_blank">Gambling Law Asia</a> — la base legal de la prohibición del juego online en Indonesia</li>
+</ul></div></article>
+<div class="article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>></a>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo"><div class="logo-mark"><span>Σ</span></div><div>Gamer Math Portal</div></div>
+<p id="i18nFooterText">© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego.</p>
+</div>
+</footer>
+<script>
+const translations = {
+  ru:{
+    logoSub:"Статья", navHome:"Главная", navArticles:"Статьи",
+    eyebrow:"Регулирование · Обзор законодательства",
+    heroTitle:'Легальность <span class="accent">онлайн-гэмблинга</span>: Центральная Азия, Аргентина, Индонезия',
+    meta:"Обновлено в 2026 году · ~9 минут чтения",
+    body:`
+    <p>Правовой статус онлайн-гэмблинга кардинально различается от страны к стране — от полной легализации с лицензированием до уголовной ответственности за организацию и продвижение. Разбираем актуальную картину по семи странам: пяти государствам Центральной Азии, а также Аргентине и Индонезии, где регулирование устроено принципиально иначе.</p>
+    <div class="callout"><strong>Важное уточнение.</strong> Законодательство в этой сфере меняется быстро. Материал отражает картину на момент публикации и не заменяет проверку актуальных нормативных актов и консультацию с юристом конкретной юрисдикции.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Сравнительная инфографика по регионам</h2>
+    <p style="font-size:13.5px;">Условная шкала «жёсткости» регулирования — от полного запрета до легального лицензируемого рынка.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">Узбекистан</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Таджикистан</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Казахстан</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Кыргызстан</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Туркменистан</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Аргентина</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Индонезия</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Легально и лицензируется</span><span><i class="dot mixed"></i> Частично / фрагментарно / в процессе</span><span><i class="dot banned"></i> Запрещено законом</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>Узбекистан: легализация с 2025 года, но лицензий пока нет</h3>
+    <p>До 2024 года азартные игры в стране были под запретом. В апреле 2024 года подписано постановление о <strong>легализации игорной деятельности и букмекерства</strong>, и с 1 января 2025 года индустрия официально вышла из «серой» зоны. Регулятор — <strong>Национальное агентство перспективных проектов (НАПП)</strong>, отвечающее за лицензирование и контроль ответственной игры.</p>
+    <p>Важный нюанс: легализация отрасли не равна легальности каждого отдельного оператора. Работать в стране могут только компании с лицензией НАПП; деятельность без лицензии, включая иностранных операторов, карается штрафами и блокировкой. Реклама азартных игр строго регулируется отдельным законом «О рекламе».</p>
+    <h3><span class="h3-icon">⚖</span>Таджикистан: наземные казино под запретом, онлайн не урегулирован отдельно</h3>
+    <p>Деятельность казино и игровых залов была прекращена указом президента ещё в 2000 году, в первую очередь из-за нарушений налогового законодательства. Организация нелегального игорного бизнеса подпадает под Уголовный кодекс страны с суровой ответственностью. Отдельного регулирования именно онлайн-гэмблинга как самостоятельного сегмента законодательство на сегодня не содержит.</p>
+    <h3><span class="h3-icon">⚖</span>Казахстан: наземные казино — по лицензии, интернет-казино — под прямым запретом</h3>
+    <p>Отрасль регулируется законом «Об игорном бизнесе» с 2007 года. Наземные казино и залы игровых автоматов разрешены только по лицензии и в специально отведённых игорных зонах. При этом <strong>деятельность электронного (интернет-) казино прямо запрещена на всей территории республики</strong> независимо от наличия зарубежной лицензии у оператора. Отдельно допускаются лицензированные букмекерские сайты под доменом .KZ, зарегистрированные в налоговых органах — это не тождественно интернет-казино.</p>
+    <h3><span class="h3-icon">🛂</span>Кыргызстан: легализация 2022 года с ограничением по гражданству</h3>
+    <p>После десятилетнего запрета игорный бизнес легализовали в 2022 году. Казино разрешено работать только в специально отведённых зонах и обслуживать исключительно иностранных граждан — гражданство посетителя проверяется через государственную цифровую систему идентификации. Онлайн-сегмент пока формируется как отдельная система правил.</p>
+    <h3><span class="h3-icon">🔒</span>Туркменистан: закрытый правовой режим</h3>
+    <p>Публичной и проверяемой информации о регулировании онлайн-гэмблинга крайне мало — страна известна одним из самых закрытых регуляторных режимов региона в целом. Отсутствие открытых данных — само по себе сигнал к тому, что перед любыми действиями в этой юрисдикции необходима индивидуальная юридическая проверка.</p>
+    <h3><span class="h3-icon">🗺</span>Аргентина: не единый закон, а 24 разных рынка</h3>
+    <p>Аргентина устроена принципиально иначе: единого национального закона об онлайн-гэмблинге не существует, регулирование отдано на уровень 23 провинций и автономного города Буэнос-Айрес. Базовый принцип — <strong>гэмблинг запрещён, если прямо не разрешён</strong> конкретной провинциальной властью. По состоянию на 2026 год онлайн-гэмблинг в той или иной форме регулируют 23 из 24 юрисдикций страны; исключение — провинция Сантьяго-дель-Эстеро, где онлайн-ставки прямо запрещены.</p>
+    <p>Лицензии выдаются на разные сроки — например, 5 лет в городе Буэнос-Айрес и до 15 лет в провинциях Кордова и Буэнос-Айрес. Легальным считается только оператор с лицензией конкретной провинции; по общему принципу домен площадки должен оканчиваться на национальную юрисдикцию — иностранный «.com»-сайт без местной лицензии легальным не считается. С 2025 года также обсуждается федеральный законопроект об ограничении рекламы онлайн-гэмблинга на национальном уровне.</p>
+    <h3><span class="h3-icon">🚫</span>Индонезия: самый строгий режим в регионе — полный запрет без исключений</h3>
+    <p>Индонезия — крупнейшая по населению мусульманская страна мира — запрещает <strong>все формы гэмблинга</strong>, наземного и онлайн, для граждан и иностранцев без каких-либо исключений. Правовая база — Уголовный кодекс (статьи 303 и 303-bis) и закон № 7 от 1974 года о контроле над азартными играми. С 2024 года действует обновлённый закон об электронной информации (ITE Law), который отдельно криминализирует распространение и продвижение онлайн-гэмблинга в цифровой среде, включая маскировку рекламы под «советы по здоровью» или «лайфстайл-контент» в соцсетях.</p>
+    <p>С января 2026 года законодательство закрыло последнюю серую зону: ранее ответственность наступала только за игру «в публичном месте», теперь частная игра дома через смартфон приравнена к публичной и карается так же — вплоть до 10 лет лишения свободы и штрафов до 10 млрд рупий для организаторов. Индонезийские регуляторы также активно блокируют финансовую инфраструктуру: с 2024 года заморожено свыше 33 000 банковских счетов, связанных с онлайн-гэмблингом, а в 2026 году под аналогичный запрет как «замаскированный гэмблинг» попал даже крипто-сервис прогнозных рынков Polymarket.</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Сводная таблица по странам</h2>
+    <div class="table-scroll"><table><thead><tr><th>Страна</th><th>Статус</th><th>Регулятор / основа регулирования</th></tr></thead><tbody>
+      <tr><td><strong>Узбекистан</strong></td><td><span class="badge mixed">Легализовано, лицензий пока нет</span></td><td>НАПП (с 2025 г.)</td></tr>
+      <tr><td><strong>Таджикистан</strong></td><td><span class="badge banned">Запрещено</span></td><td>Уголовный кодекс (с 2000 г.)</td></tr>
+      <tr><td><strong>Казахстан</strong></td><td><span class="badge mixed">Наземное — по лицензии, онлайн-казино запрещено</span></td><td>Закон «Об игорном бизнесе» (2007 г.)</td></tr>
+      <tr><td><strong>Кыргызстан</strong></td><td><span class="badge mixed">Легализовано для иностранцев, онлайн в разработке</span></td><td>Закон «Об игорной деятельности» (2022 г.)</td></tr>
+      <tr><td><strong>Туркменистан</strong></td><td><span class="badge banned">Данных недостаточно</span></td><td>Закрытый регуляторный режим</td></tr>
+      <tr><td><strong>Аргентина</strong></td><td><span class="badge legal">Легально в 23 из 24 юрисдикций</span></td><td>Провинциальные регуляторы</td></tr>
+      <tr><td><strong>Индонезия</strong></td><td><span class="badge banned">Полный запрет без исключений</span></td><td>Уголовный кодекс, закон 1974 г., ITE Law (2024–2026 гг.)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Почему важно проверять актуальный статус самостоятельно</h3>
+    <ul>
+      <li>Законодательство меняется быстро — то, что было запрещено год назад, может быть легализовано, и наоборот</li>
+      <li>Легализация отрасли в стране не означает автоматическую легальность конкретного оператора — значение имеет местная лицензия</li>
+      <li>Ответственность может наступать как для организаторов, так и для отдельных категорий пользователей — в зависимости от юрисдикции</li>
+    </ul>
+    <div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно информационный характер и основан на публично доступных источниках на момент подготовки текста. Он не является юридической консультацией и не отражает автоматически все последние изменения законодательства. Перед принятием любых решений рекомендуется обращаться к официальным нормативным актам и профильным юристам своей юрисдикции.</div>
+    <div class="sources"><h3>Источники</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — о принятии поправок, легализующих букмекерскую деятельность и онлайн-казино в Узбекистане</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — юридическая аналитика по регулированию рекламы азартных игр в Узбекистане</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — обзор истории запрета казино в Таджикистане</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Ассоциация налогоплательщиков Казахстана</a> — правовой статус электронных казино в РК</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — как устроена легализация игорного бизнеса в Кыргызстане</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — официальный юридический обзор провинциального регулирования</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — правовая база запрета онлайн-гэмблинга в Индонезии</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+  },
+  en:{
+    logoSub:"Article", navHome:"Home", navArticles:"Articles",
+    eyebrow:"Regulation · Legislative Overview",
+    heroTitle:'Online Gambling <span class="accent">Legality</span>: Central Asia, Argentina, Indonesia',
+    meta:"Updated 2026 · ~9 min read",
+    body:`
+    <p>The legal status of online gambling varies dramatically from country to country — from full legalization with licensing to criminal liability for organizing or promoting it. We cover the current picture across seven countries: five Central Asian states, plus Argentina and Indonesia, where regulation is structured in fundamentally different ways.</p>
+    <div class="callout"><strong>A key caveat.</strong> Legislation in this area changes quickly. This material reflects the picture at the time of publication and does not replace checking current regulations or consulting a lawyer in a specific jurisdiction.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Comparative infographic by region</h2>
+    <p style="font-size:13.5px;">A conditional "strictness" scale — from a full ban to a fully licensed legal market.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">Uzbekistan</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Tajikistan</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kazakhstan</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kyrgyzstan</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Turkmenistan</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Argentina</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Indonesia</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Legal and licensed</span><span><i class="dot mixed"></i> Partial / fragmented / in progress</span><span><i class="dot banned"></i> Banned by law</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>Uzbekistan: legalized since 2025, but no licenses issued yet</h3>
+    <p>Until 2024, gambling was banned in the country. In April 2024, a decree was signed <strong>legalizing gambling and bookmaking</strong>, and as of January 1, 2025, the industry officially left the "grey" zone. The regulator is the <strong>National Agency for Perspective Projects (NAPP)</strong>, responsible for licensing and oversight of responsible gambling.</p>
+    <p>An important nuance: legalizing the industry doesn't mean every individual operator is legal. Only companies holding an NAPP license may operate in the country; unlicensed activity, including by foreign operators, is punished with fines and blocking. Gambling advertising is strictly regulated by a separate advertising law.</p>
+    <h3><span class="h3-icon">⚖</span>Tajikistan: land-based casinos banned, online not separately regulated</h3>
+    <p>Casino and gaming-hall operations were shut down by presidential decree back in 2000, primarily due to tax-law violations. Running an illegal gambling business falls under the country's Criminal Code, with severe liability. The law does not currently contain separate regulation of online gambling as its own segment.</p>
+    <h3><span class="h3-icon">⚖</span>Kazakhstan: land-based casinos by license, internet casinos directly banned</h3>
+    <p>The industry is regulated by the Gambling Business Law since 2007. Land-based casinos and slot halls are permitted only under license and only within designated gambling zones. At the same time, <strong>operating an electronic (internet) casino is directly banned across the entire country</strong>, regardless of any foreign license the operator may hold. Separately, licensed bookmaker sites under the .KZ domain, registered with tax authorities, are allowed — this is not the same as an internet casino.</p>
+    <h3><span class="h3-icon">🛂</span>Kyrgyzstan: legalized in 2022, with a citizenship restriction</h3>
+    <p>After a decade-long ban, gambling was legalized in 2022. Casinos may operate only in designated zones and may serve foreign citizens exclusively — a visitor's citizenship is checked through a state digital ID system. The online segment is still being formed as a separate set of rules.</p>
+    <h3><span class="h3-icon">🔒</span>Turkmenistan: a closed regulatory regime</h3>
+    <p>There is very little public, verifiable information about online gambling regulation — the country is known as one of the most closed regulatory regimes in the region overall. The lack of open data is itself a signal that any activity in this jurisdiction requires individual legal review.</p>
+    <h3><span class="h3-icon">🗺</span>Argentina: not one law, but 24 different markets</h3>
+    <p>Argentina works fundamentally differently: there is no single national online gambling law — regulation is delegated to the 23 provinces and the autonomous city of Buenos Aires. The base principle is that <strong>gambling is banned unless expressly authorized</strong> by a specific provincial authority. As of 2026, 23 of the country's 24 jurisdictions regulate online gambling in some form; the exception is Santiago del Estero, where online betting is expressly banned.</p>
+    <p>Licenses are issued for varying terms — for example, 5 years in the City of Buenos Aires and up to 15 years in Córdoba and Buenos Aires Province. Only an operator holding a specific province's license is considered legal; as a general rule, a platform's domain should end in the national jurisdiction — a foreign ".com" site without a local license is not considered legal. Since 2025, a federal bill restricting online gambling advertising nationwide has also been under discussion.</p>
+    <h3><span class="h3-icon">🚫</span>Indonesia: the strictest regime in the region — a total ban with no exceptions</h3>
+    <p>Indonesia — the world's largest Muslim-majority country by population — bans <strong>all forms of gambling</strong>, land-based and online, for citizens and foreigners alike, with no exceptions. The legal basis is the Criminal Code (Articles 303 and 303-bis) and Law No. 7 of 1974 on Gambling Control. Since 2024, an updated electronic information law (the ITE Law) has separately criminalized distributing and promoting online gambling digitally, including disguising ads as "health tips" or "lifestyle content" on social media.</p>
+    <p>Since January 2026, the law closed the last grey area: liability previously applied only to gambling "in a public place"; private play at home via smartphone is now treated the same as public gambling and carries the same penalties — up to 10 years in prison and fines of up to IDR 10 billion for organizers. Indonesian regulators are also aggressively targeting financial infrastructure: over 33,000 bank accounts linked to online gambling have been frozen since 2024, and in 2026 the crypto prediction-market service Polymarket was blocked under the same "disguised gambling" rationale.</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Summary table by country</h2>
+    <div class="table-scroll"><table><thead><tr><th>Country</th><th>Status</th><th>Regulator / legal basis</th></tr></thead><tbody>
+      <tr><td><strong>Uzbekistan</strong></td><td><span class="badge mixed">Legalized, no licenses issued yet</span></td><td>NAPP (since 2025)</td></tr>
+      <tr><td><strong>Tajikistan</strong></td><td><span class="badge banned">Banned</span></td><td>Criminal Code (since 2000)</td></tr>
+      <tr><td><strong>Kazakhstan</strong></td><td><span class="badge mixed">Land-based licensed, internet casinos banned</span></td><td>Gambling Business Law (2007)</td></tr>
+      <tr><td><strong>Kyrgyzstan</strong></td><td><span class="badge mixed">Legalized for foreigners, online in development</span></td><td>Gambling Activity Law (2022)</td></tr>
+      <tr><td><strong>Turkmenistan</strong></td><td><span class="badge banned">Insufficient data</span></td><td>Closed regulatory regime</td></tr>
+      <tr><td><strong>Argentina</strong></td><td><span class="badge legal">Legal in 23 of 24 jurisdictions</span></td><td>Provincial regulators</td></tr>
+      <tr><td><strong>Indonesia</strong></td><td><span class="badge banned">Total ban, no exceptions</span></td><td>Criminal Code, 1974 law, ITE Law (2024–2026)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Why it's worth checking the current status yourself</h3>
+    <ul>
+      <li>Legislation changes fast — what was banned a year ago may be legal now, and vice versa</li>
+      <li>Legalizing an industry doesn't automatically make a specific operator legal — a local license is what matters</li>
+      <li>Liability may apply to organizers, and in some jurisdictions to certain categories of users too</li>
+    </ul>
+    <div class="disclaimer"><strong>Important.</strong> This material is for informational purposes only and is based on publicly available sources at the time of writing. It is not legal advice and does not automatically reflect the latest legislative changes. Before making any decisions, consult official regulations and qualified lawyers in your jurisdiction.</div>
+    <div class="sources"><h3>Sources</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — on the amendments legalizing bookmaking and online casinos in Uzbekistan</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — legal analysis of gambling advertising rules in Uzbekistan</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — an overview of the casino ban's history in Tajikistan</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Kazakhstan Taxpayers Association</a> — legal status of electronic casinos in Kazakhstan</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — how gambling legalization works in Kyrgyzstan</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — an official legal overview of provincial regulation</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — the legal basis for Indonesia's online gambling ban</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+  },
+  uz:{
+    logoSub:"Maqola", navHome:"Bosh sahifa", navArticles:"Maqolalar",
+    eyebrow:"Tartibga solish · Qonunchilik sharhi",
+    heroTitle:'Onlayn-gemblingning <span class="accent">qonuniyligi</span>: Markaziy Osiyo, Argentina, Indoneziya',
+    meta:"2026-yilda yangilandi · ~9 daqiqalik o'qish",
+    body:`
+    <p>Onlayn-gemblingning huquqiy maqomi mamlakatdan mamlakatga tubdan farq qiladi — litsenziyalash bilan to'liq legallashtirishdan tortib, tashkil etish va targ'ib qilish uchun jinoiy javobgarlikkacha. Yetti mamlakat bo'yicha dolzarb manzarani ko'rib chiqamiz: Markaziy Osiyoning beshta davlati, shuningdek tartibga solish tubdan boshqacha tashkil etilgan Argentina va Indoneziya.</p>
+    <div class="callout"><strong>Muhim izoh.</strong> Bu sohadagi qonunchilik tez o'zgaradi. Material nashr etilgan vaqtdagi manzarani aks ettiradi va dolzarb me'yoriy hujjatlarni tekshirish hamda muayyan yurisdiksiya yuristi bilan maslahatlashishning o'rnini bosmaydi.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Mintaqalar bo'yicha qiyosiy infografika</h2>
+    <p style="font-size:13.5px;">Tartibga solishning shartli «qattiqlik» shkalasi — to'liq taqiqdan litsenziyalanadigan qonuniy bozorgacha.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">O'zbekiston</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Tojikiston</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Qozog'iston</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Qirg'iziston</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Turkmaniston</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Argentina</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Indoneziya</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Qonuniy va litsenziyalanadi</span><span><i class="dot mixed"></i> Qisman / parchalangan / jarayonda</span><span><i class="dot banned"></i> Qonun bilan taqiqlangan</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>O'zbekiston: 2025-yildan legallashtirilgan, ammo litsenziyalar hali yo'q</h3>
+    <p>2024-yilgacha mamlakatda azartli o'yinlar taqiqlangan edi. 2024-yil aprel oyida <strong>o'yin faoliyati va tikish ishini legallashtirish</strong> to'g'risida qaror imzolandi, va 2025-yil 1-yanvardan soha rasman «kulrang» zonadan chiqdi. Regulator — mas'uliyatli o'yin nazorati va litsenziyalash uchun javobgar <strong>Istiqbolli loyihalar milliy agentligi (ILMA)</strong>.</p>
+    <p>Muhim nuans: sohaning legallashtirilishi har bir alohida operatorning qonuniyligini anglatmaydi. Mamlakatda faqat ILMA litsenziyasiga ega kompaniyalar ishlashi mumkin; litsenziyasiz faoliyat, shu jumladan xorijiy operatorlarniki, jarima va bloklash bilan jazolanadi. Azartli o'yinlar reklamasi alohida «Reklama to'g'risida»gi qonun bilan qattiq tartibga solinadi.</p>
+    <h3><span class="h3-icon">⚖</span>Tojikiston: yer usti kazinolar taqiqlangan, onlayn alohida tartibga solinmagan</h3>
+    <p>Kazino va o'yin zallari faoliyati 2000-yilda prezident farmoni bilan, birinchi navbatda soliq qonunchiligi buzilishi sababli to'xtatilgan. Noqonuniy o'yin biznesini tashkil etish mamlakat Jinoyat kodeksi ostiga tushadi va qattiq javobgarlikni nazarda tutadi. Bugungi kunda qonunchilikda onlayn-gembling alohida segment sifatida maxsus tartibga solinmagan.</p>
+    <h3><span class="h3-icon">⚖</span>Qozog'iston: yer usti kazinolar litsenziya bilan, internet-kazinolar to'g'ridan-to'g'ri taqiqlangan</h3>
+    <p>Soha 2007-yildan «O'yin biznesi to'g'risida»gi qonun bilan tartibga solinadi. Yer usti kazinolar va o'yin avtomatlari zallari faqat litsenziya bilan va maxsus ajratilgan o'yin zonalarida ruxsat etilgan. Shu bilan birga, operatorda xorijiy litsenziya bor-yo'qligidan qat'i nazar, <strong>elektron (internet-) kazino faoliyati butun respublika hududida to'g'ridan-to'g'ri taqiqlangan</strong>. Soliq organlarida ro'yxatdan o'tgan .KZ domenidagi litsenziyalangan tikish saytlari alohida ruxsat etiladi — bu internet-kazino bilan bir xil emas.</p>
+    <h3><span class="h3-icon">🛂</span>Qirg'iziston: fuqarolikka cheklov bilan 2022-yilgi legallashtirish</h3>
+    <p>O'n yillik taqiqdan so'ng o'yin biznesi 2022-yilda legallashtirildi. Kazino faqat maxsus ajratilgan zonalarda ishlashi va faqat xorijiy fuqarolarga xizmat ko'rsatishi mumkin — tashrif buyuruvchining fuqaroligi davlat raqamli identifikatsiya tizimi orqali tekshiriladi. Onlayn segment hozircha alohida qoidalar tizimi sifatida shakllanmoqda.</p>
+    <h3><span class="h3-icon">🔒</span>Turkmaniston: yopiq huquqiy tartib</h3>
+    <p>Onlayn-gemblingni tartibga solish haqida ochiq va tekshirilishi mumkin bo'lgan ma'lumot juda kam — mamlakat umuman mintaqadagi eng yopiq tartibga solish rejimlaridan biri sifatida tanilgan. Ochiq ma'lumotlarning yo'qligi — bu yurisdiksiyada har qanday harakatdan oldin alohida yuridik tekshiruv zarurligining o'zi bir signaldir.</p>
+    <h3><span class="h3-icon">🗺</span>Argentina: yagona qonun emas, balki 24 xil bozor</h3>
+    <p>Argentina tubdan boshqacha tashkil etilgan: onlayn-gembling bo'yicha yagona milliy qonun mavjud emas, tartibga solish 23 ta provinsiya va Buenos-Ayres avtonom shahri darajasiga topshirilgan. Asosiy tamoyil — <strong>gembling aniq ruxsat etilmagan bo'lsa, taqiqlangan</strong> hisoblanadi. 2026-yilga kelib mamlakatning 24 ta yurisdiksiyasidan 23 tasi onlayn-gemblingni u yoki bu shaklda tartibga soladi; istisno — onlayn tikishlar to'g'ridan-to'g'ri taqiqlangan Santyago-del-Estero provinsiyasi.</p>
+    <p>Litsenziyalar turli muddatlarga beriladi — masalan, Buenos-Ayres shahrida 5 yil, Kordova va Buenos-Ayres provinsiyalarida esa 15 yilgacha. Faqat muayyan provinsiya litsenziyasiga ega operator qonuniy hisoblanadi; umumiy qoidaga ko'ra, platforma domeni milliy yurisdiksiya bilan tugashi kerak — mahalliy litsenziyasiz xorijiy «.com» sayti qonuniy hisoblanmaydi. 2025-yildan buyon onlayn-gembling reklamasini milliy darajada cheklash bo'yicha federal qonun loyihasi ham muhokama qilinmoqda.</p>
+    <h3><span class="h3-icon">🚫</span>Indoneziya: mintaqadagi eng qattiq tartib — istisnolarsiz to'liq taqiq</h3>
+    <p>Aholi soni bo'yicha dunyodagi eng yirik musulmon davlati bo'lgan Indoneziya fuqarolar va xorijliklar uchun istisnolarsiz yer usti va onlayn <strong>gemblingning barcha shakllarini</strong> taqiqlaydi. Huquqiy asos — Jinoyat kodeksi (303 va 303-bis moddalari) va 1974-yildagi 7-sonli azartli o'yinlarni nazorat qilish to'g'risidagi qonun. 2024-yildan beri elektron axborot to'g'risidagi yangilangan qonun (ITE Law) amal qilmoqda, u ijtimoiy tarmoqlarda reklamani «sog'liq bo'yicha maslahatlar» yoki «lifestyle-kontent» sifatida niqoblashni ham qamrab olib, onlayn-gemblingni raqamli muhitda tarqatish va targ'ib qilishni alohida jinoiylashtiradi.</p>
+    <p>2026-yil yanvaridan qonunchilik oxirgi kulrang zonani yopdi: ilgari javobgarlik faqat «jamoat joyida» o'ynash uchun kelib chiqar edi, endi smartfon orqali uyda shaxsiy o'ynash ham jamoat o'yiniga tenglashtirilgan va xuddi shunday jazolanadi — tashkilotchilar uchun 10 yilgacha ozodlikdan mahrum etish va 10 milliard rupiyagacha jarima. Indoneziya regulyatorlari moliyaviy infratuzilmani ham faol bloklamoqda: 2024-yildan buyon onlayn-gembling bilan bog'liq 33 000 dan ortiq bank hisobi muzlatilgan, 2026-yilda esa xuddi shu «niqoblangan gembling» sifatida hatto kripto-prognoz bozori xizmati Polymarket ham bloklandi.</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Mamlakatlar bo'yicha jamlovchi jadval</h2>
+    <div class="table-scroll"><table><thead><tr><th>Mamlakat</th><th>Holat</th><th>Regulator / tartibga solish asosi</th></tr></thead><tbody>
+      <tr><td><strong>O'zbekiston</strong></td><td><span class="badge mixed">Legallashtirilgan, litsenziyalar hali yo'q</span></td><td>ILMA (2025-yildan)</td></tr>
+      <tr><td><strong>Tojikiston</strong></td><td><span class="badge banned">Taqiqlangan</span></td><td>Jinoyat kodeksi (2000-yildan)</td></tr>
+      <tr><td><strong>Qozog'iston</strong></td><td><span class="badge mixed">Yer usti — litsenziya bilan, internet-kazino taqiqlangan</span></td><td>«O'yin biznesi to'g'risida»gi qonun (2007)</td></tr>
+      <tr><td><strong>Qirg'iziston</strong></td><td><span class="badge mixed">Xorijliklar uchun legallashtirilgan, onlayn ishlab chiqilmoqda</span></td><td>«O'yin faoliyati to'g'risida»gi qonun (2022)</td></tr>
+      <tr><td><strong>Turkmaniston</strong></td><td><span class="badge banned">Ma'lumot yetarli emas</span></td><td>Yopiq tartibga solish rejimi</td></tr>
+      <tr><td><strong>Argentina</strong></td><td><span class="badge legal">24 tadan 23 yurisdiksiyada qonuniy</span></td><td>Provinsiya regulyatorlari</td></tr>
+      <tr><td><strong>Indoneziya</strong></td><td><span class="badge banned">Istisnolarsiz to'liq taqiq</span></td><td>Jinoyat kodeksi, 1974-yilgi qonun, ITE Law (2024–2026)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Nega dolzarb holatni mustaqil tekshirish muhim</h3>
+    <ul>
+      <li>Qonunchilik tez o'zgaradi — bir yil oldin taqiqlangan narsa legallashtirilgan bo'lishi mumkin, va aksincha</li>
+      <li>Mamlakatda sohaning legallashtirilishi muayyan operatorning avtomatik qonuniyligini anglatmaydi — mahalliy litsenziya muhim</li>
+      <li>Javobgarlik yurisdiksiyaga qarab tashkilotchilar uchun ham, foydalanuvchilarning alohida toifalari uchun ham kelib chiqishi mumkin</li>
+    </ul>
+    <div class="disclaimer"><strong>Muhim.</strong> Material faqat axborot xarakteriga ega bo'lib, matn tayyorlangan vaqtdagi ommaviy manbalarga asoslangan. U yuridik konsultatsiya emas va qonunchilikdagi barcha so'nggi o'zgarishlarni avtomatik aks ettirmaydi. Har qanday qaror qabul qilishdan oldin rasmiy me'yoriy hujjatlarga va o'z yurisdiksiyangiz yuristlariga murojaat qilish tavsiya etiladi.</div>
+    <div class="sources"><h3>Manbalar</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — O'zbekistonda tikish faoliyati va onlayn-kazinolarni legallashtiruvchi tuzatishlar qabul qilingani haqida</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — O'zbekistonda azartli o'yinlar reklamasini tartibga solish bo'yicha yuridik tahlil</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — Tojikistonda kazino taqig'i tarixi sharhi</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Qozog'iston soliq to'lovchilar assotsiatsiyasi</a> — QRda elektron kazinolarning huquqiy maqomi</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — Qirg'izistonda o'yin biznesini legallashtirish qanday ishlaydi</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — provinsiyaviy tartibga solish bo'yicha rasmiy yuridik sharh</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — Indoneziyada onlayn-gembling taqig'ining huquqiy asosi</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+  },
+  tg:{
+    logoSub:"Мақола", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
+    eyebrow:"Танзимкунӣ · Шарҳи қонунгузорӣ",
+    heroTitle:'<span class="accent">Қонунияти</span> гэмблинги онлайн: Осиёи Марказӣ, Аргентина, Индонезия',
+    meta:"Соли 2026 навсозӣ шудааст · ~9 дақиқа хондан",
+    body:`
+    <p>Мақоми ҳуқуқии гэмблинги онлайн аз кишвар ба кишвар куллан фарқ мекунад — аз легализатсияи пурра бо литсензиякунонӣ то масъулияти ҷиноятӣ барои ташкил ва тарғиб. Мо вазъи рӯзонаро дар ҳафт кишвар баррасӣ мекунем: панҷ давлати Осиёи Марказӣ, инчунин Аргентина ва Индонезия, ки дар онҳо танзимкунӣ ба таври куллан дигар ташкил шудааст.</p>
+    <div class="callout"><strong>Изоҳи муҳим.</strong> Қонунгузорӣ дар ин соҳа зуд тағйир меёбад. Мавод вазъиятро дар лаҳзаи нашр инъикос мекунад ва санҷиши санадҳои меъёрии дурустро ва машварат бо ҳуқуқшиноси юрисдиксияи мушаххасро иваз намекунад.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Инфографикаи муқоисавӣ аз рӯи минтақаҳо</h2>
+    <p style="font-size:13.5px;">Миқёси шартии «сахтии» танзимкунӣ — аз манъи пурра то бозори қонунии литсензиядор.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">Узбекистон</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Тоҷикистон</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Қазоқистон</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Қирғизистон</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Туркманистон</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Аргентина</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Индонезия</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Қонунӣ ва литсензиядор</span><span><i class="dot mixed"></i> Қисман / пароканда / дар раванд</span><span><i class="dot banned"></i> Бо қонун манъшуда</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>Узбекистон: аз соли 2025 легализатсия шудааст, вале литсензияҳо ҳанӯз нестанд</h3>
+    <p>То соли 2024 бозиҳои шартӣ дар кишвар манъ буданд. Дар моҳи апрели 2024 қарор дар бораи <strong>легализатсияи фаъолияти бозигарӣ ва тикор</strong> имзо шуд, ва аз 1 январи 2025 соҳа расман аз минтақаи «хокистарӣ» баромад. Танзимкунанда — <strong>Агентии миллии лоиҳаҳои дурнамо (АМЛД)</strong>, ки барои литсензиякунонӣ ва назорати бозии масъулиятнок ҷавобгар аст.</p>
+    <p>Нуктаи муҳим: легализатсияи соҳа маънои қонунияти ҳар як провайдери алоҳидаро надорад. Дар кишвар танҳо ширкатҳои дорои литсензияи АМЛД кор карда метавонанд; фаъолият бе литсензия, аз ҷумла операторони хориҷӣ, бо ҷарима ва бастан ҷазо дода мешавад. Рекламаи бозиҳои шартӣ бо қонуни алоҳидаи «Дар бораи реклама» сахт танзим карда мешавад.</p>
+    <h3><span class="h3-icon">⚖</span>Тоҷикистон: казиноҳои заминӣ манъ, онлайн алоҳида танзим нашудааст</h3>
+    <p>Фаъолияти казино ва толорҳои бозӣ бо фармони президент дар соли 2000, пеш аз ҳама аз сабаби вайронкунии қонунгузории андоз, қатъ карда шуд. Ташкили бизнеси ғайриқонунии бозигарӣ ба Кодекси ҷиноятии кишвар дучор мешавад ва масъулияти сахтро дар назар дорад. Қонунгузорӣ дар ҳоли ҳозир танзими алоҳидаи гэмблинги онлайнро ҳамчун сегменти мустақил надорад.</p>
+    <h3><span class="h3-icon">⚖</span>Қазоқистон: казиноҳои заминӣ — бо литсензия, интернет-казино — бевосита манъ</h3>
+    <p>Соҳа аз соли 2007 бо қонуни «Дар бораи бизнеси бозигарӣ» танзим карда мешавад. Казиноҳои заминӣ ва толорҳои автоматҳои бозӣ танҳо бо литсензия ва дар минтақаҳои махсуси бозигарӣ иҷозат дода мешаванд. Дар айни замон <strong>фаъолияти казиноии электронӣ (интернетӣ) новобаста аз мавҷудияти литсензияи хориҷии оператор дар тамоми ҳудуди ҷумҳурӣ бевосита манъ аст</strong>. Алоҳида сайтҳои тикори литсензиядор дар домени .KZ, ки дар мақомоти андоз бақайдгирӣ шудаанд, иҷозат дода мешаванд — ин ба интернет-казино баробар нест.</p>
+    <h3><span class="h3-icon">🛂</span>Қирғизистон: легализатсияи соли 2022 бо маҳдудияти шаҳрвандӣ</h3>
+    <p>Пас аз манъи даҳсола бизнеси бозигарӣ дар соли 2022 легализатсия шуд. Казино танҳо дар минтақаҳои махсус ҷудошуда кор карда метавонад ва танҳо ба шаҳрвандони хориҷӣ хизмат мерасонад — шаҳрвандии ташрифоваранда тавассути системаи рақамии идентификатсияи давлатӣ санҷида мешавад. Сегменти онлайн ҳоло ҳамчун системаи алоҳидаи қоидаҳо шакл мегирад.</p>
+    <h3><span class="h3-icon">🔒</span>Туркманистон: режими сарбастаи ҳуқуқӣ</h3>
+    <p>Маълумоти оммавӣ ва санҷидашаванда дар бораи танзими гэмблинги онлайн хеле кам аст — кишвар умуман ҳамчун яке аз режимҳои сарбастатарини танзимкунии минтақа маъруф аст. Набудани маълумоти кушода худ сигналест, ки пеш аз ҳар гуна амал дар ин юрисдиксия санҷиши инфиродии ҳуқуқӣ зарур аст.</p>
+    <h3><span class="h3-icon">🗺</span>Аргентина: на як қонуни ягона, балки 24 бозори гуногун</h3>
+    <p>Аргентина куллан дигар ташкил шудааст: қонуни ягонаи миллӣ дар бораи гэмблинги онлайн вуҷуд надорад, танзимкунӣ ба сатҳи 23 вилоят ва шаҳри мухтори Буэнос-Айрес супурда шудааст. Принсипи асосӣ — <strong>гэмблинг манъ аст, агар аниқ аз ҷониби ҳокимияти вилоятии мушаххас иҷозат дода нашуда бошад</strong>. Дар соли 2026, 23 аз 24 юрисдиксияи кишвар гэмблинги онлайнро бо шакли ин ё он танзим мекунанд; истисно — вилояти Сантяго-дел-Эстеро, ки дар он бозиҳои онлайн бевосита манъ аст.</p>
+    <p>Литсензияҳо ба мӯҳлатҳои гуногун дода мешаванд — масалан, 5 сол дар шаҳри Буэнос-Айрес ва то 15 сол дар вилоятҳои Кордова ва Буэнос-Айрес. Танҳо оператори дорои литсензияи вилояти мушаххас қонунӣ ҳисобида мешавад; мувофиқи принсипи умумӣ, домени платформа бояд ба юрисдиксияи миллӣ хотима ёбад — сайти хориҷии «.com» бе литсензияи маҳаллӣ қонунӣ ҳисобида намешавад. Аз соли 2025 инчунин лоиҳаи қонуни федералӣ дар бораи маҳдуд кардани рекламаи гэмблинги онлайн дар сатҳи миллӣ баррасӣ мешавад.</p>
+    <h3><span class="h3-icon">🚫</span>Индонезия: режими сахттарин дар минтақа — манъи пурра бе истисно</h3>
+    <p>Индонезия — калонтарин кишвари мусулмонӣ дар ҷаҳон аз рӯи шумораи аҳолӣ — <strong>ҳамаи шаклҳои гэмблингро</strong>, заминӣ ва онлайн, барои шаҳрвандон ва хориҷиён бе ягон истисно манъ мекунад. Асоси ҳуқуқӣ — Кодекси ҷиноятӣ (моддаҳои 303 ва 303-bis) ва қонуни №7-и соли 1974 дар бораи назорати бозиҳои шартӣ. Аз соли 2024 қонуни навшудаи иттилооти электронӣ (ITE Law) амал мекунад, ки паҳнкунӣ ва тарғиби гэмблинги онлайнро дар муҳити рақамӣ алоҳида ҷиноӣ мешуморад, аз ҷумла ниқобдории рекламаро ҳамчун «маслиҳатҳои саломатӣ» ё «муҳтавои лайфстайл» дар шабакаҳои иҷтимоӣ.</p>
+    <p>Аз январи 2026 қонунгузорӣ минтақаи охирини хокистариро баст: пештар масъулият танҳо барои бозӣ «дар ҷои ҷамъиятӣ» пайдо мешуд, акнун бозии хусусӣ дар хона тавассути смартфон ба бозии ҷамъиятӣ баробар карда шудааст ва ба ҳамон тарз ҷазо дода мешавад — то 8 то 10 соли маҳрумият аз озодӣ ва ҷаримаҳо то 10 миллиард рупия барои ташкилотчиён. Танзимкунандагони Индонезия инчунин инфрасохтори молиявиро фаъолона мебанданд: аз соли 2024 бештар аз 33 000 ҳисоби бонкии бо гэмблинги онлайн алоқаманд бастаанд, ва дар соли 2026 ҳатто хидмати бозори пешгӯии крипто Polymarket ҳамчун «гэмблинги ниқобдор» ба ҳамин манъ дучор шуд.</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Ҷадвали ҷамъбастӣ аз рӯи кишварҳо</h2>
+    <div class="table-scroll"><table><thead><tr><th>Кишвар</th><th>Мақом</th><th>Танзимкунанда / асоси танзимкунӣ</th></tr></thead><tbody>
+      <tr><td><strong>Узбекистон</strong></td><td><span class="badge mixed">Легализатсия шудааст, литсензияҳо ҳанӯз нестанд</span></td><td>АМЛД (аз 2025)</td></tr>
+      <tr><td><strong>Тоҷикистон</strong></td><td><span class="badge banned">Манъ</span></td><td>Кодекси ҷиноятӣ (аз 2000)</td></tr>
+      <tr><td><strong>Қазоқистон</strong></td><td><span class="badge mixed">Заминӣ — бо литсензия, интернет-казино манъ</span></td><td>Қонуни «Дар бораи бизнеси бозигарӣ» (2007)</td></tr>
+      <tr><td><strong>Қирғизистон</strong></td><td><span class="badge mixed">Барои хориҷиён легализатсия шудааст, онлайн дар таҳия</span></td><td>Қонуни «Дар бораи фаъолияти бозигарӣ» (2022)</td></tr>
+      <tr><td><strong>Туркманистон</strong></td><td><span class="badge banned">Маълумот кофӣ нест</span></td><td>Режими сарбастаи танзимкунӣ</td></tr>
+      <tr><td><strong>Аргентина</strong></td><td><span class="badge legal">Дар 23 аз 24 юрисдиксия қонунӣ</span></td><td>Танзимкунандагони вилоятӣ</td></tr>
+      <tr><td><strong>Индонезия</strong></td><td><span class="badge banned">Манъи пурра бе истисно</span></td><td>Кодекси ҷиноятӣ, қонуни 1974, ITE Law (2024–2026)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Чаро санҷидани мақоми рӯзона мустақилона муҳим аст</h3>
+    <ul>
+      <li>Қонунгузорӣ зуд тағйир меёбад — он чизе, ки як сол пеш манъ буд, метавонад легализатсия шуда бошад, ва баръакс</li>
+      <li>Легализатсияи соҳа дар кишвар қонунияти автоматии провайдери мушаххасро надорад — литсензияи маҳаллӣ аҳамият дорад</li>
+      <li>Масъулият метавонад ҳам ба ташкилотчиён, ҳам ба категорияҳои алоҳидаи корбарон, вобаста ба юрисдиксия, дучор ояд</li>
+    </ul>
+    <div class="disclaimer"><strong>Муҳим.</strong> Мавод хусусияти танҳо иттилоотӣ дорад ва дар асоси манбаъҳои оммавии дастрас дар лаҳзаи таҳияи матн навишта шудааст. Он машварати ҳуқуқӣ нест ва ҳамаи тағйироти охирини қонунгузориро автоматӣ инъикос намекунад. Пеш аз қабули ҳар гуна қарор ба санадҳои расмии меъёрӣ ва ҳуқуқшиносони соҳавии юрисдиксияи худ муроҷиат кардан тавсия дода мешавад.</div>
+    <div class="sources"><h3>Манбаъҳо</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — дар бораи қабули тағйирот, ки фаъолияти тикор ва казиноҳои онлайнро дар Узбекистон легализатсия мекунанд</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — таҳлили ҳуқуқии танзими рекламаи бозиҳои шартӣ дар Узбекистон</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — шарҳи таърихи манъи казино дар Тоҷикистон</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Ассотсиатсияи андозсупорандагони Қазоқистон</a> — мақоми ҳуқуқии казиноҳои электронӣ дар ҚҶ</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — легализатсияи бизнеси бозигарӣ дар Қирғизистон чӣ гуна кор мекунад</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — шарҳи расмии ҳуқуқии танзимкунии вилоятӣ</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — асоси ҳуқуқии манъи гэмблинги онлайн дар Индонезия</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+  },
+  es:{
+    logoSub:"Artículo", navHome:"Inicio", navArticles:"Artículos",
+    eyebrow:"Regulación · Panorama legislativo",
+    heroTitle:'<span class="accent">Legalidad</span> del juego online: Asia Central, Argentina, Indonesia',
+    meta:"Actualizado en 2026 · ~9 min de lectura",
+    body:`
+    <p>El estatus legal del juego online varía enormemente de un país a otro: desde la legalización total con licencias hasta la responsabilidad penal por organizarlo o promoverlo. Repasamos el panorama actual en siete países: cinco estados de Asia Central, además de Argentina e Indonesia, donde la regulación está estructurada de manera fundamentalmente distinta.</p>
+    <div class="callout"><strong>Aclaración importante.</strong> La legislación en esta materia cambia rápido. Este material refleja el panorama al momento de su publicación y no reemplaza la verificación de normas vigentes ni la consulta con un abogado de la jurisdicción específica.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Infografía comparativa por región</h2>
+    <p style="font-size:13.5px;">Una escala condicional de "rigor" regulatorio, desde la prohibición total hasta un mercado legal y licenciado.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">Uzbekistán</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Tayikistán</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kazajistán</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kirguistán</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Turkmenistán</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Argentina</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Indonesia</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Legal y con licencia</span><span><i class="dot mixed"></i> Parcial / fragmentado / en curso</span><span><i class="dot banned"></i> Prohibido por ley</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>Uzbekistán: legalizado desde 2025, pero aún sin licencias emitidas</h3>
+    <p>Hasta 2024, el juego estaba prohibido en el país. En abril de 2024 se firmó un decreto que <strong>legaliza la actividad de juego y las apuestas deportivas</strong>, y desde el 1 de enero de 2025 la industria salió oficialmente de la "zona gris". El regulador es la <strong>Agencia Nacional de Proyectos Prospectivos (NAPP)</strong>, responsable de otorgar licencias y supervisar el juego responsable.</p>
+    <p>Un matiz importante: que la industria esté legalizada no significa que cada operador individual lo sea. Solo pueden operar en el país empresas con licencia de la NAPP; la actividad sin licencia, incluida la de operadores extranjeros, se castiga con multas y bloqueos. La publicidad de juegos de azar está estrictamente regulada por una ley específica.</p>
+    <h3><span class="h3-icon">⚖</span>Tayikistán: casinos terrestres prohibidos, sin regulación específica online</h3>
+    <p>La actividad de casinos y salas de juego fue cerrada por decreto presidencial ya en el año 2000, principalmente por incumplimientos de la ley tributaria. Organizar un negocio de juego ilegal cae bajo el Código Penal del país, con responsabilidad severa. Actualmente la legislación no contiene una regulación específica del juego online como segmento propio.</p>
+    <h3><span class="h3-icon">⚖</span>Kazajistán: casinos terrestres con licencia, casinos por internet directamente prohibidos</h3>
+    <p>La industria se regula por la Ley sobre el Negocio de Juegos de Azar desde 2007. Los casinos terrestres y las salas de máquinas tragamonedas están permitidos solo con licencia y en zonas de juego especialmente designadas. Al mismo tiempo, <strong>operar un casino electrónico (por internet) está directamente prohibido en todo el territorio del país</strong>, sin importar si el operador tiene una licencia extranjera. Se permiten por separado sitios de apuestas deportivas con licencia bajo el dominio .KZ, registrados ante las autoridades fiscales — algo distinto de un casino online.</p>
+    <h3><span class="h3-icon">🛂</span>Kirguistán: legalizado en 2022, con restricción por nacionalidad</h3>
+    <p>Tras una prohibición de una década, el negocio del juego se legalizó en 2022. Los casinos solo pueden operar en zonas especialmente designadas y atender exclusivamente a ciudadanos extranjeros; la nacionalidad del visitante se verifica mediante un sistema estatal de identificación digital. El segmento online todavía se está formando como un conjunto de reglas separado.</p>
+    <h3><span class="h3-icon">🔒</span>Turkmenistán: un régimen regulatorio cerrado</h3>
+    <p>Hay muy poca información pública y verificable sobre la regulación del juego online; el país es conocido por tener uno de los regímenes regulatorios más cerrados de la región en general. La falta de datos abiertos es en sí misma una señal de que cualquier actividad en esta jurisdicción requiere una revisión legal individual.</p>
+    <h3><span class="h3-icon">🗺</span>Argentina: no una sola ley, sino 24 mercados distintos</h3>
+    <p>Argentina funciona de manera fundamentalmente distinta: no existe una ley nacional única sobre el juego online, la regulación está delegada a las 23 provincias y a la Ciudad Autónoma de Buenos Aires. El principio base es que <strong>el juego está prohibido salvo autorización expresa</strong> de la autoridad provincial correspondiente. Al 2026, 23 de las 24 jurisdicciones del país regulan el juego online de alguna forma; la excepción es Santiago del Estero, donde las apuestas online están expresamente prohibidas.</p>
+    <p>Las licencias se otorgan por plazos distintos: por ejemplo, 5 años en la Ciudad de Buenos Aires y hasta 15 años en Córdoba y en la Provincia de Buenos Aires. Solo se considera legal a un operador con licencia de una provincia específica; como regla general, el dominio de la plataforma debe corresponder a la jurisdicción nacional — un sitio extranjero ".com" sin licencia local no se considera legal. Desde 2025 también se discute un proyecto de ley federal para restringir la publicidad del juego online a nivel nacional.</p>
+    <h3><span class="h3-icon">🚫</span>Indonesia: el régimen más estricto de la región — prohibición total sin excepciones</h3>
+    <p>Indonesia, el país de mayoría musulmana más poblado del mundo, prohíbe <strong>todas las formas de juego</strong>, terrestre y online, tanto para ciudadanos como para extranjeros, sin excepción alguna. La base legal es el Código Penal (artículos 303 y 303-bis) y la Ley N.º 7 de 1974 sobre control de juegos de azar. Desde 2024 rige una ley actualizada sobre información electrónica (Ley ITE) que penaliza específicamente la distribución y promoción del juego online en el entorno digital, incluyendo publicidad disfrazada de "consejos de salud" o "contenido de estilo de vida" en redes sociales.</p>
+    <p>Desde enero de 2026 la legislación cerró la última zona gris: antes la responsabilidad solo aplicaba al juego "en un lugar público"; ahora jugar en privado en casa por celular se equipara al juego público y se castiga igual, con hasta 10 años de prisión y multas de hasta 10.000 millones de rupias para los organizadores. Los reguladores indonesios también atacan agresivamente la infraestructura financiera: desde 2024 se han congelado más de 33.000 cuentas bancarias vinculadas al juego online, y en 2026 el servicio cripto de mercados de predicción Polymarket fue bloqueado bajo la misma lógica de "juego disfrazado".</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Tabla resumen por país</h2>
+    <div class="table-scroll"><table><thead><tr><th>País</th><th>Estatus</th><th>Regulador / base legal</th></tr></thead><tbody>
+      <tr><td><strong>Uzbekistán</strong></td><td><span class="badge mixed">Legalizado, sin licencias emitidas aún</span></td><td>NAPP (desde 2025)</td></tr>
+      <tr><td><strong>Tayikistán</strong></td><td><span class="badge banned">Prohibido</span></td><td>Código Penal (desde 2000)</td></tr>
+      <tr><td><strong>Kazajistán</strong></td><td><span class="badge mixed">Terrestre con licencia, casinos online prohibidos</span></td><td>Ley sobre el Negocio de Juego (2007)</td></tr>
+      <tr><td><strong>Kirguistán</strong></td><td><span class="badge mixed">Legalizado para extranjeros, online en desarrollo</span></td><td>Ley sobre la Actividad de Juego (2022)</td></tr>
+      <tr><td><strong>Turkmenistán</strong></td><td><span class="badge banned">Datos insuficientes</span></td><td>Régimen regulatorio cerrado</td></tr>
+      <tr><td><strong>Argentina</strong></td><td><span class="badge legal">Legal en 23 de 24 jurisdicciones</span></td><td>Reguladores provinciales</td></tr>
+      <tr><td><strong>Indonesia</strong></td><td><span class="badge banned">Prohibición total sin excepciones</span></td><td>Código Penal, ley de 1974, Ley ITE (2024–2026)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Por qué conviene verificar el estatus vigente por cuenta propia</h3>
+    <ul>
+      <li>La legislación cambia rápido: lo que estaba prohibido hace un año puede estar legalizado ahora, y viceversa</li>
+      <li>Que una industria esté legalizada en un país no vuelve automáticamente legal a un operador específico: lo que importa es la licencia local</li>
+      <li>La responsabilidad puede recaer tanto en los organizadores como, en algunas jurisdicciones, en ciertas categorías de usuarios</li>
+    </ul>
+    <div class="disclaimer"><strong>Importante.</strong> Este material tiene fines exclusivamente informativos y se basa en fuentes públicamente disponibles al momento de su redacción. No constituye asesoramiento legal ni refleja automáticamente los últimos cambios legislativos. Antes de tomar cualquier decisión, se recomienda consultar la normativa oficial y a abogados especializados en la jurisdicción correspondiente.</div>
+    <div class="sources"><h3>Fuentes</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — sobre las reformas que legalizan las apuestas deportivas y los casinos online en Uzbekistán</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — análisis legal sobre la regulación de la publicidad de juegos de azar en Uzbekistán</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — reseña de la historia de la prohibición de casinos en Tayikistán</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Asociación de Contribuyentes de Kazajistán</a> — estatus legal de los casinos electrónicos en Kazajistán</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — cómo funciona la legalización del negocio de juego en Kirguistán</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — panorama legal oficial de la regulación provincial</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — la base legal de la prohibición del juego online en Indonesia</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+  },
+  id:{
+    logoSub:"Artikel", navHome:"Beranda", navArticles:"Artikel",
+    eyebrow:"Regulasi · Tinjauan Legislasi",
+    heroTitle:'<span class="accent">Legalitas</span> Judi Online: Asia Tengah, Argentina, Indonesia',
+    meta:"Diperbarui 2026 · ~9 menit membaca",
+    body:`
+    <p>Status hukum judi online sangat berbeda dari satu negara ke negara lain — mulai dari legalisasi penuh dengan lisensi hingga tanggung jawab pidana karena mengorganisir atau mempromosikannya. Kami membahas gambaran terkini di tujuh negara: lima negara Asia Tengah, ditambah Argentina dan Indonesia, yang regulasinya disusun secara fundamental berbeda.</p>
+    <div class="callout"><strong>Catatan penting.</strong> Regulasi di bidang ini berubah dengan cepat. Materi ini mencerminkan gambaran pada saat publikasi dan tidak menggantikan pengecekan peraturan terkini maupun konsultasi dengan pengacara di yurisdiksi tertentu.</div>
+    <h2 style="font-size:22px;margin:30px 0 6px;">Infografis perbandingan per kawasan</h2>
+    <p style="font-size:13.5px;">Skala "ketatnya" regulasi secara kondisional — dari larangan total hingga pasar legal berlisensi penuh.</p>
+    <div class="status-chart">
+      <div class="status-row"><div class="status-label">Uzbekistan</div><div class="status-track"><div class="status-fill mixed" data-value="60" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Tajikistan</div><div class="status-track"><div class="status-fill banned" data-value="12" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kazakhstan</div><div class="status-track"><div class="status-fill mixed" data-value="45" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Kirgistan</div><div class="status-track"><div class="status-fill mixed" data-value="50" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Turkmenistan</div><div class="status-track"><div class="status-fill banned" data-value="8" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Argentina</div><div class="status-track"><div class="status-fill legal" data-value="80" style="width:0%"></div></div></div>
+      <div class="status-row"><div class="status-label">Indonesia</div><div class="status-track"><div class="status-fill banned" data-value="3" style="width:0%"></div></div></div>
+      <div class="status-legend"><span><i class="dot legal"></i> Legal dan berlisensi</span><span><i class="dot mixed"></i> Sebagian / terfragmentasi / dalam proses</span><span><i class="dot banned"></i> Dilarang oleh hukum</span></div>
+    </div>
+    <h3><span class="h3-icon">🏛</span>Uzbekistan: dilegalkan sejak 2025, namun belum ada lisensi yang diterbitkan</h3>
+    <p>Hingga 2024, perjudian dilarang di negara ini. Pada April 2024, sebuah keputusan ditandatangani untuk <strong>melegalkan aktivitas perjudian dan taruhan olahraga</strong>, dan sejak 1 Januari 2025 industri ini resmi keluar dari "zona abu-abu". Regulatornya adalah <strong>Badan Nasional Proyek Prospektif (NAPP)</strong>, yang bertanggung jawab atas perizinan dan pengawasan perjudian yang bertanggung jawab.</p>
+    <p>Catatan penting: legalisasi industri tidak berarti setiap operator individual otomatis legal. Hanya perusahaan berlisensi NAPP yang boleh beroperasi di negara ini; aktivitas tanpa lisensi, termasuk oleh operator asing, dikenai denda dan pemblokiran. Iklan perjudian diatur ketat oleh undang-undang periklanan tersendiri.</p>
+    <h3><span class="h3-icon">⚖</span>Tajikistan: kasino darat dilarang, online tidak diatur secara khusus</h3>
+    <p>Operasi kasino dan ruang permainan dihentikan lewat dekrit presiden sejak tahun 2000, terutama karena pelanggaran hukum pajak. Menjalankan bisnis judi ilegal tunduk pada KUHP negara dengan sanksi berat. Saat ini undang-undang belum memuat regulasi khusus untuk judi online sebagai segmen tersendiri.</p>
+    <h3><span class="h3-icon">⚖</span>Kazakhstan: kasino darat berlisensi, kasino internet dilarang langsung</h3>
+    <p>Industri ini diatur oleh Undang-Undang Bisnis Perjudian sejak 2007. Kasino darat dan ruang mesin slot diizinkan hanya dengan lisensi dan di zona perjudian yang ditentukan khusus. Sementara itu, <strong>operasi kasino elektronik (internet) dilarang secara langsung di seluruh wilayah negara</strong>, terlepas dari apakah operator memiliki lisensi asing. Situs taruhan berlisensi dengan domain .KZ yang terdaftar di otoritas pajak diizinkan secara terpisah — ini berbeda dengan kasino online.</p>
+    <h3><span class="h3-icon">🛂</span>Kirgistan: dilegalkan pada 2022, dengan pembatasan kewarganegaraan</h3>
+    <p>Setelah larangan selama satu dekade, bisnis perjudian dilegalkan pada 2022. Kasino hanya boleh beroperasi di zona yang ditentukan khusus dan hanya melayani warga negara asing — kewarganegaraan pengunjung diperiksa melalui sistem identifikasi digital negara. Segmen online masih dalam tahap pembentukan sebagai sistem aturan tersendiri.</p>
+    <h3><span class="h3-icon">🔒</span>Turkmenistan: rezim regulasi yang tertutup</h3>
+    <p>Informasi publik dan terverifikasi tentang regulasi judi online sangat sedikit — negara ini dikenal sebagai salah satu rezim regulasi paling tertutup di kawasan secara umum. Kurangnya data terbuka itu sendiri merupakan sinyal bahwa aktivitas apa pun di yurisdiksi ini memerlukan tinjauan hukum tersendiri.</p>
+    <h3><span class="h3-icon">🗺</span>Argentina: bukan satu undang-undang, melainkan 24 pasar berbeda</h3>
+    <p>Argentina bekerja secara fundamental berbeda: tidak ada undang-undang nasional tunggal tentang judi online — regulasi didelegasikan ke tingkat 23 provinsi dan kota otonom Buenos Aires. Prinsip dasarnya adalah <strong>perjudian dilarang kecuali diizinkan secara eksplisit</strong> oleh otoritas provinsi tertentu. Per 2026, 23 dari 24 yurisdiksi negara mengatur judi online dalam beberapa bentuk; pengecualiannya adalah provinsi Santiago del Estero, yang secara eksplisit melarang taruhan online.</p>
+    <p>Lisensi diterbitkan untuk jangka waktu yang berbeda-beda — misalnya, 5 tahun di Kota Buenos Aires dan hingga 15 tahun di provinsi Córdoba dan Buenos Aires. Hanya operator dengan lisensi provinsi tertentu yang dianggap legal; sebagai aturan umum, domain platform harus berakhiran sesuai yurisdiksi nasional — situs asing ".com" tanpa lisensi lokal tidak dianggap legal. Sejak 2025, rancangan undang-undang federal untuk membatasi iklan judi online secara nasional juga sedang dibahas.</p>
+    <h3><span class="h3-icon">🚫</span>Indonesia: rezim paling ketat di kawasan — larangan total tanpa pengecualian</h3>
+    <p>Indonesia — negara dengan populasi Muslim terbesar di dunia — melarang <strong>semua bentuk perjudian</strong>, darat maupun online, bagi warga negara maupun orang asing tanpa pengecualian apa pun. Dasar hukumnya adalah KUHP (Pasal 303 dan 303 bis) serta UU No. 7 Tahun 1974 tentang Penertiban Perjudian. Sejak 2024, UU ITE yang diperbarui berlaku dan secara khusus mengkriminalisasi penyebaran dan promosi judi online di ranah digital, termasuk iklan yang disamarkan sebagai "tips kesehatan" atau "konten gaya hidup" di media sosial.</p>
+    <p>Sejak Januari 2026, regulasi menutup zona abu-abu terakhir: sebelumnya tanggung jawab hukum hanya berlaku untuk perjudian "di tempat umum", kini bermain pribadi di rumah lewat ponsel disamakan dengan perjudian publik dan dikenai sanksi yang sama — hingga 10 tahun penjara dan denda hingga Rp10 miliar bagi penyelenggara. Regulator Indonesia juga aktif memblokir infrastruktur keuangan: sejak 2024 lebih dari 33.000 rekening bank terkait judi online telah dibekukan, dan pada 2026 layanan pasar prediksi kripto Polymarket bahkan diblokir dengan alasan "judi terselubung" yang sama.</p>
+    <h2 style="font-size:22px;margin:30px 0 14px;">Tabel ringkasan per negara</h2>
+    <div class="table-scroll"><table><thead><tr><th>Negara</th><th>Status</th><th>Regulator / dasar regulasi</th></tr></thead><tbody>
+      <tr><td><strong>Uzbekistan</strong></td><td><span class="badge mixed">Dilegalkan, belum ada lisensi diterbitkan</span></td><td>NAPP (sejak 2025)</td></tr>
+      <tr><td><strong>Tajikistan</strong></td><td><span class="badge banned">Dilarang</span></td><td>KUHP (sejak 2000)</td></tr>
+      <tr><td><strong>Kazakhstan</strong></td><td><span class="badge mixed">Darat berlisensi, kasino online dilarang</span></td><td>UU Bisnis Perjudian (2007)</td></tr>
+      <tr><td><strong>Kirgistan</strong></td><td><span class="badge mixed">Dilegalkan untuk WNA, online masih dikembangkan</span></td><td>UU Aktivitas Perjudian (2022)</td></tr>
+      <tr><td><strong>Turkmenistan</strong></td><td><span class="badge banned">Data tidak cukup</span></td><td>Rezim regulasi tertutup</td></tr>
+      <tr><td><strong>Argentina</strong></td><td><span class="badge legal">Legal di 23 dari 24 yurisdiksi</span></td><td>Regulator provinsi</td></tr>
+      <tr><td><strong>Indonesia</strong></td><td><span class="badge banned">Larangan total tanpa pengecualian</span></td><td>KUHP, UU 1974, UU ITE (2024–2026)</td></tr>
+    </tbody></table></div>
+    <h3><span class="h3-icon">❗</span>Mengapa penting memeriksa status terkini secara mandiri</h3>
+    <ul>
+      <li>Regulasi berubah cepat — apa yang dilarang setahun lalu bisa jadi sudah legal sekarang, begitu pula sebaliknya</li>
+      <li>Legalisasi industri di suatu negara tidak otomatis membuat operator tertentu legal — yang penting adalah lisensi lokal</li>
+      <li>Tanggung jawab hukum bisa berlaku baik bagi penyelenggara maupun, di beberapa yurisdiksi, kategori pengguna tertentu</li>
+    </ul>
+    <div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat informasional semata dan didasarkan pada sumber yang tersedia untuk umum pada saat penulisan. Ini bukan nasihat hukum dan tidak secara otomatis mencerminkan perubahan legislasi terbaru. Sebelum mengambil keputusan apa pun, disarankan untuk merujuk pada peraturan resmi dan berkonsultasi dengan pengacara di yurisdiksi Anda.</div>
+    <div class="sources"><h3>Sumber</h3><ul>
+      <li><a href="https://podrobno.uz/cat/obchestvo/zakon-o-legalizatsii-azartnykh-igr-i-bukmekerskoy-deyatelnosti-proshel-rassmotrenie-deputatami/" target="_blank" rel="noopener">Podrobno.uz</a> — tentang amendemen yang melegalkan taruhan olahraga dan kasino online di Uzbekistan</li>
+      <li><a href="https://vitvet.com/articles/analitika_po_azartnym_igram_v_uzbekistane/" target="_blank" rel="noopener">VitVet.com</a> — analisis hukum tentang regulasi iklan perjudian di Uzbekistan</li>
+      <li><a href="https://by.tribuna.com/casino/blogs/3277701-gde-v-tadzhikistane-razresheno-kazino/" target="_blank" rel="noopener">Tribuna.com</a> — tinjauan sejarah larangan kasino di Tajikistan</li>
+      <li><a href="https://annk.kz/post/zakonnost-elektronnyx-kazino-igrovyx-avtomatov-bukmekerskix-kontor-i-totalizatorov" target="_blank" rel="noopener">Asosiasi Wajib Pajak Kazakhstan</a> — status hukum kasino elektronik di Kazakhstan</li>
+      <li><a href="https://sbceurasia.com/obshhie/2025/02/17/legalizovano-no-ne-dlja-vseh-kak-rabotaet-igornyj-biznes-v-kyrgyzstane/" target="_blank" rel="noopener">SBC Eurasia</a> — bagaimana legalisasi bisnis perjudian bekerja di Kirgistan</li>
+      <li><a href="https://iclg.com/practice-areas/gambling-laws-and-regulations/argentina/" target="_blank" rel="noopener">ICLG Gambling Laws and Regulations — Argentina</a> — tinjauan hukum resmi tentang regulasi provinsi</li>
+      <li><a href="https://gamblinglawasia.com/guides/is-online-gambling-legal-indonesia/" target="_blank" rel="noopener">Gambling Law Asia</a> — dasar hukum larangan judi online di Indonesia</li>
+    </ul></div>`,
+    footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+  }
+};
+
+function applyLanguage(lang){
+  const t = translations[lang];
+  if(!t) return;
+  document.documentElement.setAttribute('lang', lang);
+  document.getElementById('i18nLogoSub').textContent = t.logoSub;
+  document.getElementById('i18nNavHome').textContent = t.navHome;
+  document.getElementById('i18nNavArticles').textContent = t.navArticles;
+  document.getElementById('i18nEyebrow').textContent = t.eyebrow;
+  document.getElementById('i18nHeroTitle').innerHTML = t.heroTitle;
+  document.getElementById('i18nMeta').textContent = t.meta;
+  document.getElementById('i18nFooterText').textContent = t.footerText;
+  document.getElementById('articleBody').innerHTML = t.body;
+  initStatusChart();
+}
+
+function initStatusChart(){
+  const chart = document.querySelector('.status-chart');
+  if(!chart) return;
+
+  chart.querySelectorAll('.status-row').forEach(row=>{
+    const fill = row.querySelector('.status-fill');
+    const label = row.querySelector('.status-label');
+    if(!fill) return;
+    const target = fill.getAttribute('data-value');
+
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{ fill.style.width = target + '%'; });
+    });
+
+    const statusClass = fill.classList.contains('legal') ? 'legal' : fill.classList.contains('mixed') ? 'mixed' : 'banned';
+    const dotColor = statusClass === 'legal' ? 'var(--green)' : statusClass === 'mixed' ? 'var(--gold)' : 'var(--red)';
+    const legendSpan = chart.querySelector('.status-legend .dot.' + statusClass);
+    const statusWord = legendSpan ? legendSpan.parentElement.textContent.trim() : statusClass;
+
+    row.addEventListener('mouseenter', (e)=>{
+      showChartTooltip(chart, e, `<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${dotColor};margin-right:6px;"></span><strong>${label ? label.textContent : ''}</strong><br>${statusWord} · ${target}/100`);
+    });
+    row.addEventListener('mousemove', (e)=> moveChartTooltip(chart, e));
+    row.addEventListener('mouseleave', ()=> hideChartTooltip(chart));
+  });
+}
+
+function ensureChartTooltip(container){
+  let tip = container.querySelector('.chart-tooltip');
+  if(!tip){
+    tip = document.createElement('div');
+    tip.className = 'chart-tooltip';
+    container.appendChild(tip);
+  }
+  return tip;
+}
+function showChartTooltip(container, evt, html){
+  const tip = ensureChartTooltip(container);
+  tip.innerHTML = html;
+  tip.style.opacity = '1';
+  moveChartTooltip(container, evt);
+}
+function moveChartTooltip(container, evt){
+  const tip = container.querySelector('.chart-tooltip');
+  if(!tip) return;
+  const rect = container.getBoundingClientRect();
+  let x = evt.clientX - rect.left + 14;
+  let y = evt.clientY - rect.top - 10;
+  const maxX = rect.width - 160;
+  if(x > maxX) x = maxX;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+}
+function hideChartTooltip(container){
+  const tip = container.querySelector('.chart-tooltip');
+  if(tip) tip.style.opacity = '0';
+}
+
+document.querySelectorAll('.lang-switch button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    applyLanguage(btn.dataset.lang);
+  });
+});
+
+applyLanguage('es');
+
+</script>
+</body>
+</html>
