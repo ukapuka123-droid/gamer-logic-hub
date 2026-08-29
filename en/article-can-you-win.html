@@ -182,6 +182,18 @@ footer .logo{justify-content:center;margin-bottom:14px;}
 .btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
 .article-btn-slot{margin:30px auto;text-align:center;}
 .article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+.next-article-slot{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+.next-article-slot .btn-ghost{min-width:220px;}
+.next-article-slot .next-article-link{background:var(--green);border-color:var(--green);color:var(--bg-deep);box-shadow:0 10px 28px rgba(76,201,142,0.28);}
+.next-article-slot .next-article-link:hover{background:#5dd9a0;border-color:#5dd9a0;transform:translateY(-2px);}
+.popular-articles{margin:10px 0 28px;padding:20px;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);}
+.popular-articles h2{margin:0 0 14px;font-size:19px;color:var(--gold);}
+.popular-list{display:grid;grid-template-columns:1fr;gap:8px;}
+.popular-link{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg-panel-2);border:1px solid transparent;border-radius:10px;color:var(--text-primary);font-size:13.5px;font-weight:600;line-height:1.4;transition:transform .18s ease,border-color .18s ease,background .18s ease;}
+.popular-link:hover{transform:translateX(3px);border-color:rgba(76,201,142,.5);background:rgba(76,201,142,.08);}
+.popular-link .popular-icon{color:var(--green);font-size:12px;flex:0 0 auto;}
+.popular-link .popular-arrow{margin-left:auto;color:var(--gold);font-size:16px;flex:0 0 auto;}
+@media(min-width:720px){.popular-list{grid-template-columns:1fr 1fr;}}
 </style>
 <link href="https://gamer-logic-hub.com/en/article-can-you-win.html" rel="canonical"/>
 <link href="https://gamer-logic-hub.com/article-can-you-win.html" hreflang="ru" rel="alternate"/>
@@ -260,6 +272,16 @@ footer .logo{justify-content:center;margin-bottom:14px;}
 <li>Remember: an RNG has no memory; "chasing" a win after losses is a cognitive trap, not a mathematical pattern</li>
 <li>If play stops being entertainment and turns into a way to "win back" losses, that's a signal to pause</li>
 </ul>
+<div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Read the next article</a>
+<a class="btn-ghost all-articles-link" href="articles.html">All articles</a>
+</div>
+<section class="popular-articles" aria-label="Popular articles"><h2>Popular articles</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Why High Volatility Does Not Guarantee a Win</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Independent Lab Certification of Games: Why It Matters</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Online Gambling Legality: Central Asia, Argentina, Indonesia</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — How Multipliers Work</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
 <div class="disclaimer"><strong>Important.</strong> This material is purely educational and explains general mathematical principles of games with random outcomes. It is not a recommendation to play with real money and guarantees no result. If a sense of control over play is slipping, it's worth reaching out to a specialist or a problem-gambling helpline in your country.</div>
 <div class="sources"><h3>Sources &amp; further reading</h3><ul>
 <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" rel="noopener" target="_blank">Wikipedia — Gambling mathematics</a> — general mathematical theory of games of chance</li>
@@ -268,13 +290,13 @@ footer .logo{justify-content:center;margin-bottom:14px;}
 <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" rel="noopener" target="_blank">Wikipedia — Law of large numbers</a> — why the result converges to the theoretical average only over a long run</li>
 </ul></div></article>
 <div class="article-btn-slot">
-<a class="btn-gold" href="https://stake.us/?c=XafmrJl6" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>></a>
+<a class="btn-gold" href="https://stake.us/?c=XafmrJl6" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
 </div>
 </main>
 <footer>
 <div class="wrap">
-<div class="logo"><div class="logo-mark"><span>Σ</span></div><div>Gamer Math Portal</div></div>
-<p id="i18nFooterText">© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics.</p>
+<div class="logo"><div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div><div>Gamer Logic Hub</div></div>
+<p id="i18nFooterText">© 2026 Gamer Logic Hub. Educational content about the mathematics of game mechanics.</p>
 </div>
 </footer>
 <script>
@@ -470,7 +492,17 @@ const translations = {
       <li>Если игра перестаёт быть развлечением и превращается в способ «отыграться» — это сигнал сделать паузу</li>
     </ul>
 
-    <div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно образовательный характер и объясняет общие математические принципы игр со случайным исходом. Он не является рекомендацией к игре на реальные деньги и не гарантирует никакого результата. Если ощущение контроля над игрой теряется, стоит обратиться за поддержкой к специалисту или на горячую линию помощи людям с игровой зависимостью в своей стране.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Читать следующую статью</a>
+<a class="btn-ghost all-articles-link" href="articles.html">Все статьи</a>
+</div>
+<section class="popular-articles" aria-label="Популярные статьи"><h2>Популярные статьи</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Почему высокая волатильность не гарантирует выигрыш</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Сертификация игр независимыми лабораториями: зачем она нужна</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Легальность онлайн-гэмблинга: Центральная Азия, Аргентина, Индонезия</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — как работают множители</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Важно.</strong> Материал носит исключительно образовательный характер и объясняет общие математические принципы игр со случайным исходом. Он не является рекомендацией к игре на реальные деньги и не гарантирует никакого результата. Если ощущение контроля над игрой теряется, стоит обратиться за поддержкой к специалисту или на горячую линию помощи людям с игровой зависимостью в своей стране.</div>
 
     <div class="sources"><h3>Источники и дополнительное чтение</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — общая математическая теория игр со случайным исходом</li>
@@ -478,7 +510,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — когнитивное искажение, лежащее в основе веры в «системы»</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — почему результат сходится к теоретическому среднему только на длинной дистанции</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. Образовательный контент о математике игровых механик."
+    footerText:"© 2026 Gamer Logic Hub. Образовательный контент о математике игровых механик."
   },
   en:{
     logoSub:"Article", navHome:"Home", navArticles:"Articles",
@@ -516,7 +548,17 @@ const translations = {
       <li>If play stops being entertainment and turns into a way to "win back" losses, that's a signal to pause</li>
     </ul>
 
-    <div class="disclaimer"><strong>Important.</strong> This material is purely educational and explains general mathematical principles of games with random outcomes. It is not a recommendation to play with real money and guarantees no result. If a sense of control over play is slipping, it's worth reaching out to a specialist or a problem-gambling helpline in your country.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Read the next article</a>
+<a class="btn-ghost all-articles-link" href="articles.html">All articles</a>
+</div>
+<section class="popular-articles" aria-label="Popular articles"><h2>Popular articles</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Why High Volatility Does Not Guarantee a Win</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Independent Lab Certification of Games: Why It Matters</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Online Gambling Legality: Central Asia, Argentina, Indonesia</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — How Multipliers Work</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Important.</strong> This material is purely educational and explains general mathematical principles of games with random outcomes. It is not a recommendation to play with real money and guarantees no result. If a sense of control over play is slipping, it's worth reaching out to a specialist or a problem-gambling helpline in your country.</div>
 
     <div class="sources"><h3>Sources & further reading</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — general mathematical theory of games of chance</li>
@@ -524,7 +566,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — the cognitive bias underlying belief in "systems"</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — why the result converges to the theoretical average only over a long run</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. Educational content about the mathematics of game mechanics."
+    footerText:"© 2026 Gamer Logic Hub. Educational content about the mathematics of game mechanics."
   },
   uz:{
     logoSub:"Maqola", navHome:"Bosh sahifa", navArticles:"Maqolalar",
@@ -562,7 +604,17 @@ const translations = {
       <li>Agar o'yin ko'ngilochar bo'lishdan to'xtab, yo'qotilganni «qaytarib olish» usuliga aylansa — bu pauza qilish signalidir</li>
     </ul>
 
-    <div class="disclaimer"><strong>Muhim.</strong> Material faqat ta'lim maqsadida bo'lib, tasodifiy natijali o'yinlarning umumiy matematik tamoyillarini tushuntiradi. U real pulga o'ynash bo'yicha tavsiya emas va hech qanday natijani kafolatlamaydi. Agar o'yin ustidan nazorat hissi yo'qolayotgan bo'lsa, mutaxassisga yoki o'z mamlakatingizdagi o'yin qaramligiga yordam ko'rsatuvchi ishonch telefoniga murojaat qilishga arziydi.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Keyingi maqolani o‘qing</a>
+<a class="btn-ghost all-articles-link" href="articles.html">Barcha maqolalar</a>
+</div>
+<section class="popular-articles" aria-label="Ommabop maqolalar"><h2>Ommabop maqolalar</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Nega yuqori volatillik yutuqni kafolatlamaydi</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Onlayn-gemblingning qonuniyligi: Markaziy Osiyo, Argentina, Indoneziya</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — ko‘paytirgichlar qanday ishlaydi</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Muhim.</strong> Material faqat ta'lim maqsadida bo'lib, tasodifiy natijali o'yinlarning umumiy matematik tamoyillarini tushuntiradi. U real pulga o'ynash bo'yicha tavsiya emas va hech qanday natijani kafolatlamaydi. Agar o'yin ustidan nazorat hissi yo'qolayotgan bo'lsa, mutaxassisga yoki o'z mamlakatingizdagi o'yin qaramligiga yordam ko'rsatuvchi ishonch telefoniga murojaat qilishga arziydi.</div>
 
     <div class="sources"><h3>Manbalar va qo'shimcha o'qish</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — tasodifiy natijali o'yinlarning umumiy matematik nazariyasi</li>
@@ -570,7 +622,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — «tizimlar»ga ishonchning asosida yotgan kognitiv xato</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — nega natija faqat uzoq masofada nazariy o'rtachaga yaqinlashadi</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
+    footerText:"© 2026 Gamer Logic Hub. O'yin mexanikalari matematikasi haqida ta'lim kontenti."
   },
   tg:{
     logoSub:"Мақола", navHome:"Сафҳаи асосӣ", navArticles:"Мақолаҳо",
@@ -608,7 +660,17 @@ const translations = {
       <li>Агар бозӣ фароғат буданро бас карда, ба усули «баргардонидани» гумшуда табдил ёбад — ин сигнали таваққуф аст</li>
     </ul>
 
-    <div class="disclaimer"><strong>Муҳим.</strong> Мавод хусусияти танҳо таълимӣ дорад ва принсипҳои умумии математикии бозиҳои бо натиҷаи тасодуфиро шарҳ медиҳад. Он тавсия ба бозӣ бо пули воқеӣ нест ва ҳеҷ натиҷаро кафолат намедиҳад. Агар ҳисси назорат бар бозӣ гум шавад, ба мутахассис ё ба хатти кӯмаки вобастагии қиморбозӣ дар кишвари худ муроҷиат кардан арзанда аст.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Мақолаи навбатиро хонед</a>
+<a class="btn-ghost all-articles-link" href="articles.html">Ҳамаи мақолаҳо</a>
+</div>
+<section class="popular-articles" aria-label="Мақолаҳои маъмул"><h2>Мақолаҳои маъмул</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Чаро волатилнокии баланд бурдро кафолат намедиҳад</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Сертификатсияи бозиҳо аз ҷониби лабораторияҳои мустақил: чаро он лозим аст</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Қонунияти гэмблинги онлайн: Осиёи Марказӣ, Аргентина, Индонезия</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — зарбкунандаҳо чӣ гуна кор мекунанд</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Муҳим.</strong> Мавод хусусияти танҳо таълимӣ дорад ва принсипҳои умумии математикии бозиҳои бо натиҷаи тасодуфиро шарҳ медиҳад. Он тавсия ба бозӣ бо пули воқеӣ нест ва ҳеҷ натиҷаро кафолат намедиҳад. Агар ҳисси назорат бар бозӣ гум шавад, ба мутахассис ё ба хатти кӯмаки вобастагии қиморбозӣ дар кишвари худ муроҷиат кардан арзанда аст.</div>
 
     <div class="sources"><h3>Манбаъҳо ва хондани иловагӣ</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — назарияи умумии математикии бозиҳои бо натиҷаи тасодуфӣ</li>
@@ -616,7 +678,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — хатои маърифатие, ки дар асоси эътиқод ба «системаҳо» қарор дорад</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — чаро натиҷа танҳо дар масофаи дароз ба миёнаи назариявӣ наздик мешавад</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
+    footerText:"© 2026 Gamer Logic Hub. Мундариҷаи таълимӣ дар бораи математикаи механизмҳои бозӣ."
   },
   es:{
     logoSub:"Artículo", navHome:"Inicio", navArticles:"Artículos",
@@ -654,7 +716,17 @@ const translations = {
       <li>Si jugar deja de ser entretenimiento y se convierte en una forma de "recuperar" lo perdido, es señal de hacer una pausa</li>
     </ul>
 
-    <div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y explica principios matemáticos generales de los juegos con resultado aleatorio. No es una recomendación para jugar con dinero real y no garantiza ningún resultado. Si la sensación de control sobre el juego se está perdiendo, vale la pena contactar a un especialista o a una línea de ayuda para el juego problemático en tu país.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Leer el siguiente artículo</a>
+<a class="btn-ghost all-articles-link" href="articles.html">Todos los artículos</a>
+</div>
+<section class="popular-articles" aria-label="Artículos populares"><h2>Artículos populares</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Por qué la alta volatilidad no garantiza una victoria</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Certificación de juegos por laboratorios independientes: por qué importa</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Legalidad del juego online: Asia Central, Argentina, Indonesia</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — cómo funcionan los multiplicadores</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Importante.</strong> Este material es puramente educativo y explica principios matemáticos generales de los juegos con resultado aleatorio. No es una recomendación para jugar con dinero real y no garantiza ningún resultado. Si la sensación de control sobre el juego se está perdiendo, vale la pena contactar a un especialista o a una línea de ayuda para el juego problemático en tu país.</div>
 
     <div class="sources"><h3>Fuentes y lectura adicional</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teoría matemática general de los juegos de azar</li>
@@ -662,7 +734,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — el sesgo cognitivo detrás de la creencia en los "sistemas"</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — por qué el resultado converge al promedio teórico solo en el largo plazo</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. Contenido educativo sobre la matemática de las mecánicas de juego."
+    footerText:"© 2026 Gamer Logic Hub. Contenido educativo sobre la matemática de las mecánicas de juego."
   },
   id:{
     logoSub:"Artikel", navHome:"Beranda", navArticles:"Artikel",
@@ -700,7 +772,17 @@ const translations = {
       <li>Jika bermain berhenti menjadi hiburan dan berubah menjadi cara untuk "mengembalikan" kerugian, itu adalah sinyal untuk berhenti sejenak</li>
     </ul>
 
-    <div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat murni edukasi dan menjelaskan prinsip matematis umum dari game dengan hasil acak. Ini bukan rekomendasi untuk bermain dengan uang sungguhan dan tidak menjamin hasil apa pun. Jika rasa kendali atas permainan mulai hilang, ada baiknya menghubungi spesialis atau hotline bantuan masalah judi di negara Anda.</div>
+    <div class="article-btn-slot next-article-slot">
+<a class="next-article-link btn-ghost" href="article-gates-of-olympus-multipliers.html">Baca artikel berikutnya</a>
+<a class="btn-ghost all-articles-link" href="articles.html">Semua artikel</a>
+</div>
+<section class="popular-articles" aria-label="Artikel populer"><h2>Artikel populer</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Mengapa Volatilitas Tinggi Tidak Menjamin Kemenangan</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>Sertifikasi Game oleh Laboratorium Independen: Mengapa Ini Penting</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Legalitas Judi Online: Asia Tengah, Argentina, Indonesia</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-gates-of-olympus-multipliers.html"><span class="popular-icon">◆</span><span>Gates of Olympus — Cara Kerja Pengali</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Penting.</strong> Materi ini bersifat murni edukasi dan menjelaskan prinsip matematis umum dari game dengan hasil acak. Ini bukan rekomendasi untuk bermain dengan uang sungguhan dan tidak menjamin hasil apa pun. Jika rasa kendali atas permainan mulai hilang, ada baiknya menghubungi spesialis atau hotline bantuan masalah judi di negara Anda.</div>
 
     <div class="sources"><h3>Sumber & bacaan lanjutan</h3><ul>
       <li><a href="https://en.wikipedia.org/wiki/Gambling_mathematics" target="_blank" rel="noopener">Wikipedia — Gambling mathematics</a> — teori matematis umum permainan berbasis peluang</li>
@@ -708,7 +790,7 @@ const translations = {
       <li><a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener">Wikipedia — Gambler's fallacy</a> — bias kognitif di balik kepercayaan pada "sistem"</li>
       <li><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers" target="_blank" rel="noopener">Wikipedia — Law of large numbers</a> — mengapa hasil hanya konvergen ke rata-rata teoretis dalam jangka panjang</li>
     </ul></div>`,
-    footerText:"© 2026 Gamer Math Portal. Konten edukasi tentang matematika mekanisme game."
+    footerText:"© 2026 Gamer Logic Hub. Konten edukasi tentang matematika mekanisme game."
   }
 };
 
