@@ -53,3 +53,95 @@
   addBlock();
   new MutationObserver(addBlock).observe(document.body, { childList: true, subtree: true });
 })();
+
+(() => {
+  const API_URL = 'https://gamer-logic-stats.ukapuka123.workers.dev';
+  const articleMatch = location.pathname.match(/\/article-([a-z0-9-]+)\.html$/i);
+  if (!articleMatch) return;
+
+  const articleId = articleMatch[1].toLowerCase();
+  const language = (document.documentElement.lang || 'ru').split('-')[0];
+  const copy = {
+    ru: { views: 'просмотров', like: 'Нравится', unlike: 'Убрать лайк', error: 'Не удалось сохранить лайк' },
+    en: { views: 'views', like: 'Like', unlike: 'Unlike', error: 'Could not save your like' },
+    uz: { views: 'ko‘rish', like: 'Yoqdi', unlike: 'Laykni olib tashlash', error: 'Laykni saqlab bo‘lmadi' },
+    tg: { views: 'тамошо', like: 'Маъқул', unlike: 'Лайкро гирифтан', error: 'Лайк сабт нашуд' },
+    es: { views: 'vistas', like: 'Me gusta', unlike: 'Quitar Me gusta', error: 'No se pudo guardar tu Me gusta' },
+    id: { views: 'tayangan', like: 'Suka', unlike: 'Batal suka', error: 'Suka tidak dapat disimpan' }
+  };
+  const t = copy[language] || copy.ru;
+
+  const style = document.createElement('style');
+  style.textContent = '.article-reactions{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0 0;font-size:13px}.article-view-count,.article-like-button{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:8px 13px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(12,7,25,.62);color:var(--muted,#c7bbd9);backdrop-filter:blur(8px)}.article-view-count strong,.article-like-button strong{color:var(--text,#fff);font-variant-numeric:tabular-nums}.article-reaction-icon{width:18px;height:18px;flex:0 0 18px}.article-like-button{cursor:pointer;font:inherit;transition:transform .16s ease,border-color .16s ease,background .16s ease}.article-like-button:hover{transform:translateY(-1px);border-color:rgba(255,87,145,.7)}.article-like-button[aria-pressed="true"]{border-color:rgba(255,87,145,.72);background:rgba(255,62,126,.16);color:#ff8db6}.article-like-button[aria-pressed="true"] .article-reaction-icon{fill:#ff5b95}.article-like-button:disabled{cursor:wait;opacity:.7}.article-reactions-error{width:100%;margin:0;color:#ff9eae;font-size:12px;text-align:center}@media(max-width:520px){.article-reactions{gap:8px}.article-view-count,.article-like-button{min-height:36px;padding:7px 11px}}';
+  document.head.append(style);
+
+  const widget = document.createElement('div');
+  widget.className = 'article-reactions';
+  widget.innerHTML = `<span class="article-view-count"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></svg><strong data-article-views>—</strong><span>${t.views}</span></span><button class="article-like-button" type="button" aria-pressed="false" aria-label="${t.like}"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 4.7a5.4 5.4 0 0 0-7.7 0L12 5.8l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 21l8.8-8.6a5.4 5.4 0 0 0 0-7.7Z"/></svg><span data-like-label>${t.like}</span><strong data-article-likes>—</strong></button>`;
+  const hero = document.querySelector('.article-hero');
+  if (!hero) return;
+  hero.append(widget);
+
+  const viewsNode = widget.querySelector('[data-article-views]');
+  const likesNode = widget.querySelector('[data-article-likes]');
+  const likeButton = widget.querySelector('.article-like-button');
+  const likeLabel = widget.querySelector('[data-like-label]');
+
+  const visitorId = (() => {
+    const key = 'glh-stats-visitor';
+    try {
+      let value = localStorage.getItem(key);
+      if (!value) {
+        value = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        localStorage.setItem(key, value);
+      }
+      return value;
+    } catch (_) {
+      return crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    }
+  })();
+
+  const render = (stats) => {
+    viewsNode.textContent = new Intl.NumberFormat(language).format(Number(stats.views) || 0);
+    likesNode.textContent = new Intl.NumberFormat(language).format(Number(stats.likes) || 0);
+    const liked = Boolean(stats.liked);
+    likeButton.setAttribute('aria-pressed', String(liked));
+    likeButton.setAttribute('aria-label', liked ? t.unlike : t.like);
+    likeLabel.textContent = liked ? t.unlike : t.like;
+  };
+
+  const request = async (path) => {
+    const response = await fetch(`${API_URL}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ article: articleId, visitor: visitorId })
+    });
+    if (!response.ok) throw new Error(`Stats API ${response.status}`);
+    return response.json();
+  };
+
+  const loadStats = () => request('/view').then(render).catch(() => {
+    viewsNode.textContent = '—';
+    likesNode.textContent = '—';
+  });
+
+  likeButton.addEventListener('click', async () => {
+    likeButton.disabled = true;
+    widget.querySelector('.article-reactions-error')?.remove();
+    try {
+      render(await request('/like'));
+    } catch (_) {
+      const message = document.createElement('p');
+      message.className = 'article-reactions-error';
+      message.textContent = t.error;
+      widget.append(message);
+    } finally {
+      likeButton.disabled = false;
+    }
+  });
+
+  if (document.visibilityState === 'visible') loadStats();
+  else document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') loadStats();
+  }, { once: true });
+})();

@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gamer-logic-stats",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-01",
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true
+    }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "gamer-logic-stats-db",
+      "database_id": "d4c162a4-7aae-4054-a058-a36f3bf5315e"
+    }
+  ]
+}
