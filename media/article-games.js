@@ -77,7 +77,7 @@
 
   const widget = document.createElement('div');
   widget.className = 'article-reactions';
-  widget.innerHTML = `<span class="article-view-count"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></svg><strong data-article-views>—</strong><span>${t.views}</span></span><button class="article-like-button" type="button" aria-pressed="false" aria-label="${t.like}"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 4.7a5.4 5.4 0 0 0-7.7 0L12 5.8l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 21l8.8-8.6a5.4 5.4 0 0 0 0-7.7Z"/></svg><span data-like-label>${t.like}</span><strong data-article-likes>—</strong></button>`;
+  widget.innerHTML = `<span class="article-view-count"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.6"/></svg><strong data-article-views>0</strong><span>${t.views}</span></span><button class="article-like-button" type="button" aria-pressed="false" aria-label="${t.like}"><svg class="article-reaction-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.8 4.7a5.4 5.4 0 0 0-7.7 0L12 5.8l-1.1-1.1a5.4 5.4 0 0 0-7.7 7.7L12 21l8.8-8.6a5.4 5.4 0 0 0 0-7.7Z"/></svg><span data-like-label>${t.like}</span><strong data-article-likes>0</strong></button>`;
   const hero = document.querySelector('.article-hero');
   if (!hero) return;
   hero.append(widget);
@@ -121,8 +121,8 @@
   };
 
   const loadStats = () => request('/view').then(render).catch(() => {
-    viewsNode.textContent = '—';
-    likesNode.textContent = '—';
+    viewsNode.textContent = '0';
+    likesNode.textContent = '0';
   });
 
   likeButton.addEventListener('click', async () => {

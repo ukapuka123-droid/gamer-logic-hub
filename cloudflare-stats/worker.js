@@ -1,7 +1,9 @@
 const ALLOWED_ORIGINS = new Set([
   'https://gamer-logic-hub.com',
   'https://www.gamer-logic-hub.com',
-  'https://ukapuka123-droid.github.io'
+  'https://ukapuka123-droid.github.io',
+  'http://127.0.0.1:8000',
+  'http://localhost:8000'
 ]);
 const BOT_UA = /bot|crawler|spider|slurp|bingpreview|facebookexternalhit|twitterbot|whatsapp|telegrambot|discordbot|headless/i;
 
@@ -85,6 +87,29 @@ export default {
 
     if (request.method === 'GET' && url.pathname === '/health') {
       return json(request, { ok: true, service: 'gamer-logic-stats' });
+    }
+
+    if (request.method === 'GET' && url.pathname === '/stats') {
+      const articles = (url.searchParams.get('articles') || '')
+        .split(',')
+        .map((article) => article.trim().toLowerCase())
+        .filter(validArticle)
+        .slice(0, 50);
+      if (!articles.length) return json(request, { error: 'No valid articles' }, 400);
+
+      const placeholders = articles.map(() => '?').join(',');
+      const result = await env.DB.prepare(
+        `SELECT article_id, views, likes FROM article_stats WHERE article_id IN (${placeholders})`
+      ).bind(...articles).all();
+      const saved = new Map((result.results || []).map((row) => [row.article_id, row]));
+      const stats = Object.fromEntries(articles.map((article) => {
+        const row = saved.get(article);
+        return [article, {
+          views: Number(row?.views || 0),
+          likes: Number(row?.likes || 0)
+        }];
+      }));
+      return json(request, { stats });
     }
 
     if (request.method !== 'POST' || !['/view', '/like'].includes(url.pathname)) {
