@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="uz">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>Zeus vs Hades — Pragmatic Play sloti sharhi — Gamer Logic Hub</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta content="Zeus vs Hades sharhi: Olympus va Hades volatiliteti, RTP, kengayuvchi Wild koʼpaytirgichlari va bepul spinlar." name="description"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg-deep:#0d081b;
+  --bg-panel:#161029;
+  --bg-panel-2:#1c1436;
+  --gold:#ffd700;
+  --gold-dim:#c9a227;
+  --purple-neon:#a855f7;
+  --purple-glow:#7c3aed;
+  --text-primary:#f5f0ff;
+  --text-muted:#a89cc8;
+  --line:rgba(255,215,0,0.18);
+  --radius:14px;
+  --green:#4cc98e;
+  --amber:#ffd700;
+  --red:#ef6a6a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,58,237,0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(255,215,0,0.06), transparent),
+    var(--bg-deep);
+  color:var(--text-primary);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  width:100%;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px;}
+.wrap-narrow{width:100%;max-width:760px;margin:0 auto;padding:0 20px;}
+.meander{
+  height:14px;width:100%;
+  background-image:
+    linear-gradient(var(--gold-dim) 2px, transparent 2px),
+    linear-gradient(90deg, var(--gold-dim) 2px, transparent 2px);
+  background-size:14px 14px;opacity:0.55;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(13,8,27,0.85);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:12px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:50%;
+  background:conic-gradient(from 180deg, var(--gold), var(--purple-neon), var(--gold));
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(255,215,0,0.35);
+}
+.logo-mark span{width:24px;height:24px;border-radius:50%;background:var(--bg-deep);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold);}
+.logo small{display:block;font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
+.header-controls{display:flex;align-items:center;gap:10px;}
+
+  nav.main-nav{
+    display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+    border-radius:999px;padding:4px;
+  }
+  nav.main-nav a{
+    font-size:12.5px;font-weight:700;letter-spacing:0.02em;color:var(--text-muted);
+    padding:8px 16px;border-radius:999px;transition:all .2s ease;white-space:nowrap;
+  }
+  nav.main-nav a:hover{color:var(--text-primary);background:rgba(255,215,0,0.08);}
+  nav.main-nav a.active{
+    background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+    color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+  }
+
+.lang-switch{
+  display:flex;gap:4px;background:var(--bg-panel);border:1px solid var(--line);
+  border-radius:999px;padding:4px;max-width:52vw;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.lang-switch::-webkit-scrollbar{display:none;}
+.lang-switch button{
+  border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;
+  letter-spacing:0.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;
+  white-space:nowrap;flex:0 0 auto;font-family:inherit;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));
+  color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);
+}
+
+.btn-gold{
+  display:inline-block;background:var(--gold);color:var(--bg-deep);font-weight:700;font-size:13px;
+  padding:10px 18px;border-radius:10px;box-shadow:0 0 18px rgba(255,215,0,0.35);transition:transform .2s ease;
+}
+.btn-gold:hover{transform:translateY(-1px);}
+.btn-outline{
+  display:inline-block;border:1px solid var(--line);color:var(--text-primary);font-weight:600;font-size:13px;
+  padding:9px 17px;border-radius:10px;
+}
+
+/* article hero */
+.article-hero{padding:44px 0 10px;text-align:center;}
+.eyebrow{
+  display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);
+  border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+}
+.article-hero h1{font-size:clamp(24px,6vw,38px);line-height:1.2;font-weight:700;margin-bottom:14px;}
+.article-hero h1 .accent{
+  background:linear-gradient(135deg, var(--gold), #fff2a8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.article-hero .meta{color:var(--text-muted);font-size:13px;}
+
+section.block{padding:40px 0;}
+.section-head{margin-bottom:22px;}
+.section-head h2{font-size:clamp(20px,4.5vw,26px);margin-bottom:8px;}
+article p{color:var(--text-muted);font-size:15px;margin-bottom:14px;}
+article h3{font-size:18px;color:var(--gold);margin:26px 0 10px;display:flex;align-items:center;gap:10px;}
+article h3 .h3-icon{
+  width:30px;height:30px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+article strong{color:var(--text-primary);}
+article ul{padding-left:20px;margin-bottom:14px;}
+article li{color:var(--text-muted);font-size:14.5px;margin-bottom:6px;}
+
+.lede{
+  background:var(--bg-panel-2);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:10px;padding:18px 20px;font-size:14px;color:var(--text-muted);margin-bottom:24px;
+}
+.lede strong{color:var(--text-primary);}
+
+.callout{
+  background:#fff8db1a;border-left:3px solid var(--gold-dim);border-radius:10px;padding:14px 18px;
+  margin:20px 0;font-size:13.5px;color:var(--text-muted);
+}
+
+.disclaimer{
+  background:var(--bg-panel);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:20px;font-size:13px;color:var(--text-muted);margin-top:30px;
+}
+.disclaimer strong{color:var(--gold);}
+
+.table-scroll{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line);-webkit-overflow-scrolling:touch;margin:18px 0;}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:13.5px;}
+thead th{background:var(--bg-panel-2);color:var(--gold);text-align:left;padding:12px 14px;font-weight:700;letter-spacing:0.03em;white-space:nowrap;border-bottom:1px solid var(--line);}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--line);color:var(--text-muted);}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:rgba(255,215,0,0.04);}
+tbody td strong{color:var(--text-primary);}
+
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11.5px;font-weight:700;}
+.badge.low, .badge.legal{background:rgba(76,201,142,0.15);color:var(--green);}
+.badge.mid, .badge.mixed{background:rgba(255,215,0,0.15);color:var(--gold);}
+.badge.high, .badge.banned{background:rgba(239,106,106,0.18);color:var(--red);}
+
+/* infographic bars */
+.status-chart{margin:22px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.status-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.status-row:last-child{margin-bottom:0;}
+.status-label{width:110px;flex:0 0 auto;font-size:12.5px;font-weight:600;color:var(--text-primary);}
+.status-track{flex:1;height:14px;background:var(--bg-deep);border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+.status-fill{height:100%;border-radius:8px;}
+.status-fill.legal{background:linear-gradient(90deg,var(--green),#3aa876);width:85%;}
+.status-fill.mixed{background:linear-gradient(90deg,var(--gold-dim),var(--gold));width:55%;}
+.status-fill.banned{background:linear-gradient(90deg,#c94a4a,var(--red));width:15%;}
+.status-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--text-muted);}
+.status-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot.legal{background:var(--green);}
+.dot.mixed{background:var(--gold);}
+.dot.banned{background:var(--red);}
+
+/* icon diagrams */
+.icon-flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:24px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;}
+.icon-step{display:flex;flex-direction:column;align-items:center;gap:8px;width:110px;text-align:center;}
+.icon-step .circ{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.icon-step span{font-size:11.5px;color:var(--text-muted);}
+.icon-arrow{color:var(--gold-dim);font-size:18px;}
+
+/* sources */
+.sources{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;}
+.sources h3{color:var(--gold);font-size:15px;margin-bottom:12px;}
+.sources ul{list-style:none;padding:0;}
+.sources li{margin-bottom:10px;font-size:13px;color:var(--text-muted);}
+.sources a{color:var(--purple-neon);font-weight:600;border-bottom:1px dotted rgba(168,85,247,0.5);}
+.sources a:hover{color:var(--gold);}
+
+/* article cards / hub */
+.card-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:720px){.card-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.card-grid.three{grid-template-columns:1fr 1fr 1fr;}}
+.card{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+.card .icon{
+  width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg, rgba(255,215,0,0.16), rgba(168,85,247,0.16));
+  border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px;
+}
+.card h3{font-size:16px;margin-bottom:8px;color:var(--gold);margin-top:0;}
+.card p{font-size:13.5px;color:var(--text-muted);margin-bottom:12px;}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:0.03em;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--text-muted);}
+.card a.read-more{font-size:13px;font-weight:700;color:var(--gold);}
+
+footer{padding:40px 0 60px;text-align:center;color:var(--text-muted);font-size:12px;border-top:1px solid var(--line);margin-top:20px;}
+footer .logo{justify-content:center;margin-bottom:14px;}
+
+@media (max-width:480px){
+  nav.main-nav{order:3;}
+  .lang-switch{max-width:60vw;}
+}
+
+
+.lang-switch a,.lang-switch span{border:none;background:transparent;color:var(--text-muted);font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 10px;border-radius:999px;cursor:pointer;transition:all .2s ease;white-space:nowrap;flex:0 0 auto;font-family:inherit;text-decoration:none;display:inline-block;}
+.lang-switch a.active,.lang-switch span.active{background:linear-gradient(135deg, var(--purple-glow), var(--purple-neon));color:#fff;box-shadow:0 0 10px rgba(168,85,247,0.55);cursor:default;}
+
+.btn-gold{display:inline-block;padding:15px 32px;background:linear-gradient(135deg,var(--gold),var(--gold-dim));color:#1a1330;font-weight:700;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;border-radius:999px;box-shadow:0 10px 28px rgba(255,215,0,0.28);transition:transform .18s ease, box-shadow .18s ease;border:1.5px solid transparent;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(255,215,0,0.4);}
+.btn-ghost{display:inline-block;min-width:200px;min-height:20px;padding:15px 32px;border-radius:999px;border:1.5px solid var(--purple-neon);color:var(--text-primary);font-weight:600;font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:0.02em;text-align:center;transition:background .18s ease,border-color .18s ease;}
+.btn-ghost:hover{background:rgba(168,85,247,0.14);border-color:var(--purple-glow);}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.article-btn-slot{margin:30px auto;text-align:center;}
+.article-btn-slot .btn-gold{min-width:260px;min-height:20px;}
+.next-article-slot{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+.next-article-slot .btn-ghost{min-width:220px;}
+.next-article-slot .next-article-link{background:var(--green);border-color:var(--green);color:var(--bg-deep);box-shadow:0 10px 28px rgba(76,201,142,0.28);}
+.next-article-slot .next-article-link:hover{background:#5dd9a0;border-color:#5dd9a0;transform:translateY(-2px);}
+.popular-articles{margin:10px 0 28px;padding:20px;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);}
+.popular-articles h2{margin:0 0 14px;font-size:19px;color:var(--gold);}
+.popular-list{display:grid;grid-template-columns:1fr;gap:8px;}
+.popular-link{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg-panel-2);border:1px solid transparent;border-radius:10px;color:var(--text-primary);font-size:13.5px;font-weight:600;line-height:1.4;transition:transform .18s ease,border-color .18s ease,background .18s ease;}
+.popular-link:hover{transform:translateX(3px);border-color:rgba(76,201,142,.5);background:rgba(76,201,142,.08);}
+.popular-link .popular-icon{color:var(--green);font-size:12px;flex:0 0 auto;}
+.popular-link .popular-arrow{margin-left:auto;color:var(--gold);font-size:16px;flex:0 0 auto;}
+@media(min-width:720px){.popular-list{grid-template-columns:1fr 1fr;}}
+.gameplay-demo{margin:24px 0;background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 16px 38px rgba(0,0,0,.28);}
+.gameplay-demo video{display:block;width:100%;height:auto;aspect-ratio:440/293;background:#080512;}
+.gameplay-demo figcaption{padding:12px 16px;color:var(--text-muted);font-size:12.5px;text-align:center;border-top:1px solid var(--line);}
+.multiplier-example{margin:24px 0;}
+.multiplier-example img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 16px 38px rgba(0,0,0,.28);}
+.article-image{margin:24px 0}.article-image img{display:block;width:100%;height:auto;aspect-ratio:auto;border-radius:18px;box-shadow:0 16px 38px rgba(0,0,0,.28)}.article-image figcaption{padding:10px 4px 0;color:var(--text-muted);font-size:12.5px;text-align:center}
+.footer-trust{margin-top:12px;text-align:center}.footer-about-link{color:#ffd400;text-decoration:underline;text-underline-offset:3px}.footer-site-status{margin:8px 0 0;color:#d8fff0;font-weight:700}
+.article-publish-date{display:block;margin:12px auto 0;color:var(--text-muted);font-size:13px}
+.olympus-hero{position:relative;isolation:isolate;overflow:hidden;max-width:720px;min-height:286px;margin-top:12px;padding:42px 28px 28px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 44px rgba(0,0,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.olympus-hero + .block{margin-top:18px}
+.olympus-hero::before{content:"";position:absolute;z-index:-2;inset:0;background-image:var(--olympus-hero-image);background-position:center;background-size:cover;background-repeat:no-repeat;opacity:.27;transform:scale(1.02)}
+.olympus-hero::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(18,8,38,.34),rgba(24,9,51,.58))}
+.olympus-hero h1{max-width:760px;text-shadow:0 3px 16px rgba(0,0,0,.72)}
+.olympus-hero .eyebrow,.olympus-hero .meta,.olympus-hero .article-publish-date{position:relative;text-shadow:0 2px 10px rgba(0,0,0,.8)}
+.olympus-hero .article-btn-slot{width:100%;margin:26px auto 0}
+.olympus-hero .btn-gold{min-width:min(360px,90%)}
+@media(max-width:560px){.olympus-hero{min-height:300px;padding:34px 18px 24px}.olympus-hero::before{background-position:52% center}.olympus-hero .article-btn-slot{margin-top:20px}}.themed-article-hero{position:relative;isolation:isolate;overflow:hidden;max-width:760px;min-height:322px;margin-top:14px;padding:44px 235px 34px 28px;text-align:left;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,var(--bg-panel),var(--bg-panel-2));box-shadow:0 16px 38px rgba(0,0,0,.28);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.themed-article-hero>*{position:relative;z-index:2}.themed-article-hero::before{content:"";position:absolute;z-index:1;background:var(--hero-art) center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 14px 18px rgba(0,0,0,.38))}.themed-article-hero::after{content:"";position:absolute;z-index:0;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.2),rgba(168,85,247,0) 68%);pointer-events:none}.themed-article-hero .eyebrow{margin-left:0}.themed-article-hero h1{max-width:500px;margin:20px 0 12px;font-size:clamp(28px,4.4vw,38px);line-height:1.2;text-align:left}.themed-article-hero .article-publish-date{margin:0;color:var(--text-muted)}.themed-article-hero .meta{margin:3px 0 0;text-align:left}.olympus-card-hero::before{right:-6px;bottom:-54px;width:228px;height:330px;animation:character-float 4.2s ease-in-out infinite;transform-origin:50% 80%}.volatility-card-hero::before{right:8px;top:63px;width:224px;height:174px;animation:money-burn-one 9s ease-in-out infinite;transform-origin:50% 70%}.themed-article-hero+.article-btn-slot{margin-top:30px}@keyframes character-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes money-burn-one{0%,10%{opacity:1;transform:translateY(0) rotate(-7deg) scale(1);filter:none}17%{opacity:1;transform:translateY(-3px) rotate(-7deg) scale(.97);filter:sepia(1) saturate(7) hue-rotate(315deg) brightness(1.08) drop-shadow(0 0 10px #ff3b16)}27%{opacity:0;transform:translateY(-15px) rotate(-7deg) scale(.7);filter:grayscale(1) brightness(.35) blur(2px)}58%{opacity:0;transform:translateY(8px) rotate(-7deg) scale(.82);filter:blur(2px)}70%,100%{opacity:1;transform:translateY(0) rotate(-7deg) scale(1);filter:none}}@media(prefers-reduced-motion:reduce){.olympus-card-hero::before,.volatility-card-hero::before{animation:none}}@media(max-width:620px){.themed-article-hero{min-height:410px;padding:30px 18px 190px;text-align:center;align-items:center}.themed-article-hero h1{margin-top:16px;text-align:center}.themed-article-hero .article-publish-date,.themed-article-hero .meta{margin-left:auto;margin-right:auto;text-align:center}.olympus-card-hero::before{right:50%;bottom:-70px;width:176px;height:260px;margin-right:-88px}.volatility-card-hero{min-height:360px;padding-bottom:154px}.volatility-card-hero::before{right:50%;top:auto;bottom:8px;width:210px;height:140px;margin-right:-105px}}.hades-article-hero::before{right:-2px;bottom:-42px;width:224px;height:330px;animation:none}.hades-article-hero::after{background:radial-gradient(circle,rgba(255,72,32,.25),rgba(168,85,247,0) 70%)}@media(max-width:620px){.hades-article-hero::before{right:50%;bottom:-66px;width:178px;height:270px;margin-right:-89px}}.hades-article-hero::before{display:none!important}.hades-hero-art{position:absolute!important;z-index:1!important;right:-2px;bottom:-42px;width:224px;max-height:330px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 14px 18px rgba(0,0,0,.38));pointer-events:none}@media(max-width:620px){.hades-hero-art{right:50%;bottom:-66px;width:178px;max-height:270px;transform:translateX(50%)}}</style>
+<link href="https://gamer-logic-hub.com/uz/article-gates-of-olympus-multipliers.html" rel="canonical"/>
+<link href="https://gamer-logic-hub.com/article-gates-of-olympus-multipliers.html" hreflang="ru" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/en/article-gates-of-olympus-multipliers.html" hreflang="en" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/uz/article-gates-of-olympus-multipliers.html" hreflang="uz" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/tg/article-gates-of-olympus-multipliers.html" hreflang="tg" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/es/article-gates-of-olympus-multipliers.html" hreflang="es-AR" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/id/article-gates-of-olympus-multipliers.html" hreflang="id" rel="alternate"/>
+<link href="https://gamer-logic-hub.com/article-gates-of-olympus-multipliers.html" hreflang="x-default" rel="alternate"/>
+<meta content="article" property="og:type"/>
+<meta content="Gamer Logic Hub" property="og:site_name"/>
+<meta content="Zeus vs Hades — Pragmatic Play sloti sharhi" property="og:title"/>
+<meta content="Zeus vs Hades sharhi: Olympus va Hades volatiliteti, RTP, kengayuvchi Wild koʼpaytirgichlari va bepul spinlar." property="og:description"/>
+<meta content="https://gamer-logic-hub.com/uz/article-gates-of-olympus-multipliers.html" property="og:url"/>
+<meta content="uz_UZ" property="og:locale"/>
+<meta content="ru_RU" property="og:locale:alternate"/>
+<meta content="en_US" property="og:locale:alternate"/>
+<meta content="tg_TJ" property="og:locale:alternate"/>
+<meta content="es_AR" property="og:locale:alternate"/>
+<meta content="id_ID" property="og:locale:alternate"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Zeus vs Hades — Pragmatic Play sloti sharhi" name="twitter:title"/>
+<meta content="Zeus vs Hades sharhi: Olympus va Hades volatiliteti, RTP, kengayuvchi Wild koʼpaytirgichlari va bepul spinlar." name="twitter:description"/>
+<script type="application/ld+json">{"author":{"url":"https://gamer-logic-hub.com","name":"Gamer Logic Hub","@type":"Organization"},"headline":"Zeus vs Hades — Pragmatic Play sloti sharhi","isAccessibleForFree":true,"description":"Zeus vs Hades sharhi: Olympus va Hades volatiliteti, RTP, kengayuvchi Wild koʼpaytirgichlari va bepul spinlar.","url":"https://gamer-logic-hub.com/uz/article-gates-of-olympus-multipliers.html","mainEntityOfPage":{"@id":"https://gamer-logic-hub.com/uz/article-gates-of-olympus-multipliers.html","@type":"WebPage"},"datePublished":"2026-08-31","inLanguage":"uz","@context":"https://schema.org","image":"https://gamer-logic-hub.com/media/zeus-vs-hades-volatility.jpg","dateModified":"2026-08-31","@type":"Article","publisher":{"url":"https://gamer-logic-hub.com","name":"Gamer Logic Hub","logo":{"url":"https://gamer-logic-hub.com/apple-touch-icon.png","@type":"ImageObject"},"@type":"Organization"}}</script>
+<meta content="https://gamer-logic-hub.com/uz/apple-touch-icon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="index, follow" name="robots"/>
+</head>
+<body>
+<header>
+<div class="header-inner">
+<div class="logo">
+<div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div>
+<div>Gamer Logic Hub<small id="i18nLogoSub">Maqola</small></div>
+</div>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="index.html" id="i18nNavHome">Bosh sahifa</a>
+<a class="active" href="articles.html" id="i18nNavArticles">Maqolalar</a>
+</nav>
+<div class="header-controls">
+<div aria-label="Language selection" class="lang-switch" role="group"><a href="../article-zeus-vs-hades.html">RU</a> <a href="../en/article-zeus-vs-hades.html">EN</a> <span class="active">UZ</span> <a href="../tg/article-zeus-vs-hades.html">TJ</a> <a href="../es/article-zeus-vs-hades.html">AR</a> <a href="../id/article-zeus-vs-hades.html">ID</a></div>
+</div>
+</div>
+<div class="meander"></div>
+</header>
+<main>
+<section class="article-hero wrap-narrow themed-article-hero hades-article-hero" style="--hero-art:url('../media/hades-hero-transparent.png')"><img class="hades-hero-art" src="../media/hades-hero-transparent.png?v=3" alt="" aria-hidden="true"><span class="eyebrow">Oʼyin sharhi · Pragmatic Play</span><h1>Zeus vs Hades — Pragmatic Play sloti sharhi</h1><time class="article-publish-date" datetime="2026-08-31">Nashr etildi: 31-avgust, 2026</time><p class="meta">~8 daqiqa</p></section>
+<div class="wrap-narrow article-btn-slot">
+<a class="btn-gold" href="https://jtredportal.com/ch69Hj1A8jw?click_id={click_id}" id="i18nArtBtnTop" target="_blank" rel="noopener nofollow sponsored">Bonus 425% + 250FS</a>
+</div>
+
+<article class="block wrap-narrow"><div class="section-head"><h2>Slot, uning noodatiy mexanikasi va bitta oʼyindagi ikki volatilitet rejimi</h2></div><p class="lede"><strong>Qisqacha:</strong> bu yerda stavkadan tashqari kayfiyatni ham tanlaysiz. Olympus — yuqori volatil, lekin bonusga tez-tez olib boradi. Hades — juda yuqori volatil: bonus kamroq, ichidagi salohiyat esa kattaroq. Xudolar tortishadi, matematika esa jim hisoblaydi.</p>
+<figure class="article-image"><img src="../media/zeus-vs-hades-volatility.jpg" width="1195" height="671" loading="eager" alt="Ikki volatilitet rejimi"><figcaption>Olympus yumshoqroq, Hades esa keskinroq.</figcaption></figure>
+<h3><span class="h3-icon">⚔</span>Oddiy spinlar</h3><p>Oʼyin <strong>5×5 maydon va 15 toʼlov chizigʼi</strong> bilan ishlaydi. Yutuqlar birinchi barabandan chapdan oʼngga sanaladi. Olympus moviy va salqin, Hades esa olovli — dekor ham nima kutish kerakligini yashirmaydi.</p><p>Rejimni bazaviy oʼyinda almashtirish mumkin. Stavka oʼzgarmaydi, natijalar taqsimoti oʼzgaradi: Olympus bonusni tez-tez, Hades esa kamroq, ammo ogʼirroq beradi.</p>
+<h3><span class="h3-icon">%</span>RTP va haqiqiy kutish</h3><p>Asl versiya uchun odatda <strong>96,07% atrofidagi RTP</strong> koʼrsatiladi, lekin operator sozlamasi farq qilishi mumkin. Aniq raqamni oʼyin maʼlumotidan tekshiring. RTP bir kechalik vaʼda emas.</p><div class="callout"><strong>Muhim:</strong> Hades RTPni oshirmaydi, faqat natijalar tarqalishini kuchaytiradi. Bu yashirin saxiylik tugmasi emas.</div>
+<h3><span class="h3-icon">⚡</span>Kengayuvchi Wild</h3><p>Yutuqda qatnashgan Zeus yoki Hades Wild butun barabanni egallab, <strong>x100 gacha</strong> tasodifiy koʼpaytirgich oladi.</p>
+<figure class="article-image"><img src="../media/zeus-vs-hades-wilds.jpg" width="1195" height="671" loading="lazy" alt="Wild x4 va x3"><figcaption>Hades x4 va Zeus x3 — mexanika bitta kadrda.</figcaption></figure>
+<h3><span class="h3-icon">10</span>Ikki bonus turi</h3><p>1-, 3- va 5-barabandagi Scatter <strong>10 bepul spin</strong> ochadi. Olympusga kirish osonroq. Hades bonusida esa kamida bitta kengayuvchi Wild kafolatlanadi — yerosti xudosi sokin kirishni yoqtirmaydi.</p>
+<figure class="article-image"><img src="../media/zeus-vs-hades-olympus.jpg" width="1195" height="671" loading="lazy" alt="Olympus bonusi"><figcaption>Olympus bonusida ikkala xudo ham barabanni egalladi.</figcaption></figure>
+<p>Bonus sotib olish mavjud bozorlarda oddiy va Super Free Spins narxi hamda kafolatlari bilan farq qiladi. Xarid yutuqni emas, bonusga kirishni beradi. Maksimum <strong>x15 000 stavkagacha</strong>.</p>
+<figure class="article-image"><img src="../media/zeus-vs-hades-bonus-buy.jpg" width="1195" height="671" loading="lazy" alt="Bonus sotib olish"><figcaption>Narx boshqa, ssenariy boshqa, yakunni esa RNG yozadi.</figcaption></figure>
+<h3><span class="h3-icon">✓</span>Qaysi rejim?</h3><p>Tez-tez bonus uchun Olympus, uzoq tanaffusdan qoʼrqmasangiz Hades. Hech biri magʼlubiyatdan keyin “qarzdor” boʼlib qolmaydi.</p><p>Eng yaxshi gʼoya — volatilitetni koʼrinadigan qilish. Odatda u jadvalda yashirinadi, bu yerda esa ikki jahldor xudo katta tugma yonida turibdi. Juda yunoncha.</p><div class="article-btn-slot next-article-slot"><a class="next-article-link btn-ghost" href="article-volatility.html">Keyingi maqolani o‘qing</a><a class="btn-ghost all-articles-link" href="articles.html">Barcha maqolalar</a></div>
+<section class="popular-articles" aria-label="Ommabop maqolalar"><h2>Ommabop maqolalar</h2><div class="popular-list">
+<a class="popular-link" href="article-volatility.html"><span class="popular-icon">◆</span><span>Nega yuqori volatillik yutuqni kafolatlamaydi</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-certification.html"><span class="popular-icon">◆</span><span>O'yinlarni mustaqil laboratoriyalar sertifikatlashtirishi: nega bu kerak</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-legality.html"><span class="popular-icon">◆</span><span>Onlayn-gemblingning qonuniyligi: Markaziy Osiyo, Argentina, Indoneziya</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+<a class="popular-link" href="article-zeus-vs-hades.html"><span class="popular-icon">◆</span><span>Zeus vs Hades — Pragmatic Play sloti sharhi</span><span class="popular-arrow" aria-hidden="true">→</span></a>
+</div></section>
+<div class="disclaimer"><strong>Muhim.</strong> Material faqat ta’lim uchun. Bu yutish strategiyasi yoki real pulga o‘ynash tavsiyasi emas.</div>
+<div class="sources"><h3>Sources</h3><ul><li><a href="https://www.pragmaticplay.com/es/noticias/pragmatic-play-potencia-la-eleccion-del-jugador-en-zeus-vs-hades-gods-of-war/" rel="noopener" target="_blank">Pragmatic Play — Zeus vs Hades: Gods of War</a> — official mechanics and volatility modes</li></ul></div></article>
+</main>
+<footer>
+<div class="wrap">
+<div class="logo"><div class="logo-mark"><span><svg fill="none" height="16" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L20.5 7 V17 L12 22 L3.5 17 V7 Z" stroke="currentColor" stroke-width="1.6"></path><path d="M12 8 V16 M8 12 H16" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><circle cx="12" cy="12" fill="currentColor" r="1.6"></circle></svg></span></div><div>Gamer Logic Hub</div></div>
+<p id="i18nFooterText">© 2026 Gamer Logic Hub. O'yin mexanikalari matematikasi haqida ta'lim kontenti.</p>
+</div>
+<div class="footer-trust"><a class="footer-about-link" href="about.html">Loyiha haqida</a><p class="footer-site-status">Gamer Logic Hub kazino emas va stavkalarni qabul qilmaydi.</p></div>
+</footer>
+<script src="../media/article-games.js"></script>
+</body>
+</html>
+
+
+
+
+
