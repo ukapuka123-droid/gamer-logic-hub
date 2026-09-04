@@ -1,0 +1,5 @@
+.rtp-card{position:relative;isolation:isolate;overflow:hidden;padding-right:164px}
+.rtp-card>*:not(.rtp-card-art){position:relative;z-index:2}
+.rtp-card::after{content:"";position:absolute;z-index:0;right:-28px;bottom:-35px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(76,190,210,.18),transparent 68%);pointer-events:none}
+.rtp-card .rtp-card-art{position:absolute;z-index:1;right:-18px;bottom:-8px;display:block;width:190px;height:170px;object-fit:contain;object-position:center bottom;margin:0;float:none;filter:drop-shadow(0 12px 15px rgba(0,0,0,.38));pointer-events:none}
+@media(max-width:560px){.rtp-card{padding-right:118px}.rtp-card .rtp-card-art{right:-24px;bottom:-4px;width:145px;height:135px}}

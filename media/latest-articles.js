@@ -4,16 +4,65 @@
   if (!latestGrid || storyGrids.length < 2) return;
 
   const language = (document.documentElement.lang || 'ru').split('-')[0];
-  if ((language === 'ru' || language === 'en') && !document.getElementById('featured-simulators')) {
+  const featuredCopy = {
+    ru: {
+      badge: 'Новые интерактивные лаборатории', title: 'Главные симуляторы', description: 'Три углублённых инструмента для практического изучения RTP, стратегии и вероятностей.',
+      cards: [
+        ['RTP и волатильность', 'Slot RTP & Volatility Lab', 'До 100 000 спинов, фактический RTP, частота выплат и максимальная просадка.', 'Открыть лабораторию →', 'slot-lab-card-hero.png', 'Слот-машина и график распределения для лаборатории RTP', 'simulator-slot-lab.html'],
+        ['Обучение решениям', 'Blackjack Strategy Trainer', 'Практикуйте базовую стратегию и получайте объяснение каждого решения.', 'Начать тренировку →', 'blackjack-strategy-card-hero.png', 'Карты и компас решений тренажёра стратегии Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Шансы и house edge', 'Roulette Odds Calculator', 'Сравните типы ставок, европейское и американское колесо на длинной серии.', 'Рассчитать вероятность →', 'roulette-lab-card-hero.png', 'Рулетка и аналитические графики калькулятора вероятностей', 'simulator-roulette-lab.html']
+      ]
+    },
+    en: {
+      badge: 'New interactive labs', title: 'Featured simulators', description: 'Three in-depth tools for exploring RTP, strategy and probability through practice.',
+      cards: [
+        ['RTP and volatility', 'Slot RTP & Volatility Lab', 'Run up to 100,000 spins and inspect observed RTP, hit rate and maximum drawdown.', 'Open the lab →', 'slot-lab-card-hero.png', 'Slot machine and distribution chart for the RTP lab', 'simulator-slot-lab.html'],
+        ['Decision training', 'Blackjack Strategy Trainer', 'Practice basic strategy and get an explanation for every decision.', 'Start training →', 'blackjack-strategy-card-hero.png', 'Cards and decision compass for the Blackjack strategy trainer', 'simulator-blackjack-strategy.html'],
+        ['Odds and house edge', 'Roulette Odds Calculator', 'Compare bets and test European and American wheels over a large sample.', 'Calculate the odds →', 'roulette-lab-card-hero.png', 'Roulette wheel and analytical charts for the odds calculator', 'simulator-roulette-lab.html']
+      ]
+    },
+    uz: {
+      badge: 'Yangi interaktiv laboratoriyalar', title: 'Asosiy simulyatorlar', description: 'RTP, strategiya va ehtimollikni amalda tushunish uchun uchta batafsil vosita.',
+      cards: [
+        ['RTP va volatillik', 'Slot RTP va volatillik laboratoriyasi', '100 000 tagacha spin qiling, haqiqiy RTP, yutuq chastotasi va maksimal pasayishni kuzating.', 'Laboratoriyani ochish →', 'slot-lab-card-hero.png', 'RTP laboratoriyasi uchun slot va taqsimot grafigi', 'simulator-slot-lab.html'],
+        ['Qarorlarni mashq qilish', 'Blackjack strategiya trenajyori', 'Asosiy strategiyani mashq qiling va har bir qaror bo‘yicha sodda izoh oling.', 'Mashqni boshlash →', 'blackjack-strategy-card-hero.png', 'Blackjack strategiya trenajyori kartalari', 'simulator-blackjack-strategy.html'],
+        ['Ehtimollik va house edge', 'Ruletka ehtimollari kalkulyatori', 'Tikish turlarini solishtiring va Yevropa hamda Amerika g‘ildiraklarini katta seriyada sinang.', 'Ehtimollikni hisoblash →', 'roulette-lab-card-hero.png', 'Ehtimollik kalkulyatori uchun ruletka va grafiklar', 'simulator-roulette-lab.html']
+      ]
+    },
+    tg: {
+      badge: 'Лабораторияҳои нави интерактивӣ', title: 'Симуляторҳои асосӣ', description: 'Се воситаи муфассал барои омӯзиши амалии RTP, стратегия ва эҳтимолият.',
+      cards: [
+        ['RTP ва волатилнокӣ', 'Лабораторияи RTP ва волатилнокии слот', 'То 100 000 спин гузаронед ва RTP-и воқеӣ, басомади бурд ва пастшавии калонтаринро бинед.', 'Кушодани лаборатория →', 'slot-lab-card-hero.png', 'Слот ва графики тақсимот барои лабораторияи RTP', 'simulator-slot-lab.html'],
+        ['Машқи қарорҳо', 'Тренажёри стратегияи Blackjack', 'Стратегияи асосиро машқ кунед ва барои ҳар қарор шарҳи фаҳмо гиред.', 'Оғози машқ →', 'blackjack-strategy-card-hero.png', 'Кортҳои тренажёри стратегияи Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Эҳтимолият ва house edge', 'Ҳисобкунаки эҳтимолияти рулетка', 'Навъҳои шартро муқоиса карда, чархи аврупоӣ ва амрикоиро дар силсилаи калон санҷед.', 'Ҳисоб кардани эҳтимолият →', 'roulette-lab-card-hero.png', 'Рулетка ва графикҳои ҳисобкунаки эҳтимолият', 'simulator-roulette-lab.html']
+      ]
+    },
+    es: {
+      badge: 'Nuevos laboratorios interactivos', title: 'Simuladores principales', description: 'Tres herramientas completas para entender RTP, estrategia y probabilidades metiendo mano, sin vueltas.',
+      cards: [
+        ['RTP y volatilidad', 'Laboratorio de RTP y volatilidad', 'Probá hasta 100.000 tiradas y mirá el RTP real, la frecuencia de premios y la caída máxima.', 'Abrir el laboratorio →', 'slot-lab-card-hero.png', 'Tragamonedas y gráfico de distribución del laboratorio de RTP', 'simulator-slot-lab.html'],
+        ['Práctica de decisiones', 'Entrenador de estrategia de Blackjack', 'Practicá la estrategia básica y recibí una explicación clara para cada decisión.', 'Empezar a practicar →', 'blackjack-strategy-card-hero.png', 'Cartas del entrenador de estrategia de Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Chances y ventaja de la casa', 'Calculadora de probabilidades de ruleta', 'Compará apuestas y probá ruedas europea y americana en una tanda larga.', 'Calcular probabilidades →', 'roulette-lab-card-hero.png', 'Ruleta y gráficos de la calculadora de probabilidades', 'simulator-roulette-lab.html']
+      ]
+    },
+    id: {
+      badge: 'Laboratorium interaktif terbaru', title: 'Simulator utama', description: 'Tiga alat lengkap buat membedah RTP, strategi, dan probabilitas lewat praktik langsung.',
+      cards: [
+        ['RTP dan volatilitas', 'Lab RTP & volatilitas slot', 'Jalankan sampai 100.000 spin lalu cek RTP aktual, hit rate, dan penurunan saldo maksimum.', 'Buka lab →', 'slot-lab-card-hero.png', 'Mesin slot dan grafik distribusi untuk lab RTP', 'simulator-slot-lab.html'],
+        ['Latihan keputusan', 'Pelatih strategi Blackjack', 'Latih strategi dasar dan dapatkan penjelasan yang gampang dipahami untuk setiap keputusan.', 'Mulai latihan →', 'blackjack-strategy-card-hero.png', 'Kartu untuk pelatih strategi Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Peluang dan house edge', 'Kalkulator peluang Roulette', 'Bandingkan jenis taruhan dan tes roda Eropa serta Amerika dalam seri panjang.', 'Hitung peluang →', 'roulette-lab-card-hero.png', 'Roda roulette dan grafik kalkulator peluang', 'simulator-roulette-lab.html']
+      ]
+    }
+  };
+  if (featuredCopy[language] && !document.getElementById('featured-simulators')) {
     const simulatorSection = document.getElementById('simulators');
     if (simulatorSection) {
       const featured = document.createElement('section');
       featured.className = 'section wrap featured-tools';
       featured.id = 'featured-simulators';
-      featured.innerHTML = `<div class="section-head"><div><span class="featured-badge">Новые интерактивные лаборатории</span><h2>Главные симуляторы</h2><p>Три углублённых инструмента для практического изучения RTP, стратегии и вероятностей.</p></div></div><div class="featured-sim-grid"><a class="featured-sim-card" href="simulator-slot-lab.html"><img src="media/slot-lab-card-hero.png" alt="Слот-машина и график распределения для лаборатории RTP"><div class="featured-sim-copy"><span>RTP и волатильность</span><h3>Slot RTP &amp; Volatility Lab</h3><p>До 100 000 спинов, фактический RTP, частота выплат и максимальная просадка.</p><b>Открыть лабораторию →</b></div></a><a class="featured-sim-card" href="simulator-blackjack-strategy.html"><img src="media/blackjack-strategy-card-hero.png" alt="Карты и компас решений тренажёра стратегии Blackjack"><div class="featured-sim-copy"><span>Обучение решениям</span><h3>Blackjack Strategy Trainer</h3><p>Практикуйте базовую стратегию и получайте объяснение каждого решения.</p><b>Начать тренировку →</b></div></a><a class="featured-sim-card" href="simulator-roulette-lab.html"><img src="media/roulette-lab-card-hero.png" alt="Рулетка и аналитические графики калькулятора вероятностей"><div class="featured-sim-copy"><span>Шансы и house edge</span><h3>Roulette Odds Calculator</h3><p>Сравните типы ставок, европейское и американское колесо на длинной серии.</p><b>Рассчитать вероятность →</b></div></a></div>`;
-      if (language === 'en') {
-        featured.innerHTML = `<div class="section-head"><div><span class="featured-badge">New interactive labs</span><h2>Featured simulators</h2><p>Three in-depth tools for exploring RTP, strategy and probability through practice.</p></div></div><div class="featured-sim-grid"><a class="featured-sim-card" href="simulator-slot-lab.html"><img src="../media/slot-lab-card-hero.png" alt="Slot machine and distribution chart for the RTP lab"><div class="featured-sim-copy"><span>RTP and volatility</span><h3>Slot RTP &amp; Volatility Lab</h3><p>Run up to 100,000 spins and inspect observed RTP, hit rate and maximum drawdown.</p><b>Open the lab →</b></div></a><a class="featured-sim-card" href="simulator-blackjack-strategy.html"><img src="../media/blackjack-strategy-card-hero.png" alt="Cards and decision compass for the Blackjack strategy trainer"><div class="featured-sim-copy"><span>Decision training</span><h3>Blackjack Strategy Trainer</h3><p>Practice basic strategy and get an explanation for every decision.</p><b>Start training →</b></div></a><a class="featured-sim-card" href="simulator-roulette-lab.html"><img src="../media/roulette-lab-card-hero.png" alt="Roulette wheel and analytical charts for the odds calculator"><div class="featured-sim-copy"><span>Odds and house edge</span><h3>Roulette Odds Calculator</h3><p>Compare bets and test European and American wheels over a large sample.</p><b>Calculate the odds →</b></div></a></div>`;
-      }
+      const copy = featuredCopy[language];
+      const mediaPrefix = language === 'ru' ? 'media/' : '../media/';
+      featured.innerHTML = `<div class="section-head"><div><span class="featured-badge">${copy.badge}</span><h2>${copy.title}</h2><p>${copy.description}</p></div></div><div class="featured-sim-grid">${copy.cards.map(([tag, title, description, action, image, alt, href]) => `<a class="featured-sim-card" href="${href}"><img src="${mediaPrefix}${image}" alt="${alt}"><div class="featured-sim-copy"><span>${tag}</span><h3>${title}</h3><p>${description}</p><b>${action}</b></div></a>`).join('')}</div>`;
       const featuredStyle = document.createElement('style');
       featuredStyle.textContent = '.featured-tools{padding-top:42px}.featured-badge{display:inline-flex;padding:7px 12px;margin-bottom:8px;border:1px solid rgba(32,232,117,.45);border-radius:999px;background:rgba(32,232,117,.08);color:#8bffc0;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.featured-sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.featured-sim-card{position:relative;display:flex;min-width:0;min-height:360px;overflow:hidden;border:1px solid #62427e;border-radius:20px;background:#17102a;color:#fff;text-decoration:none;box-shadow:0 18px 42px rgba(0,0,0,.28);transition:transform .22s,border-color .22s,box-shadow .22s}.featured-sim-card:hover{transform:translateY(-5px);border-color:var(--purple);box-shadow:0 24px 48px rgba(92,35,151,.3)}.featured-sim-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s}.featured-sim-card:hover img{transform:scale(1.035)}.featured-sim-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,4,20,.02) 30%,rgba(11,6,24,.58) 60%,rgba(11,6,24,.98) 100%)}.featured-sim-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:22px}.featured-sim-copy>span{align-self:flex-start;margin-bottom:auto;padding:5px 9px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(11,6,24,.68);color:#e8dcfa;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(8px)}.featured-sim-copy h3{margin:0;color:#fff;font-size:21px;line-height:1.18}.featured-sim-copy p{margin:7px 0 0;color:#d5c7e9;font-size:13px}.featured-sim-copy b{margin-top:12px;color:var(--yellow);font-size:13px}@media(max-width:820px){.featured-sim-grid{grid-template-columns:1fr 1fr}.featured-sim-card:last-child{grid-column:1/-1}}@media(max-width:560px){.featured-sim-grid{grid-template-columns:1fr}.featured-sim-card,.featured-sim-card:last-child{grid-column:auto;min-height:330px}}';
       document.head.append(featuredStyle);
@@ -32,6 +81,19 @@
   const statsStyle = document.createElement('style');
   statsStyle.textContent = '.latest-story-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:29px;margin-bottom:8px}.latest-story-topline .story-kicker{min-width:0}.latest-story-stats{display:flex;flex:0 0 auto;gap:5px;pointer-events:none;user-select:none}.latest-story-stat{display:inline-flex;align-items:center;gap:4px;min-height:27px;padding:5px 8px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(12,7,25,.72);color:var(--muted,#bba9dc);font-size:9.5px;font-weight:700;line-height:1;white-space:nowrap}.latest-story-stat svg{width:13px;height:13px;flex:0 0 13px}.latest-story-stat strong{color:var(--text,#fff);font-variant-numeric:tabular-nums}@media(max-width:900px){.latest-story-stat>span{display:none}.latest-story-stat{padding:5px 7px}}@media(max-width:380px){.latest-story-topline{gap:6px}.latest-story-stats{gap:4px}.latest-story-stat{padding:4px 6px}}';
   document.head.append(statsStyle);
+
+  const rtpCardStyle = document.createElement('style');
+  rtpCardStyle.textContent = '.story-card.rtp-story-card{position:relative;isolation:isolate;overflow:hidden;padding-right:142px}.rtp-story-card>*:not(.rtp-story-art){position:relative;z-index:2}.rtp-story-art{position:absolute;z-index:1;right:-22px;bottom:-5px;width:165px;height:150px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 11px 14px rgba(0,0,0,.38));pointer-events:none}.rtp-story-card:after{content:"";position:absolute;z-index:0;right:-30px;bottom:-44px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(76,190,210,.18),transparent 68%);pointer-events:none}@media(max-width:560px){.story-card.rtp-story-card{padding-right:112px}.rtp-story-art{right:-28px;width:140px;height:130px}}';
+  document.head.append(rtpCardStyle);
+
+  const rtpImageAlt = {
+    ru: 'Шкала RTP от низкого к высокому значению',
+    en: 'RTP gauge ranging from low to high return',
+    uz: "Pastdan yuqorigacha bo'lgan RTP ko'rsatkichi",
+    tg: 'Нишондиҳандаи RTP аз сатҳи паст то баланд',
+    es: 'Medidor de RTP desde retorno bajo hasta alto',
+    id: 'Pengukur RTP dari tingkat pengembalian rendah hingga tinggi'
+  };
 
   const localLatestArticles = {
     ru: [
@@ -108,6 +170,17 @@
       const card = document.createElement('a');
       card.className = 'story-card';
       card.href = article.href;
+
+      if (article.href === 'article-rtp-slots.html') {
+        const image = document.createElement('img');
+        image.className = 'rtp-story-art';
+        image.src = `${language === 'ru' ? 'media/' : '../media/'}rtp-meter.png`;
+        image.width = 754;
+        image.height = 510;
+        image.alt = rtpImageAlt[language] || rtpImageAlt.ru;
+        card.classList.add('rtp-story-card');
+        card.append(image);
+      }
 
       const kicker = document.createElement('span');
       kicker.className = 'story-kicker';
