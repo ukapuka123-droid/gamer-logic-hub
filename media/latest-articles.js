@@ -79,12 +79,16 @@
   };
   const statsText = statsCopy[language] || statsCopy.ru;
   const statsStyle = document.createElement('style');
-  statsStyle.textContent = '.latest-story-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:29px;margin-bottom:8px}.latest-story-topline .story-kicker{min-width:0}.latest-story-stats{display:flex;flex:0 0 auto;gap:5px;pointer-events:none;user-select:none}.latest-story-stat{display:inline-flex;align-items:center;gap:4px;min-height:27px;padding:5px 8px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(12,7,25,.72);color:var(--muted,#bba9dc);font-size:9.5px;font-weight:700;line-height:1;white-space:nowrap}.latest-story-stat svg{width:13px;height:13px;flex:0 0 13px}.latest-story-stat strong{color:var(--text,#fff);font-variant-numeric:tabular-nums}@media(max-width:900px){.latest-story-stat>span{display:none}.latest-story-stat{padding:5px 7px}}@media(max-width:380px){.latest-story-topline{gap:6px}.latest-story-stats{gap:4px}.latest-story-stat{padding:4px 6px}}';
+  statsStyle.textContent = '.latest-story-topline{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:29px;margin-bottom:8px}.latest-story-topline .story-kicker{min-width:max-content;white-space:nowrap}.latest-story-stats{display:flex;flex:0 0 auto;gap:5px;pointer-events:none;user-select:none}.latest-story-stat{display:inline-flex;align-items:center;gap:4px;min-height:27px;padding:5px 8px;border:1px solid rgba(255,255,255,.13);border-radius:999px;background:rgba(12,7,25,.72);color:var(--muted,#bba9dc);font-size:9.5px;font-weight:700;line-height:1;white-space:nowrap}.latest-story-stat svg{width:13px;height:13px;flex:0 0 13px}.latest-story-stat strong{color:var(--text,#fff);font-variant-numeric:tabular-nums}.fair-story-card .latest-story-topline,.rtp-story-card .latest-story-topline{margin-right:-130px}@media(max-width:900px){.latest-story-stat>span{display:none}.latest-story-stat{padding:5px 7px}.fair-story-card .latest-story-topline,.rtp-story-card .latest-story-topline{margin-right:-120px}}@media(max-width:560px){.fair-story-card .latest-story-topline,.rtp-story-card .latest-story-topline{margin-right:-94px}}@media(max-width:380px){.latest-story-topline{gap:6px}.latest-story-stats{gap:4px}.latest-story-stat{padding:4px 6px}}';
   document.head.append(statsStyle);
 
   const rtpCardStyle = document.createElement('style');
   rtpCardStyle.textContent = '.story-card.rtp-story-card{position:relative;isolation:isolate;overflow:hidden;padding-right:142px}.rtp-story-card>*:not(.rtp-story-art){position:relative;z-index:2}.rtp-story-art{position:absolute;z-index:1;right:-22px;bottom:-5px;width:165px;height:150px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 11px 14px rgba(0,0,0,.38));pointer-events:none}.rtp-story-card:after{content:"";position:absolute;z-index:0;right:-30px;bottom:-44px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle,rgba(76,190,210,.18),transparent 68%);pointer-events:none}@media(max-width:560px){.story-card.rtp-story-card{padding-right:112px}.rtp-story-art{right:-28px;width:140px;height:130px}}';
   document.head.append(rtpCardStyle);
+
+  const fairCardStyle = document.createElement('style');
+  fairCardStyle.textContent = '.story-card.fair-story-card{position:relative;isolation:isolate;overflow:hidden;padding-right:148px;border-color:rgba(80,176,255,.34)}.fair-story-card>*:not(.fair-story-art){position:relative;z-index:2}.fair-story-art{position:absolute;z-index:1;right:-28px;bottom:8px;width:185px;height:145px;object-fit:contain;filter:drop-shadow(0 11px 14px rgba(0,0,0,.38));pointer-events:none}.fair-story-card:after{content:"";position:absolute;z-index:0;right:-38px;bottom:-52px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(44,156,255,.2),transparent 68%);pointer-events:none}@media(max-width:560px){.story-card.fair-story-card{padding-right:116px}.fair-story-art{right:-34px;width:155px;height:125px}}';
+  document.head.append(fairCardStyle);
 
   const rtpImageAlt = {
     ru: 'Шкала RTP от низкого к высокому значению',
@@ -95,33 +99,57 @@
     id: 'Pengukur RTP dari tingkat pengembalian rendah hingga tinggi'
   };
 
+  const fairImageAlt = {
+    ru: 'Синий игровой контроллер — символ проверяемой механики',
+    en: 'Blue game controller representing verifiable game mechanics',
+    uz: "Tekshiriladigan o'yin mexanikasi ramzi bo'lgan ko'k kontroller",
+    tg: 'Контроллери кабуд — рамзи механикаи санҷидашаванда',
+    es: 'Control azul como símbolo de una mecánica verificable',
+    id: 'Kontroler biru sebagai simbol mekanik game yang dapat diverifikasi'
+  };
+
+  const provablyLatest = {
+    ru: { href: 'article-provably-fair-rng.html', title: 'Provably Fair и RNG: как проверить честность онлайн-игры', description: 'Server seed, client seed, nonce и SHA-256 без криптотумана — разбираемся, можно ли проверить занос, слив и любой конкретный раунд.', linkText: 'Читать статью →', datetime: '2026-09-05', dateText: 'Опубликовано: 5 сентября 2026' },
+    en: { href: 'article-provably-fair-rng.html', title: 'Provably Fair and RNG: how to verify a game result', description: 'Server seed, client seed, nonce, and SHA-256 without the crypto fog—learn what a verifier really proves.', linkText: 'Read the article →', datetime: '2026-09-05', dateText: 'Published: September 5, 2026' },
+    uz: { href: 'article-provably-fair-rng.html', title: "Provably Fair va RNG: o'yin natijasini tekshirish", description: 'Server seed, client seed, nonce va SHA-256 sodda tilda — verifier nimani isbotlashini bilib oling.', linkText: "Maqolani o'qish →", datetime: '2026-09-05', dateText: 'Nashr etilgan: 5-sentabr, 2026' },
+    tg: { href: 'article-provably-fair-rng.html', title: 'Provably Fair ва RNG: санҷиши натиҷаи бозӣ', description: 'Server seed, client seed, nonce ва SHA-256 бо забони сода — verifier чиро исбот мекунад?', linkText: 'Хондани мақола →', datetime: '2026-09-05', dateText: 'Нашр шуд: 5 сентябри 2026' },
+    es: { href: 'article-provably-fair-rng.html', title: 'Provably Fair y RNG: cómo verificar un resultado', description: 'Server seed, client seed, nonce y SHA-256 sin humo cripto: qué demuestra realmente el verifier.', linkText: 'Leer el artículo →', datetime: '2026-09-05', dateText: 'Publicado: 5 de septiembre de 2026' },
+    id: { href: 'article-provably-fair-rng.html', title: 'Provably Fair dan RNG: cara cek hasil game', description: 'Server seed, client seed, nonce, dan SHA-256 tanpa jargon ribet—apa yang verifier buktikan?', linkText: 'Baca artikel →', datetime: '2026-09-05', dateText: 'Diterbitkan: 5 September 2026' }
+  };
+
   const localLatestArticles = {
     ru: [
+      { href: 'article-rtp-slots.html', title: 'RTP в слотах: что это и почему 96% не возвращаются сразу', description: 'Формула RTP, реальные отклонения короткой сессии, популярные мифы и наглядный эксперимент.', linkText: 'Читать статью →', datetime: '2026-09-04', dateText: 'Опубликовано: 4 сентября 2026' },
       { href: 'article-the-dog-house.html', title: 'The dog house - обзор на самый классический слот от Pragmatic!', description: 'Личный обзор 20 линий, Wild-будок с ×2 и ×3, бесплатных вращений и классического собачьего вайба.', linkText: 'Читать статью →', datetime: '2026-09-01', dateText: 'Опубликовано: 1 сентября 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar rush 1000 - одна из легендарных игр от Pragmatic Play!', description: 'Личный обзор поля 7×7, каскадов, липких множителей, бесплатных вращений и конфетного безумия.', linkText: 'Читать статью →', datetime: '2026-08-31', dateText: 'Опубликовано: 31 августа 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs hades - разбор слота от Pragmatic Play', description: 'Живой обзор Zeus vs Hades: режимы Olympus и Hades, RTP, обычные вращения, расширяющиеся Wild и бонусные игры.', linkText: 'Читать статью →', datetime: '2026-08-31', dateText: 'Опубликовано: 31 августа 2026' }
     ],
     en: [
+      { href: 'article-rtp-slots.html', title: 'Slot RTP explained: why 96% does not come back right away', description: 'RTP formula, real short-run swings, common myths, and a visual experiment with virtual spins.', linkText: 'Read the article →', datetime: '2026-09-04', dateText: 'Published: September 4, 2026' },
       { href: 'article-the-dog-house.html', title: "The Dog House — a review of Pragmatic's most classic slot!", description: 'A hands-on look at 20 paylines, ×2 and ×3 kennel Wilds, free spins and proper old-school doggo chaos.', linkText: 'Read the article →', datetime: '2026-09-01', dateText: 'Published: September 1, 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar Rush 1000 — one of Pragmatic Play’s legendary games!', description: 'A personal look at the 7×7 grid, tumbles, sticky multipliers, free spins, and candy-coated chaos.', linkText: 'Read the article →', datetime: '2026-08-31', dateText: 'Published: August 31, 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs Hades — Pragmatic Play Slot Review', description: 'A lively Zeus vs Hades review covering Olympus and Hades volatility, RTP, expanding Wild multipliers and free spins.', linkText: 'Read article →', datetime: '2026-08-31', dateText: 'Published: August 31, 2026' }
     ],
     uz: [
+      { href: 'article-rtp-slots.html', title: "Slotlarda RTP: nega 96% darhol qaytmaydi", description: "RTP formulasi, qisqa sessiyadagi haqiqiy og'ishlar, mashhur afsonalar va virtual spinlar tajribasi.", linkText: "Maqolani o'qish →", datetime: '2026-09-04', dateText: 'Nashr etilgan: 4-sentabr, 2026' },
       { href: 'article-the-dog-house.html', title: "The Dog House — Pragmatic'ning eng klassik sloti!", description: "20 liniya, ×2 va ×3 Wild uyalar, free spin'lar va eski maktab kuchuklar kayfiyati.", linkText: "Maqolani o'qish →", datetime: '2026-09-01', dateText: 'Nashr etilgan: 1-sentabr, 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar Rush 1000 — Pragmatic Play’ning afsonaviy o‘yinlaridan biri!', description: '7×7 maydon, kaskadlar, yopishqoq ko‘paytirgichlar, bepul aylanishlar va shirin tartibsizlik haqida shaxsiy sharh.', linkText: 'Maqolani o‘qish →', datetime: '2026-08-31', dateText: 'Nashr etilgan: 31-avgust, 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs Hades — Pragmatic Play sloti sharhi', description: 'Zeus vs Hades sharhi: Olympus va Hades volatiliteti, RTP, kengayuvchi Wild koʼpaytirgichlari va bepul spinlar.', linkText: 'Maqolani oʼqish →', datetime: '2026-08-31', dateText: 'Nashr etildi: 31-avgust, 2026' }
     ],
     tg: [
+      { href: 'article-rtp-slots.html', title: 'RTP дар слотҳо: чаро 96% фавран барнамегардад', description: 'Формулаи RTP, фарқияти натиҷаҳои кӯтоҳ, афсонаҳои маъмул ва таҷриба бо спинҳои виртуалӣ.', linkText: 'Хондани мақола →', datetime: '2026-09-04', dateText: 'Нашр шуд: 4 сентябри 2026' },
       { href: 'article-the-dog-house.html', title: 'The Dog House — слоти аз ҳама классикии Pragmatic!', description: '20 хат, хоначаҳои Wild бо ×2 ва ×3, free spin ва кайфияти сагҳои кӯҳна.', linkText: 'Хондани мақола →', datetime: '2026-09-01', dateText: 'Нашр шуд: 1 сентябри 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar Rush 1000 — яке аз бозиҳои афсонавии Pragmatic Play!', description: 'Шарҳи шахсии майдони 7×7, каскадҳо, зарбкунандаҳои часпанда, чархҳои ройгон ва бесарусомонии ширин.', linkText: 'Мақоларо хондан →', datetime: '2026-08-31', dateText: 'Нашр шуд: 31 августи 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs Hades — шарҳи слоти Pragmatic Play', description: 'Шарҳи Zeus vs Hades: Olympus ва Hades, RTP, Wild-ҳои васеъшаванда ва фриспинҳо.', linkText: 'Хондани мақола →', datetime: '2026-08-31', dateText: 'Нашр шуд: 31 августи 2026' }
     ],
     es: [
+      { href: 'article-rtp-slots.html', title: 'RTP en slots: por qué el 96% no vuelve enseguida', description: 'La fórmula del RTP, los vaivenes de una sesión corta, mitos comunes y un experimento con tiradas virtuales.', linkText: 'Leer el artículo →', datetime: '2026-09-04', dateText: 'Publicado: 4 de septiembre de 2026' },
       { href: 'article-the-dog-house.html', title: 'The Dog House: ¡el slot más clásico de Pragmatic!', description: '20 líneas, casitas Wild con ×2 y ×3, giros gratis y una banda de perros con mucha onda.', linkText: 'Leer el artículo →', datetime: '2026-09-01', dateText: 'Publicado: 1 de septiembre de 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar Rush 1000: ¡uno de los juegos legendarios de Pragmatic Play!', description: 'Una mirada personal a la cuadrícula 7×7, cascadas, multiplicadores pegajosos, giros gratis y caos azucarado.', linkText: 'Leer el artículo →', datetime: '2026-08-31', dateText: 'Publicado: 31 de agosto de 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs Hades — reseña del slot de Pragmatic Play', description: 'Reseña de Zeus vs Hades: Olympus, Hades, RTP, Wild expansivos y tiradas gratis.', linkText: 'Leer artículo →', datetime: '2026-08-31', dateText: 'Publicado: 31 de agosto de 2026' }
     ],
     id: [
+      { href: 'article-rtp-slots.html', title: 'RTP slot: kenapa 96% tidak langsung kembali', description: 'Rumus RTP, swing nyata dalam sesi pendek, mitos populer, dan eksperimen dengan spin virtual.', linkText: 'Baca artikel →', datetime: '2026-09-04', dateText: 'Diterbitkan: 4 September 2026' },
       { href: 'article-the-dog-house.html', title: 'The Dog House — slot Pragmatic paling klasik!', description: 'Ulasan 20 payline, Wild rumah anjing ×2 dan ×3, free spins, dan kekacauan doggo jadul.', linkText: 'Baca artikel →', datetime: '2026-09-01', dateText: 'Diterbitkan: 1 September 2026' },
       { href: 'article-sugar-rush-1000.html', title: 'Sugar Rush 1000 — salah satu game legendaris Pragmatic Play!', description: 'Ulasan pribadi tentang grid 7×7, tumble, pengali lengket, free spin, dan kekacauan penuh permen.', linkText: 'Baca artikel →', datetime: '2026-08-31', dateText: 'Diterbitkan: 31 Agustus 2026' },
       { href: 'article-zeus-vs-hades.html', title: 'Zeus vs Hades — Ulasan Slot Pragmatic Play', description: 'Ulasan Zeus vs Hades: mode Olympus dan Hades, RTP, Wild melebar, dan free spin.', linkText: 'Baca artikel →', datetime: '2026-08-31', dateText: 'Terbit: 31 Agustus 2026' }
@@ -182,6 +210,17 @@
         card.append(image);
       }
 
+      if (article.href === 'article-provably-fair-rng.html') {
+        const image = document.createElement('img');
+        image.className = 'fair-story-art';
+        image.src = `${language === 'ru' ? 'media/' : '../media/'}provably-fair-controller.png`;
+        image.width = 740;
+        image.height = 493;
+        image.alt = fairImageAlt[language] || fairImageAlt.ru;
+        card.classList.add('fair-story-card');
+        card.append(image);
+      }
+
       const kicker = document.createElement('span');
       kicker.className = 'story-kicker';
       kicker.textContent = 'Gamer Logic Hub';
@@ -239,6 +278,6 @@
   };
 
   loadLatestArticles().catch(() => {
-    renderArticles(localLatestArticles[language] || localLatestArticles.ru);
+    renderArticles([provablyLatest[language] || provablyLatest.ru, ...(localLatestArticles[language] || localLatestArticles.ru)].slice(0, 3));
   });
 })();
