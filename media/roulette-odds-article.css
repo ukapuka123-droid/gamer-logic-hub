@@ -1,0 +1,23 @@
+/* Roulette odds article additions; base layout comes from provably-fair-article.css. */
+.roulette-hero{position:relative;width:min(780px,100%);min-height:430px;margin:34px auto 0;padding:190px 34px 32px;overflow:hidden;border:1px solid rgba(255,215,0,.28);border-radius:24px;background-image:linear-gradient(180deg,rgba(9,4,23,.04) 8%,rgba(9,4,23,.28) 43%,rgba(9,4,23,.98) 100%),url("roulette-odds-hero.webp");background-position:center,center;background-size:cover,cover;background-repeat:no-repeat;text-align:left;box-shadow:0 24px 60px rgba(0,0,0,.34)}
+.roulette-hero h1{position:relative;z-index:2;max-width:760px;margin:0 0 12px;font-size:clamp(27px,5vw,44px);text-shadow:0 3px 18px #090417}
+.roulette-hero .eyebrow,.roulette-hero .article-publish-date,.roulette-hero .meta{position:relative;z-index:2}
+.roulette-hero .article-publish-date,.roulette-hero .meta{display:inline-block;margin-right:12px;color:#ddd0ef;font-size:12px}
+.roulette-lede{font-size:18px}
+.roulette-formula{display:block;margin:14px 0;padding:16px;overflow-x:auto;border:1px solid rgba(168,85,247,.28);border-radius:12px;background:#0d081b;color:#f7de75;font-size:15px}
+.roulette-table th:first-child,.roulette-table td:first-child{text-align:left}
+.roulette-table td:not(:first-child),.roulette-table th:not(:first-child){text-align:center;white-space:nowrap}
+.article>p>a{color:var(--purple);font-weight:700;text-decoration:underline;text-decoration-color:rgba(168,85,247,.5);text-decoration-thickness:1px;text-underline-offset:3px;transition:color .18s ease,text-decoration-color .18s ease}
+.article>p>a:hover{color:var(--gold);text-decoration-color:var(--gold)}
+.faq-list details{margin:10px 0;border:1px solid var(--line);border-radius:13px;background:var(--bg-panel)}
+.faq-list summary{padding:15px 18px;cursor:pointer;font-weight:750}
+.faq-list details p{margin:0;padding:0 18px 17px;color:var(--text-muted)}
+.popular-articles{margin:28px 0;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.popular-articles h2{margin:0 0 14px;font-size:19px;color:var(--gold)}
+.popular-list{display:grid;grid-template-columns:1fr;gap:8px}
+.popular-link{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--panel2);border:1px solid transparent;border-radius:10px;color:var(--text);font-size:13.5px;font-weight:600;line-height:1.4;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.popular-link:hover{transform:translateX(3px);border-color:rgba(76,217,154,.5);background:rgba(76,217,154,.08)}
+.popular-icon{color:var(--green);font-size:12px;flex:0 0 auto}
+.popular-arrow{margin-left:auto;color:var(--gold);font-size:16px;flex:0 0 auto}
+@media(min-width:720px){.popular-list{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.roulette-hero{min-height:390px;margin:20px auto 0;padding:170px 18px 24px;border-radius:0}.roulette-hero h1{font-size:28px}.roulette-lede{font-size:16px}.roulette-table{font-size:12px}}
