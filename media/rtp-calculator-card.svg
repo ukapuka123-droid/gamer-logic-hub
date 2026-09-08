@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">RTP calculator dashboard</title>
+  <desc id="desc">A glowing 96 percent gauge with calculation cards</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35116d"/><stop offset=".55" stop-color="#17082f"/><stop offset="1" stop-color="#090415"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#a84cf4" stop-opacity=".72"/><stop offset="1" stop-color="#a84cf4" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd45a"/><stop offset="1" stop-color="#ff8a3d"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="610" cy="340" r="360" fill="url(#glow)"/>
+  <g opacity=".16" stroke="#fff"><path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M0 600h1200M120 0v800M300 0v800M480 0v800M660 0v800M840 0v800M1020 0v800"/></g>
+  <g filter="url(#shadow)">
+    <rect x="170" y="100" width="860" height="570" rx="46" fill="#100822" stroke="#7642a8" stroke-width="4"/>
+    <circle cx="600" cy="330" r="176" fill="#160b2b" stroke="#3f245d" stroke-width="34"/>
+    <path d="M600 154a176 176 0 1 1-43 347" fill="none" stroke="url(#ring)" stroke-width="34" stroke-linecap="round"/>
+    <text x="600" y="350" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-weight="800" font-size="112">96%</text>
+    <text x="600" y="410" text-anchor="middle" fill="#c8b5e4" font-family="Arial, sans-serif" font-weight="700" font-size="34" letter-spacing="8">RTP</text>
+  </g>
+</svg>

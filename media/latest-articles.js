@@ -6,51 +6,57 @@
   const language = (document.documentElement.lang || 'ru').split('-')[0];
   const featuredCopy = {
     ru: {
-      badge: 'Новые интерактивные лаборатории', title: 'Главные симуляторы', description: 'Три углублённых инструмента для практического изучения RTP, стратегии и вероятностей.',
+      badge: 'Новые интерактивные лаборатории', title: 'Главные симуляторы', description: 'Четыре углублённых инструмента для практического изучения RTP, стратегии и вероятностей.',
       cards: [
         ['RTP и волатильность', 'Slot RTP & Volatility Lab', 'До 100 000 спинов, фактический RTP, частота выплат и максимальная просадка.', 'Открыть лабораторию →', 'slot-lab-card-hero.png', 'Слот-машина и график распределения для лаборатории RTP', 'simulator-slot-lab.html'],
         ['Обучение решениям', 'Blackjack Strategy Trainer', 'Практикуйте базовую стратегию и получайте объяснение каждого решения.', 'Начать тренировку →', 'blackjack-strategy-card-hero.png', 'Карты и компас решений тренажёра стратегии Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Шансы и house edge', 'Roulette Odds Calculator', 'Сравните типы ставок, европейское и американское колесо на длинной серии.', 'Рассчитать вероятность →', 'roulette-lab-card-hero.png', 'Рулетка и аналитические графики калькулятора вероятностей', 'simulator-roulette-lab.html']
+        ['Шансы и house edge', 'Roulette Odds Calculator', 'Сравните типы ставок, европейское и американское колесо на длинной серии.', 'Рассчитать вероятность →', 'roulette-lab-card-hero.png', 'Рулетка и аналитические графики калькулятора вероятностей', 'simulator-roulette-lab.html'],
+        ['RTP и матожидание', 'Калькулятор RTP и Bonus Buy', 'Рассчитайте фактический RTP, среднюю выплату и математическое ожидание покупки бонуса.', 'Открыть калькулятор →', 'rtp-calculator-card.svg?v=20260907-2', 'Калькулятор с показателем RTP 96 процентов и результатами матожидания', 'calculator-rtp.html']
       ]
     },
     en: {
-      badge: 'New interactive labs', title: 'Featured simulators', description: 'Three in-depth tools for exploring RTP, strategy and probability through practice.',
+      badge: 'New interactive labs', title: 'Featured simulators', description: 'Four in-depth tools for exploring RTP, strategy and probability through practice.',
       cards: [
         ['RTP and volatility', 'Slot RTP & Volatility Lab', 'Run up to 100,000 spins and inspect observed RTP, hit rate and maximum drawdown.', 'Open the lab →', 'slot-lab-card-hero.png', 'Slot machine and distribution chart for the RTP lab', 'simulator-slot-lab.html'],
         ['Decision training', 'Blackjack Strategy Trainer', 'Practice basic strategy and get an explanation for every decision.', 'Start training →', 'blackjack-strategy-card-hero.png', 'Cards and decision compass for the Blackjack strategy trainer', 'simulator-blackjack-strategy.html'],
-        ['Odds and house edge', 'Roulette Odds Calculator', 'Compare bets and test European and American wheels over a large sample.', 'Calculate the odds →', 'roulette-lab-card-hero.png', 'Roulette wheel and analytical charts for the odds calculator', 'simulator-roulette-lab.html']
+        ['Odds and house edge', 'Roulette Odds Calculator', 'Compare bets and test European and American wheels over a large sample.', 'Calculate the odds →', 'roulette-lab-card-hero.png', 'Roulette wheel and analytical charts for the odds calculator', 'simulator-roulette-lab.html'],
+        ['RTP and expected value', 'RTP & Bonus Buy Calculator', 'Calculate observed RTP, average payout, and the expected value of a bonus purchase.', 'Open the calculator →', 'rtp-calculator-card.svg?v=20260907-2', 'Calculator showing 96 percent RTP and expected value results', 'calculator-rtp.html']
       ]
     },
     uz: {
-      badge: 'Yangi interaktiv laboratoriyalar', title: 'Asosiy simulyatorlar', description: 'RTP, strategiya va ehtimollikni amalda tushunish uchun uchta batafsil vosita.',
+      badge: 'Yangi interaktiv laboratoriyalar', title: 'Asosiy simulyatorlar', description: 'RTP, strategiya va ehtimollikni amalda tushunish uchun to‘rtta batafsil vosita.',
       cards: [
         ['RTP va volatillik', 'Slot RTP va volatillik laboratoriyasi', '100 000 tagacha spin qiling, haqiqiy RTP, yutuq chastotasi va maksimal pasayishni kuzating.', 'Laboratoriyani ochish →', 'slot-lab-card-hero.png', 'RTP laboratoriyasi uchun slot va taqsimot grafigi', 'simulator-slot-lab.html'],
         ['Qarorlarni mashq qilish', 'Blackjack strategiya trenajyori', 'Asosiy strategiyani mashq qiling va har bir qaror bo‘yicha sodda izoh oling.', 'Mashqni boshlash →', 'blackjack-strategy-card-hero.png', 'Blackjack strategiya trenajyori kartalari', 'simulator-blackjack-strategy.html'],
-        ['Ehtimollik va house edge', 'Ruletka ehtimollari kalkulyatori', 'Tikish turlarini solishtiring va Yevropa hamda Amerika g‘ildiraklarini katta seriyada sinang.', 'Ehtimollikni hisoblash →', 'roulette-lab-card-hero.png', 'Ehtimollik kalkulyatori uchun ruletka va grafiklar', 'simulator-roulette-lab.html']
+        ['Ehtimollik va house edge', 'Ruletka ehtimollari kalkulyatori', 'Tikish turlarini solishtiring va Yevropa hamda Amerika g‘ildiraklarini katta seriyada sinang.', 'Ehtimollikni hisoblash →', 'roulette-lab-card-hero.png', 'Ehtimollik kalkulyatori uchun ruletka va grafiklar', 'simulator-roulette-lab.html'],
+        ['RTP va matematik kutilma', 'RTP va Bonus Buy kalkulyatori', 'Amaldagi RTP, o‘rtacha to‘lov va bonus xaridining matematik kutilmasini hisoblang.', 'Kalkulyatorni ochish →', 'rtp-calculator-card.svg?v=20260907-2', 'RTP 96 foiz va matematik kutilma natijalarini ko‘rsatuvchi kalkulyator', 'calculator-rtp.html']
       ]
     },
     tg: {
-      badge: 'Лабораторияҳои нави интерактивӣ', title: 'Симуляторҳои асосӣ', description: 'Се воситаи муфассал барои омӯзиши амалии RTP, стратегия ва эҳтимолият.',
+      badge: 'Лабораторияҳои нави интерактивӣ', title: 'Симуляторҳои асосӣ', description: 'Чор воситаи муфассал барои омӯзиши амалии RTP, стратегия ва эҳтимолият.',
       cards: [
         ['RTP ва волатилнокӣ', 'Лабораторияи RTP ва волатилнокии слот', 'То 100 000 спин гузаронед ва RTP-и воқеӣ, басомади бурд ва пастшавии калонтаринро бинед.', 'Кушодани лаборатория →', 'slot-lab-card-hero.png', 'Слот ва графики тақсимот барои лабораторияи RTP', 'simulator-slot-lab.html'],
         ['Машқи қарорҳо', 'Тренажёри стратегияи Blackjack', 'Стратегияи асосиро машқ кунед ва барои ҳар қарор шарҳи фаҳмо гиред.', 'Оғози машқ →', 'blackjack-strategy-card-hero.png', 'Кортҳои тренажёри стратегияи Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Эҳтимолият ва house edge', 'Ҳисобкунаки эҳтимолияти рулетка', 'Навъҳои шартро муқоиса карда, чархи аврупоӣ ва амрикоиро дар силсилаи калон санҷед.', 'Ҳисоб кардани эҳтимолият →', 'roulette-lab-card-hero.png', 'Рулетка ва графикҳои ҳисобкунаки эҳтимолият', 'simulator-roulette-lab.html']
+        ['Эҳтимолият ва house edge', 'Ҳисобкунаки эҳтимолияти рулетка', 'Навъҳои шартро муқоиса карда, чархи аврупоӣ ва амрикоиро дар силсилаи калон санҷед.', 'Ҳисоб кардани эҳтимолият →', 'roulette-lab-card-hero.png', 'Рулетка ва графикҳои ҳисобкунаки эҳтимолият', 'simulator-roulette-lab.html'],
+        ['RTP ва интизории математикӣ', 'Калкулятори RTP ва Bonus Buy', 'RTP-и воқеӣ, пардохти миёна ва интизории хариди бонусро ҳисоб кунед.', 'Кушодани калкулятор →', 'rtp-calculator-card.svg?v=20260907-2', 'Калкулятор бо RTP 96 фоиз ва натиҷаҳои интизории математикӣ', 'calculator-rtp.html']
       ]
     },
     es: {
-      badge: 'Nuevos laboratorios interactivos', title: 'Simuladores principales', description: 'Tres herramientas completas para entender RTP, estrategia y probabilidades metiendo mano, sin vueltas.',
+      badge: 'Nuevos laboratorios interactivos', title: 'Simuladores principales', description: 'Cuatro herramientas completas para entender RTP, estrategia y probabilidades metiendo mano, sin vueltas.',
       cards: [
         ['RTP y volatilidad', 'Laboratorio de RTP y volatilidad', 'Probá hasta 100.000 tiradas y mirá el RTP real, la frecuencia de premios y la caída máxima.', 'Abrir el laboratorio →', 'slot-lab-card-hero.png', 'Tragamonedas y gráfico de distribución del laboratorio de RTP', 'simulator-slot-lab.html'],
         ['Práctica de decisiones', 'Entrenador de estrategia de Blackjack', 'Practicá la estrategia básica y recibí una explicación clara para cada decisión.', 'Empezar a practicar →', 'blackjack-strategy-card-hero.png', 'Cartas del entrenador de estrategia de Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Chances y ventaja de la casa', 'Calculadora de probabilidades de ruleta', 'Compará apuestas y probá ruedas europea y americana en una tanda larga.', 'Calcular probabilidades →', 'roulette-lab-card-hero.png', 'Ruleta y gráficos de la calculadora de probabilidades', 'simulator-roulette-lab.html']
+        ['Chances y ventaja de la casa', 'Calculadora de probabilidades de ruleta', 'Compará apuestas y probá ruedas europea y americana en una tanda larga.', 'Calcular probabilidades →', 'roulette-lab-card-hero.png', 'Ruleta y gráficos de la calculadora de probabilidades', 'simulator-roulette-lab.html'],
+        ['RTP y valor esperado', 'Calculadora de RTP y Bonus Buy', 'Calculá el RTP observado, el pago promedio y el valor esperado de una compra de bonus.', 'Abrir la calculadora →', 'rtp-calculator-card.svg?v=20260907-2', 'Calculadora con RTP de 96 por ciento y resultados de valor esperado', 'calculator-rtp.html']
       ]
     },
     id: {
-      badge: 'Laboratorium interaktif terbaru', title: 'Simulator utama', description: 'Tiga alat lengkap buat membedah RTP, strategi, dan probabilitas lewat praktik langsung.',
+      badge: 'Laboratorium interaktif terbaru', title: 'Simulator utama', description: 'Empat alat lengkap buat membedah RTP, strategi, dan probabilitas lewat praktik langsung.',
       cards: [
         ['RTP dan volatilitas', 'Lab RTP & volatilitas slot', 'Jalankan sampai 100.000 spin lalu cek RTP aktual, hit rate, dan penurunan saldo maksimum.', 'Buka lab →', 'slot-lab-card-hero.png', 'Mesin slot dan grafik distribusi untuk lab RTP', 'simulator-slot-lab.html'],
         ['Latihan keputusan', 'Pelatih strategi Blackjack', 'Latih strategi dasar dan dapatkan penjelasan yang gampang dipahami untuk setiap keputusan.', 'Mulai latihan →', 'blackjack-strategy-card-hero.png', 'Kartu untuk pelatih strategi Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Peluang dan house edge', 'Kalkulator peluang Roulette', 'Bandingkan jenis taruhan dan tes roda Eropa serta Amerika dalam seri panjang.', 'Hitung peluang →', 'roulette-lab-card-hero.png', 'Roda roulette dan grafik kalkulator peluang', 'simulator-roulette-lab.html']
+        ['Peluang dan house edge', 'Kalkulator peluang Roulette', 'Bandingkan jenis taruhan dan tes roda Eropa serta Amerika dalam seri panjang.', 'Hitung peluang →', 'roulette-lab-card-hero.png', 'Roda roulette dan grafik kalkulator peluang', 'simulator-roulette-lab.html'],
+        ['RTP dan expected value', 'Kalkulator RTP & Bonus Buy', 'Hitung RTP aktual, pembayaran rata-rata, dan expected value pembelian bonus.', 'Buka kalkulator →', 'rtp-calculator-card.svg?v=20260907-2', 'Kalkulator dengan RTP 96 persen dan hasil expected value', 'calculator-rtp.html']
       ]
     }
   };
@@ -66,6 +72,9 @@
       const featuredStyle = document.createElement('style');
       featuredStyle.textContent = '.featured-tools{padding-top:42px}.featured-badge{display:inline-flex;padding:7px 12px;margin-bottom:8px;border:1px solid rgba(32,232,117,.45);border-radius:999px;background:rgba(32,232,117,.08);color:#8bffc0;font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.featured-sim-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.featured-sim-card{position:relative;display:flex;min-width:0;min-height:360px;overflow:hidden;border:1px solid #62427e;border-radius:20px;background:#17102a;color:#fff;text-decoration:none;box-shadow:0 18px 42px rgba(0,0,0,.28);transition:transform .22s,border-color .22s,box-shadow .22s}.featured-sim-card:hover{transform:translateY(-5px);border-color:var(--purple);box-shadow:0 24px 48px rgba(92,35,151,.3)}.featured-sim-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s}.featured-sim-card:hover img{transform:scale(1.035)}.featured-sim-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,4,20,.02) 30%,rgba(11,6,24,.58) 60%,rgba(11,6,24,.98) 100%)}.featured-sim-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;width:100%;padding:22px}.featured-sim-copy>span{align-self:flex-start;margin-bottom:auto;padding:5px 9px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(11,6,24,.68);color:#e8dcfa;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(8px)}.featured-sim-copy h3{margin:0;color:#fff;font-size:21px;line-height:1.18}.featured-sim-copy p{margin:7px 0 0;color:#d5c7e9;font-size:13px}.featured-sim-copy b{margin-top:12px;color:var(--yellow);font-size:13px}@media(max-width:820px){.featured-sim-grid{grid-template-columns:1fr 1fr}.featured-sim-card:last-child{grid-column:1/-1}}@media(max-width:560px){.featured-sim-grid{grid-template-columns:1fr}.featured-sim-card,.featured-sim-card:last-child{grid-column:auto;min-height:330px}}';
       document.head.append(featuredStyle);
+      const featuredGridStyle = document.createElement('style');
+      featuredGridStyle.textContent = '.featured-sim-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.featured-sim-card{min-height:340px}.featured-sim-copy{padding:18px}.featured-sim-copy h3{font-size:19px}@media(max-width:1020px){.featured-sim-grid{grid-template-columns:1fr 1fr}.featured-sim-card:last-child{grid-column:auto}}@media(max-width:560px){.featured-sim-grid{grid-template-columns:1fr}.featured-sim-card{min-height:330px}}';
+      document.head.append(featuredGridStyle);
       simulatorSection.before(featured);
     }
   }
