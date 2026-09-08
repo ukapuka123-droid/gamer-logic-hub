@@ -46,19 +46,22 @@ const replaceOnce = (file, from, to) => {
 };
 
 for (const lang of languages) {
-  const c = copy[lang], dir = folder[lang], prefix = prefixFor(lang);
+  const c = copy[lang], dir = folder[lang];
   const home = `${dir ? `${dir}/` : ''}index.html`;
   const oldHeading = {ru:'<h2>Популярные игры</h2><p>Исследуйте вероятность и игровые механики без ставок и реальных денег.</p>',en:'<h2>Popular games</h2><p>Play around with probability and game mechanics — no bets or real money involved.</p>',uz:"<h2>Mashhur o'yinlar</h2><p>Ehtimollik va o'yin mexanizmlarini stavka va real pulsiz sinab ko'ring.</p>",tg:'<h2>Бозиҳои машҳур</h2><p>Эҳтимолият ва механизмҳои бозиро бе шарт ва пули воқеӣ омӯзед.</p>',es:'<h2>Juegos populares</h2><p>Probá la probabilidad y las mecánicas sin apuestas ni dinero real.</p>',id:'<h2>Game populer</h2><p>Eksplor probabilitas dan mekanisme game tanpa taruhan atau uang asli.</p>'}[lang];
-  replaceOnce(home, oldHeading, `<h2>${c.sectionTitle}</h2><p>${c.sectionText}</p>`);
-  const cardStyles = '<style id="rtp-calculator-card-style">.sim-card.rtp-calculator-card{display:flex;flex-direction:column;min-height:0;padding:0;overflow:hidden;border:1px solid #52366a;background:#17102a;color:#fff;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}.rtp-calculator-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(73,28,129,.38)}.rtp-calculator-card .sim-art{height:220px;border:0;border-radius:0;background:radial-gradient(circle at 50% 42%,rgba(255,180,84,.26),transparent 34%),linear-gradient(145deg,#30145b,#130827)}.rtp-calculator-card .sim-art span{width:112px;height:112px;border:1px solid rgba(255,180,84,.75);background:#160b2a;color:#ffb454;font-size:29px;box-shadow:0 0 0 12px rgba(168,76,244,.12),0 14px 28px rgba(0,0,0,.3)}.rtp-calculator-card .sim-copy{min-height:96px;padding:14px 16px 16px;background:linear-gradient(145deg,#21143d,#17102a);border-top:1px solid rgba(168,76,244,.42)}.rtp-calculator-card .sim-status{margin:0 0 7px;color:#78e6bb}.rtp-calculator-card h3{margin:0;color:#fff;font-size:17px;line-height:1.22}.rtp-calculator-card p{margin:5px 0 0;color:#cdbde8;font-size:12px;line-height:1.35}@media(max-width:560px){.rtp-calculator-card .sim-art{height:210px}}</style>';
-  replaceOnce(home, '</head>', `${cardStyles}</head>`);
-  const grid = '<div class="sim-grid">';
-  const card = `<div class="sim-grid"><a class="sim-card rtp-calculator-card" href="calculator-rtp.html"><div class="sim-art"><span>96%</span></div><div class="sim-copy"><span class="sim-status">${c.available}</span><h3>${c.cardTitle}</h3><p>${c.cardText}</p></div></a>`;
-  replaceOnce(home, grid, card);
   const buttonOld = {ru:'>Популярные игры</a>',en:'>Popular games</a>',uz:">Mashhur o'yinlar</a>",tg:'>Бозиҳои машҳур</a>',es:'>Juegos populares</a>',id:'>Game populer</a>'}[lang];
-  replaceOnce(home, buttonOld, `>${c.heroLink}</a>`);
-  replaceOnce(home, 'latest-articles.js?v=20260905-2', 'latest-articles.js?v=20260907-3');
-  replaceOnce(home, 'latest-articles.js?v=20260907-3', 'latest-articles.js?v=20260907-4');
+  const homePath = path.join(root, home);
+  let homeHtml = fs.readFileSync(homePath, 'utf8');
+  const expandedHeading = `<h2>${c.sectionTitle}</h2><p>${c.sectionText}</p>`;
+  const catalogCard = `<div class="sim-grid"><a class="sim-card rtp-calculator-card" href="calculator-rtp.html"><div class="sim-art"><span>96%</span></div><div class="sim-copy"><span class="sim-status">${c.available}</span><h3>${c.cardTitle}</h3><p>${c.cardText}</p></div></a>`;
+  homeHtml = homeHtml
+    .replace(expandedHeading, oldHeading)
+    .replace(catalogCard, '<div class="sim-grid">')
+    .replace(/<style id="rtp-calculator-card-style">[\s\S]*?<\/style>/, '')
+    .replace(`>${c.heroLink}</a>`, buttonOld)
+    .replace('latest-articles.js?v=20260905-2', 'latest-articles.js?v=20260907-4')
+    .replace('latest-articles.js?v=20260907-3', 'latest-articles.js?v=20260907-4');
+  fs.writeFileSync(homePath, homeHtml, 'utf8');
 
   const bonus = `${dir ? `${dir}/` : ''}article-bonus-buy-slots.html`;
   replaceOnce(bonus, '<div class="related">', `<div class="related"><a href="calculator-rtp.html">${c.bonusLink}</a>`);
