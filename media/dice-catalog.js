@@ -23,7 +23,7 @@
     const card = document.createElement('a');
     card.className = 'sim-card plinko-card dice-card';
     card.href = 'simulator-dice.html';
-    card.innerHTML = `<div class="sim-art"><img src="${media}dice-card-hero.png" alt="Dice 0–100"></div><div class="sim-copy"><span class="sim-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div>`;
+    card.innerHTML = `<div class="sim-art"><img src="${media}dice-card-hero.webp" alt="Dice 0–100"></div><div class="sim-copy"><span class="sim-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div>`;
     placeholder ? placeholder.replaceWith(card) : simGrid.append(card);
   }
   const other = document.querySelector('.other-games');
@@ -32,7 +32,7 @@
     card.className = 'other-game';
     card.href = 'simulator-dice.html';
     card.style.marginTop = '12px';
-    card.innerHTML = `<img src="${media}dice-card-hero.png" alt="Dice 0–100"><div class="other-game-copy"><span class="other-game-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div><span class="other-game-action">${play[lang] || play.ru}</span>`;
+    card.innerHTML = `<img src="${media}dice-card-hero.webp" alt="Dice 0–100"><div class="other-game-copy"><span class="other-game-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div><span class="other-game-action">${play[lang] || play.ru}</span>`;
     other.append(card);
   }
 })();

@@ -36,7 +36,7 @@
     const card = document.createElement('a');
     card.className = 'all-game';
     card.href = 'simulator-dice.html';
-    card.innerHTML = `<img src="${mediaPrefix}dice-card-hero.png" alt="Dice"><div class="all-game-copy"><span class="all-game-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div>`;
+    card.innerHTML = `<img src="${mediaPrefix}dice-card-hero.webp" alt="Dice"><div class="all-game-copy"><span class="all-game-status">${available[lang] || available.ru}</span><h3>Dice: 0–100</h3><p>${text[lang] || text.ru}</p></div>`;
     gamesGrid.append(card);
   }
   const articlesPerPage = 6;

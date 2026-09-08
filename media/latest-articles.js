@@ -8,54 +8,54 @@
     ru: {
       badge: 'Новые интерактивные лаборатории', title: 'Главные симуляторы', description: 'Четыре углублённых инструмента для практического изучения RTP, стратегии и вероятностей.',
       cards: [
-        ['RTP и волатильность', 'Slot RTP & Volatility Lab', 'До 100 000 спинов, фактический RTP, частота выплат и максимальная просадка.', 'Открыть лабораторию →', 'slot-lab-card-hero.png', 'Слот-машина и график распределения для лаборатории RTP', 'simulator-slot-lab.html'],
-        ['Обучение решениям', 'Blackjack Strategy Trainer', 'Практикуйте базовую стратегию и получайте объяснение каждого решения.', 'Начать тренировку →', 'blackjack-strategy-card-hero.png', 'Карты и компас решений тренажёра стратегии Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Шансы и house edge', 'Roulette Odds Calculator', 'Сравните типы ставок, европейское и американское колесо на длинной серии.', 'Рассчитать вероятность →', 'roulette-lab-card-hero.png', 'Рулетка и аналитические графики калькулятора вероятностей', 'simulator-roulette-lab.html'],
+        ['RTP и волатильность', 'Slot RTP & Volatility Lab', 'До 100 000 спинов, фактический RTP, частота выплат и максимальная просадка.', 'Открыть лабораторию →', 'slot-lab-card-hero.webp', 'Слот-машина и график распределения для лаборатории RTP', 'simulator-slot-lab.html'],
+        ['Обучение решениям', 'Blackjack Strategy Trainer', 'Практикуйте базовую стратегию и получайте объяснение каждого решения.', 'Начать тренировку →', 'blackjack-strategy-card-hero.webp', 'Карты и компас решений тренажёра стратегии Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Шансы и house edge', 'Roulette Odds Calculator', 'Сравните типы ставок, европейское и американское колесо на длинной серии.', 'Рассчитать вероятность →', 'roulette-lab-card-hero.webp', 'Рулетка и аналитические графики калькулятора вероятностей', 'simulator-roulette-lab.html'],
         ['RTP и матожидание', 'Калькулятор RTP и Bonus Buy', 'Рассчитайте фактический RTP, среднюю выплату и математическое ожидание покупки бонуса.', 'Открыть калькулятор →', 'rtp-calculator-card.svg?v=20260907-2', 'Калькулятор с показателем RTP 96 процентов и результатами матожидания', 'calculator-rtp.html']
       ]
     },
     en: {
       badge: 'New interactive labs', title: 'Featured simulators', description: 'Four in-depth tools for exploring RTP, strategy and probability through practice.',
       cards: [
-        ['RTP and volatility', 'Slot RTP & Volatility Lab', 'Run up to 100,000 spins and inspect observed RTP, hit rate and maximum drawdown.', 'Open the lab →', 'slot-lab-card-hero.png', 'Slot machine and distribution chart for the RTP lab', 'simulator-slot-lab.html'],
-        ['Decision training', 'Blackjack Strategy Trainer', 'Practice basic strategy and get an explanation for every decision.', 'Start training →', 'blackjack-strategy-card-hero.png', 'Cards and decision compass for the Blackjack strategy trainer', 'simulator-blackjack-strategy.html'],
-        ['Odds and house edge', 'Roulette Odds Calculator', 'Compare bets and test European and American wheels over a large sample.', 'Calculate the odds →', 'roulette-lab-card-hero.png', 'Roulette wheel and analytical charts for the odds calculator', 'simulator-roulette-lab.html'],
+        ['RTP and volatility', 'Slot RTP & Volatility Lab', 'Run up to 100,000 spins and inspect observed RTP, hit rate and maximum drawdown.', 'Open the lab →', 'slot-lab-card-hero.webp', 'Slot machine and distribution chart for the RTP lab', 'simulator-slot-lab.html'],
+        ['Decision training', 'Blackjack Strategy Trainer', 'Practice basic strategy and get an explanation for every decision.', 'Start training →', 'blackjack-strategy-card-hero.webp', 'Cards and decision compass for the Blackjack strategy trainer', 'simulator-blackjack-strategy.html'],
+        ['Odds and house edge', 'Roulette Odds Calculator', 'Compare bets and test European and American wheels over a large sample.', 'Calculate the odds →', 'roulette-lab-card-hero.webp', 'Roulette wheel and analytical charts for the odds calculator', 'simulator-roulette-lab.html'],
         ['RTP and expected value', 'RTP & Bonus Buy Calculator', 'Calculate observed RTP, average payout, and the expected value of a bonus purchase.', 'Open the calculator →', 'rtp-calculator-card.svg?v=20260907-2', 'Calculator showing 96 percent RTP and expected value results', 'calculator-rtp.html']
       ]
     },
     uz: {
       badge: 'Yangi interaktiv laboratoriyalar', title: 'Asosiy simulyatorlar', description: 'RTP, strategiya va ehtimollikni amalda tushunish uchun to‘rtta batafsil vosita.',
       cards: [
-        ['RTP va volatillik', 'Slot RTP va volatillik laboratoriyasi', '100 000 tagacha spin qiling, haqiqiy RTP, yutuq chastotasi va maksimal pasayishni kuzating.', 'Laboratoriyani ochish →', 'slot-lab-card-hero.png', 'RTP laboratoriyasi uchun slot va taqsimot grafigi', 'simulator-slot-lab.html'],
-        ['Qarorlarni mashq qilish', 'Blackjack strategiya trenajyori', 'Asosiy strategiyani mashq qiling va har bir qaror bo‘yicha sodda izoh oling.', 'Mashqni boshlash →', 'blackjack-strategy-card-hero.png', 'Blackjack strategiya trenajyori kartalari', 'simulator-blackjack-strategy.html'],
-        ['Ehtimollik va house edge', 'Ruletka ehtimollari kalkulyatori', 'Tikish turlarini solishtiring va Yevropa hamda Amerika g‘ildiraklarini katta seriyada sinang.', 'Ehtimollikni hisoblash →', 'roulette-lab-card-hero.png', 'Ehtimollik kalkulyatori uchun ruletka va grafiklar', 'simulator-roulette-lab.html'],
+        ['RTP va volatillik', 'Slot RTP va volatillik laboratoriyasi', '100 000 tagacha spin qiling, haqiqiy RTP, yutuq chastotasi va maksimal pasayishni kuzating.', 'Laboratoriyani ochish →', 'slot-lab-card-hero.webp', 'RTP laboratoriyasi uchun slot va taqsimot grafigi', 'simulator-slot-lab.html'],
+        ['Qarorlarni mashq qilish', 'Blackjack strategiya trenajyori', 'Asosiy strategiyani mashq qiling va har bir qaror bo‘yicha sodda izoh oling.', 'Mashqni boshlash →', 'blackjack-strategy-card-hero.webp', 'Blackjack strategiya trenajyori kartalari', 'simulator-blackjack-strategy.html'],
+        ['Ehtimollik va house edge', 'Ruletka ehtimollari kalkulyatori', 'Tikish turlarini solishtiring va Yevropa hamda Amerika g‘ildiraklarini katta seriyada sinang.', 'Ehtimollikni hisoblash →', 'roulette-lab-card-hero.webp', 'Ehtimollik kalkulyatori uchun ruletka va grafiklar', 'simulator-roulette-lab.html'],
         ['RTP va matematik kutilma', 'RTP va Bonus Buy kalkulyatori', 'Amaldagi RTP, o‘rtacha to‘lov va bonus xaridining matematik kutilmasini hisoblang.', 'Kalkulyatorni ochish →', 'rtp-calculator-card.svg?v=20260907-2', 'RTP 96 foiz va matematik kutilma natijalarini ko‘rsatuvchi kalkulyator', 'calculator-rtp.html']
       ]
     },
     tg: {
       badge: 'Лабораторияҳои нави интерактивӣ', title: 'Симуляторҳои асосӣ', description: 'Чор воситаи муфассал барои омӯзиши амалии RTP, стратегия ва эҳтимолият.',
       cards: [
-        ['RTP ва волатилнокӣ', 'Лабораторияи RTP ва волатилнокии слот', 'То 100 000 спин гузаронед ва RTP-и воқеӣ, басомади бурд ва пастшавии калонтаринро бинед.', 'Кушодани лаборатория →', 'slot-lab-card-hero.png', 'Слот ва графики тақсимот барои лабораторияи RTP', 'simulator-slot-lab.html'],
-        ['Машқи қарорҳо', 'Тренажёри стратегияи Blackjack', 'Стратегияи асосиро машқ кунед ва барои ҳар қарор шарҳи фаҳмо гиред.', 'Оғози машқ →', 'blackjack-strategy-card-hero.png', 'Кортҳои тренажёри стратегияи Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Эҳтимолият ва house edge', 'Ҳисобкунаки эҳтимолияти рулетка', 'Навъҳои шартро муқоиса карда, чархи аврупоӣ ва амрикоиро дар силсилаи калон санҷед.', 'Ҳисоб кардани эҳтимолият →', 'roulette-lab-card-hero.png', 'Рулетка ва графикҳои ҳисобкунаки эҳтимолият', 'simulator-roulette-lab.html'],
+        ['RTP ва волатилнокӣ', 'Лабораторияи RTP ва волатилнокии слот', 'То 100 000 спин гузаронед ва RTP-и воқеӣ, басомади бурд ва пастшавии калонтаринро бинед.', 'Кушодани лаборатория →', 'slot-lab-card-hero.webp', 'Слот ва графики тақсимот барои лабораторияи RTP', 'simulator-slot-lab.html'],
+        ['Машқи қарорҳо', 'Тренажёри стратегияи Blackjack', 'Стратегияи асосиро машқ кунед ва барои ҳар қарор шарҳи фаҳмо гиред.', 'Оғози машқ →', 'blackjack-strategy-card-hero.webp', 'Кортҳои тренажёри стратегияи Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Эҳтимолият ва house edge', 'Ҳисобкунаки эҳтимолияти рулетка', 'Навъҳои шартро муқоиса карда, чархи аврупоӣ ва амрикоиро дар силсилаи калон санҷед.', 'Ҳисоб кардани эҳтимолият →', 'roulette-lab-card-hero.webp', 'Рулетка ва графикҳои ҳисобкунаки эҳтимолият', 'simulator-roulette-lab.html'],
         ['RTP ва интизории математикӣ', 'Калкулятори RTP ва Bonus Buy', 'RTP-и воқеӣ, пардохти миёна ва интизории хариди бонусро ҳисоб кунед.', 'Кушодани калкулятор →', 'rtp-calculator-card.svg?v=20260907-2', 'Калкулятор бо RTP 96 фоиз ва натиҷаҳои интизории математикӣ', 'calculator-rtp.html']
       ]
     },
     es: {
       badge: 'Nuevos laboratorios interactivos', title: 'Simuladores principales', description: 'Cuatro herramientas completas para entender RTP, estrategia y probabilidades metiendo mano, sin vueltas.',
       cards: [
-        ['RTP y volatilidad', 'Laboratorio de RTP y volatilidad', 'Probá hasta 100.000 tiradas y mirá el RTP real, la frecuencia de premios y la caída máxima.', 'Abrir el laboratorio →', 'slot-lab-card-hero.png', 'Tragamonedas y gráfico de distribución del laboratorio de RTP', 'simulator-slot-lab.html'],
-        ['Práctica de decisiones', 'Entrenador de estrategia de Blackjack', 'Practicá la estrategia básica y recibí una explicación clara para cada decisión.', 'Empezar a practicar →', 'blackjack-strategy-card-hero.png', 'Cartas del entrenador de estrategia de Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Chances y ventaja de la casa', 'Calculadora de probabilidades de ruleta', 'Compará apuestas y probá ruedas europea y americana en una tanda larga.', 'Calcular probabilidades →', 'roulette-lab-card-hero.png', 'Ruleta y gráficos de la calculadora de probabilidades', 'simulator-roulette-lab.html'],
+        ['RTP y volatilidad', 'Laboratorio de RTP y volatilidad', 'Probá hasta 100.000 tiradas y mirá el RTP real, la frecuencia de premios y la caída máxima.', 'Abrir el laboratorio →', 'slot-lab-card-hero.webp', 'Tragamonedas y gráfico de distribución del laboratorio de RTP', 'simulator-slot-lab.html'],
+        ['Práctica de decisiones', 'Entrenador de estrategia de Blackjack', 'Practicá la estrategia básica y recibí una explicación clara para cada decisión.', 'Empezar a practicar →', 'blackjack-strategy-card-hero.webp', 'Cartas del entrenador de estrategia de Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Chances y ventaja de la casa', 'Calculadora de probabilidades de ruleta', 'Compará apuestas y probá ruedas europea y americana en una tanda larga.', 'Calcular probabilidades →', 'roulette-lab-card-hero.webp', 'Ruleta y gráficos de la calculadora de probabilidades', 'simulator-roulette-lab.html'],
         ['RTP y valor esperado', 'Calculadora de RTP y Bonus Buy', 'Calculá el RTP observado, el pago promedio y el valor esperado de una compra de bonus.', 'Abrir la calculadora →', 'rtp-calculator-card.svg?v=20260907-2', 'Calculadora con RTP de 96 por ciento y resultados de valor esperado', 'calculator-rtp.html']
       ]
     },
     id: {
       badge: 'Laboratorium interaktif terbaru', title: 'Simulator utama', description: 'Empat alat lengkap buat membedah RTP, strategi, dan probabilitas lewat praktik langsung.',
       cards: [
-        ['RTP dan volatilitas', 'Lab RTP & volatilitas slot', 'Jalankan sampai 100.000 spin lalu cek RTP aktual, hit rate, dan penurunan saldo maksimum.', 'Buka lab →', 'slot-lab-card-hero.png', 'Mesin slot dan grafik distribusi untuk lab RTP', 'simulator-slot-lab.html'],
-        ['Latihan keputusan', 'Pelatih strategi Blackjack', 'Latih strategi dasar dan dapatkan penjelasan yang gampang dipahami untuk setiap keputusan.', 'Mulai latihan →', 'blackjack-strategy-card-hero.png', 'Kartu untuk pelatih strategi Blackjack', 'simulator-blackjack-strategy.html'],
-        ['Peluang dan house edge', 'Kalkulator peluang Roulette', 'Bandingkan jenis taruhan dan tes roda Eropa serta Amerika dalam seri panjang.', 'Hitung peluang →', 'roulette-lab-card-hero.png', 'Roda roulette dan grafik kalkulator peluang', 'simulator-roulette-lab.html'],
+        ['RTP dan volatilitas', 'Lab RTP & volatilitas slot', 'Jalankan sampai 100.000 spin lalu cek RTP aktual, hit rate, dan penurunan saldo maksimum.', 'Buka lab →', 'slot-lab-card-hero.webp', 'Mesin slot dan grafik distribusi untuk lab RTP', 'simulator-slot-lab.html'],
+        ['Latihan keputusan', 'Pelatih strategi Blackjack', 'Latih strategi dasar dan dapatkan penjelasan yang gampang dipahami untuk setiap keputusan.', 'Mulai latihan →', 'blackjack-strategy-card-hero.webp', 'Kartu untuk pelatih strategi Blackjack', 'simulator-blackjack-strategy.html'],
+        ['Peluang dan house edge', 'Kalkulator peluang Roulette', 'Bandingkan jenis taruhan dan tes roda Eropa serta Amerika dalam seri panjang.', 'Hitung peluang →', 'roulette-lab-card-hero.webp', 'Roda roulette dan grafik kalkulator peluang', 'simulator-roulette-lab.html'],
         ['RTP dan expected value', 'Kalkulator RTP & Bonus Buy', 'Hitung RTP aktual, pembayaran rata-rata, dan expected value pembelian bonus.', 'Buka kalkulator →', 'rtp-calculator-card.svg?v=20260907-2', 'Kalkulator dengan RTP 96 persen dan hasil expected value', 'calculator-rtp.html']
       ]
     }

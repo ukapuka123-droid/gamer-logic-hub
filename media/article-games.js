@@ -13,9 +13,9 @@
   };
   const t = copy[language] || copy.ru;
   const games = [
-    { href: 'simulator-plinko.html', image: 'plinko-card-hero.png', alt: 'Plinko', title: t.plinkoTitle, text: t.plinkoText },
-    { href: 'simulator-limbo.html', image: 'limbo-card-hero.png', alt: 'Limbo', title: t.limboTitle, text: t.limboText },
-    { href: 'simulator-dice.html', image: 'dice-card-hero.png', alt: 'Dice', title: 'Dice: 0–100', text: language === 'ru' ? 'Выберите условие и наблюдайте результат на шкале от 0 до 100.' : language === 'es' ? 'Elegí una condición y observá el resultado en la escala de 0 a 100.' : language === 'id' ? 'Pilih kondisi dan amati hasil pada skala 0–100.' : language === 'uz' ? 'Shartni tanlang va natijani 0–100 shkalasida kuzating.' : language === 'tg' ? 'Шартро интихоб карда, натиҷаро дар миқёси 0–100 бинед.' : 'Choose a condition and watch the result land on the 0–100 scale.' }
+    { href: 'simulator-plinko.html', image: 'plinko-card-hero.webp', alt: 'Plinko', title: t.plinkoTitle, text: t.plinkoText },
+    { href: 'simulator-limbo.html', image: 'limbo-card-hero.webp', alt: 'Limbo', title: t.limboTitle, text: t.limboText },
+    { href: 'simulator-dice.html', image: 'dice-card-hero.webp', alt: 'Dice', title: 'Dice: 0–100', text: language === 'ru' ? 'Выберите условие и наблюдайте результат на шкале от 0 до 100.' : language === 'es' ? 'Elegí una condición y observá el resultado en la escala de 0 a 100.' : language === 'id' ? 'Pilih kondisi dan amati hasil pada skala 0–100.' : language === 'uz' ? 'Shartni tanlang va natijani 0–100 shkalasida kuzating.' : language === 'tg' ? 'Шартро интихоб карда, натиҷаро дар миқёси 0–100 бинед.' : 'Choose a condition and watch the result land on the 0–100 scale.' }
   ].slice(0, 6);
 
   const style = document.createElement('style');
